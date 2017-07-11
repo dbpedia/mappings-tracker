@@ -1,0 +1,467 @@
+@base	          	<http://ga.dbpedia.org/resource/Mapping_ga:Comhlacht_bosca_eolais/> .
+@prefix schema: 	<http://schema.org/> .
+@prefix rr:    		<http://www.w3.org/ns/r2rml#> .
+@prefix owl:   		<http://www.w3.org/2002/07/owl#> .
+@prefix gml:   		<http://www.opengis.net/gml/> .
+@prefix xsd:   		<http://www.w3.org/2001/XMLSchema#> .
+@prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
+@prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
+@prefix dct:   		<http://purl.org/dc/terms/> .
+@prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
+@prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
+@prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
+@prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
+@prefix crml:  		<http://semweb.mmlab.be/ns/crml#> .
+@prefix fno:   		<http://w3id.org/function/ontology#> .
+@prefix georss: 	<http://www.georss.org/georss/> .
+@prefix dbf:   		<http://dbpedia.org/function/> .
+@prefix dbo:   		<http://dbpedia.org/ontology/> .
+@prefix mappings: 	<http://mappings.dbpedia.org/wiki/> .
+@prefix rdf:   		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix bibo:  		<http://purl.org/ontology/bibo/> .
+@prefix dul:   		<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix cidoccrm: 	<http://purl.org/NET/cidoc-crm/core#> .
+@prefix wikidata: 	<http://www.wikidata.org/entity/> .
+@prefix dc:    		<http://purl.org/dc/elements/1.1/> .
+
+
+### Main TriplesMap
+####################
+<http://ga.dbpedia.org/resource/Mapping_ga:Comhlacht_bosca_eolais>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <SimplePropertyMapping/109> ,
+			       <SimplePropertyMapping/107> ,
+			       <SimplePropertyMapping/112> ,
+			       <SimplePropertyMapping/108> ,
+			       <SimplePropertyMapping/110> ,
+			       <ConditionalMapping/tionscail_contains_baincéireacht> ,
+			       <SimplePropertyMapping/105> ,
+			       <SimplePropertyMapping/106> ,
+			       <SimplePropertyMapping/103> ,
+			       <SimplePropertyMapping/111> ,
+			       <SimplePropertyMapping/104> ;
+        rr:subjectMap          <SubjectMap> .
+
+
+### Main SubjectMap
+####################
+<SubjectMap>  a      rr:SubjectMap ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}" ;
+        rr:termType  rr:IRI .
+
+
+### LogicalSource
+##################
+
+<LogicalSource>  a                rml:LogicalSource ;
+        rml:iterator              "Infobox" ;
+        rml:referenceFormulation  ql:wikitext ;
+        rml:source                "http://ga.wikipedia.org/wiki/Mapping_ga:Comhlacht_bosca_eolais?oldid=47407" .
+
+
+###########
+# Mappings
+###########
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/109>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/109/FTM> ;
+        rr:predicate  dbo:extinctionYear .
+
+### Function Term Map
+<SimplePropertyMapping/109/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/109/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/109/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/109/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/109/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/109/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/109/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "teipthe" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/112>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/112/FTM> ;
+        rr:predicate  dbo:industry .
+
+### Function Term Map
+<SimplePropertyMapping/112/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/112/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/112/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/112/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/112/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/112/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/112/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "tionscail" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/107>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/107/FTM> ;
+        rr:predicate  dbo:location .
+
+### Function Term Map
+<SimplePropertyMapping/107/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/107/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/107/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/107/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/107/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/107/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/107/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "suíomh" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/108>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/108/FTM> ;
+        rr:predicate  dbo:extinctionDate .
+
+### Function Term Map
+<SimplePropertyMapping/108/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/108/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/108/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/108/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/108/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/108/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/108/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "teipthe" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/110>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/110/FTM> ;
+        rr:predicate  dbo:keyPerson .
+
+### Function Term Map
+<SimplePropertyMapping/110/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/110/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/110/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/110/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/110/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/110/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/110/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "daoine" .
+
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/105>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/105/FTM> ;
+        rr:predicate  foaf:homepage .
+
+### Function Term Map
+<SimplePropertyMapping/105/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/105/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/105/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/105/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/105/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/105/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/105/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "líonláithreán" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/106>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/106/FTM> ;
+        rr:predicate  dbo:foundingDate .
+
+### Function Term Map
+<SimplePropertyMapping/106/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/106/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/106/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/106/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/106/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/106/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/106/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "bunaithe" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/103>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/103/FTM> ;
+        rr:predicate  foaf:name .
+
+### Function Term Map
+<SimplePropertyMapping/103/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/103/FTM/FV> ;
+        rr:language         "ga" .
+
+### Function Execution Mapping
+<SimplePropertyMapping/103/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/103/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/103/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/103/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/103/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "ainm_comhlachta" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/111>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/111/FTM> ;
+        rr:predicate  dbo:numberOfEmployees .
+
+### Function Term Map
+<SimplePropertyMapping/111/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/111/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/111/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/111/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/111/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/111/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/111/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "méid_fostaithe" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/104>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/104/FTM> ;
+        rr:predicate  dbo:type .
+
+### Function Term Map
+<SimplePropertyMapping/104/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/104/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/104/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/104/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/104/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/104/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/104/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "saghas_comhlachta" .
+
+
+######################
+# Conditional Mappings
+######################
+
+
+### Conditional PredicateObjectMap
+###################################
+<ConditionalMapping/tionscail_contains_bainc%C3%A9ireacht>
+        a                    rr:PredicateObjectMap ;
+        crml:equalCondition  <ConditionalMapping/tionscail_contains_bainc%C3%A9ireacht/FTM> ;
+        crml:fallbackMap     <ConditionalMapping/tionscail_contains_bainc%C3%A9ireacht/1> ;
+        rr:object            dbo:Organisation , dbo:Bank , wikidata:Q43229 , schema:BankOrCreditUnion , dbo:Company , dbo:Agent , dul:SocialPerson , dul:Agent , owl:Thing , schema:Organization ;
+        rr:predicate         rdf:type .
+
+### Function Term Map
+<ConditionalMapping/tionscail_contains_bainc%C3%A9ireacht/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/tionscail_contains_bainc%C3%A9ireacht/FTM/FV> .
+
+### Function Execution Mapping
+<ConditionalMapping/tionscail_contains_bainc%C3%A9ireacht/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/contains> ,
+			       <ConditionalMapping/tionscail_contains_bainc%C3%A9ireacht/FTM/FV/ValueParameterPOM> ,
+			       <ConditionalMapping/tionscail_contains_bainc%C3%A9ireacht/FTM/FV/PropertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/tionscail_contains_bainc%C3%A9ireacht/FTM/FV/ValueParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "baincéireacht" ;
+        rr:predicate  <http://dbpedia.org/function/contains/valueParameter> .
+
+<ConditionalMapping/tionscail_contains_bainc%C3%A9ireacht/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/tionscail_contains_bainc%C3%A9ireacht/FTM/FV/PropertyParameterPOM/ObjectMap> ;
+        rr:predicate  <http://dbpedia.org/function/contains/propertyParameter> .
+
+### References
+<ConditionalMapping/tionscail_contains_bainc%C3%A9ireacht/FTM/FV/PropertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "tionscail" .
+
+### Conditional PredicateObjectMap
+###################################
+<ConditionalMapping/tionscail_contains_bainc%C3%A9ireacht/1>
+        a             rr:PredicateObjectMap ;
+        rr:object     wikidata:Q43229 , dul:SocialPerson , schema:Organization , dbo:Agent , dbo:Organisation , dul:Agent , owl:Thing , dbo:Company ;
+        rr:predicate  rdf:type .
+
+
+############
+# Functions
+############
+
+
+<Function/contains>  a  rr:PredicateObjectMap ;
+        rr:object     dbf:contains ;
+        rr:predicate  fno:executes .
+
+<Function/SimplePropertyFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:simplePropertyFunction ;
+        rr:predicate  fno:executes .
+
+
+### Functions SubjectMap
+#########################
+
+<SubjectMap/Function>
+        a            rr:SubjectMap ;
+        rr:class     fno:Execution ;
+        rr:termType  rr:BlankNode .
