@@ -48,11 +48,13 @@
 			       <SimplePropertyMapping/20> ,
 			       <SimplePropertyMapping/45> ,
 			       <SimplePropertyMapping/64> ,
+			       <SimplePropertyMapping/4> ,
 			       <SimplePropertyMapping/38> ,
 			       <SimplePropertyMapping/48> ,
 			       <SimplePropertyMapping/15> ,
 			       <SimplePropertyMapping/39> ,
 			       <SimplePropertyMapping/12> ,
+			       <SimplePropertyMapping/3> ,
 			       <SimplePropertyMapping/30> ,
 			       <SimplePropertyMapping/10> ,
 			       <SimplePropertyMapping/36> ,
@@ -60,8 +62,8 @@
 			       <SimplePropertyMapping/13> ,
 			       <SimplePropertyMapping/54> ,
 			       <SimplePropertyMapping/31> ,
-			       <SimplePropertyMapping/82> ,
 			       <SimplePropertyMapping/29> ,
+			       <SimplePropertyMapping/6> ,
 			       <SimplePropertyMapping/75> ,
 			       <SimplePropertyMapping/81> ,
 			       <SimplePropertyMapping/59> ,
@@ -70,7 +72,6 @@
 			       <SimplePropertyMapping/56> ,
 			       <SimplePropertyMapping/23> ,
 			       <SimplePropertyMapping/33> ,
-			       <SimplePropertyMapping/84> ,
 			       <SimplePropertyMapping/67> ,
 			       <SimplePropertyMapping/77> ,
 			       <SimplePropertyMapping/47> ,
@@ -81,12 +82,12 @@
 			       <SimplePropertyMapping/24> ,
 			       <SimplePropertyMapping/14> ,
 			       <SimplePropertyMapping/51> ,
+			       <SimplePropertyMapping/5> ,
 			       <SimplePropertyMapping/49> ,
 			       <SimplePropertyMapping/68> ,
 			       <SimplePropertyMapping/8> ,
 			       <SimplePropertyMapping/19> ,
 			       <SimplePropertyMapping/16> ,
-			       <SimplePropertyMapping/83> ,
 			       <SimplePropertyMapping/7> ,
 			       <SimplePropertyMapping/34> ,
 			       <SimplePropertyMapping/62> ,
@@ -100,7 +101,6 @@
 			       <SimplePropertyMapping/41> ,
 			       <SimplePropertyMapping/32> ,
 			       <SimplePropertyMapping/60> ,
-			       <SimplePropertyMapping/85> ,
 			       <SimplePropertyMapping/76> ,
 			       <SimplePropertyMapping/44> ,
 			       <SimplePropertyMapping/27> ,
@@ -129,9 +129,9 @@
 ##################
 
 <LogicalSource>  a                rml:LogicalSource ;
-        rml:iterator              "Infobox" ;
+        rml:iterator              "Infobox:Takson_infobox" ;
         rml:referenceFormulation  ql:wikitext ;
-        rml:source                "http://pl.wikipedia.org/wiki/Mapping_pl:Takson_infobox?oldid=13144" .
+        rml:source                "https://pl.wikipedia.org/wiki/{wikititle}" .
 
 
 ###########
@@ -143,7 +143,7 @@
 <SimplePropertyMapping/52>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/52/FTM> ;
-        rr:predicate  dbo:family .
+        rr:predicate  dbo:genus .
 
 ### Function Term Map
 <SimplePropertyMapping/52/FTM>
@@ -167,7 +167,7 @@
 ### References
 <SimplePropertyMapping/52/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "alliance" .
+        rml:reference  "genus" .
 
 
 ### Predicate Object Map
@@ -175,7 +175,7 @@
 <SimplePropertyMapping/80>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/80/FTM> ;
-        rr:predicate  dbo:family .
+        rr:predicate  dbo:species .
 
 ### Function Term Map
 <SimplePropertyMapping/80/FTM>
@@ -199,7 +199,7 @@
 ### References
 <SimplePropertyMapping/80/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "superfamilia" .
+        rml:reference  "species_complex" .
 
 
 ### Predicate Object Map
@@ -207,12 +207,13 @@
 <SimplePropertyMapping/63>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/63/FTM> ;
-        rr:predicate  dbo:binomial .
+        rr:predicate  foaf:name .
 
 ### Function Term Map
 <SimplePropertyMapping/63/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/63/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/63/FTM/FV> ;
+        rr:language         "pl" .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/63/FTM/FV>
@@ -231,7 +232,7 @@
 ### References
 <SimplePropertyMapping/63/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "łacina2" .
+        rml:reference  "name" .
 
 
 ### Predicate Object Map
@@ -239,7 +240,7 @@
 <SimplePropertyMapping/73>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/73/FTM> ;
-        rr:predicate  dbo:phylum .
+        rr:predicate  dbo:order .
 
 ### Function Term Map
 <SimplePropertyMapping/73/FTM>
@@ -263,7 +264,7 @@
 ### References
 <SimplePropertyMapping/73/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "superphylum" .
+        rml:reference  "magnordo" .
 
 
 ### Predicate Object Map
@@ -271,7 +272,7 @@
 <SimplePropertyMapping/43>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/43/FTM> ;
-        rr:predicate  dbo:order .
+        rr:predicate  dbo:family .
 
 ### Function Term Map
 <SimplePropertyMapping/43/FTM>
@@ -295,7 +296,7 @@
 ### References
 <SimplePropertyMapping/43/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "infrarząd" .
+        rml:reference  "rodzina" .
 
 
 ### Predicate Object Map
@@ -327,7 +328,7 @@
 ### References
 <SimplePropertyMapping/53/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "nadrodzaj" .
+        rml:reference  "subgenus" .
 
 
 ### Predicate Object Map
@@ -335,7 +336,7 @@
 <SimplePropertyMapping/22>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/22/FTM> ;
-        rr:predicate  dbo:phylum .
+        rr:predicate  dbo:division .
 
 ### Function Term Map
 <SimplePropertyMapping/22/FTM>
@@ -359,7 +360,7 @@
 ### References
 <SimplePropertyMapping/22/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "podtyp" .
+        rml:reference  "divisio" .
 
 
 ### Predicate Object Map
@@ -367,7 +368,7 @@
 <SimplePropertyMapping/66>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/66/FTM> ;
-        rr:predicate  dbo:conservationStatusSystem .
+        rr:predicate  dbo:kingdom .
 
 ### Function Term Map
 <SimplePropertyMapping/66/FTM>
@@ -391,7 +392,7 @@
 ### References
 <SimplePropertyMapping/66/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "status_system" .
+        rml:reference  "unranked_regnum" .
 
 
 ### Predicate Object Map
@@ -423,7 +424,7 @@
 ### References
 <SimplePropertyMapping/46/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "nadrodzina" .
+        rml:reference  "tribus" .
 
 
 ### Predicate Object Map
@@ -431,7 +432,7 @@
 <SimplePropertyMapping/61>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/61/FTM> ;
-        rr:predicate  dbo:binomial .
+        rr:predicate  dbo:conservationStatus .
 
 ### Function Term Map
 <SimplePropertyMapping/61/FTM>
@@ -455,7 +456,7 @@
 ### References
 <SimplePropertyMapping/61/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "łacina" .
+        rml:reference  "status" .
 
 
 ### Predicate Object Map
@@ -463,7 +464,7 @@
 <SimplePropertyMapping/20>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/20/FTM> ;
-        rr:predicate  dbo:phylum .
+        rr:predicate  dbo:family .
 
 ### Function Term Map
 <SimplePropertyMapping/20/FTM>
@@ -487,7 +488,7 @@
 ### References
 <SimplePropertyMapping/20/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "nadtyp" .
+        rml:reference  "plemię" .
 
 
 ### Predicate Object Map
@@ -495,7 +496,7 @@
 <SimplePropertyMapping/45>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/45/FTM> ;
-        rr:predicate  dbo:order .
+        rr:predicate  dbo:family .
 
 ### Function Term Map
 <SimplePropertyMapping/45/FTM>
@@ -519,7 +520,7 @@
 ### References
 <SimplePropertyMapping/45/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "magnorząd" .
+        rml:reference  "supertribus" .
 
 
 ### Predicate Object Map
@@ -527,7 +528,7 @@
 <SimplePropertyMapping/64>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/64/FTM> ;
-        rr:predicate  dbo:binomialAuthority .
+        rr:predicate  dbo:domain .
 
 ### Function Term Map
 <SimplePropertyMapping/64/FTM>
@@ -551,7 +552,39 @@
 ### References
 <SimplePropertyMapping/64/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "autor2" .
+        rml:reference  "unranked_superdomain" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/4/FTM> ;
+        rr:predicate  dbo:kingdom .
+
+### Function Term Map
+<SimplePropertyMapping/4/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/4/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/4/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/4/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/4/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/4/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/4/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "królestwo" .
 
 
 ### Predicate Object Map
@@ -559,7 +592,7 @@
 <SimplePropertyMapping/38>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/38/FTM> ;
-        rr:predicate  dbo:class .
+        rr:predicate  dbo:order .
 
 ### Function Term Map
 <SimplePropertyMapping/38/FTM>
@@ -583,7 +616,7 @@
 ### References
 <SimplePropertyMapping/38/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "infraklasa" .
+        rml:reference  "podrząd" .
 
 
 ### Predicate Object Map
@@ -615,7 +648,7 @@
 ### References
 <SimplePropertyMapping/48/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "podrodzina" .
+        rml:reference  "alliance" .
 
 
 ### Predicate Object Map
@@ -623,7 +656,7 @@
 <SimplePropertyMapping/15>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/15/FTM> ;
-        rr:predicate  dbo:family .
+        rr:predicate  dbo:class .
 
 ### Function Term Map
 <SimplePropertyMapping/15/FTM>
@@ -647,7 +680,7 @@
 ### References
 <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "rodzina" .
+        rml:reference  "podgromada" .
 
 
 ### Predicate Object Map
@@ -679,7 +712,7 @@
 ### References
 <SimplePropertyMapping/39/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "nadrząd" .
+        rml:reference  "infrarząd" .
 
 
 ### Predicate Object Map
@@ -687,7 +720,7 @@
 <SimplePropertyMapping/12>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/12/FTM> ;
-        rr:predicate  dbo:domain .
+        rr:predicate  dbo:family .
 
 ### Function Term Map
 <SimplePropertyMapping/12/FTM>
@@ -711,7 +744,39 @@
 ### References
 <SimplePropertyMapping/12/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "domena" .
+        rml:reference  "podrodzina" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/3/FTM> ;
+        rr:predicate  dbo:kingdom .
+
+### Function Term Map
+<SimplePropertyMapping/3/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/3/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/3/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/3/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/3/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/3/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/3/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "nadkrólestwo" .
 
 
 ### Predicate Object Map
@@ -719,7 +784,7 @@
 <SimplePropertyMapping/30>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/30/FTM> ;
-        rr:predicate  dbo:phylum .
+        rr:predicate  dbo:class .
 
 ### Function Term Map
 <SimplePropertyMapping/30/FTM>
@@ -743,7 +808,7 @@
 ### References
 <SimplePropertyMapping/30/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "subphylum" .
+        rml:reference  "classis" .
 
 
 ### Predicate Object Map
@@ -751,13 +816,12 @@
 <SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/10/FTM> ;
-        rr:predicate  dbo:colourName .
+        rr:predicate  dbo:family .
 
 ### Function Term Map
 <SimplePropertyMapping/10/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/10/FTM/FV> ;
-        rr:language         "pl" .
+        fnml:functionValue  <SimplePropertyMapping/10/FTM/FV> .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/10/FTM/FV>
@@ -776,7 +840,7 @@
 ### References
 <SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "kolor" .
+        rml:reference  "nadrodzina" .
 
 
 ### Predicate Object Map
@@ -784,7 +848,7 @@
 <SimplePropertyMapping/36>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/36/FTM> ;
-        rr:predicate  dbo:class .
+        rr:predicate  dbo:order .
 
 ### Function Term Map
 <SimplePropertyMapping/36/FTM>
@@ -808,7 +872,7 @@
 ### References
 <SimplePropertyMapping/36/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "klasa bez rangi" .
+        rml:reference  "rząd" .
 
 
 ### Predicate Object Map
@@ -816,7 +880,7 @@
 <SimplePropertyMapping/74>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/74/FTM> ;
-        rr:predicate  dbo:class .
+        rr:predicate  dbo:order .
 
 ### Function Term Map
 <SimplePropertyMapping/74/FTM>
@@ -840,7 +904,7 @@
 ### References
 <SimplePropertyMapping/74/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_classis" .
+        rml:reference  "superordo" .
 
 
 ### Predicate Object Map
@@ -848,13 +912,12 @@
 <SimplePropertyMapping/13>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/13/FTM> ;
-        rr:predicate  foaf:name .
+        rr:predicate  dbo:class .
 
 ### Function Term Map
 <SimplePropertyMapping/13/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/13/FTM/FV> ;
-        rr:language         "pl" .
+        fnml:functionValue  <SimplePropertyMapping/13/FTM/FV> .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/13/FTM/FV>
@@ -873,7 +936,7 @@
 ### References
 <SimplePropertyMapping/13/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "nazwa zwyczajowa" .
+        rml:reference  "nadgromada" .
 
 
 ### Predicate Object Map
@@ -881,7 +944,7 @@
 <SimplePropertyMapping/54>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/54/FTM> ;
-        rr:predicate  dbo:genus .
+        rr:predicate  dbo:species .
 
 ### Function Term Map
 <SimplePropertyMapping/54/FTM>
@@ -905,7 +968,7 @@
 ### References
 <SimplePropertyMapping/54/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "rodzaj" .
+        rml:reference  "species" .
 
 
 ### Predicate Object Map
@@ -913,7 +976,7 @@
 <SimplePropertyMapping/31>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/31/FTM> ;
-        rr:predicate  dbo:phylum .
+        rr:predicate  dbo:class .
 
 ### Function Term Map
 <SimplePropertyMapping/31/FTM>
@@ -937,39 +1000,7 @@
 ### References
 <SimplePropertyMapping/31/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "infratyp" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/82>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/82/FTM> ;
-        rr:predicate  dbo:species .
-
-### Function Term Map
-<SimplePropertyMapping/82/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/82/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/82/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/82/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/82/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/82/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/82/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "species_group" .
+        rml:reference  "klasa" .
 
 
 ### Predicate Object Map
@@ -1001,7 +1032,40 @@
 ### References
 <SimplePropertyMapping/29/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "phylum" .
+        rml:reference  "nanotyp" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/6/FTM> ;
+        rr:predicate  dbo:colourName .
+
+### Function Term Map
+<SimplePropertyMapping/6/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/6/FTM/FV> ;
+        rr:language         "pl" .
+
+### Function Execution Mapping
+<SimplePropertyMapping/6/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/6/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/6/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/6/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/6/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "kolor" .
 
 
 ### Predicate Object Map
@@ -1009,7 +1073,7 @@
 <SimplePropertyMapping/75>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/75/FTM> ;
-        rr:predicate  dbo:class .
+        rr:predicate  dbo:family .
 
 ### Function Term Map
 <SimplePropertyMapping/75/FTM>
@@ -1033,7 +1097,7 @@
 ### References
 <SimplePropertyMapping/75/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "superclassis" .
+        rml:reference  "unranked_familia" .
 
 
 ### Predicate Object Map
@@ -1041,7 +1105,7 @@
 <SimplePropertyMapping/81>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/81/FTM> ;
-        rr:predicate  dbo:genus .
+        rr:predicate  dbo:synonym .
 
 ### Function Term Map
 <SimplePropertyMapping/81/FTM>
@@ -1065,7 +1129,7 @@
 ### References
 <SimplePropertyMapping/81/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_genus" .
+        rml:reference  "synonim" .
 
 
 ### Predicate Object Map
@@ -1073,7 +1137,7 @@
 <SimplePropertyMapping/59>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/59/FTM> ;
-        rr:predicate  dbo:species .
+        rr:predicate  dbo:binomial .
 
 ### Function Term Map
 <SimplePropertyMapping/59/FTM>
@@ -1097,7 +1161,7 @@
 ### References
 <SimplePropertyMapping/59/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "subspecies" .
+        rml:reference  "łacina2" .
 
 
 ### Predicate Object Map
@@ -1105,7 +1169,7 @@
 <SimplePropertyMapping/72>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/72/FTM> ;
-        rr:predicate  dbo:phylum .
+        rr:predicate  dbo:order .
 
 ### Function Term Map
 <SimplePropertyMapping/72/FTM>
@@ -1129,7 +1193,7 @@
 ### References
 <SimplePropertyMapping/72/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_phylum" .
+        rml:reference  "unranked_ordo" .
 
 
 ### Predicate Object Map
@@ -1161,7 +1225,7 @@
 ### References
 <SimplePropertyMapping/40/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "rząd" .
+        rml:reference  "parvordo" .
 
 
 ### Predicate Object Map
@@ -1169,7 +1233,7 @@
 <SimplePropertyMapping/56>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/56/FTM> ;
-        rr:predicate  dbo:genus .
+        rr:predicate  dbo:species .
 
 ### Function Term Map
 <SimplePropertyMapping/56/FTM>
@@ -1193,7 +1257,7 @@
 ### References
 <SimplePropertyMapping/56/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "genus" .
+        rml:reference  "variety" .
 
 
 ### Predicate Object Map
@@ -1201,7 +1265,7 @@
 <SimplePropertyMapping/23>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/23/FTM> ;
-        rr:predicate  dbo:family .
+        rr:predicate  dbo:division .
 
 ### Function Term Map
 <SimplePropertyMapping/23/FTM>
@@ -1225,7 +1289,7 @@
 ### References
 <SimplePropertyMapping/23/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "nadplemię" .
+        rml:reference  "subdivisio" .
 
 
 ### Predicate Object Map
@@ -1233,7 +1297,7 @@
 <SimplePropertyMapping/33>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/33/FTM> ;
-        rr:predicate  dbo:phylum .
+        rr:predicate  dbo:class .
 
 ### Function Term Map
 <SimplePropertyMapping/33/FTM>
@@ -1257,39 +1321,7 @@
 ### References
 <SimplePropertyMapping/33/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "nanotyp" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/84>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/84/FTM> ;
-        rr:predicate  dbo:species .
-
-### Function Term Map
-<SimplePropertyMapping/84/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/84/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/84/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/84/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/84/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/84/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/84/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "species_complex" .
+        rml:reference  "podklasa" .
 
 
 ### Predicate Object Map
@@ -1297,13 +1329,12 @@
 <SimplePropertyMapping/67>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/67/FTM> ;
-        rr:predicate  foaf:name .
+        rr:predicate  dbo:division .
 
 ### Function Term Map
 <SimplePropertyMapping/67/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/67/FTM/FV> ;
-        rr:language         "pl" .
+        fnml:functionValue  <SimplePropertyMapping/67/FTM/FV> .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/67/FTM/FV>
@@ -1322,7 +1353,7 @@
 ### References
 <SimplePropertyMapping/67/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "name" .
+        rml:reference  "superdivisio" .
 
 
 ### Predicate Object Map
@@ -1330,7 +1361,7 @@
 <SimplePropertyMapping/77>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/77/FTM> ;
-        rr:predicate  dbo:order .
+        rr:predicate  dbo:genus .
 
 ### Function Term Map
 <SimplePropertyMapping/77/FTM>
@@ -1354,7 +1385,7 @@
 ### References
 <SimplePropertyMapping/77/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "magnordo" .
+        rml:reference  "unranked_genus" .
 
 
 ### Predicate Object Map
@@ -1386,7 +1417,7 @@
 ### References
 <SimplePropertyMapping/47/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "rodzina" .
+        rml:reference  "subtribus" .
 
 
 ### Predicate Object Map
@@ -1394,7 +1425,7 @@
 <SimplePropertyMapping/57>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/57/FTM> ;
-        rr:predicate  dbo:genus .
+        rr:predicate  dbo:binomial .
 
 ### Function Term Map
 <SimplePropertyMapping/57/FTM>
@@ -1418,7 +1449,7 @@
 ### References
 <SimplePropertyMapping/57/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "subgenus" .
+        rml:reference  "łacina" .
 
 
 ### Predicate Object Map
@@ -1426,7 +1457,7 @@
 <SimplePropertyMapping/26>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/26/FTM> ;
-        rr:predicate  dbo:division .
+        rr:predicate  dbo:phylum .
 
 ### Function Term Map
 <SimplePropertyMapping/26/FTM>
@@ -1450,7 +1481,7 @@
 ### References
 <SimplePropertyMapping/26/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "divisio" .
+        rml:reference  "subphylum" .
 
 
 ### Predicate Object Map
@@ -1458,7 +1489,7 @@
 <SimplePropertyMapping/21>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/21/FTM> ;
-        rr:predicate  dbo:phylum .
+        rr:predicate  dbo:family .
 
 ### Function Term Map
 <SimplePropertyMapping/21/FTM>
@@ -1482,7 +1513,7 @@
 ### References
 <SimplePropertyMapping/21/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "typ" .
+        rml:reference  "podplemię" .
 
 
 ### Predicate Object Map
@@ -1490,7 +1521,7 @@
 <SimplePropertyMapping/65>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/65/FTM> ;
-        rr:predicate  dbo:conservationStatus .
+        rr:predicate  dbo:domain .
 
 ### Function Term Map
 <SimplePropertyMapping/65/FTM>
@@ -1514,7 +1545,7 @@
 ### References
 <SimplePropertyMapping/65/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "status" .
+        rml:reference  "superdomain" .
 
 
 ### Predicate Object Map
@@ -1522,7 +1553,7 @@
 <SimplePropertyMapping/51>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/51/FTM> ;
-        rr:predicate  dbo:family .
+        rr:predicate  dbo:genus .
 
 ### Function Term Map
 <SimplePropertyMapping/51/FTM>
@@ -1546,7 +1577,7 @@
 ### References
 <SimplePropertyMapping/51/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "subtribus" .
+        rml:reference  "podrodzaj" .
 
 
 ### Predicate Object Map
@@ -1554,7 +1585,7 @@
 <SimplePropertyMapping/14>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/14/FTM> ;
-        rr:predicate  dbo:family .
+        rr:predicate  dbo:class .
 
 ### Function Term Map
 <SimplePropertyMapping/14/FTM>
@@ -1578,7 +1609,7 @@
 ### References
 <SimplePropertyMapping/14/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "nadrodzina" .
+        rml:reference  "gromada" .
 
 
 ### Predicate Object Map
@@ -1586,7 +1617,7 @@
 <SimplePropertyMapping/24>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/24/FTM> ;
-        rr:predicate  dbo:family .
+        rr:predicate  dbo:division .
 
 ### Function Term Map
 <SimplePropertyMapping/24/FTM>
@@ -1610,7 +1641,39 @@
 ### References
 <SimplePropertyMapping/24/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "plemię" .
+        rml:reference  "unranked_divisio" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/5/FTM> ;
+        rr:predicate  dbo:kingdom .
+
+### Function Term Map
+<SimplePropertyMapping/5/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/5/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/5/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/5/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/5/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/5/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/5/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "podkrólestwo" .
 
 
 ### Predicate Object Map
@@ -1618,7 +1681,7 @@
 <SimplePropertyMapping/49>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/49/FTM> ;
-        rr:predicate  dbo:family .
+        rr:predicate  dbo:genus .
 
 ### Function Term Map
 <SimplePropertyMapping/49/FTM>
@@ -1642,7 +1705,7 @@
 ### References
 <SimplePropertyMapping/49/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "supertribus" .
+        rml:reference  "nadrodzaj" .
 
 
 ### Predicate Object Map
@@ -1650,7 +1713,7 @@
 <SimplePropertyMapping/68>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/68/FTM> ;
-        rr:predicate  dbo:domain .
+        rr:predicate  dbo:phylum .
 
 ### Function Term Map
 <SimplePropertyMapping/68/FTM>
@@ -1674,7 +1737,7 @@
 ### References
 <SimplePropertyMapping/68/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_superdomain" .
+        rml:reference  "unranked_phylum" .
 
 
 ### Predicate Object Map
@@ -1682,7 +1745,7 @@
 <SimplePropertyMapping/8>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/8/FTM> ;
-        rr:predicate  dbo:kingdom .
+        rr:predicate  dbo:domain .
 
 ### Function Term Map
 <SimplePropertyMapping/8/FTM>
@@ -1706,7 +1769,7 @@
 ### References
 <SimplePropertyMapping/8/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "królestwo" .
+        rml:reference  "domena" .
 
 
 ### Predicate Object Map
@@ -1714,7 +1777,7 @@
 <SimplePropertyMapping/19>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/19/FTM> ;
-        rr:predicate  dbo:class .
+        rr:predicate  dbo:family .
 
 ### Function Term Map
 <SimplePropertyMapping/19/FTM>
@@ -1738,7 +1801,7 @@
 ### References
 <SimplePropertyMapping/19/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "podgromada" .
+        rml:reference  "nadplemię" .
 
 
 ### Predicate Object Map
@@ -1746,7 +1809,7 @@
 <SimplePropertyMapping/16>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/16/FTM> ;
-        rr:predicate  dbo:family .
+        rr:predicate  dbo:phylum .
 
 ### Function Term Map
 <SimplePropertyMapping/16/FTM>
@@ -1770,39 +1833,7 @@
 ### References
 <SimplePropertyMapping/16/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "podrodzina" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/83>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/83/FTM> ;
-        rr:predicate  dbo:species .
-
-### Function Term Map
-<SimplePropertyMapping/83/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/83/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/83/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/83/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/83/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/83/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/83/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "species_subgroup" .
+        rml:reference  "nadtyp" .
 
 
 ### Predicate Object Map
@@ -1810,7 +1841,7 @@
 <SimplePropertyMapping/7>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/7/FTM> ;
-        rr:predicate  dbo:kingdom .
+        rr:predicate  dbo:colour .
 
 ### Function Term Map
 <SimplePropertyMapping/7/FTM>
@@ -1834,7 +1865,7 @@
 ### References
 <SimplePropertyMapping/7/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "nadkrólestwo" .
+        rml:reference  "kolor" .
 
 
 ### Predicate Object Map
@@ -1866,7 +1897,7 @@
 ### References
 <SimplePropertyMapping/34/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "classis" .
+        rml:reference  "infraklasa" .
 
 
 ### Predicate Object Map
@@ -1874,7 +1905,7 @@
 <SimplePropertyMapping/62>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/62/FTM> ;
-        rr:predicate  dbo:binomialAuthority .
+        rr:predicate  dbo:conservationStatusSystem .
 
 ### Function Term Map
 <SimplePropertyMapping/62/FTM>
@@ -1898,7 +1929,7 @@
 ### References
 <SimplePropertyMapping/62/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "autor" .
+        rml:reference  "status_system" .
 
 
 ### Predicate Object Map
@@ -1906,7 +1937,7 @@
 <SimplePropertyMapping/42>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/42/FTM> ;
-        rr:predicate  dbo:order .
+        rr:predicate  dbo:family .
 
 ### Function Term Map
 <SimplePropertyMapping/42/FTM>
@@ -1930,7 +1961,7 @@
 ### References
 <SimplePropertyMapping/42/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "podrząd" .
+        rml:reference  "nadrodzina" .
 
 
 
@@ -1939,7 +1970,7 @@
 <SimplePropertyMapping/78>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/78/FTM> ;
-        rr:predicate  dbo:order .
+        rr:predicate  dbo:species .
 
 ### Function Term Map
 <SimplePropertyMapping/78/FTM>
@@ -1963,7 +1994,7 @@
 ### References
 <SimplePropertyMapping/78/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "superordo" .
+        rml:reference  "species_group" .
 
 
 ### Predicate Object Map
@@ -1971,7 +2002,7 @@
 <SimplePropertyMapping/17>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/17/FTM> ;
-        rr:predicate  dbo:class .
+        rr:predicate  dbo:phylum .
 
 ### Function Term Map
 <SimplePropertyMapping/17/FTM>
@@ -1995,7 +2026,7 @@
 ### References
 <SimplePropertyMapping/17/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "nadgromada" .
+        rml:reference  "typ" .
 
 
 ### Predicate Object Map
@@ -2003,7 +2034,7 @@
 <SimplePropertyMapping/58>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/58/FTM> ;
-        rr:predicate  dbo:species .
+        rr:predicate  dbo:binomialAuthority .
 
 ### Function Term Map
 <SimplePropertyMapping/58/FTM>
@@ -2027,7 +2058,7 @@
 ### References
 <SimplePropertyMapping/58/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "species" .
+        rml:reference  "autor" .
 
 
 ### Predicate Object Map
@@ -2035,7 +2066,7 @@
 <SimplePropertyMapping/35>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/35/FTM> ;
-        rr:predicate  dbo:class .
+        rr:predicate  dbo:order .
 
 ### Function Term Map
 <SimplePropertyMapping/35/FTM>
@@ -2059,7 +2090,7 @@
 ### References
 <SimplePropertyMapping/35/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "klasa" .
+        rml:reference  "nadrząd" .
 
 
 ### Predicate Object Map
@@ -2067,7 +2098,7 @@
 <SimplePropertyMapping/79>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/79/FTM> ;
-        rr:predicate  dbo:family .
+        rr:predicate  dbo:species .
 
 ### Function Term Map
 <SimplePropertyMapping/79/FTM>
@@ -2091,7 +2122,7 @@
 ### References
 <SimplePropertyMapping/79/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_familia" .
+        rml:reference  "species_subgroup" .
 
 
 ### Predicate Object Map
@@ -2123,7 +2154,7 @@
 ### References
 <SimplePropertyMapping/41/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "rząd bez rangi" .
+        rml:reference  "magnorząd" .
 
 
 ### Predicate Object Map
@@ -2131,7 +2162,7 @@
 <SimplePropertyMapping/32>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/32/FTM> ;
-        rr:predicate  dbo:phylum .
+        rr:predicate  dbo:class .
 
 ### Function Term Map
 <SimplePropertyMapping/32/FTM>
@@ -2155,7 +2186,7 @@
 ### References
 <SimplePropertyMapping/32/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "mikrotyp" .
+        rml:reference  "klasa bez rangi" .
 
 
 ### Predicate Object Map
@@ -2163,7 +2194,7 @@
 <SimplePropertyMapping/60>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/60/FTM> ;
-        rr:predicate  dbo:species .
+        rr:predicate  dbo:binomialAuthority .
 
 ### Function Term Map
 <SimplePropertyMapping/60/FTM>
@@ -2187,39 +2218,7 @@
 ### References
 <SimplePropertyMapping/60/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "variety" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/85>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/85/FTM> ;
-        rr:predicate  dbo:synonym .
-
-### Function Term Map
-<SimplePropertyMapping/85/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/85/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/85/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/85/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/85/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/85/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/85/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "synonim" .
+        rml:reference  "autor2" .
 
 
 ### Predicate Object Map
@@ -2227,7 +2226,7 @@
 <SimplePropertyMapping/76>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/76/FTM> ;
-        rr:predicate  dbo:order .
+        rr:predicate  dbo:family .
 
 ### Function Term Map
 <SimplePropertyMapping/76/FTM>
@@ -2251,7 +2250,7 @@
 ### References
 <SimplePropertyMapping/76/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_ordo" .
+        rml:reference  "superfamilia" .
 
 
 ### Predicate Object Map
@@ -2259,7 +2258,7 @@
 <SimplePropertyMapping/44>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/44/FTM> ;
-        rr:predicate  dbo:order .
+        rr:predicate  dbo:family .
 
 ### Function Term Map
 <SimplePropertyMapping/44/FTM>
@@ -2283,7 +2282,7 @@
 ### References
 <SimplePropertyMapping/44/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "parvordo" .
+        rml:reference  "podrodzina" .
 
 
 ### Predicate Object Map
@@ -2291,7 +2290,7 @@
 <SimplePropertyMapping/27>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/27/FTM> ;
-        rr:predicate  dbo:division .
+        rr:predicate  dbo:phylum .
 
 ### Function Term Map
 <SimplePropertyMapping/27/FTM>
@@ -2315,7 +2314,7 @@
 ### References
 <SimplePropertyMapping/27/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "subdivisio" .
+        rml:reference  "infratyp" .
 
 
 ### Predicate Object Map
@@ -2323,7 +2322,7 @@
 <SimplePropertyMapping/70>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/70/FTM> ;
-        rr:predicate  dbo:kingdom .
+        rr:predicate  dbo:class .
 
 ### Function Term Map
 <SimplePropertyMapping/70/FTM>
@@ -2347,7 +2346,7 @@
 ### References
 <SimplePropertyMapping/70/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_regnum" .
+        rml:reference  "unranked_classis" .
 
 
 ### Predicate Object Map
@@ -2355,7 +2354,7 @@
 <SimplePropertyMapping/50>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/50/FTM> ;
-        rr:predicate  dbo:family .
+        rr:predicate  dbo:genus .
 
 ### Function Term Map
 <SimplePropertyMapping/50/FTM>
@@ -2379,7 +2378,7 @@
 ### References
 <SimplePropertyMapping/50/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "tribus" .
+        rml:reference  "rodzaj" .
 
 
 ### Predicate Object Map
@@ -2387,7 +2386,7 @@
 <SimplePropertyMapping/25>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/25/FTM> ;
-        rr:predicate  dbo:family .
+        rr:predicate  dbo:phylum .
 
 ### Function Term Map
 <SimplePropertyMapping/25/FTM>
@@ -2411,7 +2410,7 @@
 ### References
 <SimplePropertyMapping/25/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "podplemię" .
+        rml:reference  "phylum" .
 
 
 ### Predicate Object Map
@@ -2419,7 +2418,7 @@
 <SimplePropertyMapping/71>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/71/FTM> ;
-        rr:predicate  dbo:division .
+        rr:predicate  dbo:class .
 
 ### Function Term Map
 <SimplePropertyMapping/71/FTM>
@@ -2443,7 +2442,7 @@
 ### References
 <SimplePropertyMapping/71/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "superdivisio" .
+        rml:reference  "superclassis" .
 
 
 ### Predicate Object Map
@@ -2451,7 +2450,7 @@
 <SimplePropertyMapping/11>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/11/FTM> ;
-        rr:predicate  dbo:colour .
+        rr:predicate  dbo:family .
 
 ### Function Term Map
 <SimplePropertyMapping/11/FTM>
@@ -2475,7 +2474,7 @@
 ### References
 <SimplePropertyMapping/11/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "kolor" .
+        rml:reference  "rodzina" .
 
 
 ### Predicate Object Map
@@ -2483,7 +2482,7 @@
 <SimplePropertyMapping/69>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/69/FTM> ;
-        rr:predicate  dbo:domain .
+        rr:predicate  dbo:phylum .
 
 ### Function Term Map
 <SimplePropertyMapping/69/FTM>
@@ -2507,7 +2506,7 @@
 ### References
 <SimplePropertyMapping/69/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "superdomain" .
+        rml:reference  "superphylum" .
 
 
 ### Predicate Object Map
@@ -2515,7 +2514,7 @@
 <SimplePropertyMapping/37>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/37/FTM> ;
-        rr:predicate  dbo:class .
+        rr:predicate  dbo:order .
 
 ### Function Term Map
 <SimplePropertyMapping/37/FTM>
@@ -2539,7 +2538,7 @@
 ### References
 <SimplePropertyMapping/37/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "podklasa" .
+        rml:reference  "rząd bez rangi" .
 
 
 ### Predicate Object Map
@@ -2547,7 +2546,7 @@
 <SimplePropertyMapping/55>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/55/FTM> ;
-        rr:predicate  dbo:genus .
+        rr:predicate  dbo:species .
 
 ### Function Term Map
 <SimplePropertyMapping/55/FTM>
@@ -2571,7 +2570,7 @@
 ### References
 <SimplePropertyMapping/55/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "podrodzaj" .
+        rml:reference  "subspecies" .
 
 
 ### Predicate Object Map
@@ -2579,7 +2578,7 @@
 <SimplePropertyMapping/18>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/18/FTM> ;
-        rr:predicate  dbo:class .
+        rr:predicate  dbo:phylum .
 
 ### Function Term Map
 <SimplePropertyMapping/18/FTM>
@@ -2603,7 +2602,7 @@
 ### References
 <SimplePropertyMapping/18/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "gromada" .
+        rml:reference  "podtyp" .
 
 
 ### Predicate Object Map
@@ -2611,7 +2610,7 @@
 <SimplePropertyMapping/28>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/28/FTM> ;
-        rr:predicate  dbo:division .
+        rr:predicate  dbo:phylum .
 
 ### Function Term Map
 <SimplePropertyMapping/28/FTM>
@@ -2635,7 +2634,7 @@
 ### References
 <SimplePropertyMapping/28/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_divisio" .
+        rml:reference  "mikrotyp" .
 
 
 ### Predicate Object Map
@@ -2643,12 +2642,13 @@
 <SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/9/FTM> ;
-        rr:predicate  dbo:kingdom .
+        rr:predicate  foaf:name .
 
 ### Function Term Map
 <SimplePropertyMapping/9/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/9/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/9/FTM/FV> ;
+        rr:language         "pl" .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/9/FTM/FV>
@@ -2667,7 +2667,7 @@
 ### References
 <SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "podkrólestwo" .
+        rml:reference  "nazwa zwyczajowa" .
 
 
 ######################
