@@ -37,23 +37,23 @@
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <SimplePropertyMapping/9> ,
 			       <SimplePropertyMapping/15> ,
-			       <SimplePropertyMapping/4> ,
-			       <SimplePropertyMapping/6> ,
+			       <SimplePropertyMapping/18> ,
 			       <ConditionalMapping/type_contains_Maar> ,
+			       <SimplePropertyMapping/25> ,
+			       <SimplePropertyMapping/17> ,
+			       <SimplePropertyMapping/22> ,
+			       <SimplePropertyMapping/24> ,
 			       <SimplePropertyMapping/14> ,
-			       <SimplePropertyMapping/5> ,
-			       <SimplePropertyMapping/0> ,
-			       <SimplePropertyMapping/3> ,
 			       <latitude> ,
-			       <SimplePropertyMapping/8> ,
 			       <SimplePropertyMapping/11> ,
 			       <SimplePropertyMapping/13> ,
 			       <SimplePropertyMapping/16> ,
-			       <SimplePropertyMapping/2> ,
-			       <SimplePropertyMapping/7> ,
+			       <SimplePropertyMapping/21> ,
+			       <SimplePropertyMapping/19> ,
+			       <SimplePropertyMapping/20> ,
+			       <SimplePropertyMapping/23> ,
 			       <SimplePropertyMapping/10> ,
 			       <SimplePropertyMapping/12> ,
-			       <SimplePropertyMapping/1> ,
 			       <longitude> ;
         rr:subjectMap          <SubjectMap> .
 
@@ -83,12 +83,13 @@
 <SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/9/FTM> ;
-        rr:predicate  dbo:parentMountainPeak .
+        rr:predicate  foaf:name .
 
 ### Function Term Map
 <SimplePropertyMapping/9/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/9/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/9/FTM/FV> ;
+        rr:language         "en" .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/9/FTM/FV>
@@ -107,7 +108,7 @@
 ### References
 <SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "parent_peak" .
+        rml:reference  "name" .
 
 
 ### Predicate Object Map
@@ -115,22 +116,29 @@
 <SimplePropertyMapping/15>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/15/FTM> ;
-        rr:predicate  dbo:firstAscentYear .
+        rr:predicate  dbo:prominence .
 
 ### Function Term Map
 <SimplePropertyMapping/15/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/15/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/15/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Length> .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/15/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/15/FTM/FV/unitParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
+<SimplePropertyMapping/15/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Length" ;
+        rr:predicate  dbf:unitParameter .
+
 <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM/ObjectMap> ;
@@ -139,86 +147,175 @@
 ### References
 <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
+        rml:reference  "prominence" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/18>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/18/FTM> ;
+        rr:predicate  dbo:parentMountainPeak .
+
+### Function Term Map
+<SimplePropertyMapping/18/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/18/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/18/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/18/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/18/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/18/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/18/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "parent_peak" .
+
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/25>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/25/FTM> ;
+        rr:predicate  dbo:firstAscentPerson .
+
+### Function Term Map
+<SimplePropertyMapping/25/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/25/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/25/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/25/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/25/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/25/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/25/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
         rml:reference  "first_ascent" .
 
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/4>
+<SimplePropertyMapping/17>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/4/FTM> ;
-        rr:predicate  dbo:elevation .
+        rr:objectMap  <SimplePropertyMapping/17/FTM> ;
+        rr:predicate  dbo:prominence .
 
 ### Function Term Map
-<SimplePropertyMapping/4/FTM>
+<SimplePropertyMapping/17/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/4/FTM/FV> ;
+        fnml:functionValue  <SimplePropertyMapping/17/FTM/FV> ;
         rr:datatype         <http://dbpedia.org/datatype/foot> .
 
 ### Function Execution Mapping
-<SimplePropertyMapping/4/FTM/FV>
+<SimplePropertyMapping/17/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/4/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/4/FTM/FV/unitParameterPOM> ;
+			       <SimplePropertyMapping/17/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/17/FTM/FV/unitParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/4/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/4/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-<SimplePropertyMapping/4/FTM/FV/unitParameterPOM>
+<SimplePropertyMapping/17/FTM/FV/unitParameterPOM>
         a             rr:PredicateObjectMap ;
         rr:object     "foot" ;
         rr:predicate  dbf:unitParameter .
 
+<SimplePropertyMapping/17/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/17/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
 ### References
-<SimplePropertyMapping/4/FTM/FV/propertyParameterPOM/ObjectMap>
+<SimplePropertyMapping/17/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "elevation_ft" .
+        rml:reference  "prominence_ft" .
 
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/6>
+<SimplePropertyMapping/22>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/6/FTM> ;
-        rr:predicate  dbo:prominence .
+        rr:objectMap  <SimplePropertyMapping/22/FTM> ;
+        rr:predicate  dbo:nationalTopographicSystemMapNumber .
 
 ### Function Term Map
-<SimplePropertyMapping/6/FTM>
+<SimplePropertyMapping/22/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/6/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/Length> .
+        fnml:functionValue  <SimplePropertyMapping/22/FTM/FV> .
 
 ### Function Execution Mapping
-<SimplePropertyMapping/6/FTM/FV>
+<SimplePropertyMapping/22/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/6/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/6/FTM/FV/unitParameterPOM> ;
+			       <SimplePropertyMapping/22/FTM/FV/propertyParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/6/FTM/FV/unitParameterPOM>
+<SimplePropertyMapping/22/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "Length" ;
-        rr:predicate  dbf:unitParameter .
-
-<SimplePropertyMapping/6/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/6/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:objectMap  <SimplePropertyMapping/22/FTM/FV/propertyParameterPOM/ObjectMap> ;
         rr:predicate  dbf:propertyParameter .
 
 ### References
-<SimplePropertyMapping/6/FTM/FV/propertyParameterPOM/ObjectMap>
+<SimplePropertyMapping/22/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "prominence" .
+        rml:reference  "topo" .
 
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/24>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/24/FTM> ;
+        rr:predicate  dbo:firstAscentYear .
+
+### Function Term Map
+<SimplePropertyMapping/24/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/24/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/24/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/24/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/24/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/24/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/24/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "first_ascent" .
 
 
 ### Predicate Object Map
@@ -226,7 +323,7 @@
 <SimplePropertyMapping/14>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/14/FTM> ;
-        rr:predicate  dbo:eruptionYear .
+        rr:predicate  dbo:mountainRange .
 
 ### Function Term Map
 <SimplePropertyMapping/14/FTM>
@@ -250,7 +347,7 @@
 ### References
 <SimplePropertyMapping/14/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "last_eruption" .
+        rml:reference  "range" .
 
 
 ### Predicate Object Map
@@ -315,165 +412,24 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/0>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/0/FTM> ;
-        rr:predicate  foaf:name .
-
-### Function Term Map
-<SimplePropertyMapping/0/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/0/FTM/FV> ;
-        rr:language         "en" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/0/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "name" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/3>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/3/FTM> ;
-        rr:predicate  dbo:elevation .
-
-### Function Term Map
-<SimplePropertyMapping/3/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/3/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/metre> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/3/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/3/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/3/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/3/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "metre" ;
-        rr:predicate  dbf:unitParameter .
-
-<SimplePropertyMapping/3/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/3/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/3/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "elevation_m" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/5>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/5/FTM> ;
-        rr:predicate  dbo:mountainRange .
-
-### Function Term Map
-<SimplePropertyMapping/5/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/5/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/5/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/5/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/5/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/5/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/5/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "range" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/8>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/8/FTM> ;
-        rr:predicate  dbo:prominence .
-
-### Function Term Map
-<SimplePropertyMapping/8/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/8/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/foot> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/8/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/8/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/8/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/8/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "foot" ;
-        rr:predicate  dbf:unitParameter .
-
-<SimplePropertyMapping/8/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/8/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/8/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "prominence_ft" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/11>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/11/FTM> ;
-        rr:predicate  dbo:region .
+        rr:predicate  dbo:elevation .
 
 ### Function Term Map
 <SimplePropertyMapping/11/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/11/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/11/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Length> .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/11/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/11/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/11/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/11/FTM/FV/unitParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
@@ -482,10 +438,15 @@
         rr:objectMap  <SimplePropertyMapping/11/FTM/FV/propertyParameterPOM/ObjectMap> ;
         rr:predicate  dbf:propertyParameter .
 
+<SimplePropertyMapping/11/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Length" ;
+        rr:predicate  dbf:unitParameter .
+
 ### References
 <SimplePropertyMapping/11/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "region" .
+        rml:reference  "elevation" .
 
 
 ### Predicate Object Map
@@ -493,22 +454,29 @@
 <SimplePropertyMapping/13>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/13/FTM> ;
-        rr:predicate  dbo:nationalTopographicSystemMapNumber .
+        rr:predicate  dbo:elevation .
 
 ### Function Term Map
 <SimplePropertyMapping/13/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/13/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/13/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/foot> .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/13/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/13/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/13/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/13/FTM/FV/unitParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
+<SimplePropertyMapping/13/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "foot" ;
+        rr:predicate  dbf:unitParameter .
+
 <SimplePropertyMapping/13/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/13/FTM/FV/propertyParameterPOM/ObjectMap> ;
@@ -517,7 +485,7 @@
 ### References
 <SimplePropertyMapping/13/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "topo" .
+        rml:reference  "elevation_ft" .
 
 
 ### Predicate Object Map
@@ -525,22 +493,29 @@
 <SimplePropertyMapping/16>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/16/FTM> ;
-        rr:predicate  dbo:firstAscentPerson .
+        rr:predicate  dbo:prominence .
 
 ### Function Term Map
 <SimplePropertyMapping/16/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/16/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/16/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/metre> .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/16/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/16/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/16/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/16/FTM/FV/unitParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
+<SimplePropertyMapping/16/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "metre" ;
+        rr:predicate  dbf:unitParameter .
+
 <SimplePropertyMapping/16/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/16/FTM/FV/propertyParameterPOM/ObjectMap> ;
@@ -549,85 +524,135 @@
 ### References
 <SimplePropertyMapping/16/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "first_ascent" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/2>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/2/FTM> ;
-        rr:predicate  dbo:elevation .
-
-### Function Term Map
-<SimplePropertyMapping/2/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/2/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/Length> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/2/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/2/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/2/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/2/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/2/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-<SimplePropertyMapping/2/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "Length" ;
-        rr:predicate  dbf:unitParameter .
-
-### References
-<SimplePropertyMapping/2/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "elevation" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/7>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/7/FTM> ;
-        rr:predicate  dbo:prominence .
-
-### Function Term Map
-<SimplePropertyMapping/7/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/7/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/metre> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/7/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/7/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/7/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/7/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "metre" ;
-        rr:predicate  dbf:unitParameter .
-
-<SimplePropertyMapping/7/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/7/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/7/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
         rml:reference  "prominence_m" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/21>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/21/FTM> ;
+        rr:predicate  dbo:type .
+
+### Function Term Map
+<SimplePropertyMapping/21/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/21/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/21/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/21/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/21/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/21/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/21/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "type" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/19>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/19/FTM> ;
+        rr:predicate  dbo:locatedInArea .
+
+### Function Term Map
+<SimplePropertyMapping/19/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/19/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/19/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/19/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/19/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/19/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/19/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "location" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/20>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/20/FTM> ;
+        rr:predicate  dbo:region .
+
+### Function Term Map
+<SimplePropertyMapping/20/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/20/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/20/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/20/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/20/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/20/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/20/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "region" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/23>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/23/FTM> ;
+        rr:predicate  dbo:eruptionYear .
+
+### Function Term Map
+<SimplePropertyMapping/23/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/23/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/23/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/23/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/23/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/23/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/23/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "last_eruption" .
 
 
 ### Predicate Object Map
@@ -635,12 +660,13 @@
 <SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/10/FTM> ;
-        rr:predicate  dbo:locatedInArea .
+        rr:predicate  dbo:otherName .
 
 ### Function Term Map
 <SimplePropertyMapping/10/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/10/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/10/FTM/FV> ;
+        rr:language         "en" .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/10/FTM/FV>
@@ -659,7 +685,7 @@
 ### References
 <SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "location" .
+        rml:reference  "other_name" .
 
 
 ### Predicate Object Map
@@ -667,22 +693,29 @@
 <SimplePropertyMapping/12>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/12/FTM> ;
-        rr:predicate  dbo:type .
+        rr:predicate  dbo:elevation .
 
 ### Function Term Map
 <SimplePropertyMapping/12/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/12/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/12/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/metre> .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/12/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/12/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/12/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/12/FTM/FV/unitParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
+<SimplePropertyMapping/12/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "metre" ;
+        rr:predicate  dbf:unitParameter .
+
 <SimplePropertyMapping/12/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/12/FTM/FV/propertyParameterPOM/ObjectMap> ;
@@ -691,40 +724,7 @@
 ### References
 <SimplePropertyMapping/12/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "type" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/1>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/1/FTM> ;
-        rr:predicate  dbo:otherName .
-
-### Function Term Map
-<SimplePropertyMapping/1/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/1/FTM/FV> ;
-        rr:language         "en" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/1/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/1/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/1/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/1/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/1/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "other_name" .
+        rml:reference  "elevation_m" .
 
 
 ### Predicate Object Map
@@ -799,7 +799,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/type_contains_Maar/FTM> ;
         crml:fallbackMap     <ConditionalMapping/type_contains_Maar/1> ;
-        rr:object            dbo:Volcano , dbo:Place , owl:Thing , schema:Place , dbo:Location , wikidata:Q8072 , dbo:NaturalPlace ;
+        rr:object            dbo:Volcano ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -838,7 +838,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/type_contains_Maar/1/FTM> ;
         crml:fallbackMap     <ConditionalMapping/type_contains_Maar/1/2> ;
-        rr:object            schema:Place , dbo:Location , dbo:NaturalPlace , wikidata:Q8072 , dbo:Volcano , owl:Thing , dbo:Place ;
+        rr:object            dbo:Volcano ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -877,7 +877,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/type_contains_Maar/1/2/FTM> ;
         crml:fallbackMap     <ConditionalMapping/type_contains_Maar/1/2/3> ;
-        rr:object            dbo:Place , wikidata:Q8072 , dbo:Location , dbo:NaturalPlace , owl:Thing , schema:Place , dbo:Volcano ;
+        rr:object            dbo:Volcano ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -914,7 +914,7 @@
 ###################################
 <ConditionalMapping/type_contains_Maar/1/2/3>
         a             rr:PredicateObjectMap ;
-        rr:object     owl:Thing , dbo:Location , dbo:NaturalPlace , schema:Mountain , dbo:Mountain , schema:Place , wikidata:Q8502 , dbo:Place ;
+        rr:object     dbo:Mountain ;
         rr:predicate  rdf:type .
 
 

@@ -37,18 +37,18 @@
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <SimplePropertyMapping/26> ,
 			       <StartDateMapping/2> ,
+			       <SimplePropertyMapping/28> ,
 			       <EndDateMapping/2> ,
 			       <StartDateMapping/1> ,
 			       <SimplePropertyMapping/19> ,
 			       <SimplePropertyMapping/20> ,
+			       <SimplePropertyMapping/27> ,
 			       <SimplePropertyMapping/21> ,
 			       <SimplePropertyMapping/22> ,
 			       <EndDateMapping/1> ,
 			       <SimplePropertyMapping/24> ,
 			       <StartDateMapping/0> ,
-			       <SimplePropertyMapping/18> ,
 			       <EndDateMapping/0> ,
-			       <SimplePropertyMapping/17> ,
 			       <ConditionalMapping/blianta_bainisteoir_isSet_null> ,
 			       <SimplePropertyMapping/23> ,
 			       <SimplePropertyMapping/25> ;
@@ -80,7 +80,7 @@
 <SimplePropertyMapping/26>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/26/FTM> ;
-        rr:predicate  dbo:managerClub .
+        rr:predicate  dbo:team .
 
 ### Function Term Map
 <SimplePropertyMapping/26/FTM>
@@ -104,7 +104,7 @@
 ### References
 <SimplePropertyMapping/26/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "clubanna_bainisteoir" .
+        rml:reference  "club" .
 
 
 ### Predicate Object Map
@@ -136,6 +136,38 @@
 <StartDateMapping/2/FTM/FV/PropertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
         rml:reference  "blianta_bainisteoir" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/28>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/28/FTM> ;
+        rr:predicate  dbo:managerClub .
+
+### Function Term Map
+<SimplePropertyMapping/28/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/28/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/28/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/28/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/28/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/28/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/28/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "clubanna_bainisteoir" .
 
 
 ### Predicate Object Map
@@ -205,12 +237,13 @@
 <SimplePropertyMapping/19>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/19/FTM> ;
-        rr:predicate  dbo:birthDate .
+        rr:predicate  foaf:name .
 
 ### Function Term Map
 <SimplePropertyMapping/19/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/19/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/19/FTM/FV> ;
+        rr:language         "ga" .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/19/FTM/FV>
@@ -229,7 +262,7 @@
 ### References
 <SimplePropertyMapping/19/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "dáta_breithe" .
+        rml:reference  "ainm" .
 
 
 ### Predicate Object Map
@@ -237,12 +270,13 @@
 <SimplePropertyMapping/20>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/20/FTM> ;
-        rr:predicate  dbo:birthPlace .
+        rr:predicate  foaf:nick .
 
 ### Function Term Map
 <SimplePropertyMapping/20/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/20/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/20/FTM/FV> ;
+        rr:language         "ga" .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/20/FTM/FV>
@@ -261,7 +295,39 @@
 ### References
 <SimplePropertyMapping/20/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "áit_breithe" .
+        rml:reference  "leasainm" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/27>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/27/FTM> ;
+        rr:predicate  dbo:team .
+
+### Function Term Map
+<SimplePropertyMapping/27/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/27/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/27/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/27/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/27/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/27/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/27/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "clubanna_imreoir" .
 
 
 ### Predicate Object Map
@@ -269,7 +335,7 @@
 <SimplePropertyMapping/21>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/21/FTM> ;
-        rr:predicate  dbo:deathDate .
+        rr:predicate  dbo:birthDate .
 
 ### Function Term Map
 <SimplePropertyMapping/21/FTM>
@@ -293,7 +359,7 @@
 ### References
 <SimplePropertyMapping/21/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "dáta_báis" .
+        rml:reference  "dáta_breithe" .
 
 
 ### Predicate Object Map
@@ -301,7 +367,7 @@
 <SimplePropertyMapping/22>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/22/FTM> ;
-        rr:predicate  dbo:deathPlace .
+        rr:predicate  dbo:birthPlace .
 
 ### Function Term Map
 <SimplePropertyMapping/22/FTM>
@@ -325,7 +391,7 @@
 ### References
 <SimplePropertyMapping/22/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "áit_bháis" .
+        rml:reference  "áit_breithe" .
 
 
 ### Predicate Object Map
@@ -364,7 +430,7 @@
 <SimplePropertyMapping/24>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/24/FTM> ;
-        rr:predicate  dbo:team .
+        rr:predicate  dbo:deathPlace .
 
 ### Function Term Map
 <SimplePropertyMapping/24/FTM>
@@ -388,7 +454,7 @@
 ### References
 <SimplePropertyMapping/24/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "club" .
+        rml:reference  "áit_bháis" .
 
 
 ### Predicate Object Map
@@ -420,39 +486,6 @@
 <StartDateMapping/0/FTM/FV/PropertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
         rml:reference  "blianta_imreoir" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/18>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/18/FTM> ;
-        rr:predicate  foaf:nick .
-
-### Function Term Map
-<SimplePropertyMapping/18/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/18/FTM/FV> ;
-        rr:language         "ga" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/18/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/18/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/18/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/18/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/18/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "leasainm" .
 
 
 ### Predicate Object Map
@@ -489,43 +522,10 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/17>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/17/FTM> ;
-        rr:predicate  foaf:name .
-
-### Function Term Map
-<SimplePropertyMapping/17/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/17/FTM/FV> ;
-        rr:language         "ga" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/17/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/17/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/17/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/17/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/17/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "ainm" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/23>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/23/FTM> ;
-        rr:predicate  dbo:number .
+        rr:predicate  dbo:deathDate .
 
 ### Function Term Map
 <SimplePropertyMapping/23/FTM>
@@ -549,7 +549,7 @@
 ### References
 <SimplePropertyMapping/23/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "suíomh" .
+        rml:reference  "dáta_báis" .
 
 
 ### Predicate Object Map
@@ -557,7 +557,7 @@
 <SimplePropertyMapping/25>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/25/FTM> ;
-        rr:predicate  dbo:team .
+        rr:predicate  dbo:number .
 
 ### Function Term Map
 <SimplePropertyMapping/25/FTM>
@@ -581,7 +581,7 @@
 ### References
 <SimplePropertyMapping/25/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "clubanna_imreoir" .
+        rml:reference  "suíomh" .
 
 
 ######################
@@ -595,7 +595,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/blianta_bainisteoir_isSet_null/FTM> ;
         crml:fallbackMap     <ConditionalMapping/blianta_bainisteoir_isSet_null/1> ;
-        rr:object            wikidata:Q215627 , dul:Agent , wikidata:Q628099 , dbo:Agent , dbo:SoccerManager , foaf:Person , owl:Thing , dbo:SportsManager , dul:NaturalPerson , dbo:Person , schema:Person , wikidata:Q5 ;
+        rr:object            dbo:SoccerManager ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -628,7 +628,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/blianta_bainisteoir_isSet_null/1/FTM> ;
         crml:fallbackMap     <ConditionalMapping/blianta_bainisteoir_isSet_null/1/2> ;
-        rr:object            schema:Person , dbo:Agent , owl:Thing , dbo:Person , dul:NaturalPerson , foaf:Person , dbo:SportsManager , dul:Agent , dbo:SoccerManager , wikidata:Q215627 , wikidata:Q5 , wikidata:Q628099 ;
+        rr:object            dbo:SoccerManager ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -659,7 +659,7 @@
 ###################################
 <ConditionalMapping/blianta_bainisteoir_isSet_null/1/2>
         a             rr:PredicateObjectMap ;
-        rr:object     wikidata:Q5 , dul:Agent , dul:NaturalPerson , wikidata:Q215627 , dbo:Person , dbo:Athlete , dbo:Agent , schema:Person , wikidata:Q937857 , dbo:SoccerPlayer , owl:Thing , foaf:Person ;
+        rr:object     dbo:SoccerPlayer ;
         rr:predicate  rdf:type .
 
 

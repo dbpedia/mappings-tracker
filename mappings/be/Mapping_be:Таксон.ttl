@@ -35,9 +35,9 @@
 <http://be.dbpedia.org/resource/Mapping_be:Таксон>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <SimplePropertyMapping/5> ,
-			       <SimplePropertyMapping/6> ,
-			       <SimplePropertyMapping/7> ,
+        rr:predicateObjectMap  <SimplePropertyMapping/8> ,
+			       <SimplePropertyMapping/9> ,
+			       <SimplePropertyMapping/10> ,
 			       <ConditionalMapping/regnum_contains_Расліны> ;
         rr:subjectMap          <SubjectMap> .
 
@@ -65,97 +65,97 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/7>
+<SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/7/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/10/FTM> ;
         rr:predicate  dbo:synonym .
 
 ### Function Term Map
-<SimplePropertyMapping/7/FTM>
+<SimplePropertyMapping/10/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/7/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/10/FTM/FV> .
 
 ### Function Execution Mapping
-<SimplePropertyMapping/7/FTM/FV>
+<SimplePropertyMapping/10/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/7/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/7/FTM/FV/propertyParameterPOM>
+<SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/7/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:objectMap  <SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/ObjectMap> ;
         rr:predicate  dbf:propertyParameter .
 
 ### References
-<SimplePropertyMapping/7/FTM/FV/propertyParameterPOM/ObjectMap>
+<SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
         rml:reference  "syn" .
 
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/6>
+<SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/6/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/9/FTM> ;
         rr:predicate  foaf:name .
 
 ### Function Term Map
-<SimplePropertyMapping/6/FTM>
+<SimplePropertyMapping/9/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/6/FTM/FV> ;
+        fnml:functionValue  <SimplePropertyMapping/9/FTM/FV> ;
         rr:language         "be" .
 
 ### Function Execution Mapping
-<SimplePropertyMapping/6/FTM/FV>
+<SimplePropertyMapping/9/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/6/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/6/FTM/FV/propertyParameterPOM>
+<SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/6/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:objectMap  <SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/ObjectMap> ;
         rr:predicate  dbf:propertyParameter .
 
 ### References
-<SimplePropertyMapping/6/FTM/FV/propertyParameterPOM/ObjectMap>
+<SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
         rml:reference  "name" .
 
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/5>
+<SimplePropertyMapping/8>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/5/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/8/FTM> ;
         rr:predicate  dbo:kingdom .
 
 ### Function Term Map
-<SimplePropertyMapping/5/FTM>
+<SimplePropertyMapping/8/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/5/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/8/FTM/FV> .
 
 ### Function Execution Mapping
-<SimplePropertyMapping/5/FTM/FV>
+<SimplePropertyMapping/8/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/5/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/8/FTM/FV/propertyParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/5/FTM/FV/propertyParameterPOM>
+<SimplePropertyMapping/8/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/5/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:objectMap  <SimplePropertyMapping/8/FTM/FV/propertyParameterPOM/ObjectMap> ;
         rr:predicate  dbf:propertyParameter .
 
 ### References
-<SimplePropertyMapping/5/FTM/FV/propertyParameterPOM/ObjectMap>
+<SimplePropertyMapping/8/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
         rml:reference  "regnum" .
 
@@ -171,7 +171,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/regnum_contains_Расліны/FTM> ;
         crml:fallbackMap     <ConditionalMapping/regnum_contains_Расліны/1> ;
-        rr:object            wikidata:Q756 , wikidata:Q19088 , dbo:Species , dbo:Eukaryote , dbo:Plant , owl:Thing ;
+        rr:object            dbo:Plant ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -210,7 +210,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/regnum_contains_Расліны/1/FTM> ;
         crml:fallbackMap     <ConditionalMapping/regnum_contains_Расліны/1/2> ;
-        rr:object            owl:Thing , dbo:Animal , wikidata:Q729 , dbo:Species , dbo:Eukaryote , wikidata:Q19088 ;
+        rr:object            dbo:Animal ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -249,7 +249,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/regnum_contains_Расліны/1/2/FTM> ;
         crml:fallbackMap     <ConditionalMapping/regnum_contains_Расліны/1/2/3> ;
-        rr:object            dbo:Fungus , dbo:Eukaryote , wikidata:Q19088 , dbo:Species , owl:Thing ;
+        rr:object            dbo:Fungus ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -288,7 +288,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/regnum_contains_Расліны/1/2/3/FTM> ;
         crml:fallbackMap     <ConditionalMapping/regnum_contains_Расліны/1/2/3/4> ;
-        rr:object            dbo:Bacteria , dbo:Species , owl:Thing ;
+        rr:object            dbo:Bacteria ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -327,7 +327,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/regnum_contains_Расліны/1/2/3/4/FTM> ;
         crml:fallbackMap     <ConditionalMapping/regnum_contains_Расліны/1/2/3/4/5> ;
-        rr:object            dbo:Archaea , dbo:Species , owl:Thing ;
+        rr:object            dbo:Archaea ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -364,7 +364,7 @@
 ###################################
 <ConditionalMapping/regnum_contains_Расліны/1/2/3/4/5>
         a             rr:PredicateObjectMap ;
-        rr:object     dbo:Species , owl:Thing ;
+        rr:object     dbo:Species ;
         rr:predicate  rdf:type .
 
 

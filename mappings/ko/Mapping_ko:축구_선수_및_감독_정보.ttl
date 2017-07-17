@@ -37,7 +37,6 @@
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <SimplePropertyMapping/19> ,
 			       <SimplePropertyMapping/18> ,
-			       <SimplePropertyMapping/8> ,
 			       <SimplePropertyMapping/24> ,
 			       <SimplePropertyMapping/26> ,
 			       <SimplePropertyMapping/25> ,
@@ -48,6 +47,7 @@
 			       <SimplePropertyMapping/28> ,
 			       <SimplePropertyMapping/12> ,
 			       <SimplePropertyMapping/29> ,
+			       <SimplePropertyMapping/30> ,
 			       <SimplePropertyMapping/16> ,
 			       <SimplePropertyMapping/13> ,
 			       <SimplePropertyMapping/15> ,
@@ -86,7 +86,7 @@
 <SimplePropertyMapping/19>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/19/FTM> ;
-        rr:predicate  dbo:youthClub .
+        rr:predicate  dbo:team .
 
 ### Function Term Map
 <SimplePropertyMapping/19/FTM>
@@ -110,7 +110,7 @@
 ### References
 <SimplePropertyMapping/19/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "청소년 클럽" .
+        rml:reference  "현 소속팀" .
 
 
 ### Predicate Object Map
@@ -118,7 +118,7 @@
 <SimplePropertyMapping/18>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/18/FTM> ;
-        rr:predicate  dbo:team .
+        rr:predicate  dbo:position .
 
 ### Function Term Map
 <SimplePropertyMapping/18/FTM>
@@ -142,7 +142,7 @@
 ### References
 <SimplePropertyMapping/18/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "현 소속팀" .
+        rml:reference  "포지션" .
 
 
 ### Predicate Object Map
@@ -150,7 +150,7 @@
 <SimplePropertyMapping/24>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/24/FTM> ;
-        rr:predicate  dbo:appearancesInNationalTeam .
+        rr:predicate  dbo:goalsInLeague .
 
 ### Function Term Map
 <SimplePropertyMapping/24/FTM>
@@ -174,40 +174,7 @@
 ### References
 <SimplePropertyMapping/24/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "국가대표팀 출장수(골)" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/8>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/8/FTM> ;
-        rr:predicate  foaf:name .
-
-### Function Term Map
-<SimplePropertyMapping/8/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/8/FTM/FV> ;
-        rr:language         "ko" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/8/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/8/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/8/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/8/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/8/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "이름" .
+        rml:reference  "출장수(골)" .
 
 
 ### Predicate Object Map
@@ -215,7 +182,7 @@
 <SimplePropertyMapping/26>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/26/FTM> ;
-        rr:predicate  dbo:managerClub .
+        rr:predicate  dbo:goalsInNationalTeam .
 
 ### Function Term Map
 <SimplePropertyMapping/26/FTM>
@@ -239,7 +206,7 @@
 ### References
 <SimplePropertyMapping/26/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "감독 클럽" .
+        rml:reference  "국가대표팀 출장수(골)" .
 
 
 ### Predicate Object Map
@@ -247,7 +214,7 @@
 <SimplePropertyMapping/25>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/25/FTM> ;
-        rr:predicate  dbo:goalsInNationalTeam .
+        rr:predicate  dbo:appearancesInNationalTeam .
 
 ### Function Term Map
 <SimplePropertyMapping/25/FTM>
@@ -304,7 +271,7 @@
 ### References
 <SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "풀 네임" .
+        rml:reference  "이름" .
 
 
 ### Predicate Object Map
@@ -312,7 +279,7 @@
 <SimplePropertyMapping/27>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/27/FTM> ;
-        rr:predicate  dbo:managerYears .
+        rr:predicate  dbo:managerClub .
 
 ### Function Term Map
 <SimplePropertyMapping/27/FTM>
@@ -336,7 +303,7 @@
 ### References
 <SimplePropertyMapping/27/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "감독 연도" .
+        rml:reference  "감독 클럽" .
 
 
 ### Predicate Object Map
@@ -344,12 +311,13 @@
 <SimplePropertyMapping/11>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/11/FTM> ;
-        rr:predicate  dbo:nationality .
+        rr:predicate  foaf:name .
 
 ### Function Term Map
 <SimplePropertyMapping/11/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/11/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/11/FTM/FV> ;
+        rr:language         "ko" .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/11/FTM/FV>
@@ -368,7 +336,7 @@
 ### References
 <SimplePropertyMapping/11/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "국적" .
+        rml:reference  "로마자 표기" .
 
 
 ### Predicate Object Map
@@ -376,7 +344,7 @@
 <SimplePropertyMapping/28>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/28/FTM> ;
-        rr:predicate  dbo:nationalTeam .
+        rr:predicate  dbo:managerYears .
 
 ### Function Term Map
 <SimplePropertyMapping/28/FTM>
@@ -400,7 +368,7 @@
 ### References
 <SimplePropertyMapping/28/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "국가대표팀" .
+        rml:reference  "감독 연도" .
 
 
 ### Predicate Object Map
@@ -433,7 +401,7 @@
 ### References
 <SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "로마자 표기" .
+        rml:reference  "풀 네임" .
 
 
 ### Predicate Object Map
@@ -441,7 +409,7 @@
 <SimplePropertyMapping/12>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/12/FTM> ;
-        rr:predicate  dbo:birthDate .
+        rr:predicate  dbo:nationality .
 
 ### Function Term Map
 <SimplePropertyMapping/12/FTM>
@@ -465,7 +433,7 @@
 ### References
 <SimplePropertyMapping/12/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "출생일" .
+        rml:reference  "국적" .
 
 
 ### Predicate Object Map
@@ -473,7 +441,7 @@
 <SimplePropertyMapping/29>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/29/FTM> ;
-        rr:predicate  dbo:nationalYears .
+        rr:predicate  dbo:nationalTeam .
 
 ### Function Term Map
 <SimplePropertyMapping/29/FTM>
@@ -497,6 +465,38 @@
 ### References
 <SimplePropertyMapping/29/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
+        rml:reference  "국가대표팀" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/30>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/30/FTM> ;
+        rr:predicate  dbo:nationalYears .
+
+### Function Term Map
+<SimplePropertyMapping/30/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/30/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/30/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/30/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/30/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/30/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/30/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
         rml:reference  "국가대표팀 연도" .
 
 
@@ -505,22 +505,29 @@
 <SimplePropertyMapping/16>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/16/FTM> ;
-        rr:predicate  dbo:weight .
+        rr:predicate  dbo:height .
 
 ### Function Term Map
 <SimplePropertyMapping/16/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/16/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/16/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Length> .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/16/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/16/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/16/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/16/FTM/FV/unitParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
+<SimplePropertyMapping/16/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Length" ;
+        rr:predicate  dbf:unitParameter .
+
 <SimplePropertyMapping/16/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/16/FTM/FV/propertyParameterPOM/ObjectMap> ;
@@ -529,7 +536,7 @@
 ### References
 <SimplePropertyMapping/16/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "체중" .
+        rml:reference  "키" .
 
 
 ### Predicate Object Map
@@ -537,7 +544,7 @@
 <SimplePropertyMapping/13>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/13/FTM> ;
-        rr:predicate  dbo:birthPlace .
+        rr:predicate  dbo:birthDate .
 
 ### Function Term Map
 <SimplePropertyMapping/13/FTM>
@@ -561,7 +568,7 @@
 ### References
 <SimplePropertyMapping/13/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "출생지" .
+        rml:reference  "출생일" .
 
 
 ### Predicate Object Map
@@ -569,7 +576,7 @@
 <SimplePropertyMapping/20>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/20/FTM> ;
-        rr:predicate  dbo:youthYears .
+        rr:predicate  dbo:youthClub .
 
 ### Function Term Map
 <SimplePropertyMapping/20/FTM>
@@ -593,7 +600,7 @@
 ### References
 <SimplePropertyMapping/20/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "청소년 클럽 소속 연도" .
+        rml:reference  "청소년 클럽" .
 
 
 ### Predicate Object Map
@@ -601,29 +608,22 @@
 <SimplePropertyMapping/15>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/15/FTM> ;
-        rr:predicate  dbo:height .
+        rr:predicate  dbo:deathDate .
 
 ### Function Term Map
 <SimplePropertyMapping/15/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/15/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/Length> .
+        fnml:functionValue  <SimplePropertyMapping/15/FTM/FV> .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/15/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/15/FTM/FV/unitParameterPOM> ;
+			       <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/15/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "Length" ;
-        rr:predicate  dbf:unitParameter .
-
 <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM/ObjectMap> ;
@@ -632,7 +632,7 @@
 ### References
 <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "키" .
+        rml:reference  "사망일" .
 
 
 
@@ -641,7 +641,7 @@
 <SimplePropertyMapping/14>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/14/FTM> ;
-        rr:predicate  dbo:deathDate .
+        rr:predicate  dbo:birthPlace .
 
 ### Function Term Map
 <SimplePropertyMapping/14/FTM>
@@ -665,7 +665,7 @@
 ### References
 <SimplePropertyMapping/14/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "사망일" .
+        rml:reference  "출생지" .
 
 
 ### Predicate Object Map
@@ -673,7 +673,7 @@
 <SimplePropertyMapping/22>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/22/FTM> ;
-        rr:predicate  dbo:appearancesInLeague .
+        rr:predicate  dbo:club .
 
 ### Function Term Map
 <SimplePropertyMapping/22/FTM>
@@ -697,7 +697,7 @@
 ### References
 <SimplePropertyMapping/22/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "출장수(골)" .
+        rml:reference  "클럽" .
 
 
 ### Predicate Object Map
@@ -705,7 +705,7 @@
 <SimplePropertyMapping/21>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/21/FTM> ;
-        rr:predicate  dbo:club .
+        rr:predicate  dbo:youthYears .
 
 ### Function Term Map
 <SimplePropertyMapping/21/FTM>
@@ -729,7 +729,7 @@
 ### References
 <SimplePropertyMapping/21/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "클럽" .
+        rml:reference  "청소년 클럽 소속 연도" .
 
 
 ### Predicate Object Map
@@ -737,7 +737,7 @@
 <SimplePropertyMapping/23>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/23/FTM> ;
-        rr:predicate  dbo:goalsInLeague .
+        rr:predicate  dbo:appearancesInLeague .
 
 ### Function Term Map
 <SimplePropertyMapping/23/FTM>
@@ -769,7 +769,7 @@
 <SimplePropertyMapping/17>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/17/FTM> ;
-        rr:predicate  dbo:position .
+        rr:predicate  dbo:weight .
 
 ### Function Term Map
 <SimplePropertyMapping/17/FTM>
@@ -793,7 +793,7 @@
 ### References
 <SimplePropertyMapping/17/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "포지션" .
+        rml:reference  "체중" .
 
 
 ######################
@@ -807,7 +807,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/manageryears_isSet_null/FTM> ;
         crml:fallbackMap     <ConditionalMapping/manageryears_isSet_null/1> ;
-        rr:object            dbo:Agent , dul:NaturalPerson , owl:Thing , dbo:SoccerManager , foaf:Person , wikidata:Q5 , dul:Agent , dbo:SportsManager , dbo:Person , schema:Person , wikidata:Q628099 , wikidata:Q215627 ;
+        rr:object            dbo:SoccerManager ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -840,7 +840,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/manageryears_isSet_null/1/FTM> ;
         crml:fallbackMap     <ConditionalMapping/manageryears_isSet_null/1/2> ;
-        rr:object            dbo:SportsManager , wikidata:Q628099 , dbo:Agent , dul:NaturalPerson , foaf:Person , dul:Agent , schema:Person , dbo:SoccerManager , dbo:Person , wikidata:Q215627 , owl:Thing , wikidata:Q5 ;
+        rr:object            dbo:SoccerManager ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -871,7 +871,7 @@
 ###################################
 <ConditionalMapping/manageryears_isSet_null/1/2>
         a             rr:PredicateObjectMap ;
-        rr:object     wikidata:Q937857 , wikidata:Q5 , dbo:Athlete , dul:NaturalPerson , dul:Agent , wikidata:Q215627 , owl:Thing , dbo:SoccerPlayer , foaf:Person , dbo:Person , schema:Person , dbo:Agent ;
+        rr:object     dbo:SoccerPlayer ;
         rr:predicate  rdf:type .
 
 

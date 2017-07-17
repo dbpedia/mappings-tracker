@@ -35,23 +35,23 @@
 <http://fr.dbpedia.org/resource/Mapping_fr:Infobox_Animation_et_bande_dessinée_asiatiques/Vidéo>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <SimplePropertyMapping/12> ,
-			       <SimplePropertyMapping/19> ,
+        rr:predicateObjectMap  <SimplePropertyMapping/19> ,
+			       <SimplePropertyMapping/31> ,
+			       <SimplePropertyMapping/30> ,
 			       <SimplePropertyMapping/22> ,
-			       <SimplePropertyMapping/17> ,
 			       <SimplePropertyMapping/23> ,
-			       <SimplePropertyMapping/16> ,
 			       <SimplePropertyMapping/20> ,
-			       <SimplePropertyMapping/14> ,
+			       <SimplePropertyMapping/28> ,
+			       <SimplePropertyMapping/34> ,
 			       <SimplePropertyMapping/21> ,
 			       <SimplePropertyMapping/26> ,
 			       <ConditionalMapping/type_equals_animation> ,
+			       <SimplePropertyMapping/29> ,
 			       <SimplePropertyMapping/27> ,
+			       <SimplePropertyMapping/32> ,
 			       <SimplePropertyMapping/24> ,
-			       <SimplePropertyMapping/15> ,
 			       <SimplePropertyMapping/25> ,
-			       <SimplePropertyMapping/18> ,
-			       <SimplePropertyMapping/13> ;
+			       <SimplePropertyMapping/33> ;
         rr:subjectMap          <SubjectMap> .
 
 
@@ -77,48 +77,16 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/12>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/12/FTM> ;
-        rr:predicate  foaf:name .
-
-### Function Term Map
-<SimplePropertyMapping/12/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/12/FTM/FV> ;
-        rr:language         "fr" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/12/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/12/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/12/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/12/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/12/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "titre" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/19>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/19/FTM> ;
-        rr:predicate  dbo:releaseDate .
+        rr:predicate  foaf:name .
 
 ### Function Term Map
 <SimplePropertyMapping/19/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/19/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/19/FTM/FV> ;
+        rr:language         "fr" .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/19/FTM/FV>
@@ -137,7 +105,71 @@
 ### References
 <SimplePropertyMapping/19/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "date_sortie" .
+        rml:reference  "titre" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/31>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/31/FTM> ;
+        rr:predicate  dbo:genre .
+
+### Function Term Map
+<SimplePropertyMapping/31/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/31/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/31/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/31/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/31/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/31/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/31/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "genre" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/30>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/30/FTM> ;
+        rr:predicate  dbo:producedBy .
+
+### Function Term Map
+<SimplePropertyMapping/30/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/30/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/30/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/30/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/30/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/30/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/30/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "producteur" .
 
 
 ### Predicate Object Map
@@ -145,7 +177,7 @@
 <SimplePropertyMapping/22>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/22/FTM> ;
-        rr:predicate  dbo:composer .
+        rr:predicate  dbo:animator .
 
 ### Function Term Map
 <SimplePropertyMapping/22/FTM>
@@ -169,39 +201,7 @@
 ### References
 <SimplePropertyMapping/22/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "compositeur" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/17>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/17/FTM> ;
-        rr:predicate  dbo:openingDate .
-
-### Function Term Map
-<SimplePropertyMapping/17/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/17/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/17/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/17/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/17/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/17/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/17/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "début_diffusion" .
+        rml:reference  "studio_animation" .
 
 
 ### Predicate Object Map
@@ -209,7 +209,7 @@
 <SimplePropertyMapping/23>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/23/FTM> ;
-        rr:predicate  dbo:producedBy .
+        rr:predicate  dbo:numberOfEpisodes .
 
 ### Function Term Map
 <SimplePropertyMapping/23/FTM>
@@ -233,38 +233,6 @@
 ### References
 <SimplePropertyMapping/23/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "producteur" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/16>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/16/FTM> ;
-        rr:predicate  dbo:numberOfEpisodes .
-
-### Function Term Map
-<SimplePropertyMapping/16/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/16/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/16/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/16/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/16/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/16/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/16/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
         rml:reference  "nb_épisodes" .
 
 
@@ -273,7 +241,7 @@
 <SimplePropertyMapping/20>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/20/FTM> ;
-        rr:predicate  dbo:channel .
+        rr:predicate  dbo:country .
 
 ### Function Term Map
 <SimplePropertyMapping/20/FTM>
@@ -297,39 +265,71 @@
 ### References
 <SimplePropertyMapping/20/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "chaine" .
+        rml:reference  "origine" .
 
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/26>
+<SimplePropertyMapping/28>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/26/FTM> ;
-        rr:predicate  dbo:license .
+        rr:objectMap  <SimplePropertyMapping/28/FTM> ;
+        rr:predicate  dbo:writer .
 
 ### Function Term Map
-<SimplePropertyMapping/26/FTM>
+<SimplePropertyMapping/28/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/26/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/28/FTM/FV> .
 
 ### Function Execution Mapping
-<SimplePropertyMapping/26/FTM/FV>
+<SimplePropertyMapping/28/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/26/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/28/FTM/FV/propertyParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/26/FTM/FV/propertyParameterPOM>
+<SimplePropertyMapping/28/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/26/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:objectMap  <SimplePropertyMapping/28/FTM/FV/propertyParameterPOM/ObjectMap> ;
         rr:predicate  dbf:propertyParameter .
 
 ### References
-<SimplePropertyMapping/26/FTM/FV/propertyParameterPOM/ObjectMap>
+<SimplePropertyMapping/28/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "licence_original" .
+        rml:reference  "scénariste" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/34>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/34/FTM> ;
+        rr:predicate  dbo:license .
+
+### Function Term Map
+<SimplePropertyMapping/34/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/34/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/34/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/34/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/34/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/34/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/34/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "licence_francophone" .
 
 
 ### Predicate Object Map
@@ -337,7 +337,7 @@
 <SimplePropertyMapping/21>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/21/FTM> ;
-        rr:predicate  dbo:writer .
+        rr:predicate  dbo:director .
 
 ### Function Term Map
 <SimplePropertyMapping/21/FTM>
@@ -361,40 +361,72 @@
 ### References
 <SimplePropertyMapping/21/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "scénariste" .
+        rml:reference  "réalisateur" .
 
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/14>
+<SimplePropertyMapping/26>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/14/FTM> ;
-        rr:predicate  dbo:director .
+        rr:objectMap  <SimplePropertyMapping/26/FTM> ;
+        rr:predicate  dbo:releaseDate .
 
 ### Function Term Map
-<SimplePropertyMapping/14/FTM>
+<SimplePropertyMapping/26/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/14/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/26/FTM/FV> .
 
 ### Function Execution Mapping
-<SimplePropertyMapping/14/FTM/FV>
+<SimplePropertyMapping/26/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/14/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/26/FTM/FV/propertyParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/14/FTM/FV/propertyParameterPOM>
+<SimplePropertyMapping/26/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/14/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:objectMap  <SimplePropertyMapping/26/FTM/FV/propertyParameterPOM/ObjectMap> ;
         rr:predicate  dbf:propertyParameter .
 
 ### References
-<SimplePropertyMapping/14/FTM/FV/propertyParameterPOM/ObjectMap>
+<SimplePropertyMapping/26/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "réalisateur" .
+        rml:reference  "date_sortie" .
 
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/29>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/29/FTM> ;
+        rr:predicate  dbo:composer .
+
+### Function Term Map
+<SimplePropertyMapping/29/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/29/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/29/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/29/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/29/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/29/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/29/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "compositeur" .
 
 
 ### Predicate Object Map
@@ -402,7 +434,7 @@
 <SimplePropertyMapping/27>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/27/FTM> ;
-        rr:predicate  dbo:license .
+        rr:predicate  dbo:channel .
 
 ### Function Term Map
 <SimplePropertyMapping/27/FTM>
@@ -426,7 +458,46 @@
 ### References
 <SimplePropertyMapping/27/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "licence_francophone" .
+        rml:reference  "chaine" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/32>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/32/FTM> ;
+        rr:predicate  dbo:runtime .
+
+### Function Term Map
+<SimplePropertyMapping/32/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/32/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Time> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/32/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/32/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/32/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/32/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/32/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+<SimplePropertyMapping/32/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Time" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<SimplePropertyMapping/32/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "durée" .
 
 
 ### Predicate Object Map
@@ -434,7 +505,7 @@
 <SimplePropertyMapping/24>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/24/FTM> ;
-        rr:predicate  dbo:genre .
+        rr:predicate  dbo:openingDate .
 
 ### Function Term Map
 <SimplePropertyMapping/24/FTM>
@@ -458,39 +529,7 @@
 ### References
 <SimplePropertyMapping/24/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "genre" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/15>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/15/FTM> ;
-        rr:predicate  dbo:animator .
-
-### Function Term Map
-<SimplePropertyMapping/15/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/15/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/15/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/15/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/15/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "studio_animation" .
+        rml:reference  "début_diffusion" .
 
 
 ### Predicate Object Map
@@ -498,21 +537,19 @@
 <SimplePropertyMapping/25>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/25/FTM> ;
-        rr:predicate  dbo:runtime .
+        rr:predicate  dbo:closingDate .
 
 ### Function Term Map
 <SimplePropertyMapping/25/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/25/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/Time> .
+        fnml:functionValue  <SimplePropertyMapping/25/FTM/FV> .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/25/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/25/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/25/FTM/FV/unitParameterPOM> ;
+			       <SimplePropertyMapping/25/FTM/FV/propertyParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
@@ -521,79 +558,42 @@
         rr:objectMap  <SimplePropertyMapping/25/FTM/FV/propertyParameterPOM/ObjectMap> ;
         rr:predicate  dbf:propertyParameter .
 
-<SimplePropertyMapping/25/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "Time" ;
-        rr:predicate  dbf:unitParameter .
-
 ### References
 <SimplePropertyMapping/25/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "durée" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/18>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/18/FTM> ;
-        rr:predicate  dbo:closingDate .
-
-### Function Term Map
-<SimplePropertyMapping/18/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/18/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/18/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/18/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/18/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/18/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/18/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
         rml:reference  "fin_diffusion" .
 
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/13>
+<SimplePropertyMapping/33>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/13/FTM> ;
-        rr:predicate  dbo:country .
+        rr:objectMap  <SimplePropertyMapping/33/FTM> ;
+        rr:predicate  dbo:license .
 
 ### Function Term Map
-<SimplePropertyMapping/13/FTM>
+<SimplePropertyMapping/33/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/13/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/33/FTM/FV> .
 
 ### Function Execution Mapping
-<SimplePropertyMapping/13/FTM/FV>
+<SimplePropertyMapping/33/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/13/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/33/FTM/FV/propertyParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/13/FTM/FV/propertyParameterPOM>
+<SimplePropertyMapping/33/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/13/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:objectMap  <SimplePropertyMapping/33/FTM/FV/propertyParameterPOM/ObjectMap> ;
         rr:predicate  dbf:propertyParameter .
 
 ### References
-<SimplePropertyMapping/13/FTM/FV/propertyParameterPOM/ObjectMap>
+<SimplePropertyMapping/33/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "origine" .
+        rml:reference  "licence_original" .
 
 
 ######################
@@ -606,7 +606,7 @@
 <ConditionalMapping/type_equals_animation>
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/type_equals_animation/FTM> ;
-        rr:object            wikidata:Q1107 , owl:Thing , schema:CreativeWork , wikidata:Q386724 , dbo:Cartoon , dbo:Anime , dbo:Work , wikidata:Q627603 ;
+        rr:object            dbo:Anime ;
         rr:predicate         rdf:type .
 
 

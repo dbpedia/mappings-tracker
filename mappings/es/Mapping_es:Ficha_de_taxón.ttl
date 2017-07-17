@@ -35,8 +35,7 @@
 <http://es.dbpedia.org/resource/Mapping_es:Ficha_de_taxón>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <SimplePropertyMapping/58> ,
-			       <SimplePropertyMapping/6> ,
+        rr:predicateObjectMap  <SimplePropertyMapping/6> ,
 			       <SimplePropertyMapping/44> ,
 			       <SimplePropertyMapping/39> ,
 			       <SimplePropertyMapping/52> ,
@@ -88,6 +87,7 @@
 			       <SimplePropertyMapping/31> ,
 			       <SimplePropertyMapping/49> ,
 			       <SimplePropertyMapping/21> ,
+			       <SimplePropertyMapping/0> ,
 			       <SimplePropertyMapping/9> ,
 			       <SimplePropertyMapping/47> ,
 			       <SimplePropertyMapping/34> ,
@@ -119,42 +119,10 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/58>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/58/FTM> ;
-        rr:predicate  dbo:synonym .
-
-### Function Term Map
-<SimplePropertyMapping/58/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/58/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/58/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/58/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/58/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/58/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/58/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "synonyms" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/6>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/6/FTM> ;
-        rr:predicate  dbo:kingdom .
+        rr:predicate  dbo:division .
 
 ### Function Term Map
 <SimplePropertyMapping/6/FTM>
@@ -178,7 +146,7 @@
 ### References
 <SimplePropertyMapping/6/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "subregnum" .
+        rml:reference  "divisio" .
 
 
 ### Predicate Object Map
@@ -186,7 +154,7 @@
 <SimplePropertyMapping/44>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/44/FTM> ;
-        rr:predicate  dbo:division .
+        rr:predicate  dbo:phylum .
 
 ### Function Term Map
 <SimplePropertyMapping/44/FTM>
@@ -210,7 +178,7 @@
 ### References
 <SimplePropertyMapping/44/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "superdivisio" .
+        rml:reference  "unranked_phylum" .
 
 
 ### Predicate Object Map
@@ -218,12 +186,13 @@
 <SimplePropertyMapping/39>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/39/FTM> ;
-        rr:predicate  dbo:conservationStatusSystem .
+        rr:predicate  foaf:name .
 
 ### Function Term Map
 <SimplePropertyMapping/39/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/39/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/39/FTM/FV> ;
+        rr:language         "es" .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/39/FTM/FV>
@@ -242,7 +211,7 @@
 ### References
 <SimplePropertyMapping/39/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "status_system" .
+        rml:reference  "name" .
 
 
 ### Predicate Object Map
@@ -274,7 +243,7 @@
 ### References
 <SimplePropertyMapping/52/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_familia" .
+        rml:reference  "superfamilia" .
 
 
 ### Predicate Object Map
@@ -282,7 +251,7 @@
 <SimplePropertyMapping/42>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/42/FTM> ;
-        rr:predicate  dbo:domain .
+        rr:predicate  dbo:kingdom .
 
 ### Function Term Map
 <SimplePropertyMapping/42/FTM>
@@ -306,7 +275,7 @@
 ### References
 <SimplePropertyMapping/42/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "superdomain" .
+        rml:reference  "unranked_regnum" .
 
 
 ### Predicate Object Map
@@ -338,7 +307,7 @@
 ### References
 <SimplePropertyMapping/26/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "subfamilia" .
+        rml:reference  "supertribus" .
 
 
 ### Predicate Object Map
@@ -346,7 +315,7 @@
 <SimplePropertyMapping/24>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/24/FTM> ;
-        rr:predicate  dbo:order .
+        rr:predicate  dbo:family .
 
 ### Function Term Map
 <SimplePropertyMapping/24/FTM>
@@ -370,7 +339,7 @@
 ### References
 <SimplePropertyMapping/24/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "parvordo" .
+        rml:reference  "familia" .
 
 
 ### Predicate Object Map
@@ -402,7 +371,7 @@
 ### References
 <SimplePropertyMapping/55/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "species_group" .
+        rml:reference  "species_subgroup" .
 
 
 ### Predicate Object Map
@@ -410,12 +379,13 @@
 <SimplePropertyMapping/3>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/3/FTM> ;
-        rr:predicate  dbo:kingdom .
+        rr:predicate  dbo:colourName .
 
 ### Function Term Map
 <SimplePropertyMapping/3/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/3/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/3/FTM/FV> ;
+        rr:language         "es" .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/3/FTM/FV>
@@ -434,7 +404,7 @@
 ### References
 <SimplePropertyMapping/3/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "regnum" .
+        rml:reference  "color" .
 
 
 ### Predicate Object Map
@@ -442,7 +412,7 @@
 <SimplePropertyMapping/32>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/32/FTM> ;
-        rr:predicate  dbo:genus .
+        rr:predicate  dbo:species .
 
 ### Function Term Map
 <SimplePropertyMapping/32/FTM>
@@ -466,7 +436,7 @@
 ### References
 <SimplePropertyMapping/32/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "subgenus" .
+        rml:reference  "species" .
 
 
 ### Predicate Object Map
@@ -498,7 +468,7 @@
 ### References
 <SimplePropertyMapping/45/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_phylum" .
+        rml:reference  "superphylum" .
 
 
 ### Predicate Object Map
@@ -530,7 +500,7 @@
 ### References
 <SimplePropertyMapping/11/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "subphylum" .
+        rml:reference  "infraphylum" .
 
 
 ### Predicate Object Map
@@ -538,7 +508,7 @@
 <SimplePropertyMapping/53>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/53/FTM> ;
-        rr:predicate  dbo:family .
+        rr:predicate  dbo:genus .
 
 ### Function Term Map
 <SimplePropertyMapping/53/FTM>
@@ -562,7 +532,7 @@
 ### References
 <SimplePropertyMapping/53/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "superfamilia" .
+        rml:reference  "unranked_genus" .
 
 
 ### Predicate Object Map
@@ -594,7 +564,7 @@
 ### References
 <SimplePropertyMapping/1/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "domain" .
+        rml:reference  "superregnum" .
 
 
 ### Predicate Object Map
@@ -602,7 +572,7 @@
 <SimplePropertyMapping/48>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/48/FTM> ;
-        rr:predicate  dbo:class .
+        rr:predicate  dbo:order .
 
 ### Function Term Map
 <SimplePropertyMapping/48/FTM>
@@ -626,7 +596,7 @@
 ### References
 <SimplePropertyMapping/48/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "superclassis" .
+        rml:reference  "unranked_ordo" .
 
 
 ### Predicate Object Map
@@ -658,7 +628,7 @@
 ### References
 <SimplePropertyMapping/13/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "microphylum" .
+        rml:reference  "nanophylum" .
 
 
 ### Predicate Object Map
@@ -666,7 +636,7 @@
 <SimplePropertyMapping/35>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/35/FTM> ;
-        rr:predicate  dbo:species .
+        rr:predicate  dbo:binomial .
 
 ### Function Term Map
 <SimplePropertyMapping/35/FTM>
@@ -690,7 +660,7 @@
 ### References
 <SimplePropertyMapping/35/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "variety" .
+        rml:reference  "binomial" .
 
 
 ### Predicate Object Map
@@ -722,7 +692,7 @@
 ### References
 <SimplePropertyMapping/16/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "class" .
+        rml:reference  "unranked_subclassis" .
 
 
 ### Predicate Object Map
@@ -730,7 +700,7 @@
 <SimplePropertyMapping/37>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/37/FTM> ;
-        rr:predicate  dbo:binomialAuthority .
+        rr:predicate  dbo:conservationStatus .
 
 ### Function Term Map
 <SimplePropertyMapping/37/FTM>
@@ -754,7 +724,7 @@
 ### References
 <SimplePropertyMapping/37/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "binomial_authority" .
+        rml:reference  "status" .
 
 
 ### Predicate Object Map
@@ -786,7 +756,7 @@
 ### References
 <SimplePropertyMapping/50/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "magnordo" .
+        rml:reference  "superordo" .
 
 
 ### Predicate Object Map
@@ -818,7 +788,7 @@
 ### References
 <SimplePropertyMapping/7/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "divisio" .
+        rml:reference  "subdivisio" .
 
 
 ### Predicate Object Map
@@ -826,7 +796,7 @@
 <SimplePropertyMapping/43>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/43/FTM> ;
-        rr:predicate  dbo:kingdom .
+        rr:predicate  dbo:division .
 
 ### Function Term Map
 <SimplePropertyMapping/43/FTM>
@@ -850,7 +820,7 @@
 ### References
 <SimplePropertyMapping/43/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_regnum" .
+        rml:reference  "superdivisio" .
 
 
 ### Predicate Object Map
@@ -882,7 +852,7 @@
 ### References
 <SimplePropertyMapping/22/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "subordo" .
+        rml:reference  "infraordo" .
 
 
 ### Predicate Object Map
@@ -914,7 +884,7 @@
 ### References
 <SimplePropertyMapping/27/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "supertribus" .
+        rml:reference  "tribus" .
 
 
 ### Predicate Object Map
@@ -946,7 +916,7 @@
 ### References
 <SimplePropertyMapping/17/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_subclassis" .
+        rml:reference  "subclassis" .
 
 
 ### Predicate Object Map
@@ -954,7 +924,7 @@
 <SimplePropertyMapping/30>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/30/FTM> ;
-        rr:predicate  dbo:family .
+        rr:predicate  dbo:genus .
 
 ### Function Term Map
 <SimplePropertyMapping/30/FTM>
@@ -978,7 +948,7 @@
 ### References
 <SimplePropertyMapping/30/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "alliance" .
+        rml:reference  "genus" .
 
 
 ### Predicate Object Map
@@ -1010,7 +980,7 @@
 ### References
 <SimplePropertyMapping/56/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "species_subgroup" .
+        rml:reference  "species_complex" .
 
 
 ### Predicate Object Map
@@ -1018,13 +988,12 @@
 <SimplePropertyMapping/4>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/4/FTM> ;
-        rr:predicate  dbo:colourName .
+        rr:predicate  dbo:colour .
 
 ### Function Term Map
 <SimplePropertyMapping/4/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/4/FTM/FV> ;
-        rr:language         "es" .
+        fnml:functionValue  <SimplePropertyMapping/4/FTM/FV> .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/4/FTM/FV>
@@ -1051,7 +1020,7 @@
 <SimplePropertyMapping/46>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/46/FTM> ;
-        rr:predicate  dbo:phylum .
+        rr:predicate  dbo:class .
 
 ### Function Term Map
 <SimplePropertyMapping/46/FTM>
@@ -1075,7 +1044,7 @@
 ### References
 <SimplePropertyMapping/46/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "superphylum" .
+        rml:reference  "unranked_classis" .
 
 
 ### Predicate Object Map
@@ -1107,7 +1076,7 @@
 ### References
 <SimplePropertyMapping/12/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "infraphylum" .
+        rml:reference  "microphylum" .
 
 
 
@@ -1116,7 +1085,7 @@
 <SimplePropertyMapping/54>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/54/FTM> ;
-        rr:predicate  dbo:genus .
+        rr:predicate  dbo:species .
 
 ### Function Term Map
 <SimplePropertyMapping/54/FTM>
@@ -1140,7 +1109,7 @@
 ### References
 <SimplePropertyMapping/54/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_genus" .
+        rml:reference  "species_group" .
 
 
 ### Predicate Object Map
@@ -1172,7 +1141,7 @@
 ### References
 <SimplePropertyMapping/33/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "species" .
+        rml:reference  "subspecies" .
 
 
 ### Predicate Object Map
@@ -1180,13 +1149,12 @@
 <SimplePropertyMapping/40>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/40/FTM> ;
-        rr:predicate  foaf:name .
+        rr:predicate  dbo:domain .
 
 ### Function Term Map
 <SimplePropertyMapping/40/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/40/FTM/FV> ;
-        rr:language         "es" .
+        fnml:functionValue  <SimplePropertyMapping/40/FTM/FV> .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/40/FTM/FV>
@@ -1205,7 +1173,7 @@
 ### References
 <SimplePropertyMapping/40/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "name" .
+        rml:reference  "unranked_superdomain" .
 
 
 ### Predicate Object Map
@@ -1237,7 +1205,7 @@
 ### References
 <SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "phylum" .
+        rml:reference  "subphylum" .
 
 
 ### Predicate Object Map
@@ -1245,7 +1213,7 @@
 <SimplePropertyMapping/14>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/14/FTM> ;
-        rr:predicate  dbo:phylum .
+        rr:predicate  dbo:class .
 
 ### Function Term Map
 <SimplePropertyMapping/14/FTM>
@@ -1269,7 +1237,7 @@
 ### References
 <SimplePropertyMapping/14/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "nanophylum" .
+        rml:reference  "classis" .
 
 
 ### Predicate Object Map
@@ -1277,7 +1245,7 @@
 <SimplePropertyMapping/36>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/36/FTM> ;
-        rr:predicate  dbo:binomial .
+        rr:predicate  dbo:binomialAuthority .
 
 ### Function Term Map
 <SimplePropertyMapping/36/FTM>
@@ -1301,7 +1269,7 @@
 ### References
 <SimplePropertyMapping/36/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "binomial" .
+        rml:reference  "binomial_authority" .
 
 
 ### Predicate Object Map
@@ -1309,7 +1277,7 @@
 <SimplePropertyMapping/57>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/57/FTM> ;
-        rr:predicate  dbo:species .
+        rr:predicate  dbo:synonym .
 
 ### Function Term Map
 <SimplePropertyMapping/57/FTM>
@@ -1333,7 +1301,7 @@
 ### References
 <SimplePropertyMapping/57/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "species_complex" .
+        rml:reference  "synonyms" .
 
 
 ### Predicate Object Map
@@ -1341,7 +1309,7 @@
 <SimplePropertyMapping/5>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/5/FTM> ;
-        rr:predicate  dbo:colour .
+        rr:predicate  dbo:kingdom .
 
 ### Function Term Map
 <SimplePropertyMapping/5/FTM>
@@ -1365,7 +1333,7 @@
 ### References
 <SimplePropertyMapping/5/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "color" .
+        rml:reference  "subregnum" .
 
 
 ### Predicate Object Map
@@ -1373,7 +1341,7 @@
 <SimplePropertyMapping/20>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/20/FTM> ;
-        rr:predicate  dbo:class .
+        rr:predicate  dbo:order .
 
 ### Function Term Map
 <SimplePropertyMapping/20/FTM>
@@ -1397,7 +1365,7 @@
 ### References
 <SimplePropertyMapping/20/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "infraclassis" .
+        rml:reference  "ordo" .
 
 
 ### Predicate Object Map
@@ -1405,7 +1373,7 @@
 <SimplePropertyMapping/38>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/38/FTM> ;
-        rr:predicate  dbo:conservationStatus .
+        rr:predicate  dbo:conservationStatusSystem .
 
 ### Function Term Map
 <SimplePropertyMapping/38/FTM>
@@ -1429,7 +1397,7 @@
 ### References
 <SimplePropertyMapping/38/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "status" .
+        rml:reference  "status_system" .
 
 
 ### Predicate Object Map
@@ -1437,7 +1405,7 @@
 <SimplePropertyMapping/51>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/51/FTM> ;
-        rr:predicate  dbo:order .
+        rr:predicate  dbo:family .
 
 ### Function Term Map
 <SimplePropertyMapping/51/FTM>
@@ -1461,7 +1429,7 @@
 ### References
 <SimplePropertyMapping/51/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "superordo" .
+        rml:reference  "unranked_familia" .
 
 
 ### Predicate Object Map
@@ -1493,7 +1461,7 @@
 ### References
 <SimplePropertyMapping/8/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "subdivisio" .
+        rml:reference  "unranked_divisio" .
 
 
 ### Predicate Object Map
@@ -1525,7 +1493,7 @@
 ### References
 <SimplePropertyMapping/41/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_superdomain" .
+        rml:reference  "superdomain" .
 
 
 ### Predicate Object Map
@@ -1557,7 +1525,7 @@
 ### References
 <SimplePropertyMapping/25/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "familia" .
+        rml:reference  "subfamilia" .
 
 
 ### Predicate Object Map
@@ -1589,7 +1557,7 @@
 ### References
 <SimplePropertyMapping/28/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "tribus" .
+        rml:reference  "subtribus" .
 
 
 ### Predicate Object Map
@@ -1621,7 +1589,7 @@
 ### References
 <SimplePropertyMapping/23/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "infraordo" .
+        rml:reference  "parvordo" .
 
 
 ### Predicate Object Map
@@ -1629,7 +1597,7 @@
 <SimplePropertyMapping/2>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/2/FTM> ;
-        rr:predicate  dbo:domain .
+        rr:predicate  dbo:kingdom .
 
 ### Function Term Map
 <SimplePropertyMapping/2/FTM>
@@ -1653,7 +1621,7 @@
 ### References
 <SimplePropertyMapping/2/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "superregnum" .
+        rml:reference  "regnum" .
 
 
 ### Predicate Object Map
@@ -1685,7 +1653,7 @@
 ### References
 <SimplePropertyMapping/18/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "subclassis" .
+        rml:reference  "unranked_infraclassis" .
 
 
 ### Predicate Object Map
@@ -1717,7 +1685,7 @@
 ### References
 <SimplePropertyMapping/31/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "genus" .
+        rml:reference  "subgenus" .
 
 
 ### Predicate Object Map
@@ -1749,7 +1717,7 @@
 ### References
 <SimplePropertyMapping/49/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_ordo" .
+        rml:reference  "magnordo" .
 
 
 ### Predicate Object Map
@@ -1781,7 +1749,39 @@
 ### References
 <SimplePropertyMapping/21/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "ordo" .
+        rml:reference  "subordo" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/0/FTM> ;
+        rr:predicate  dbo:domain .
+
+### Function Term Map
+<SimplePropertyMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/0/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "domain" .
 
 
 ### Predicate Object Map
@@ -1789,7 +1789,7 @@
 <SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/9/FTM> ;
-        rr:predicate  dbo:division .
+        rr:predicate  dbo:phylum .
 
 ### Function Term Map
 <SimplePropertyMapping/9/FTM>
@@ -1813,7 +1813,7 @@
 ### References
 <SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_divisio" .
+        rml:reference  "phylum" .
 
 
 ### Predicate Object Map
@@ -1845,7 +1845,7 @@
 ### References
 <SimplePropertyMapping/47/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_classis" .
+        rml:reference  "superclassis" .
 
 
 ### Predicate Object Map
@@ -1877,7 +1877,7 @@
 ### References
 <SimplePropertyMapping/34/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "subspecies" .
+        rml:reference  "variety" .
 
 
 ### Predicate Object Map
@@ -1909,7 +1909,7 @@
 ### References
 <SimplePropertyMapping/19/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "unranked_infraclassis" .
+        rml:reference  "infraclassis" .
 
 
 ### Predicate Object Map
@@ -1941,7 +1941,7 @@
 ### References
 <SimplePropertyMapping/29/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "subtribus" .
+        rml:reference  "alliance" .
 
 
 ### Predicate Object Map
@@ -1973,7 +1973,7 @@
 ### References
 <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "classis" .
+        rml:reference  "class" .
 
 
 ######################
@@ -1987,7 +1987,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1> ;
-        rr:object            dbo:Eukaryote , dbo:Plant , wikidata:Q756 , dbo:Species , owl:Thing , dbo:FloweringPlant , wikidata:Q19088 ;
+        rr:object            dbo:FloweringPlant ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2026,7 +2026,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2> ;
-        rr:object            dbo:Species , owl:Thing , dbo:Eukaryote , wikidata:Q19088 , dbo:FloweringPlant , dbo:Plant , wikidata:Q756 ;
+        rr:object            dbo:FloweringPlant ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2065,7 +2065,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3> ;
-        rr:object            dbo:FloweringPlant , wikidata:Q756 , owl:Thing , dbo:Plant , dbo:Species , wikidata:Q19088 , dbo:Eukaryote ;
+        rr:object            dbo:FloweringPlant ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2104,7 +2104,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4> ;
-        rr:object            dbo:Species , wikidata:Q19088 , owl:Thing , wikidata:Q756 , dbo:Eukaryote , dbo:FloweringPlant , dbo:Plant ;
+        rr:object            dbo:FloweringPlant ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2143,7 +2143,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5> ;
-        rr:object            dbo:GreenAlga , dbo:Eukaryote , owl:Thing , wikidata:Q19088 , dbo:Plant , wikidata:Q756 , dbo:Species ;
+        rr:object            dbo:GreenAlga ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2182,7 +2182,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6> ;
-        rr:object            dbo:Species , owl:Thing , dbo:Eukaryote , wikidata:Q756 , dbo:GreenAlga , dbo:Plant , wikidata:Q19088 ;
+        rr:object            dbo:GreenAlga ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2221,7 +2221,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7> ;
-        rr:object            dbo:Moss , wikidata:Q19088 , owl:Thing , dbo:Eukaryote , dbo:Plant , wikidata:Q756 , dbo:Species ;
+        rr:object            dbo:Moss ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2260,7 +2260,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8> ;
-        rr:object            dbo:Species , dbo:Eukaryote , wikidata:Q756 , dbo:Plant , owl:Thing , wikidata:Q19088 , dbo:Moss ;
+        rr:object            dbo:Moss ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2299,7 +2299,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9> ;
-        rr:object            dbo:Plant , dbo:Species , wikidata:Q19088 , dbo:Moss , owl:Thing , dbo:Eukaryote , wikidata:Q756 ;
+        rr:object            dbo:Moss ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2338,7 +2338,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10> ;
-        rr:object            dbo:Species , dbo:Eukaryote , dbo:Plant , wikidata:Q756 , dbo:Moss , wikidata:Q19088 , owl:Thing ;
+        rr:object            dbo:Moss ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2377,7 +2377,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11> ;
-        rr:object            wikidata:Q756 , dbo:Plant , dbo:ClubMoss , wikidata:Q19088 , owl:Thing , dbo:Species , dbo:Eukaryote ;
+        rr:object            dbo:ClubMoss ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2416,7 +2416,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12> ;
-        rr:object            wikidata:Q756 , dbo:Fern , owl:Thing , dbo:Species , dbo:Plant , wikidata:Q19088 , dbo:Eukaryote ;
+        rr:object            dbo:Fern ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2455,7 +2455,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13> ;
-        rr:object            dbo:Species , owl:Thing , wikidata:Q19088 , dbo:Plant , dbo:Eukaryote , dbo:Cycad , wikidata:Q756 ;
+        rr:object            dbo:Cycad ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2494,7 +2494,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14> ;
-        rr:object            dbo:Eukaryote , owl:Thing , dbo:Ginkgo , dbo:Plant , dbo:Species , wikidata:Q19088 , wikidata:Q756 ;
+        rr:object            dbo:Ginkgo ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2533,7 +2533,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15> ;
-        rr:object            dbo:Conifer , wikidata:Q756 , dbo:Species , owl:Thing , dbo:Eukaryote , dbo:Plant , wikidata:Q19088 ;
+        rr:object            dbo:Conifer ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2572,7 +2572,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16> ;
-        rr:object            dbo:Species , dbo:Gnetophytes , wikidata:Q19088 , owl:Thing , dbo:Plant , wikidata:Q756 , dbo:Eukaryote ;
+        rr:object            dbo:Gnetophytes ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2611,7 +2611,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17> ;
-        rr:object            dbo:Eukaryote , wikidata:Q729 , dbo:Animal , wikidata:Q152 , owl:Thing , dbo:Species , dbo:Fish , wikidata:Q19088 ;
+        rr:object            dbo:Fish ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2650,7 +2650,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18> ;
-        rr:object            owl:Thing , dbo:Eukaryote , wikidata:Q152 , dbo:Fish , wikidata:Q19088 , dbo:Species , dbo:Animal , wikidata:Q729 ;
+        rr:object            dbo:Fish ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2689,7 +2689,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19> ;
-        rr:object            owl:Thing , dbo:Species , dbo:Animal , dbo:Eukaryote , wikidata:Q729 , wikidata:Q152 , dbo:Fish , wikidata:Q19088 ;
+        rr:object            dbo:Fish ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2728,7 +2728,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20> ;
-        rr:object            dbo:Fish , wikidata:Q19088 , dbo:Eukaryote , dbo:Animal , dbo:Species , wikidata:Q729 , owl:Thing , wikidata:Q152 ;
+        rr:object            dbo:Fish ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2767,7 +2767,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21> ;
-        rr:object            wikidata:Q19088 , wikidata:Q152 , dbo:Fish , dbo:Animal , dbo:Eukaryote , owl:Thing , wikidata:Q729 , dbo:Species ;
+        rr:object            dbo:Fish ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2806,7 +2806,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22> ;
-        rr:object            wikidata:Q19088 , dbo:Eukaryote , dbo:Fish , wikidata:Q729 , dbo:Species , wikidata:Q152 , dbo:Animal , owl:Thing ;
+        rr:object            dbo:Fish ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2845,7 +2845,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23> ;
-        rr:object            dbo:Eukaryote , wikidata:Q152 , dbo:Fish , dbo:Species , wikidata:Q729 , dbo:Animal , wikidata:Q19088 , owl:Thing ;
+        rr:object            dbo:Fish ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2884,7 +2884,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24> ;
-        rr:object            dbo:Fish , dbo:Eukaryote , dbo:Animal , wikidata:Q19088 , dbo:Species , wikidata:Q729 , owl:Thing , wikidata:Q152 ;
+        rr:object            dbo:Fish ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2923,7 +2923,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25> ;
-        rr:object            dbo:Species , wikidata:Q729 , dbo:Eukaryote , owl:Thing , wikidata:Q19088 , dbo:Animal , dbo:Fish , wikidata:Q152 ;
+        rr:object            dbo:Fish ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -2962,7 +2962,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26> ;
-        rr:object            wikidata:Q729 , wikidata:Q19088 , dbo:Fish , wikidata:Q152 , dbo:Animal , dbo:Eukaryote , dbo:Species , owl:Thing ;
+        rr:object            dbo:Fish ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3001,7 +3001,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27> ;
-        rr:object            dbo:Animal , dbo:Eukaryote , dbo:Species , owl:Thing , wikidata:Q152 , dbo:Fish , wikidata:Q19088 , wikidata:Q729 ;
+        rr:object            dbo:Fish ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3040,7 +3040,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28> ;
-        rr:object            wikidata:Q729 , dbo:Animal , wikidata:Q19088 , dbo:Eukaryote , owl:Thing , dbo:Amphibian , dbo:Species ;
+        rr:object            dbo:Amphibian ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3079,7 +3079,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29> ;
-        rr:object            dbo:Animal , wikidata:Q19088 , dbo:Eukaryote , dbo:Species , wikidata:Q729 , dbo:Amphibian , owl:Thing ;
+        rr:object            dbo:Amphibian ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3118,7 +3118,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30> ;
-        rr:object            dbo:Animal , dbo:Eukaryote , owl:Thing , dbo:Species , wikidata:Q729 , wikidata:Q19088 , dbo:Reptile ;
+        rr:object            dbo:Reptile ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3157,7 +3157,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31> ;
-        rr:object            wikidata:Q729 , dbo:Species , dbo:Eukaryote , wikidata:Q19088 , dbo:Animal , owl:Thing , dbo:Reptile ;
+        rr:object            dbo:Reptile ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3196,7 +3196,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32> ;
-        rr:object            wikidata:Q19088 , dbo:Reptile , dbo:Species , dbo:Eukaryote , wikidata:Q729 , dbo:Animal , owl:Thing ;
+        rr:object            dbo:Reptile ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3235,7 +3235,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33> ;
-        rr:object            dbo:Species , owl:Thing , dbo:Reptile , wikidata:Q19088 , wikidata:Q729 , dbo:Animal , dbo:Eukaryote ;
+        rr:object            dbo:Reptile ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3274,7 +3274,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34> ;
-        rr:object            wikidata:Q729 , dbo:Eukaryote , wikidata:Q19088 , dbo:Reptile , dbo:Species , dbo:Animal , owl:Thing ;
+        rr:object            dbo:Reptile ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3313,7 +3313,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35> ;
-        rr:object            dbo:Eukaryote , dbo:Species , wikidata:Q19088 , dbo:Animal , owl:Thing , wikidata:Q729 , dbo:Bird ;
+        rr:object            dbo:Bird ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3352,7 +3352,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36> ;
-        rr:object            dbo:Bird , dbo:Species , wikidata:Q19088 , wikidata:Q729 , dbo:Animal , dbo:Eukaryote , owl:Thing ;
+        rr:object            dbo:Bird ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3391,7 +3391,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37> ;
-        rr:object            dbo:Species , wikidata:Q7377 , dbo:Animal , dbo:Mammal , wikidata:Q729 , owl:Thing , dbo:Eukaryote , wikidata:Q19088 ;
+        rr:object            dbo:Mammal ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3430,7 +3430,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38> ;
-        rr:object            wikidata:Q729 , dbo:Species , dbo:Insect , dbo:Eukaryote , dbo:Animal , wikidata:Q1390 , wikidata:Q19088 , owl:Thing ;
+        rr:object            dbo:Insect ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3469,7 +3469,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39> ;
-        rr:object            dbo:Animal , dbo:Eukaryote , owl:Thing , dbo:Arachnid , wikidata:Q729 , wikidata:Q19088 , dbo:Species ;
+        rr:object            dbo:Arachnid ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3508,7 +3508,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40> ;
-        rr:object            owl:Thing , dbo:Species , dbo:Animal , dbo:Eukaryote , wikidata:Q19088 , dbo:Crustacean , wikidata:Q729 ;
+        rr:object            dbo:Crustacean ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3547,7 +3547,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41> ;
-        rr:object            dbo:Animal , wikidata:Q729 , wikidata:Q19088 , dbo:Eukaryote , dbo:Species , dbo:Crustacean , owl:Thing ;
+        rr:object            dbo:Crustacean ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3586,7 +3586,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42> ;
-        rr:object            dbo:Species , dbo:Eukaryote , owl:Thing , wikidata:Q729 , dbo:Mollusca , wikidata:Q25326 , wikidata:Q19088 , dbo:Animal ;
+        rr:object            dbo:Mollusca ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3625,7 +3625,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43> ;
-        rr:object            dbo:Species , wikidata:Q19088 , wikidata:Q756 , dbo:Plant , dbo:Eukaryote , owl:Thing ;
+        rr:object            dbo:Plant ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3664,7 +3664,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44> ;
-        rr:object            wikidata:Q19088 , dbo:Eukaryote , wikidata:Q729 , dbo:Animal , dbo:Species , owl:Thing ;
+        rr:object            dbo:Animal ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3703,7 +3703,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45> ;
-        rr:object            dbo:Fungus , dbo:Eukaryote , wikidata:Q19088 , dbo:Species , owl:Thing ;
+        rr:object            dbo:Fungus ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3742,7 +3742,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46> ;
-        rr:object            dbo:Fungus , dbo:Eukaryote , wikidata:Q19088 , dbo:Species , owl:Thing ;
+        rr:object            dbo:Fungus ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3781,7 +3781,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47> ;
-        rr:object            dbo:Eukaryote , wikidata:Q19088 , dbo:Species , owl:Thing ;
+        rr:object            dbo:Eukaryote ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3820,7 +3820,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47/48> ;
-        rr:object            dbo:Eukaryote , wikidata:Q19088 , dbo:Species , owl:Thing ;
+        rr:object            dbo:Eukaryote ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3859,7 +3859,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47/48/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47/48/49> ;
-        rr:object            dbo:Eukaryote , wikidata:Q19088 , dbo:Species , owl:Thing ;
+        rr:object            dbo:Eukaryote ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3898,7 +3898,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47/48/49/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47/48/49/50> ;
-        rr:object            dbo:Eukaryote , wikidata:Q19088 , dbo:Species , owl:Thing ;
+        rr:object            dbo:Eukaryote ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3937,7 +3937,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47/48/49/50/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47/48/49/50/51> ;
-        rr:object            dbo:Archaea , dbo:Species , owl:Thing ;
+        rr:object            dbo:Archaea ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -3976,7 +3976,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47/48/49/50/51/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47/48/49/50/51/52> ;
-        rr:object            dbo:Bacteria , dbo:Species , owl:Thing ;
+        rr:object            dbo:Bacteria ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -4015,7 +4015,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47/48/49/50/51/52/FTM> ;
         crml:fallbackMap     <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47/48/49/50/51/52/53> ;
-        rr:object            dbo:Bacteria , dbo:Species , owl:Thing ;
+        rr:object            dbo:Bacteria ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -4052,7 +4052,7 @@
 ###################################
 <ConditionalMapping/divisio_contains_Magnoliophyta/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47/48/49/50/51/52/53>
         a             rr:PredicateObjectMap ;
-        rr:object     dbo:Species , owl:Thing ;
+        rr:object     dbo:Species ;
         rr:predicate  rdf:type .
 
 

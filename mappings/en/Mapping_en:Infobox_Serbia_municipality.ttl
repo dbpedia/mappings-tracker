@@ -45,7 +45,7 @@
 			       <SimplePropertyMapping/2> ,
 			       <latitude> ,
 			       <SimplePropertyMapping/0> ,
-			       <ConstantMapping/0> ,
+			       <ConstantMapping/3> ,
 			       <SimplePropertyMapping/9> ,
 			       <longitude> ,
 			       <SimplePropertyMapping/7> ,
@@ -421,13 +421,6 @@
 
 ### Predicate Object Map
 #########################
-<ConstantMapping/0>  a  rr:PredicateObjectMap ;
-        rr:object     dbr-en:Serbia ;
-        rr:predicate  dbo:country .
-
-
-### Predicate Object Map
-#########################
 <longitude>  a        rr:PredicateObjectMap ;
         rr:objectMap  <longitude/ObjectMap> ;
         rr:predicate  geo:long .
@@ -521,6 +514,13 @@
 
 ### Predicate Object Map
 #########################
+<ConstantMapping/3>  a  rr:PredicateObjectMap ;
+        rr:object     dbr-en:Serbia ;
+        rr:predicate  dbo:country .
+
+
+### Predicate Object Map
+#########################
 <SimplePropertyMapping/7>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/7/FTM> ;
@@ -594,7 +594,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/settlement_type_equals_city/FTM> ;
         crml:fallbackMap     <ConditionalMapping/settlement_type_equals_city/1> ;
-        rr:object            wikidata:Q515 , dbo:City , schema:City , dbo:Location , dbo:PopulatedPlace , owl:Thing , dbo:Settlement , wikidata:Q486972 , schema:Place , dbo:Place ;
+        rr:object            dbo:City ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -633,7 +633,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/settlement_type_equals_city/1/FTM> ;
         crml:fallbackMap     <ConditionalMapping/settlement_type_equals_city/1/2> ;
-        rr:object            schema:Place , wikidata:Q3957 , dbo:Place , dbo:Settlement , dbo:PopulatedPlace , dbo:Town , dbo:Location , owl:Thing , wikidata:Q486972 ;
+        rr:object            dbo:Town ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -672,7 +672,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/settlement_type_equals_city/1/2/FTM> ;
         crml:fallbackMap     <ConditionalMapping/settlement_type_equals_city/1/2/3> ;
-        rr:object            dbo:Place , wikidata:Q486972 , dbo:Village , dbo:PopulatedPlace , schema:Place , wikidata:Q532 , dbo:Location , dbo:Settlement , owl:Thing ;
+        rr:object            dbo:Village ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -709,7 +709,7 @@
 ###################################
 <ConditionalMapping/settlement_type_equals_city/1/2/3>
         a             rr:PredicateObjectMap ;
-        rr:object     dbo:Town , wikidata:Q3957 , dbo:Location , dbo:PopulatedPlace , dbo:Settlement , owl:Thing , schema:Place , wikidata:Q486972 , dbo:Place ;
+        rr:object     dbo:Town ;
         rr:predicate  rdf:type .
 
 

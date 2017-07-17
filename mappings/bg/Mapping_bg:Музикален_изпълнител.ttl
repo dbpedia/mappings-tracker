@@ -36,26 +36,26 @@
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <SimplePropertyMapping/20> ,
-			       <SimplePropertyMapping/10> ,
+			       <SimplePropertyMapping/24> ,
 			       <EndDateMapping/0> ,
 			       <SimplePropertyMapping/23> ,
-			       <SimplePropertyMapping/14> ,
-			       <SimplePropertyMapping/6> ,
-			       <SimplePropertyMapping/8> ,
+			       <SimplePropertyMapping/27> ,
+			       <SimplePropertyMapping/31> ,
 			       <SimplePropertyMapping/21> ,
+			       <SimplePropertyMapping/25> ,
 			       <SimplePropertyMapping/17> ,
-			       <SimplePropertyMapping/7> ,
 			       <SimplePropertyMapping/19> ,
-			       <SimplePropertyMapping/11> ,
+			       <SimplePropertyMapping/32> ,
 			       <SimplePropertyMapping/15> ,
-			       <SimplePropertyMapping/9> ,
+			       <SimplePropertyMapping/28> ,
 			       <SimplePropertyMapping/18> ,
+			       <SimplePropertyMapping/30> ,
 			       <ConditionalMapping/състав_isSet_null> ,
-			       <SimplePropertyMapping/13> ,
 			       <SimplePropertyMapping/22> ,
+			       <SimplePropertyMapping/26> ,
 			       <StartDateMapping/0> ,
-			       <SimplePropertyMapping/12> ,
-			       <SimplePropertyMapping/16> ;
+			       <SimplePropertyMapping/16> ,
+			       <SimplePropertyMapping/29> ;
         rr:subjectMap          <SubjectMap> .
 
 
@@ -84,7 +84,7 @@
 <SimplePropertyMapping/20>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/20/FTM> ;
-        rr:predicate  dbo:formationDate .
+        rr:predicate  dbo:picture .
 
 ### Function Term Map
 <SimplePropertyMapping/20/FTM>
@@ -108,39 +108,39 @@
 ### References
 <SimplePropertyMapping/20/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "създадена" .
+        rml:reference  "картинка" .
 
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/10>
+<SimplePropertyMapping/24>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/10/FTM> ;
-        rr:predicate  dbo:formerBandMember .
+        rr:objectMap  <SimplePropertyMapping/24/FTM> ;
+        rr:predicate  dbo:birthDate .
 
 ### Function Term Map
-<SimplePropertyMapping/10/FTM>
+<SimplePropertyMapping/24/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/10/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/24/FTM/FV> .
 
 ### Function Execution Mapping
-<SimplePropertyMapping/10/FTM/FV>
+<SimplePropertyMapping/24/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/24/FTM/FV/propertyParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
+<SimplePropertyMapping/24/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:objectMap  <SimplePropertyMapping/24/FTM/FV/propertyParameterPOM/ObjectMap> ;
         rr:predicate  dbf:propertyParameter .
 
 ### References
-<SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/ObjectMap>
+<SimplePropertyMapping/24/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "свързани_изпълнители" .
+        rml:reference  "роден_на" .
 
 
 ### Predicate Object Map
@@ -179,12 +179,13 @@
 <SimplePropertyMapping/23>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/23/FTM> ;
-        rr:predicate  foaf:homepage .
+        rr:predicate  dbo:birthName .
 
 ### Function Term Map
 <SimplePropertyMapping/23/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/23/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/23/FTM/FV> ;
+        rr:language         "bg" .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/23/FTM/FV>
@@ -203,104 +204,71 @@
 ### References
 <SimplePropertyMapping/23/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "сайт" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/14>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/14/FTM> ;
-        rr:predicate  dbo:birthName .
-
-### Function Term Map
-<SimplePropertyMapping/14/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/14/FTM/FV> ;
-        rr:language         "bg" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/14/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/14/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/14/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/14/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/14/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
         rml:reference  "рождено_име" .
 
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/6>
+<SimplePropertyMapping/27>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/6/FTM> ;
-        rr:predicate  dbo:genre .
+        rr:objectMap  <SimplePropertyMapping/27/FTM> ;
+        rr:predicate  dbo:deathPlace .
 
 ### Function Term Map
-<SimplePropertyMapping/6/FTM>
+<SimplePropertyMapping/27/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/6/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/27/FTM/FV> .
 
 ### Function Execution Mapping
-<SimplePropertyMapping/6/FTM/FV>
+<SimplePropertyMapping/27/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/6/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/27/FTM/FV/propertyParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/6/FTM/FV/propertyParameterPOM>
+<SimplePropertyMapping/27/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/6/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:objectMap  <SimplePropertyMapping/27/FTM/FV/propertyParameterPOM/ObjectMap> ;
         rr:predicate  dbf:propertyParameter .
 
 ### References
-<SimplePropertyMapping/6/FTM/FV/propertyParameterPOM/ObjectMap>
+<SimplePropertyMapping/27/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "стил" .
+        rml:reference  "починал_в" .
 
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/8>
+<SimplePropertyMapping/31>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/8/FTM> ;
-        rr:predicate  dbo:bandMember .
+        rr:objectMap  <SimplePropertyMapping/31/FTM> ;
+        rr:predicate  dbo:instrument .
 
 ### Function Term Map
-<SimplePropertyMapping/8/FTM>
+<SimplePropertyMapping/31/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/8/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/31/FTM/FV> .
 
 ### Function Execution Mapping
-<SimplePropertyMapping/8/FTM/FV>
+<SimplePropertyMapping/31/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/8/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/31/FTM/FV/propertyParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/8/FTM/FV/propertyParameterPOM>
+<SimplePropertyMapping/31/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/8/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:objectMap  <SimplePropertyMapping/31/FTM/FV/propertyParameterPOM/ObjectMap> ;
         rr:predicate  dbf:propertyParameter .
 
 ### References
-<SimplePropertyMapping/8/FTM/FV/propertyParameterPOM/ObjectMap>
+<SimplePropertyMapping/31/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "състав" .
+        rml:reference  "инструмент" .
 
 
 ### Predicate Object Map
@@ -308,7 +276,7 @@
 <SimplePropertyMapping/21>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/21/FTM> ;
-        rr:predicate  dbo:recordLabel .
+        rr:predicate  dbo:pictureDescription .
 
 ### Function Term Map
 <SimplePropertyMapping/21/FTM>
@@ -332,7 +300,39 @@
 ### References
 <SimplePropertyMapping/21/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "лейбъл" .
+        rml:reference  "картинка_текст" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/25>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/25/FTM> ;
+        rr:predicate  dbo:birthPlace .
+
+### Function Term Map
+<SimplePropertyMapping/25/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/25/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/25/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/25/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/25/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/25/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/25/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "роден_в" .
 
 
 ### Predicate Object Map
@@ -340,7 +340,7 @@
 <SimplePropertyMapping/17>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/17/FTM> ;
-        rr:predicate  dbo:deathDate .
+        rr:predicate  dbo:bandMember .
 
 ### Function Term Map
 <SimplePropertyMapping/17/FTM>
@@ -364,40 +364,7 @@
 ### References
 <SimplePropertyMapping/17/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "починал_на" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/7>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/7/FTM> ;
-        rr:predicate  foaf:name .
-
-### Function Term Map
-<SimplePropertyMapping/7/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/7/FTM/FV> ;
-        rr:language         "bg" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/7/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/7/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/7/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/7/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/7/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "име" .
+        rml:reference  "състав" .
 
 
 ### Predicate Object Map
@@ -405,13 +372,12 @@
 <SimplePropertyMapping/19>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/19/FTM> ;
-        rr:predicate  dbo:alias .
+        rr:predicate  dbo:formerBandMember .
 
 ### Function Term Map
 <SimplePropertyMapping/19/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/19/FTM/FV> ;
-        rr:language         "bg" .
+        fnml:functionValue  <SimplePropertyMapping/19/FTM/FV> .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/19/FTM/FV>
@@ -430,39 +396,39 @@
 ### References
 <SimplePropertyMapping/19/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "псевдоним" .
+        rml:reference  "свързани_изпълнители" .
 
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/11>
+<SimplePropertyMapping/32>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/11/FTM> ;
-        rr:predicate  dbo:picture .
+        rr:objectMap  <SimplePropertyMapping/32/FTM> ;
+        rr:predicate  foaf:homepage .
 
 ### Function Term Map
-<SimplePropertyMapping/11/FTM>
+<SimplePropertyMapping/32/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/11/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/32/FTM/FV> .
 
 ### Function Execution Mapping
-<SimplePropertyMapping/11/FTM/FV>
+<SimplePropertyMapping/32/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/11/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/32/FTM/FV/propertyParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/11/FTM/FV/propertyParameterPOM>
+<SimplePropertyMapping/32/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/11/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:objectMap  <SimplePropertyMapping/32/FTM/FV/propertyParameterPOM/ObjectMap> ;
         rr:predicate  dbf:propertyParameter .
 
 ### References
-<SimplePropertyMapping/11/FTM/FV/propertyParameterPOM/ObjectMap>
+<SimplePropertyMapping/32/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "картинка" .
+        rml:reference  "сайт" .
 
 
 ### Predicate Object Map
@@ -470,7 +436,7 @@
 <SimplePropertyMapping/15>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/15/FTM> ;
-        rr:predicate  dbo:birthDate .
+        rr:predicate  dbo:genre .
 
 ### Function Term Map
 <SimplePropertyMapping/15/FTM>
@@ -494,39 +460,40 @@
 ### References
 <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "роден_на" .
+        rml:reference  "стил" .
 
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/9>
+<SimplePropertyMapping/28>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/9/FTM> ;
-        rr:predicate  dbo:formerBandMember .
+        rr:objectMap  <SimplePropertyMapping/28/FTM> ;
+        rr:predicate  dbo:alias .
 
 ### Function Term Map
-<SimplePropertyMapping/9/FTM>
+<SimplePropertyMapping/28/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/9/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/28/FTM/FV> ;
+        rr:language         "bg" .
 
 ### Function Execution Mapping
-<SimplePropertyMapping/9/FTM/FV>
+<SimplePropertyMapping/28/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/28/FTM/FV/propertyParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
+<SimplePropertyMapping/28/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:objectMap  <SimplePropertyMapping/28/FTM/FV/propertyParameterPOM/ObjectMap> ;
         rr:predicate  dbf:propertyParameter .
 
 ### References
-<SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/ObjectMap>
+<SimplePropertyMapping/28/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "бивши_членове" .
+        rml:reference  "псевдоним" .
 
 
 ### Predicate Object Map
@@ -534,7 +501,7 @@
 <SimplePropertyMapping/18>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/18/FTM> ;
-        rr:predicate  dbo:deathPlace .
+        rr:predicate  dbo:formerBandMember .
 
 ### Function Term Map
 <SimplePropertyMapping/18/FTM>
@@ -558,8 +525,40 @@
 ### References
 <SimplePropertyMapping/18/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "починал_в" .
+        rml:reference  "бивши_членове" .
 
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/30>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/30/FTM> ;
+        rr:predicate  dbo:recordLabel .
+
+### Function Term Map
+<SimplePropertyMapping/30/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/30/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/30/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/30/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/30/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/30/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/30/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "лейбъл" .
 
 
 ### Predicate Object Map
@@ -567,7 +566,7 @@
 <SimplePropertyMapping/22>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/22/FTM> ;
-        rr:predicate  dbo:instrument .
+        rr:predicate  dbo:background .
 
 ### Function Term Map
 <SimplePropertyMapping/22/FTM>
@@ -591,39 +590,39 @@
 ### References
 <SimplePropertyMapping/22/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "инструмент" .
+        rml:reference  "фон" .
 
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/13>
+<SimplePropertyMapping/26>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/13/FTM> ;
-        rr:predicate  dbo:background .
+        rr:objectMap  <SimplePropertyMapping/26/FTM> ;
+        rr:predicate  dbo:deathDate .
 
 ### Function Term Map
-<SimplePropertyMapping/13/FTM>
+<SimplePropertyMapping/26/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/13/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/26/FTM/FV> .
 
 ### Function Execution Mapping
-<SimplePropertyMapping/13/FTM/FV>
+<SimplePropertyMapping/26/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/13/FTM/FV/propertyParameterPOM> ;
+			       <SimplePropertyMapping/26/FTM/FV/propertyParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/13/FTM/FV/propertyParameterPOM>
+<SimplePropertyMapping/26/FTM/FV/propertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/13/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:objectMap  <SimplePropertyMapping/26/FTM/FV/propertyParameterPOM/ObjectMap> ;
         rr:predicate  dbf:propertyParameter .
 
 ### References
-<SimplePropertyMapping/13/FTM/FV/propertyParameterPOM/ObjectMap>
+<SimplePropertyMapping/26/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "фон" .
+        rml:reference  "починал_на" .
 
 
 ### Predicate Object Map
@@ -659,47 +658,16 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/12>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/12/FTM> ;
-        rr:predicate  dbo:pictureDescription .
-
-### Function Term Map
-<SimplePropertyMapping/12/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/12/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/12/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/12/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/12/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/12/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/12/FTM/FV/propertyParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "картинка_текст" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/16>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/16/FTM> ;
-        rr:predicate  dbo:birthPlace .
+        rr:predicate  foaf:name .
 
 ### Function Term Map
 <SimplePropertyMapping/16/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/16/FTM/FV> .
+        fnml:functionValue  <SimplePropertyMapping/16/FTM/FV> ;
+        rr:language         "bg" .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/16/FTM/FV>
@@ -718,7 +686,39 @@
 ### References
 <SimplePropertyMapping/16/FTM/FV/propertyParameterPOM/ObjectMap>
         a              rr:ObjectMap ;
-        rml:reference  "роден_в" .
+        rml:reference  "име" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/29>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/29/FTM> ;
+        rr:predicate  dbo:formationDate .
+
+### Function Term Map
+<SimplePropertyMapping/29/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/29/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/29/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/29/FTM/FV/propertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/29/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/29/FTM/FV/propertyParameterPOM/ObjectMap> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/29/FTM/FV/propertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "създадена" .
 
 
 ######################
@@ -732,7 +732,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/състав_isSet_null/FTM> ;
         crml:fallbackMap     <ConditionalMapping/състав_isSet_null/1> ;
-        rr:object            schema:Organization , dbo:Group , dbo:Agent , dul:Agent , dbo:Band , wikidata:Q43229 , owl:Thing , dbo:Organisation , schema:MusicGroup , dul:SocialPerson , wikidata:Q215380 ;
+        rr:object            dbo:Band ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -765,7 +765,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/състав_isSet_null/1/FTM> ;
         crml:fallbackMap     <ConditionalMapping/състав_isSet_null/1/2> ;
-        rr:object            wikidata:Q43229 , schema:Organization , dul:Agent , wikidata:Q215380 , owl:Thing , dbo:Group , dbo:Band , dbo:Agent , dul:SocialPerson , schema:MusicGroup , dbo:Organisation ;
+        rr:object            dbo:Band ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -798,7 +798,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/състав_isSet_null/1/2/FTM> ;
         crml:fallbackMap     <ConditionalMapping/състав_isSet_null/1/2/3> ;
-        rr:object            schema:Organization , dbo:Organisation , owl:Thing , dbo:Agent , dul:Agent , dul:SocialPerson , schema:MusicGroup , wikidata:Q215380 , wikidata:Q43229 , dbo:Group , dbo:Band ;
+        rr:object            dbo:Band ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -831,7 +831,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/състав_isSet_null/1/2/3/FTM> ;
         crml:fallbackMap     <ConditionalMapping/състав_isSet_null/1/2/3/4> ;
-        rr:object            dbo:Band , owl:Thing , dbo:Agent , dbo:Organisation , schema:Organization , schema:MusicGroup , wikidata:Q43229 , dul:Agent , wikidata:Q215380 , dul:SocialPerson , dbo:Group ;
+        rr:object            dbo:Band ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -870,7 +870,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/състав_isSet_null/1/2/3/4/FTM> ;
         crml:fallbackMap     <ConditionalMapping/състав_isSet_null/1/2/3/4/5> ;
-        rr:object            dbo:Group , dbo:Band , owl:Thing , wikidata:Q43229 , schema:MusicGroup , schema:Organization , dbo:Agent , dbo:Organisation , wikidata:Q215380 , dul:SocialPerson , dul:Agent ;
+        rr:object            dbo:Band ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -909,7 +909,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/състав_isSet_null/1/2/3/4/5/FTM> ;
         crml:fallbackMap     <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6> ;
-        rr:object            dbo:Band , wikidata:Q215380 , owl:Thing , schema:Organization , wikidata:Q43229 , dul:SocialPerson , dbo:Organisation , dbo:Agent , dul:Agent , schema:MusicGroup , dbo:Group ;
+        rr:object            dbo:Band ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -948,7 +948,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/FTM> ;
         crml:fallbackMap     <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7> ;
-        rr:object            dbo:Band , wikidata:Q43229 , owl:Thing , schema:Organization , wikidata:Q215380 , dbo:Group , dul:SocialPerson , schema:MusicGroup , dbo:Agent , dul:Agent , dbo:Organisation ;
+        rr:object            dbo:Band ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -987,7 +987,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/FTM> ;
         crml:fallbackMap     <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8> ;
-        rr:object            owl:Thing , dbo:Agent , dbo:MusicComposer , wikidata:Q36180 , foaf:Person , wikidata:Q215627 , wikidata:Q5 , dbo:Writer , dul:NaturalPerson , dbo:Person , schema:Person , dul:Agent ;
+        rr:object            dbo:MusicComposer ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -1026,7 +1026,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/FTM> ;
         crml:fallbackMap     <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9> ;
-        rr:object            wikidata:Q215627 , wikidata:Q483501 , dul:NaturalPerson , dul:Agent , dbo:MusicalArtist , schema:MusicGroup , wikidata:Q1198887 , dbo:Person , dbo:Artist , schema:Person , dbo:Agent , dbo:MusicDirector , wikidata:Q5 , owl:Thing , foaf:Person ;
+        rr:object            dbo:MusicDirector ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -1065,7 +1065,7 @@
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/FTM> ;
         crml:fallbackMap     <ConstantMapping/0> , <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10> ;
-        rr:object            schema:MusicGroup , dbo:Person , dbo:Agent , dul:NaturalPerson , dbo:Artist , wikidata:Q483501 , owl:Thing , foaf:Person , schema:Person , wikidata:Q215627 , dul:Agent , wikidata:Q5 , dbo:MusicalArtist ;
+        rr:object            dbo:MusicalArtist ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
@@ -1100,10 +1100,122 @@
 
 ### Conditional PredicateObjectMap
 ###################################
-<ConstantMapping/0>  a       rr:PredicateObjectMap ;
-        crml:equalCondition  <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/FTM> ;
-        rr:object            <http://dbpedia.org/resource/Female> ;
-        rr:predicate         dbo:gender .
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10>
+        a                    rr:PredicateObjectMap ;
+        crml:equalCondition  <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/FTM> ;
+        crml:fallbackMap     <ConstantMapping/1> , <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11> ;
+        rr:object            dbo:MusicalArtist ;
+        rr:predicate         rdf:type .
+
+### Function Term Map
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/FTM/FV> .
+
+### Function Execution Mapping
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/contains> ,
+			       <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/FTM/FV/ValueParameterPOM> ,
+			       <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/FTM/FV/PropertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/FTM/FV/ValueParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "певец" ;
+        rr:predicate  <http://dbpedia.org/function/contains/valueParameter> .
+
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/FTM/FV/PropertyParameterPOM/ObjectMap> ;
+        rr:predicate  <http://dbpedia.org/function/contains/propertyParameter> .
+
+### References
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/FTM/FV/PropertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "фон" .
+
+### Conditional PredicateObjectMap
+###################################
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11>
+        a                    rr:PredicateObjectMap ;
+        crml:equalCondition  <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/FTM> ;
+        crml:fallbackMap     <ConstantMapping/2> , <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/12> ;
+        rr:object            dbo:MusicalArtist ;
+        rr:predicate         rdf:type .
+
+### Function Term Map
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/FTM/FV> .
+
+### Function Execution Mapping
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/contains> ,
+			       <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/FTM/FV/ValueParameterPOM> ,
+			       <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/FTM/FV/PropertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/FTM/FV/ValueParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "пианист" ;
+        rr:predicate  <http://dbpedia.org/function/contains/valueParameter> .
+
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/FTM/FV/PropertyParameterPOM/ObjectMap> ;
+        rr:predicate  <http://dbpedia.org/function/contains/propertyParameter> .
+
+### References
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/FTM/FV/PropertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "фон" .
+
+### Conditional PredicateObjectMap
+###################################
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/12>
+        a                    rr:PredicateObjectMap ;
+        crml:equalCondition  <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/12/FTM> ;
+        crml:fallbackMap     <ConstantMapping/3> , <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/12/13> ;
+        rr:object            dbo:MusicalArtist ;
+        rr:predicate         rdf:type .
+
+### Function Term Map
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/12/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/12/FTM/FV> .
+
+### Function Execution Mapping
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/12/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/isSet> ,
+			       <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/12/FTM/FV/PropertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/12/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/12/FTM/FV/PropertyParameterPOM/ObjectMap> ;
+        rr:predicate  <http://dbpedia.org/function/isSet/propertyParameter> .
+
+### References
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/12/FTM/FV/PropertyParameterPOM/ObjectMap>
+        a              rr:ObjectMap ;
+        rml:reference  "наставка" .
+
+### Conditional PredicateObjectMap
+###################################
+<ConditionalMapping/състав_isSet_null/1/2/3/4/5/6/7/8/9/10/11/12/13>
+        a                 rr:PredicateObjectMap ;
+        crml:fallbackMap  <ConstantMapping/4> ;
+        rr:object         dbo:MusicalArtist ;
+        rr:predicate      rdf:type .
 
 
 ############
