@@ -36,12 +36,12 @@
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <SimplePropertyMapping/3> ,
-			       <latitude> ,
+			       <LongitudeMapping/0> ,
+			       <LatitudeMapping/0> ,
 			       <SimplePropertyMapping/5> ,
 			       <SimplePropertyMapping/1> ,
 			       <SimplePropertyMapping/0> ,
 			       <SimplePropertyMapping/2> ,
-			       <longitude> ,
 			       <SimplePropertyMapping/4> ;
         rr:subjectMap          <SubjectMap> .
 
@@ -71,122 +71,146 @@
 #########################
 <SimplePropertyMapping/3>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/3/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/3/OM> ;
         rr:predicate  dbo:enshrinedDeity .
 
-### Function Term Map
-<SimplePropertyMapping/3/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/3/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/3/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/3/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/3/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/3/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/3/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/3/OM>
         a              rr:ObjectMap ;
         rml:reference  "祭神" .
 
 
 ### Predicate Object Map
 #########################
-<latitude>  a         rr:PredicateObjectMap ;
-        rr:objectMap  <latitude/ObjectMap> ;
-        rr:predicate  geo:lat .
+<LongitudeMapping/0>  a  rr:PredicateObjectMap ;
+        rr:objectMap  <LongitudeMapping/0/OM> ;
+        rr:predicate  geo:long .
 
 ### Function Term Map
-<latitude/ObjectMap>  a     fnml:FunctionTermMap ;
-        fnml:functionValue  <latitude/ObjectMap/FV> .
+<LongitudeMapping/0/OM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <LongitudeMapping/0/OM/FV> .
 
 ### Function Execution Mapping
-<latitude/ObjectMap/FV>
+<LongitudeMapping/0/OM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/LatitudeFunction> ,
-			       <latitude/ObjectMap/FV/LatDegreesParameterPOM> ,
-			       <latitude/ObjectMap/FV/LatMinutesParameterPOM> ,
-			       <latitude/ObjectMap/FV/LatSecondsParameterPOM> ,
-			       <latitude/ObjectMap/FV/latDirectionParameterPOM> ;
+        rr:predicateObjectMap  <Function/LongitudeFunction> ,
+			       <LongitudeMapping/0/OM/FV/lonDegreesParameterPOM> ,
+			       <LongitudeMapping/0/OM/FV/lonMinutesParameterPOM> ,
+			       <LongitudeMapping/0/OM/FV/lonSecondsParameterPOM> ,
+			       <LongitudeMapping/0/OM/FV/lonDirectionParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<latitude/ObjectMap/FV/LatSecondsParameterPOM>
+<LongitudeMapping/0/OM/FV/lonMinutesParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <latitude/ObjectMap/FV/LatSecondsParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:latSecondsParameter .
+        rr:objectMap  <LongitudeMapping/0/OM/FV/lonMinutesParameterPOM/OM> ;
+        rr:predicate  dbf:lonMinutesParameter .
 
-<latitude/ObjectMap/FV/latDirectionParameterPOM>
+<LongitudeMapping/0/OM/FV/lonDirectionParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <latitude/ObjectMap/FV/latDirectionParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:latDirectionParameter .
+        rr:objectMap  <LongitudeMapping/0/OM/FV/lonDirectionParameterPOM/OM> ;
+        rr:predicate  dbf:lonDirectionParameter .
 
-<latitude/ObjectMap/FV/LatMinutesParameterPOM>
+<LongitudeMapping/0/OM/FV/lonDegreesParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <latitude/ObjectMap/FV/LatMinutesParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:latMinutesParameter .
+        rr:objectMap  <LongitudeMapping/0/OM/FV/lonDegreesParameterPOM/OM> ;
+        rr:predicate  dbf:lonDegreesParameter .
 
-<latitude/ObjectMap/FV/LatDegreesParameterPOM>
+<LongitudeMapping/0/OM/FV/lonSecondsParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <latitude/ObjectMap/FV/LatDegreesParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:latDegreesParameter .
+        rr:objectMap  <LongitudeMapping/0/OM/FV/lonSecondsParameterPOM/OM> ;
+        rr:predicate  dbf:lonSecondsParameter .
 
 ### References
-<latitude/ObjectMap/FV/LatDegreesParameterPOM/ObjectMap>
+<LongitudeMapping/0/OM/FV/lonDegreesParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "緯度度" .
 
-<latitude/ObjectMap/FV/latDirectionParameterPOM/ObjectMap>
+<LongitudeMapping/0/OM/FV/lonMinutesParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "E(東経)及びW(西経)_" .
+        rml:reference  "経度分" .
 
-<latitude/ObjectMap/FV/LatMinutesParameterPOM/ObjectMap>
+<LongitudeMapping/0/OM/FV/lonDirectionParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "N(北緯)及びS(南緯)_" .
+
+<LongitudeMapping/0/OM/FV/lonSecondsParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "経度秒" .
+
+
+### Predicate Object Map
+#########################
+<LatitudeMapping/0>  a  rr:PredicateObjectMap ;
+        rr:objectMap  <LatitudeMapping/0/OM> ;
+        rr:predicate  geo:lat .
+
+### Function Term Map
+<LatitudeMapping/0/OM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <LatitudeMapping/0/OM/FV> .
+
+### Function Execution Mapping
+<LatitudeMapping/0/OM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/LatitudeFunction> ,
+			       <LatitudeMapping/0/OM/FV/LatDegreesParameterPOM> ,
+			       <LatitudeMapping/0/OM/FV/LatMinutesParameterPOM> ,
+			       <LatitudeMapping/0/OM/FV/LatSecondsParameterPOM> ,
+			       <LatitudeMapping/0/OM/FV/latDirectionParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<LatitudeMapping/0/OM/FV/LatDegreesParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <LatitudeMapping/0/OM/FV/LatDegreesParameterPOM/OM> ;
+        rr:predicate  dbf:latDegreesParameter .
+
+<LatitudeMapping/0/OM/FV/LatSecondsParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <LatitudeMapping/0/OM/FV/LatSecondsParameterPOM/OM> ;
+        rr:predicate  dbf:latSecondsParameter .
+
+<LatitudeMapping/0/OM/FV/latDirectionParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <LatitudeMapping/0/OM/FV/latDirectionParameterPOM/OM> ;
+        rr:predicate  dbf:latDirectionParameter .
+
+<LatitudeMapping/0/OM/FV/LatMinutesParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <LatitudeMapping/0/OM/FV/LatMinutesParameterPOM/OM> ;
+        rr:predicate  dbf:latMinutesParameter .
+
+### References
+<LatitudeMapping/0/OM/FV/LatMinutesParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "緯度分" .
 
-<latitude/ObjectMap/FV/LatSecondsParameterPOM/ObjectMap>
+<LatitudeMapping/0/OM/FV/latDirectionParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "E(東経)及びW(西経)_" .
+
+<LatitudeMapping/0/OM/FV/LatSecondsParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "緯度秒" .
+
+<LatitudeMapping/0/OM/FV/LatDegreesParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "緯度度" .
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/5>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/5/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/5/OM> ;
         rr:predicate  dbo:buildingEndYear .
 
-### Function Term Map
-<SimplePropertyMapping/5/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/5/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/5/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/5/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/5/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/5/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/5/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/5/OM>
         a              rr:ObjectMap ;
         rml:reference  "創建" .
 
@@ -195,31 +219,11 @@
 #########################
 <SimplePropertyMapping/1>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/1/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/1/OM> ;
         rr:predicate  foaf:name .
 
-### Function Term Map
-<SimplePropertyMapping/1/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/1/FTM/FV> ;
-        rr:language         "ja" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/1/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/1/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/1/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/1/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/1/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
         rml:reference  "名称" .
 
@@ -228,31 +232,11 @@
 #########################
 <SimplePropertyMapping/0>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/0/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/0/OM> ;
         rr:predicate  dbo:address .
 
-### Function Term Map
-<SimplePropertyMapping/0/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/0/FTM/FV> ;
-        rr:language         "ja" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/0/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/0/OM>
         a              rr:ObjectMap ;
         rml:reference  "所在地" .
 
@@ -261,124 +245,24 @@
 #########################
 <SimplePropertyMapping/2>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/2/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/2/OM> ;
         rr:predicate  dbo:alias .
 
-### Function Term Map
-<SimplePropertyMapping/2/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/2/FTM/FV> ;
-        rr:language         "ja" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/2/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/2/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/2/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/2/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/2/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
         rml:reference  "別名" .
 
 
 ### Predicate Object Map
 #########################
-<longitude>  a        rr:PredicateObjectMap ;
-        rr:objectMap  <longitude/ObjectMap> ;
-        rr:predicate  geo:long .
-
-### Function Term Map
-<longitude/ObjectMap>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <longitude/ObjectMap/FV> .
-
-### Function Execution Mapping
-<longitude/ObjectMap/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/LongitudeFunction> ,
-			       <longitude/ObjectMap/FV/lonDegreesParameterPOM> ,
-			       <longitude/ObjectMap/FV/lonMinutesParameterPOM> ,
-			       <longitude/ObjectMap/FV/lonSecondsParameterPOM> ,
-			       <longitude/ObjectMap/FV/lonDirectionParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<longitude/ObjectMap/FV/lonSecondsParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <longitude/ObjectMap/FV/lonSecondsParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:lonSecondsParameter .
-
-<longitude/ObjectMap/FV/lonMinutesParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <longitude/ObjectMap/FV/lonMinutesParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:lonMinutesParameter .
-
-<longitude/ObjectMap/FV/lonDirectionParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <longitude/ObjectMap/FV/lonDirectionParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:lonDirectionParameter .
-
-<longitude/ObjectMap/FV/lonDegreesParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <longitude/ObjectMap/FV/lonDegreesParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:lonDegreesParameter .
-
-### References
-<longitude/ObjectMap/FV/lonDirectionParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "N(北緯)及びS(南緯)_" .
-
-<longitude/ObjectMap/FV/lonMinutesParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "経度分" .
-
-<longitude/ObjectMap/FV/lonSecondsParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "経度秒" .
-
-<longitude/ObjectMap/FV/lonDegreesParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "経度度" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/4>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/4/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/4/OM> ;
         rr:predicate  foaf:img .
 
-### Function Term Map
-<SimplePropertyMapping/4/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/4/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/4/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/4/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/4/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/4/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/4/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/4/OM>
         a              rr:ObjectMap ;
         rml:reference  "画像" .
 
@@ -402,11 +286,6 @@
 <Function/LatitudeFunction>
         a             rr:PredicateObjectMap ;
         rr:object     dbf:latFunction ;
-        rr:predicate  fno:executes .
-
-<Function/SimplePropertyFunction>
-        a             rr:PredicateObjectMap ;
-        rr:object     dbf:simplePropertyFunction ;
         rr:predicate  fno:executes .
 
 

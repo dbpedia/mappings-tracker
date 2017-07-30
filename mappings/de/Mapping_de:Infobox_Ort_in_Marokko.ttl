@@ -35,16 +35,16 @@
 <http://de.dbpedia.org/resource/Mapping_de:Infobox_Ort_in_Marokko>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <SimplePropertyMapping/6> ,
+        rr:predicateObjectMap  <LatitudeMapping/0> ,
+			       <SimplePropertyMapping/6> ,
 			       <SimplePropertyMapping/1> ,
-			       <longitude> ,
-			       <latitude> ,
 			       <SimplePropertyMapping/3> ,
 			       <SimplePropertyMapping/5> ,
 			       <SimplePropertyMapping/2> ,
 			       <SimplePropertyMapping/0> ,
 			       <SimplePropertyMapping/7> ,
-			       <SimplePropertyMapping/4> ;
+			       <SimplePropertyMapping/4> ,
+			       <LongitudeMapping/0> ;
         rr:subjectMap          <SubjectMap> .
 
 
@@ -71,39 +71,49 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/6>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/6/FTM> ;
-        rr:predicate  dbo:elevation .
+<LatitudeMapping/0>  a  rr:PredicateObjectMap ;
+        rr:objectMap  <LatitudeMapping/0/FTM> ;
+        rr:predicate  geo:lat .
 
 ### Function Term Map
-<SimplePropertyMapping/6/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/6/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/metre> .
+<LatitudeMapping/0/FTM>
+        a                      fnml:FunctionTermMap , rr:TriplesMap ;
+        fnml:functionValue     <LatitudeMapping/0/FTM> ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/LatitudeFunction> , <LatitudeMapping/0/FTM/ParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
 
 ### Function Execution Mapping
-<SimplePropertyMapping/6/FTM/FV>
-        a                      rr:TriplesMap ;
+<LatitudeMapping/0/FTM>
+        a                      fnml:FunctionTermMap ,
+			       rr:TriplesMap ;
+        fnml:functionValue     <LatitudeMapping/0/FTM> ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/6/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/6/FTM/FV/unitParameterPOM> ;
+        rr:predicateObjectMap  <Function/LatitudeFunction> ,
+			       <LatitudeMapping/0/FTM/ParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/6/FTM/FV/unitParameterPOM>
+<LatitudeMapping/0/FTM/ParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "metre" ;
-        rr:predicate  dbf:unitParameter .
-
-<SimplePropertyMapping/6/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/6/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
+        rr:objectMap  <LatitudeMapping/0/FTM/ParameterPOM/OM> ;
+        rr:predicate  dbf:latParameter .
 
 ### References
-<SimplePropertyMapping/6/FTM/FV/propertyParameterPOM/ObjectMap>
+<LatitudeMapping/0/FTM/ParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Breitengrad" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:elevation .
+
+### ObjectMap
+<SimplePropertyMapping/6/OM>
         a              rr:ObjectMap ;
         rml:reference  "Höhe" .
 
@@ -112,129 +122,24 @@
 #########################
 <SimplePropertyMapping/1>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/1/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/1/OM> ;
         rr:predicate  dbo:region .
 
-### Function Term Map
-<SimplePropertyMapping/1/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/1/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/1/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/1/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/1/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/1/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/1/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
         rml:reference  "Region" .
 
 
 ### Predicate Object Map
 #########################
-<longitude>  a        rr:PredicateObjectMap ;
-        rr:objectMap  <longitude/FTM> ;
-        rr:predicate  geo:long .
-
-### Function Term Map
-<longitude/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <longitude/FTM/FV> .
-
-### Function Execution Mapping
-<longitude/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/LongitudeFunction> ,
-			       <longitude/FTM/FV/ParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<longitude/FTM/FV/ParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <longitude/FTM/FV/ParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:lonParameter .
-
-### References
-<longitude/FTM/FV/ParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "Längengrad" .
-
-
-### Predicate Object Map
-#########################
-<latitude>  a         rr:PredicateObjectMap ;
-        rr:objectMap  <latitude/FTM> ;
-        rr:predicate  geo:lat .
-
-### Function Term Map
-<latitude/FTM>
-        a                      fnml:FunctionTermMap , rr:TriplesMap ;
-        fnml:functionValue     <latitude/FTM> ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/LatitudeFunction> , <latitude/FTM/ParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Function Execution Mapping
-<latitude/FTM>
-        a                      fnml:FunctionTermMap ,
-			       rr:TriplesMap ;
-        fnml:functionValue     <latitude/FTM> ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/LatitudeFunction> ,
-			       <latitude/FTM/ParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<latitude/FTM/ParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <latitude/FTM/ParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:latParameter .
-
-### References
-<latitude/FTM/ParameterPOM/ObjectMap>
-        a              rr:ObjectMap ;
-        rml:reference  "Breitengrad" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/3>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/3/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/3/OM> ;
         rr:predicate  dbo:populationUrban .
 
-### Function Term Map
-<SimplePropertyMapping/3/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/3/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/3/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/3/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/3/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/3/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/3/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/3/OM>
         a              rr:ObjectMap ;
         rml:reference  "Einwohner" .
 
@@ -243,37 +148,11 @@
 #########################
 <SimplePropertyMapping/5>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/5/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/5/OM> ;
         rr:predicate  dbo:areaTotal .
 
-### Function Term Map
-<SimplePropertyMapping/5/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/5/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/squareKilometre> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/5/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/5/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/5/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/5/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/5/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-<SimplePropertyMapping/5/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "squareKilometre" ;
-        rr:predicate  dbf:unitParameter .
-
-### References
-<SimplePropertyMapping/5/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/5/OM>
         a              rr:ObjectMap ;
         rml:reference  "Fläche" .
 
@@ -282,30 +161,11 @@
 #########################
 <SimplePropertyMapping/2>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/2/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/2/OM> ;
         rr:predicate  dbo:province .
 
-### Function Term Map
-<SimplePropertyMapping/2/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/2/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/2/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/2/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/2/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/2/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/2/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
         rml:reference  "Provinz" .
 
@@ -314,31 +174,11 @@
 #########################
 <SimplePropertyMapping/0>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/0/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/0/OM> ;
         rr:predicate  foaf:name .
 
-### Function Term Map
-<SimplePropertyMapping/0/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/0/FTM/FV> ;
-        rr:language         "de" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/0/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/0/OM>
         a              rr:ObjectMap ;
         rml:reference  "Name" .
 
@@ -347,30 +187,11 @@
 #########################
 <SimplePropertyMapping/7>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/7/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/7/OM> ;
         rr:predicate  foaf:homepage .
 
-### Function Term Map
-<SimplePropertyMapping/7/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/7/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/7/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/7/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/7/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/7/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/7/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/7/OM>
         a              rr:ObjectMap ;
         rml:reference  "Webpräsenz" .
 
@@ -379,32 +200,44 @@
 #########################
 <SimplePropertyMapping/4>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/4/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/4/OM> ;
         rr:predicate  dbo:censusYear .
 
+### ObjectMap
+<SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Stand" .
+
+
+### Predicate Object Map
+#########################
+<LongitudeMapping/0>  a  rr:PredicateObjectMap ;
+        rr:objectMap  <LongitudeMapping/0/FTM> ;
+        rr:predicate  geo:long .
+
 ### Function Term Map
-<SimplePropertyMapping/4/FTM>
+<LongitudeMapping/0/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/4/FTM/FV> .
+        fnml:functionValue  <LongitudeMapping/0/FTM/FV> .
 
 ### Function Execution Mapping
-<SimplePropertyMapping/4/FTM/FV>
+<LongitudeMapping/0/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/4/FTM/FV/propertyParameterPOM> ;
+        rr:predicateObjectMap  <Function/LongitudeFunction> ,
+			       <LongitudeMapping/0/FTM/FV/ParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<SimplePropertyMapping/4/FTM/FV/propertyParameterPOM>
+<LongitudeMapping/0/FTM/FV/ParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/4/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
+        rr:objectMap  <LongitudeMapping/0/FTM/FV/ParameterPOM/OM> ;
+        rr:predicate  dbf:lonParameter .
 
 ### References
-<SimplePropertyMapping/4/FTM/FV/propertyParameterPOM/ObjectMap>
+<LongitudeMapping/0/FTM/FV/ParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Stand" .
+        rml:reference  "Längengrad" .
 
 
 ######################
@@ -417,11 +250,6 @@
 # Functions
 ############
 
-
-<Function/SimplePropertyFunction>
-        a             rr:PredicateObjectMap ;
-        rr:object     dbf:simplePropertyFunction ;
-        rr:predicate  fno:executes .
 
 <Function/LongitudeFunction>
         a             rr:PredicateObjectMap ;

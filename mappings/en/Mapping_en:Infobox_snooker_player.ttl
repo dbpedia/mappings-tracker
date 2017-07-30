@@ -1,0 +1,483 @@
+@base	          	<http://en.dbpedia.org/resource/Mapping_en:Infobox_snooker_player/> .
+@prefix schema: 	<http://schema.org/> .
+@prefix rr:    		<http://www.w3.org/ns/r2rml#> .
+@prefix owl:   		<http://www.w3.org/2002/07/owl#> .
+@prefix gml:   		<http://www.opengis.net/gml/> .
+@prefix xsd:   		<http://www.w3.org/2001/XMLSchema#> .
+@prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
+@prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
+@prefix dct:   		<http://purl.org/dc/terms/> .
+@prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
+@prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
+@prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
+@prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
+@prefix crml:  		<http://semweb.mmlab.be/ns/crml#> .
+@prefix fno:   		<http://w3id.org/function/ontology#> .
+@prefix georss: 	<http://www.georss.org/georss/> .
+@prefix dbf:   		<http://dbpedia.org/function/> .
+@prefix dbo:   		<http://dbpedia.org/ontology/> .
+@prefix mappings: 	<http://mappings.dbpedia.org/wiki/> .
+@prefix rdf:   		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix bibo:  		<http://purl.org/ontology/bibo/> .
+@prefix dul:   		<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix cidoccrm: 	<http://purl.org/NET/cidoc-crm/core#> .
+@prefix wikidata: 	<http://www.wikidata.org/entity/> .
+@prefix dc:    		<http://purl.org/dc/elements/1.1/> .
+
+
+### Main TriplesMap
+####################
+<http://en.dbpedia.org/resource/Mapping_en:Infobox_snooker_player>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <SimplePropertyMapping/8> ,
+			       <SimplePropertyMapping/11> ,
+			       <SimplePropertyMapping/9> ,
+			       <SimplePropertyMapping/12> ,
+			       <SimplePropertyMapping/13> ,
+			       <SimplePropertyMapping/14> ,
+			       <SimplePropertyMapping/1> ,
+			       <SimplePropertyMapping/2> ,
+			       <EndDateMapping/0> ,
+			       <SimplePropertyMapping/15> ,
+			       <SimplePropertyMapping/3> ,
+			       <SimplePropertyMapping/4> ,
+			       <SimplePropertyMapping/5> ,
+			       <StartDateMapping/0> ,
+			       <SimplePropertyMapping/6> ,
+			       <ConditionalMapping/0/Condition/0/ClassMapping> ,
+			       <SimplePropertyMapping/7> ,
+			       <SimplePropertyMapping/10> ,
+			       <SimplePropertyMapping/0> ;
+        rr:subjectMap          <SubjectMap> .
+
+
+### Main SubjectMap
+####################
+<SubjectMap>  a      rr:SubjectMap ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}" ;
+        rr:termType  rr:IRI .
+
+
+### LogicalSource
+##################
+
+<LogicalSource>  a                rml:LogicalSource ;
+        rml:iterator              "Infobox:Infobox_snooker_player" ;
+        rml:referenceFormulation  ql:wikitext ;
+        rml:source                "https://en.wikipedia.org/wiki/{wikititle}" .
+
+
+###########
+# Mappings
+###########
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:currentRank .
+
+### ObjectMap
+<SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Current rank" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:centuryBreaks .
+
+### ObjectMap
+<SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Century break" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:gross .
+
+### ObjectMap
+<SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Prize money" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/12>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/12/OM> ;
+        rr:predicate  dbo:bestFinish .
+
+### ObjectMap
+<SimplePropertyMapping/12/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Best finish" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/13>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/13/OM> ;
+        rr:predicate  dbo:rankingWins .
+
+### ObjectMap
+<SimplePropertyMapping/13/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Ranking wins" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/14>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/14/OM> ;
+        rr:predicate  dbo:otherWins .
+
+### ObjectMap
+<SimplePropertyMapping/14/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Other wins" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/1/OM> ;
+        rr:predicate  dbo:birthDate .
+
+### ObjectMap
+<SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "birth_date" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:birthPlace .
+
+### ObjectMap
+<SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "birth_place" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/15>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/15/OM> ;
+        rr:predicate  dbo:worldChampionTitleYear .
+
+### ObjectMap
+<SimplePropertyMapping/15/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "World champ" .
+
+
+### Predicate Object Map
+#########################
+<EndDateMapping/0>  a  rr:PredicateObjectMap ;
+        rr:objectMap  <EndDateMapping/0/FTM> ;
+        rr:predicate  dbo:activeYearsEndYear .
+
+### Function Term Map
+<EndDateMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <EndDateMapping/0/FTM/FV> .
+
+### Function Execution Mapping
+<EndDateMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/EndDateFunction> ,
+			       <EndDateMapping/0/FTM/FV/PropertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<EndDateMapping/0/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <EndDateMapping/0/FTM/FV/PropertyParameterPOM/OM> ;
+        rr:predicate  dbf:endDatePropertyParameter .
+
+### References
+<EndDateMapping/0/FTM/FV/PropertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Professional" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:deathDate .
+
+### ObjectMap
+<SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "death_date" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:deathPlace .
+
+### ObjectMap
+<SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "death_place" .
+
+
+### Predicate Object Map
+#########################
+<StartDateMapping/0>  a  rr:PredicateObjectMap ;
+        rr:objectMap  <StartDateMapping/0/FTM> ;
+        rr:predicate  dbo:activeYearsEndYear .
+
+### Function Term Map
+<StartDateMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <StartDateMapping/0/FTM/FV> .
+
+### Function Execution Mapping
+<StartDateMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/StartDateFunction> ,
+			       <StartDateMapping/0/FTM/FV/PropertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<StartDateMapping/0/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <StartDateMapping/0/FTM/FV/PropertyParameterPOM/OM> ;
+        rr:predicate  dbf:startDatePropertyParameter .
+
+### References
+<StartDateMapping/0/FTM/FV/PropertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Professional" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:sportCountry .
+
+### ObjectMap
+<SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Sport country" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:alias .
+
+### ObjectMap
+<SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Nickname" .
+
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:highestRank .
+
+### ObjectMap
+<SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "High ranking" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:highestBreak .
+
+### ObjectMap
+<SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "High break" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "name" .
+
+
+######################
+# Conditional Mappings
+######################
+
+
+### Conditional Mapping
+###################################
+<ConditionalMapping/0/Condition/0/ClassMapping>
+        a                    rr:PredicateObjectMap ;
+        crml:equalCondition  <ConditionalMapping/0/Condition/0/FTM> ;
+        crml:fallbackMap     <ConditionalMapping/0/Condition/1/ClassMapping> ;
+        rr:object            dbo:SnookerChamp ;
+        rr:predicate         rdf:type .
+
+### Function Term Map
+<ConditionalMapping/0/Condition/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/0/FTM/FV> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/IsSet> ,
+			       <ConditionalMapping/0/Condition/0/FTM/FV/PropertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/0/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/0/FTM/FV/PropertyParameterPOM/OM> ;
+        rr:predicate  <http://dbpedia.org/function/IsSet/propertyParameter> .
+
+### References
+<ConditionalMapping/0/Condition/0/FTM/FV/PropertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "World champ" .
+
+### Conditional Mapping
+###################################
+<ConditionalMapping/0/Condition/1/ClassMapping>
+        a                    rr:PredicateObjectMap ;
+        crml:equalCondition  <ConditionalMapping/0/Condition/1/FTM> ;
+        crml:fallbackMap     <ConditionalMapping/0/Condition/2/ClassMapping> ;
+        rr:object            dbo:SnookerWorldRanking ;
+        rr:predicate         rdf:type .
+
+### Function Term Map
+<ConditionalMapping/0/Condition/1/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/1/FTM/FV> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/1/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/IsSet> ,
+			       <ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM/OM> ;
+        rr:predicate  <http://dbpedia.org/function/IsSet/propertyParameter> .
+
+### References
+<ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "World champ" .
+
+
+### Conditional Mapping
+###################################
+<ConditionalMapping/0/Condition/2/ClassMapping>
+        a                    rr:PredicateObjectMap ;
+        crml:equalCondition  <ConditionalMapping/0/Condition/2/FTM> ;
+        rr:object            dbo:SnookerPlayer ;
+        rr:predicate         rdf:type .
+
+### Function Term Map
+<ConditionalMapping/0/Condition/2/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/2/FTM/FV> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/2/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/IsSet> ,
+			       <ConditionalMapping/0/Condition/2/FTM/FV/PropertyParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/2/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/2/FTM/FV/PropertyParameterPOM/OM> ;
+        rr:predicate  <http://dbpedia.org/function/IsSet/propertyParameter> .
+
+### References
+<ConditionalMapping/0/Condition/2/FTM/FV/PropertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "World champ" .
+
+
+
+############
+# Functions
+############
+
+
+<Function/IsSet>  a   rr:PredicateObjectMap ;
+        rr:object     dbf:IsSet ;
+        rr:predicate  fno:executes .
+
+<Function/StartDateFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:startDateFunction ;
+        rr:predicate  fno:executes .
+
+<Function/EndDateFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:endDateFunction ;
+        rr:predicate  fno:executes .
+
+
+### Functions SubjectMap
+#########################
+
+<SubjectMap/Function>
+        a            rr:SubjectMap ;
+        rr:class     fno:Execution ;
+        rr:termType  rr:BlankNode .

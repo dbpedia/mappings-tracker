@@ -35,7 +35,7 @@
 <http://it.dbpedia.org/resource/Mapping_it:Programma>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <ConditionalMapping/tipo_equals_radio> ;
+        rr:predicateObjectMap  <ConditionalMapping/0/Condition/0/ClassMapping> ;
         rr:subjectMap          <SubjectMap> .
 
 
@@ -65,51 +65,83 @@
 ######################
 
 
-### Conditional PredicateObjectMap
+### Conditional Mapping
 ###################################
-<ConditionalMapping/tipo_equals_radio>
+<ConditionalMapping/0/Condition/0/ClassMapping>
         a                    rr:PredicateObjectMap ;
-        crml:equalCondition  <ConditionalMapping/tipo_equals_radio/FTM> ;
-        crml:fallbackMap     <ConditionalMapping/tipo_equals_radio/1> ;
+        crml:equalCondition  <ConditionalMapping/0/Condition/0/FTM> ;
+        crml:fallbackMap     <ConditionalMapping/0/Condition/1/ClassMapping> ;
         rr:object            dbo:RadioProgram ;
         rr:predicate         rdf:type .
 
 ### Function Term Map
-<ConditionalMapping/tipo_equals_radio/FTM>
+<ConditionalMapping/0/Condition/0/FTM>
         a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <ConditionalMapping/tipo_equals_radio/FTM/FV> .
+        fnml:functionValue  <ConditionalMapping/0/Condition/0/FTM/FV> .
 
 ### Function Execution Mapping
-<ConditionalMapping/tipo_equals_radio/FTM/FV>
+<ConditionalMapping/0/Condition/0/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/equals> ,
-			       <ConditionalMapping/tipo_equals_radio/FTM/FV/ValueParameterPOM> ,
-			       <ConditionalMapping/tipo_equals_radio/FTM/FV/PropertyParameterPOM> ;
+        rr:predicateObjectMap  <Function/Equals> ,
+			       <ConditionalMapping/0/Condition/0/FTM/FV/PropertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/0/FTM/FV/ValueParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<ConditionalMapping/tipo_equals_radio/FTM/FV/ValueParameterPOM>
+<ConditionalMapping/0/Condition/0/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/0/FTM/FV/PropertyParameterPOM/OM> ;
+        rr:predicate  <http://dbpedia.org/function/Equals/propertyParameter> .
+
+<ConditionalMapping/0/Condition/0/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
         rr:object     "radio" ;
-        rr:predicate  <http://dbpedia.org/function/equals/valueParameter> .
-
-<ConditionalMapping/tipo_equals_radio/FTM/FV/PropertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/tipo_equals_radio/FTM/FV/PropertyParameterPOM/ObjectMap> ;
-        rr:predicate  <http://dbpedia.org/function/equals/propertyParameter> .
+        rr:predicate  <http://dbpedia.org/function/Equals/valueParameter> .
 
 ### References
-<ConditionalMapping/tipo_equals_radio/FTM/FV/PropertyParameterPOM/ObjectMap>
+<ConditionalMapping/0/Condition/0/FTM/FV/PropertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "tipo" .
 
-### Conditional PredicateObjectMap
+### Conditional Mapping
 ###################################
-<ConditionalMapping/tipo_equals_radio/1>
+<ConditionalMapping/0/Condition/1/ClassMapping>
+        a                    rr:PredicateObjectMap ;
+        crml:equalCondition  <ConditionalMapping/0/Condition/1/FTM> ;
+        rr:object            dbo:TelevisionShow ;
+        rr:predicate         rdf:type .
+
+### Function Term Map
+<ConditionalMapping/0/Condition/1/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/1/FTM/FV> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/1/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/Equals> ,
+			       <ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/1/FTM/FV/ValueParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     dbo:TelevisionShow ;
-        rr:predicate  rdf:type .
+        rr:objectMap  <ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM/OM> ;
+        rr:predicate  <http://dbpedia.org/function/Equals/propertyParameter> .
+
+<ConditionalMapping/0/Condition/1/FTM/FV/ValueParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "radio" ;
+        rr:predicate  <http://dbpedia.org/function/Equals/valueParameter> .
+
+### References
+<ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tipo" .
+
 
 
 ############
@@ -117,8 +149,8 @@
 ############
 
 
-<Function/equals>  a  rr:PredicateObjectMap ;
-        rr:object     dbf:equals ;
+<Function/Equals>  a  rr:PredicateObjectMap ;
+        rr:object     dbf:Equals ;
         rr:predicate  fno:executes .
 
 

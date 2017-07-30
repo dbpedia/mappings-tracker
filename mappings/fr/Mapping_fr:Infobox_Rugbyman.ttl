@@ -37,15 +37,20 @@
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <SimplePropertyMapping/4> ,
 			       <SimplePropertyMapping/6> ,
+			       <IntermediateMapping/0> ,
 			       <SimplePropertyMapping/1> ,
 			       <SimplePropertyMapping/2> ,
 			       <SimplePropertyMapping/5> ,
 			       <SimplePropertyMapping/7> ,
 			       <SimplePropertyMapping/8> ,
+			       <IntermediateMapping/1> ,
 			       <SimplePropertyMapping/10> ,
+			       <IntermediateMapping/2> ,
 			       <SimplePropertyMapping/9> ,
+			       <IntermediateMapping/3> ,
 			       <SimplePropertyMapping/3> ,
-			       <SimplePropertyMapping/0> ;
+			       <SimplePropertyMapping/0> ,
+			       <IntermediateMapping/4> ;
         rr:subjectMap          <SubjectMap> .
 
 
@@ -74,30 +79,11 @@
 #########################
 <SimplePropertyMapping/4>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/4/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/4/OM> ;
         rr:predicate  dbo:birthPlace .
 
-### Function Term Map
-<SimplePropertyMapping/4/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/4/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/4/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/4/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/4/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/4/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/4/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/4/OM>
         a              rr:ObjectMap ;
         rml:reference  "ville de naissance" .
 
@@ -106,63 +92,25 @@
 #########################
 <SimplePropertyMapping/6>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/6/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/6/OM> ;
         rr:predicate  dbo:deathDate .
 
-### Function Term Map
-<SimplePropertyMapping/6/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/6/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/6/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/6/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/6/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/6/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/6/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/6/OM>
         a              rr:ObjectMap ;
         rml:reference  "date de décès" .
+
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/1>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/1/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/1/OM> ;
         rr:predicate  dbo:birthName .
 
-### Function Term Map
-<SimplePropertyMapping/1/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/1/FTM/FV> ;
-        rr:language         "fr" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/1/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/1/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/1/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/1/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/1/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
         rml:reference  "nom complet" .
 
@@ -171,31 +119,11 @@
 #########################
 <SimplePropertyMapping/2>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/2/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/2/OM> ;
         rr:predicate  dbo:birthName .
 
-### Function Term Map
-<SimplePropertyMapping/2/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/2/FTM/FV> ;
-        rr:language         "fr" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/2/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/2/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/2/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/2/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/2/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
         rml:reference  "nom de naissance" .
 
@@ -204,30 +132,11 @@
 #########################
 <SimplePropertyMapping/5>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/5/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/5/OM> ;
         rr:predicate  dbo:nationality .
 
-### Function Term Map
-<SimplePropertyMapping/5/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/5/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/5/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/5/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/5/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/5/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/5/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/5/OM>
         a              rr:ObjectMap ;
         rml:reference  "pays de naissance" .
 
@@ -236,30 +145,11 @@
 #########################
 <SimplePropertyMapping/7>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/7/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/7/OM> ;
         rr:predicate  dbo:deathPlace .
 
-### Function Term Map
-<SimplePropertyMapping/7/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/7/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/7/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/7/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/7/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/7/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/7/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/7/OM>
         a              rr:ObjectMap ;
         rml:reference  "ville de décès" .
 
@@ -268,69 +158,26 @@
 #########################
 <SimplePropertyMapping/8>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/8/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/8/OM> ;
         rr:predicate  dbo:height .
 
-### Function Term Map
-<SimplePropertyMapping/8/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/8/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/Length> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/8/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/8/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/8/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/8/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/8/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-<SimplePropertyMapping/8/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "Length" ;
-        rr:predicate  dbf:unitParameter .
-
-### References
-<SimplePropertyMapping/8/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/8/OM>
         a              rr:ObjectMap ;
         rml:reference  "taille" .
+
+
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/10/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/10/OM> ;
         rr:predicate  dbo:position .
 
-### Function Term Map
-<SimplePropertyMapping/10/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/10/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/10/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/10/OM>
         a              rr:ObjectMap ;
         rml:reference  "position" .
 
@@ -339,121 +186,377 @@
 #########################
 <SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/9/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/9/OM> ;
         rr:predicate  foaf:nick .
 
-### Function Term Map
-<SimplePropertyMapping/9/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/9/FTM/FV> ;
-        rr:language         "fr" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/9/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/9/OM>
         a              rr:ObjectMap ;
         rml:reference  "surnom" .
+
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/3>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/3/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/3/OM> ;
         rr:predicate  dbo:birthDate .
 
-### Function Term Map
-<SimplePropertyMapping/3/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/3/FTM/FV> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/3/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/3/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/3/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/3/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/3/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/3/OM>
         a              rr:ObjectMap ;
         rml:reference  "date de naissance" .
+
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/0>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/0/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/0/OM> ;
         rr:predicate  foaf:name .
 
-### Function Term Map
-<SimplePropertyMapping/0/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/0/FTM/FV> ;
-        rr:language         "fr" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/0/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/0/OM>
         a              rr:ObjectMap ;
         rml:reference  "nom" .
+
+
+##############################
+### Intermediate Mappings
+##############################
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/OM> ;
+        rr:predicate  dbo:playerSeason .
+
+## Intermediate Object Map
+<IntermediateMapping/0/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/0/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/0/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/0/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/2> ;
+        rr:subjectMap          <IntermediateMapping/0/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/0/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:SportsEvent ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__0" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:teamPoint .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "matchs points" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/1/OM> ;
+        rr:predicate  dbo:team .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "club" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/0/OM> ;
+        rr:predicate  dbo:season .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "saison" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/OM> ;
+        rr:predicate  dbo:juniorSeason .
+
+## Intermediate Object Map
+<IntermediateMapping/1/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/1/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/1/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/1/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/1/SimplePropertyMapping/1> ;
+        rr:subjectMap          <IntermediateMapping/1/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/1/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:SportsEvent ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__1" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/1/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/1/OM> ;
+        rr:predicate  dbo:juniorTeam .
+
+### ObjectMap
+<IntermediateMapping/1/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "club junior" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/1/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/0/OM> ;
+        rr:predicate  dbo:season .
+
+### ObjectMap
+<IntermediateMapping/1/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "saison junior" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/OM> ;
+        rr:predicate  dbo:nationalSelection .
+
+## Intermediate Object Map
+<IntermediateMapping/2/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/2/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/2/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/2/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/2> ;
+        rr:subjectMap          <IntermediateMapping/2/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/2/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:SportsEvent ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__2" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/2/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:selectionPoint .
+
+### ObjectMap
+<IntermediateMapping/2/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "matchs points nationale" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/2/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/1/OM> ;
+        rr:predicate  dbo:nationalTeam .
+
+### ObjectMap
+<IntermediateMapping/2/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "équipe nationale" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/2/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/0/OM> ;
+        rr:predicate  dbo:selectionYear .
+
+### ObjectMap
+<IntermediateMapping/2/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "année nationale" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/OM> ;
+        rr:predicate  dbo:stateOfOrigin .
+
+## Intermediate Object Map
+<IntermediateMapping/3/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/3/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/3/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/3/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/2> ;
+        rr:subjectMap          <IntermediateMapping/3/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/3/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:SportsEvent ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__3" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/3/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:stateOfOriginPoint .
+
+### ObjectMap
+<IntermediateMapping/3/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "matchs points state of origin" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/3/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/1/OM> ;
+        rr:predicate  dbo:stateOfOriginTeam .
+
+### ObjectMap
+<IntermediateMapping/3/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "équipe state of origin" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/3/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/0/OM> ;
+        rr:predicate  dbo:stateOfOriginYear .
+
+### ObjectMap
+<IntermediateMapping/3/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "année state of origin" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/OM> ;
+        rr:predicate  dbo:managerSeason .
+
+## Intermediate Object Map
+<IntermediateMapping/4/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/4/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/4/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/4/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/2> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/3> ;
+        rr:subjectMap          <IntermediateMapping/4/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/4/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:SportsEvent ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__4" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/4/SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:teamManager .
+
+### ObjectMap
+<IntermediateMapping/4/SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "club entraîneur" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/4/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:teamManager .
+
+### ObjectMap
+<IntermediateMapping/4/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "club entraineur" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/4/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/1/OM> ;
+        rr:predicate  dbo:season .
+
+### ObjectMap
+<IntermediateMapping/4/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "saison entraîneur" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/4/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/0/OM> ;
+        rr:predicate  dbo:season .
+
+### ObjectMap
+<IntermediateMapping/4/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "saison entraineur" .
 
 
 ######################
 # Conditional Mappings
 ######################
-
-
-
-############
-# Functions
-############
-
-
-<Function/SimplePropertyFunction>
-        a             rr:PredicateObjectMap ;
-        rr:object     dbf:simplePropertyFunction ;
-        rr:predicate  fno:executes .
-
-
-### Functions SubjectMap
-#########################
-
-<SubjectMap/Function>
-        a            rr:SubjectMap ;
-        rr:class     fno:Execution ;
-        rr:termType  rr:BlankNode .

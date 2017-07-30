@@ -35,9 +35,24 @@
 <http://fr.dbpedia.org/resource/Mapping_fr:Pistes>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <CorrespondingProperty> ,
+        rr:predicateObjectMap  <IntermediateMapping/2> ,
+			       <IntermediateMapping/1> ,
+			       <IntermediateMapping/14> ,
+			       <IntermediateMapping/9> ,
+			       <IntermediateMapping/11> ,
+			       <IntermediateMapping/5> ,
+			       <IntermediateMapping/0> ,
+			       <SimplePropertyMapping/1> ,
+			       <IntermediateMapping/12> ,
+			       <IntermediateMapping/8> ,
+			       <IntermediateMapping/7> ,
+			       <IntermediateMapping/4> ,
+			       <IntermediateMapping/3> ,
 			       <SimplePropertyMapping/0> ,
-			       <SimplePropertyMapping/1> ;
+			       <IntermediateMapping/10> ,
+			       <CorrespondingProperty> ,
+			       <IntermediateMapping/6> ,
+			       <IntermediateMapping/13> ;
         rr:subjectMap          <SubjectMap> .
 
 
@@ -62,107 +77,2932 @@
 # Mappings
 ###########
 
+
+
+
+
+
+
+
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/1>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/1/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/1/OM> ;
         rr:predicate  dbo:runtime .
 
-### Function Term Map
-<SimplePropertyMapping/1/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/1/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/minute> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/1/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/1/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/1/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/1/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/1/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-<SimplePropertyMapping/1/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "minute" ;
-        rr:predicate  dbf:unitParameter .
-
-### References
-<SimplePropertyMapping/1/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
         rml:reference  "total_temps" .
+
+
+
+
+
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/0>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/0/FTM> ;
+        rr:objectMap  <SimplePropertyMapping/0/OM> ;
         rr:predicate  dbo:description .
 
-### Function Term Map
-<SimplePropertyMapping/0/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/0/FTM/FV> ;
-        rr:language         "fr" .
-
-### Function Execution Mapping
-<SimplePropertyMapping/0/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/ObjectMap> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/ObjectMap>
+### ObjectMap
+<SimplePropertyMapping/0/OM>
         a              rr:ObjectMap ;
         rml:reference  "titre" .
 
 
-### Predicate Object Map
-#########################
-<CorrespondingProperty>
+
+
+
+
+##############################
+### Intermediate Mappings
+##############################
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/2>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <CorrespondingProperty/ObjectMap> ;
-        rr:predicate  dbo:album .
+        rr:objectMap  <IntermediateMapping/2/OM> ;
+        rr:predicate  dbo:division .
+
+## Intermediate Object Map
+<IntermediateMapping/2/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/2/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/2/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/2/SimplePropertyMapping/11> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/5> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/10> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/8> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/7> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/2> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/9> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/4> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/3> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/6> ;
+        rr:subjectMap          <IntermediateMapping/2/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/2/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:Song ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__2" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/2/SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:comment .
+
+### ObjectMap
+<IntermediateMapping/2/SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "note3" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/2/SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/2/SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "paroles3" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/2/SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/2/SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "length3" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/2/SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/2/SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_musique" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/2/SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/2/SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "musique3" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/2/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/2/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "piste3" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/2/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:trackNumber .
+
+### ObjectMap
+<IntermediateMapping/2/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "numero3" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/2/SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/2/SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "temps3" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/2/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/1/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/2/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "title3" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/2/SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/2/SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_ecriture" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/2/SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/2/SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "auteur3" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/2/SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/2/SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_paroles" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/OM> ;
+        rr:predicate  dbo:division .
+
+## Intermediate Object Map
+<IntermediateMapping/1/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/1/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/1/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/1/SimplePropertyMapping/8> ,
+			       <IntermediateMapping/1/SimplePropertyMapping/9> ,
+			       <IntermediateMapping/1/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/1/SimplePropertyMapping/2> ,
+			       <IntermediateMapping/1/SimplePropertyMapping/3> ,
+			       <IntermediateMapping/1/SimplePropertyMapping/4> ,
+			       <IntermediateMapping/1/SimplePropertyMapping/5> ,
+			       <IntermediateMapping/1/SimplePropertyMapping/6> ,
+			       <IntermediateMapping/1/SimplePropertyMapping/10> ,
+			       <IntermediateMapping/1/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/1/SimplePropertyMapping/7> ,
+			       <IntermediateMapping/1/SimplePropertyMapping/11> ;
+        rr:subjectMap          <IntermediateMapping/1/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/1/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:Song ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__1" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/1/SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/1/SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_musique" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/1/SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/1/SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "temps2" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/1/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/1/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/1/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "title2" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/1/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:trackNumber .
+
+### ObjectMap
+<IntermediateMapping/1/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "numero2" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/1/SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/1/SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "auteur2" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/1/SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/1/SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_ecriture" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/1/SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/1/SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "paroles2" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/1/SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/1/SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_paroles" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/1/SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/1/SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "length2" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/1/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/1/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "piste2" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/1/SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/1/SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "musique2" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/1/SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:comment .
+
+### ObjectMap
+<IntermediateMapping/1/SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "note2" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/14>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/14/OM> ;
+        rr:predicate  dbo:division .
+
+## Intermediate Object Map
+<IntermediateMapping/14/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/14/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/14/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/14/SimplePropertyMapping/6> ,
+			       <IntermediateMapping/14/SimplePropertyMapping/11> ,
+			       <IntermediateMapping/14/SimplePropertyMapping/10> ,
+			       <IntermediateMapping/14/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/14/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/14/SimplePropertyMapping/9> ,
+			       <IntermediateMapping/14/SimplePropertyMapping/3> ,
+			       <IntermediateMapping/14/SimplePropertyMapping/8> ,
+			       <IntermediateMapping/14/SimplePropertyMapping/5> ,
+			       <IntermediateMapping/14/SimplePropertyMapping/2> ,
+			       <IntermediateMapping/14/SimplePropertyMapping/4> ,
+			       <IntermediateMapping/14/SimplePropertyMapping/7> ;
+        rr:subjectMap          <IntermediateMapping/14/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/14/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:Song ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__14" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/14/SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:comment .
+
+### ObjectMap
+<IntermediateMapping/14/SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "note15" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/14/SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/14/SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_paroles" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/14/SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/14/SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "length15" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/14/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/1/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/14/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "title15" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/14/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/14/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "piste15" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/14/SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/14/SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "temps15" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/14/SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/14/SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "auteur15" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/14/SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/14/SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_musique" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/14/SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/14/SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "paroles15" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/14/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:trackNumber .
+
+### ObjectMap
+<IntermediateMapping/14/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "numero15" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/14/SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/14/SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_ecriture" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/14/SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/14/SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "musique15" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/9/OM> ;
+        rr:predicate  dbo:division .
+
+## Intermediate Object Map
+<IntermediateMapping/9/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/9/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/9/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/9/SimplePropertyMapping/4> ,
+			       <IntermediateMapping/9/SimplePropertyMapping/5> ,
+			       <IntermediateMapping/9/SimplePropertyMapping/6> ,
+			       <IntermediateMapping/9/SimplePropertyMapping/7> ,
+			       <IntermediateMapping/9/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/9/SimplePropertyMapping/9> ,
+			       <IntermediateMapping/9/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/9/SimplePropertyMapping/8> ,
+			       <IntermediateMapping/9/SimplePropertyMapping/2> ,
+			       <IntermediateMapping/9/SimplePropertyMapping/10> ,
+			       <IntermediateMapping/9/SimplePropertyMapping/3> ,
+			       <IntermediateMapping/9/SimplePropertyMapping/11> ;
+        rr:subjectMap          <IntermediateMapping/9/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/9/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:Song ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__9" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/9/SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/9/SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_ecriture" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/9/SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/9/SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "paroles10" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/9/SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/9/SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_paroles" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/9/SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/9/SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "musique10" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/9/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/1/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/9/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "title10" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/9/SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/9/SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "temps10" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/9/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/9/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "piste10" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/9/SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/9/SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_musique" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/9/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:trackNumber .
+
+### ObjectMap
+<IntermediateMapping/9/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "numero10" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/9/SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/9/SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "length10" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/9/SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/9/SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "auteur10" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/9/SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:comment .
+
+### ObjectMap
+<IntermediateMapping/9/SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "note10" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/11/OM> ;
+        rr:predicate  dbo:division .
+
+## Intermediate Object Map
+<IntermediateMapping/11/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/11/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/11/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/11/SimplePropertyMapping/9> ,
+			       <IntermediateMapping/11/SimplePropertyMapping/2> ,
+			       <IntermediateMapping/11/SimplePropertyMapping/7> ,
+			       <IntermediateMapping/11/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/11/SimplePropertyMapping/8> ,
+			       <IntermediateMapping/11/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/11/SimplePropertyMapping/5> ,
+			       <IntermediateMapping/11/SimplePropertyMapping/10> ,
+			       <IntermediateMapping/11/SimplePropertyMapping/3> ,
+			       <IntermediateMapping/11/SimplePropertyMapping/6> ,
+			       <IntermediateMapping/11/SimplePropertyMapping/11> ,
+			       <IntermediateMapping/11/SimplePropertyMapping/4> ;
+        rr:subjectMap          <IntermediateMapping/11/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/11/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:Song ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__11" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/11/SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/11/SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "temps12" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/11/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:trackNumber .
+
+### ObjectMap
+<IntermediateMapping/11/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "numero12" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/11/SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/11/SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "musique12" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/11/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/11/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "piste12" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/11/SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/11/SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_musique" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/11/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/1/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/11/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "title12" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/11/SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/11/SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "paroles12" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/11/SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/11/SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "length12" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/11/SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/11/SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "auteur12" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/11/SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:comment .
+
+### ObjectMap
+<IntermediateMapping/11/SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "note12" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/11/SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/11/SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_paroles" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/11/SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/11/SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_ecriture" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/5/OM> ;
+        rr:predicate  dbo:division .
+
+## Intermediate Object Map
+<IntermediateMapping/5/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/5/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/5/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/5/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/5/SimplePropertyMapping/5> ,
+			       <IntermediateMapping/5/SimplePropertyMapping/2> ,
+			       <IntermediateMapping/5/SimplePropertyMapping/10> ,
+			       <IntermediateMapping/5/SimplePropertyMapping/7> ,
+			       <IntermediateMapping/5/SimplePropertyMapping/4> ,
+			       <IntermediateMapping/5/SimplePropertyMapping/9> ,
+			       <IntermediateMapping/5/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/5/SimplePropertyMapping/6> ,
+			       <IntermediateMapping/5/SimplePropertyMapping/3> ,
+			       <IntermediateMapping/5/SimplePropertyMapping/8> ,
+			       <IntermediateMapping/5/SimplePropertyMapping/11> ;
+        rr:subjectMap          <IntermediateMapping/5/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/5/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:Song ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__5" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/5/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/5/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "piste6" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/5/SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/5/SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "paroles6" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/5/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:trackNumber .
+
+### ObjectMap
+<IntermediateMapping/5/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "numero6" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/5/SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/5/SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "length6" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/5/SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/5/SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "musique6" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/5/SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/5/SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_ecriture" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/5/SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/5/SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "temps6" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/5/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/1/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/5/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "title6" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/5/SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/5/SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_paroles" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/5/SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/5/SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "auteur6" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/5/SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/5/SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_musique" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/5/SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:comment .
+
+### ObjectMap
+<IntermediateMapping/5/SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "note6" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/OM> ;
+        rr:predicate  dbo:division .
+
+## Intermediate Object Map
+<IntermediateMapping/0/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/0/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/0/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/0/SimplePropertyMapping/5> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/2> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/8> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/10> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/3> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/9> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/6> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/11> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/4> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/7> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/1> ;
+        rr:subjectMap          <IntermediateMapping/0/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/0/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:Song ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__0" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "paroles1" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:trackNumber .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "numero1" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_musique" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "length1" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "auteur1" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "temps1" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_paroles" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "piste1" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:comment .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "note1" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_ecriture" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "musique1" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/1/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "title1" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/12>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/12/OM> ;
+        rr:predicate  dbo:division .
+
+## Intermediate Object Map
+<IntermediateMapping/12/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/12/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/12/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/12/SimplePropertyMapping/5> ,
+			       <IntermediateMapping/12/SimplePropertyMapping/10> ,
+			       <IntermediateMapping/12/SimplePropertyMapping/4> ,
+			       <IntermediateMapping/12/SimplePropertyMapping/11> ,
+			       <IntermediateMapping/12/SimplePropertyMapping/3> ,
+			       <IntermediateMapping/12/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/12/SimplePropertyMapping/2> ,
+			       <IntermediateMapping/12/SimplePropertyMapping/9> ,
+			       <IntermediateMapping/12/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/12/SimplePropertyMapping/8> ,
+			       <IntermediateMapping/12/SimplePropertyMapping/7> ,
+			       <IntermediateMapping/12/SimplePropertyMapping/6> ;
+        rr:subjectMap          <IntermediateMapping/12/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/12/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:Song ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__12" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/12/SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/12/SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "paroles13" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/12/SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/12/SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "length13" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/12/SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/12/SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_ecriture" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/12/SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:comment .
+
+### ObjectMap
+<IntermediateMapping/12/SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "note13" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/12/SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/12/SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "auteur13" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/12/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/1/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/12/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "title13" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/12/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:trackNumber .
+
+### ObjectMap
+<IntermediateMapping/12/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "numero13" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/12/SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/12/SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "temps13" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/12/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/12/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "piste13" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/12/SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/12/SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_musique" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/12/SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/12/SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "musique13" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/12/SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/12/SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_paroles" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/8/OM> ;
+        rr:predicate  dbo:division .
+
+## Intermediate Object Map
+<IntermediateMapping/8/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/8/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/8/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/8/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/8/SimplePropertyMapping/2> ,
+			       <IntermediateMapping/8/SimplePropertyMapping/7> ,
+			       <IntermediateMapping/8/SimplePropertyMapping/10> ,
+			       <IntermediateMapping/8/SimplePropertyMapping/5> ,
+			       <IntermediateMapping/8/SimplePropertyMapping/8> ,
+			       <IntermediateMapping/8/SimplePropertyMapping/11> ,
+			       <IntermediateMapping/8/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/8/SimplePropertyMapping/3> ,
+			       <IntermediateMapping/8/SimplePropertyMapping/6> ,
+			       <IntermediateMapping/8/SimplePropertyMapping/4> ,
+			       <IntermediateMapping/8/SimplePropertyMapping/9> ;
+        rr:subjectMap          <IntermediateMapping/8/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/8/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:Song ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__8" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/8/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/1/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/8/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "title9" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/8/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:trackNumber .
+
+### ObjectMap
+<IntermediateMapping/8/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "numero9" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/8/SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/8/SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "musique9" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/8/SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/8/SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "length9" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/8/SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/8/SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "paroles9" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/8/SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/8/SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_musique" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/8/SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:comment .
+
+### ObjectMap
+<IntermediateMapping/8/SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "note9" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/8/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/8/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "piste9" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/8/SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/8/SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "auteur9" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/8/SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/8/SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_paroles" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/8/SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/8/SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_ecriture" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/8/SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/8/SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "temps9" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/7/OM> ;
+        rr:predicate  dbo:division .
+
+## Intermediate Object Map
+<IntermediateMapping/7/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/7/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/7/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/7/SimplePropertyMapping/10> ,
+			       <IntermediateMapping/7/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/7/SimplePropertyMapping/5> ,
+			       <IntermediateMapping/7/SimplePropertyMapping/8> ,
+			       <IntermediateMapping/7/SimplePropertyMapping/6> ,
+			       <IntermediateMapping/7/SimplePropertyMapping/3> ,
+			       <IntermediateMapping/7/SimplePropertyMapping/4> ,
+			       <IntermediateMapping/7/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/7/SimplePropertyMapping/9> ,
+			       <IntermediateMapping/7/SimplePropertyMapping/11> ,
+			       <IntermediateMapping/7/SimplePropertyMapping/2> ,
+			       <IntermediateMapping/7/SimplePropertyMapping/7> ;
+        rr:subjectMap          <IntermediateMapping/7/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/7/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:Song ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__7" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/7/SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/7/SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "length8" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/7/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/7/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "piste8" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/7/SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/7/SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "paroles8" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/7/SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/7/SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_musique" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/7/SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/7/SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_paroles" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/7/SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/7/SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "auteur8" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/7/SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/7/SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_ecriture" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/7/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/1/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/7/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "title8" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/7/SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/7/SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "temps8" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/7/SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:comment .
+
+### ObjectMap
+<IntermediateMapping/7/SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "note8" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/7/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:trackNumber .
+
+### ObjectMap
+<IntermediateMapping/7/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "numero8" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/7/SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/7/SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "musique8" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/OM> ;
+        rr:predicate  dbo:division .
+
+## Intermediate Object Map
+<IntermediateMapping/4/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/4/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/4/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/4/SimplePropertyMapping/3> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/2> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/9> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/8> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/5> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/7> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/11> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/10> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/4> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/6> ;
+        rr:subjectMap          <IntermediateMapping/4/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/4/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:Song ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__4" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/4/SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/4/SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "auteur5" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/4/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:trackNumber .
+
+### ObjectMap
+<IntermediateMapping/4/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "numero5" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/4/SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/4/SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "temps5" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/4/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/1/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/4/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "title5" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/4/SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/4/SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_musique" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/4/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/4/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "piste5" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/4/SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/4/SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "paroles5" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/4/SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/4/SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "musique5" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/4/SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:comment .
+
+### ObjectMap
+<IntermediateMapping/4/SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "note5" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/4/SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/4/SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "length5" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/4/SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/4/SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_ecriture" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/4/SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/4/SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_paroles" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/OM> ;
+        rr:predicate  dbo:division .
+
+## Intermediate Object Map
+<IntermediateMapping/3/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/3/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/3/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/3/SimplePropertyMapping/3> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/8> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/9> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/6> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/11> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/10> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/7> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/4> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/5> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/2> ;
+        rr:subjectMap          <IntermediateMapping/3/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/3/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:Song ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__3" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/3/SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/3/SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "auteur4" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/3/SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/3/SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_musique" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/3/SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/3/SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "temps4" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/3/SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/3/SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_paroles" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/3/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/3/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "piste4" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/3/SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:comment .
+
+### ObjectMap
+<IntermediateMapping/3/SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "note4" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/3/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/1/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/3/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "title4" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/3/SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/3/SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "length4" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/3/SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/3/SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "musique4" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/3/SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/3/SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_ecriture" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/3/SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/3/SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "paroles4" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/3/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:trackNumber .
+
+### ObjectMap
+<IntermediateMapping/3/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "numero4" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/OM> ;
+        rr:predicate  dbo:division .
+
+## Intermediate Object Map
+<IntermediateMapping/10/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/10/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/10/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/10/SimplePropertyMapping/4> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/11> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/6> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/8> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/5> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/3> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/2> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/7> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/9> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/10> ;
+        rr:subjectMap          <IntermediateMapping/10/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/10/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:Song ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__10" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/10/SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/10/SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_ecriture" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/10/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/1/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/10/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "title11" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/10/SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:comment .
+
+### ObjectMap
+<IntermediateMapping/10/SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "note11" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/10/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/10/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "piste11" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/10/SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/10/SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_paroles" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/10/SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/10/SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_musique" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/10/SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/10/SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "paroles11" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/10/SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/10/SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "auteur11" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/10/SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/10/SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "musique11" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/10/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:trackNumber .
+
+### ObjectMap
+<IntermediateMapping/10/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "numero11" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/10/SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/10/SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "temps11" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/10/SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/10/SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "length11" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/6/OM> ;
+        rr:predicate  dbo:division .
+
+## Intermediate Object Map
+<IntermediateMapping/6/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/6/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/6/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/6/SimplePropertyMapping/2> ,
+			       <IntermediateMapping/6/SimplePropertyMapping/7> ,
+			       <IntermediateMapping/6/SimplePropertyMapping/4> ,
+			       <IntermediateMapping/6/SimplePropertyMapping/9> ,
+			       <IntermediateMapping/6/SimplePropertyMapping/6> ,
+			       <IntermediateMapping/6/SimplePropertyMapping/8> ,
+			       <IntermediateMapping/6/SimplePropertyMapping/10> ,
+			       <IntermediateMapping/6/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/6/SimplePropertyMapping/3> ,
+			       <IntermediateMapping/6/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/6/SimplePropertyMapping/5> ,
+			       <IntermediateMapping/6/SimplePropertyMapping/11> ;
+        rr:subjectMap          <IntermediateMapping/6/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/6/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:Song ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__6" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/6/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:trackNumber .
+
+### ObjectMap
+<IntermediateMapping/6/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "numero7" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/6/SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/6/SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "musique7" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/6/SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/6/SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_ecriture" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/6/SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/6/SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "temps7" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/6/SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/6/SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_paroles" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/6/SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/6/SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_musique" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/6/SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/6/SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "length7" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/6/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/1/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/6/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "title7" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/6/SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/6/SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "auteur7" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/6/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/6/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "piste7" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/6/SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/6/SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "paroles7" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/6/SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:comment .
+
+### ObjectMap
+<IntermediateMapping/6/SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "note7" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/13>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/13/OM> ;
+        rr:predicate  dbo:division .
+
+## Intermediate Object Map
+<IntermediateMapping/13/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/13/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/13/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/13/SimplePropertyMapping/10> ,
+			       <IntermediateMapping/13/SimplePropertyMapping/4> ,
+			       <IntermediateMapping/13/SimplePropertyMapping/6> ,
+			       <IntermediateMapping/13/SimplePropertyMapping/2> ,
+			       <IntermediateMapping/13/SimplePropertyMapping/9> ,
+			       <IntermediateMapping/13/SimplePropertyMapping/8> ,
+			       <IntermediateMapping/13/SimplePropertyMapping/3> ,
+			       <IntermediateMapping/13/SimplePropertyMapping/5> ,
+			       <IntermediateMapping/13/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/13/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/13/SimplePropertyMapping/11> ,
+			       <IntermediateMapping/13/SimplePropertyMapping/7> ;
+        rr:subjectMap          <IntermediateMapping/13/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/13/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:Song ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__13" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/13/SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/13/SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "length14" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/13/SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/13/SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_ecriture" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/13/SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/13/SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_paroles" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/13/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:trackNumber .
+
+### ObjectMap
+<IntermediateMapping/13/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "numero14" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/13/SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:runtime .
+
+### ObjectMap
+<IntermediateMapping/13/SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "temps14" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/13/SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/13/SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "tout_musique" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/13/SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:writer .
+
+### ObjectMap
+<IntermediateMapping/13/SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "auteur14" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/13/SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:lyrics .
+
+### ObjectMap
+<IntermediateMapping/13/SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "paroles14" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/13/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/13/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "piste14" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/13/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/1/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<IntermediateMapping/13/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "title14" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/13/SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:comment .
+
+### ObjectMap
+<IntermediateMapping/13/SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "note14" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/13/SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:composer .
+
+### ObjectMap
+<IntermediateMapping/13/SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "musique14" .
 
 
 ######################
 # Conditional Mappings
 ######################
-
-
-
-############
-# Functions
-############
-
-
-<Function/SimplePropertyFunction>
-        a             rr:PredicateObjectMap ;
-        rr:object     dbf:simplePropertyFunction ;
-        rr:predicate  fno:executes .
-
-
-### Functions SubjectMap
-#########################
-
-<SubjectMap/Function>
-        a            rr:SubjectMap ;
-        rr:class     fno:Execution ;
-        rr:termType  rr:BlankNode .
