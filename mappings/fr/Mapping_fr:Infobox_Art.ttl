@@ -1,0 +1,753 @@
+@base	          	<http://fr.dbpedia.org/resource/Mapping_fr:Infobox_Art/> .
+@prefix schema: 	<http://schema.org/> .
+@prefix rr:    		<http://www.w3.org/ns/r2rml#> .
+@prefix owl:   		<http://www.w3.org/2002/07/owl#> .
+@prefix gml:   		<http://www.opengis.net/gml/> .
+@prefix xsd:   		<http://www.w3.org/2001/XMLSchema#> .
+@prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
+@prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
+@prefix dct:   		<http://purl.org/dc/terms/> .
+@prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
+@prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
+@prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
+@prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
+@prefix crml:  		<http://semweb.mmlab.be/ns/crml#> .
+@prefix fno:   		<http://w3id.org/function/ontology#> .
+@prefix georss: 	<http://www.georss.org/georss/> .
+@prefix dbf:   		<http://dbpedia.org/function/> .
+@prefix dbo:   		<http://dbpedia.org/ontology/> .
+@prefix mappings: 	<http://mappings.dbpedia.org/wiki/> .
+@prefix rdf:   		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix bibo:  		<http://purl.org/ontology/bibo/> .
+@prefix dul:   		<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix cidoccrm: 	<http://purl.org/NET/cidoc-crm/core#> .
+@prefix wikidata: 	<http://www.wikidata.org/entity/> .
+@prefix dc:    		<http://purl.org/dc/elements/1.1/> .
+
+
+### Main TriplesMap
+####################
+<http://fr.dbpedia.org/resource/Mapping_fr:Infobox_Art>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <SimplePropertyMapping/3> ,
+			       <LongitudeMapping/0> ,
+			       <SimplePropertyMapping/0> ,
+			       <SimplePropertyMapping/16> ,
+			       <SimplePropertyMapping/13> ,
+			       <SimplePropertyMapping/15> ,
+			       <SimplePropertyMapping/5> ,
+			       <LatitudeMapping/0> ,
+			       <SimplePropertyMapping/7> ,
+			       <SimplePropertyMapping/4> ,
+			       <SimplePropertyMapping/2> ,
+			       <SimplePropertyMapping/1> ,
+			       <SimplePropertyMapping/17> ,
+			       <ConditionalMapping/0/Condition/0/ClassMapping> ,
+			       <SimplePropertyMapping/9> ,
+			       <SimplePropertyMapping/6> ,
+			       <SimplePropertyMapping/10> ,
+			       <SimplePropertyMapping/8> ,
+			       <SimplePropertyMapping/12> ,
+			       <SimplePropertyMapping/14> ,
+			       <SimplePropertyMapping/11> ;
+        rr:subjectMap          <SubjectMap> .
+
+
+### Main SubjectMap
+####################
+<SubjectMap>  a      rr:SubjectMap ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}" ;
+        rr:termType  rr:IRI .
+
+
+### LogicalSource
+##################
+
+<LogicalSource>  a                rml:LogicalSource ;
+        rml:iterator              "Infobox:Infobox_Art" ;
+        rml:referenceFormulation  ql:wikitext ;
+        rml:source                "https://fr.wikipedia.org/wiki/{wikititle}" .
+
+
+###########
+# Mappings
+###########
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/3>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/3/OM> ;
+        rr:predicate  dbo:creationYear .
+
+### ObjectMap
+<SimplePropertyMapping/3/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "année" .
+
+
+### Predicate Object Map
+#########################
+<LongitudeMapping/0>  a  rr:PredicateObjectMap ;
+        rr:objectMap  <LongitudeMapping/0/FTM> ;
+        rr:predicate  geo:long .
+
+### Function Term Map
+<LongitudeMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <LongitudeMapping/0/FTM/FV> .
+
+### Function Execution Mapping
+<LongitudeMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/LongitudeFunction> ,
+			       <LongitudeMapping/0/FTM/FV/ParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<LongitudeMapping/0/FTM/FV/ParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <LongitudeMapping/0/FTM/FV/ParameterPOM/OM> ;
+        rr:predicate  dbf:lonParameter .
+
+### References
+<LongitudeMapping/0/FTM/FV/ParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "longitude" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/0/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "titre" ;
+        rr:language    "fr" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/16>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/16/OM> ;
+        rr:predicate  dbo:technique .
+
+### ObjectMap
+<SimplePropertyMapping/16/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "technique" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/13>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/13/OM> ;
+        rr:predicate  rdfs:comment .
+
+### ObjectMap
+<SimplePropertyMapping/13/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "commentaire" ;
+        rr:language    "fr" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/15>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/15/OM> ;
+        rr:predicate  dbo:imageSize .
+
+### ObjectMap
+<SimplePropertyMapping/15/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "taille" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/5>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:city .
+
+### ObjectMap
+<SimplePropertyMapping/5/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "ville" .
+
+
+### Predicate Object Map
+#########################
+<LatitudeMapping/0>  a  rr:PredicateObjectMap ;
+        rr:objectMap  <LatitudeMapping/0/FTM> ;
+        rr:predicate  geo:lat .
+
+### Function Term Map
+<LatitudeMapping/0/FTM>
+        a                      fnml:FunctionTermMap , rr:TriplesMap ;
+        fnml:functionValue     <LatitudeMapping/0/FTM> ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/LatitudeFunction> , <LatitudeMapping/0/FTM/ParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Function Execution Mapping
+<LatitudeMapping/0/FTM>
+        a                      fnml:FunctionTermMap ,
+			       rr:TriplesMap ;
+        fnml:functionValue     <LatitudeMapping/0/FTM> ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/LatitudeFunction> ,
+			       <LatitudeMapping/0/FTM/ParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<LatitudeMapping/0/FTM/ParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <LatitudeMapping/0/FTM/ParameterPOM/OM> ;
+        rr:predicate  dbf:latParameter .
+
+### References
+<LatitudeMapping/0/FTM/ParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "latitude" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:location .
+
+### ObjectMap
+<SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "localisation" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/4>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/4/OM> ;
+        rr:predicate  dbo:location .
+
+### ObjectMap
+<SimplePropertyMapping/4/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "ville" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:museum .
+
+### ObjectMap
+<SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "musée" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/17>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/17/OM> ;
+        rr:predicate  dbo:technique .
+
+### ObjectMap
+<SimplePropertyMapping/17/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "type" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/1/OM> ;
+        rr:predicate  dbo:author .
+
+### ObjectMap
+<SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "artiste" .
+
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/9>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/9/OM> ;
+        rr:predicate  dbo:height .
+
+### ObjectMap
+<SimplePropertyMapping/9/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "hauteur" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:locationCountry .
+
+### ObjectMap
+<SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "pays" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:width .
+
+### ObjectMap
+<SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "largeur" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/8>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/8/OM> ;
+        rr:predicate  dbo:owner .
+
+### ObjectMap
+<SimplePropertyMapping/8/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "propriétaire" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/12>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/12/OM> ;
+        rr:predicate  dbo:depth .
+
+### ObjectMap
+<SimplePropertyMapping/12/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "profondeur" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/14>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/14/OM> ;
+        rr:predicate  dbo:depictionDescription .
+
+### ObjectMap
+<SimplePropertyMapping/14/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "légende" ;
+        rr:language    "fr" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:diameter .
+
+### ObjectMap
+<SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "diamètre" .
+
+
+######################
+# Conditional Mappings
+######################
+
+
+### Conditional Mapping
+###################################
+<ConditionalMapping/0/Condition/0/ClassMapping>
+        a                    rr:PredicateObjectMap ;
+        crml:equalCondition  <ConditionalMapping/0/Condition/0/FTM> ;
+        crml:fallbackMap     <ConditionalMapping/0/Condition/1/ClassMapping> ;
+        rr:object            dbo:Painting ;
+        rr:predicate         rdf:type .
+
+
+
+### Function Term Map
+<ConditionalMapping/0/Condition/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/0/FTM/FV> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/Contains> ,
+			       <ConditionalMapping/0/Condition/0/FTM/FV/PropertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/0/FTM/FV/ValueParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/0/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/0/FTM/FV/PropertyParameterPOM/OM> ;
+        rr:predicate  <http://dbpedia.org/function/Contains/propertyParameter> .
+
+<ConditionalMapping/0/Condition/0/FTM/FV/ValueParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Peinture" ;
+        rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
+
+### References
+<ConditionalMapping/0/Condition/0/FTM/FV/PropertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "type" .
+
+### Conditional Mapping
+###################################
+<ConditionalMapping/0/Condition/1/ClassMapping>
+        a                    rr:PredicateObjectMap ;
+        crml:equalCondition  <ConditionalMapping/0/Condition/1/FTM> ;
+        crml:fallbackMap     <ConditionalMapping/0/Condition/2/ClassMapping> ;
+        rr:object            dbo:Painting ;
+        rr:predicate         rdf:type .
+
+
+
+### Function Term Map
+<ConditionalMapping/0/Condition/1/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/1/FTM/FV> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/1/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/Contains> ,
+			       <ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/1/FTM/FV/ValueParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM/OM> ;
+        rr:predicate  <http://dbpedia.org/function/Contains/propertyParameter> .
+
+<ConditionalMapping/0/Condition/1/FTM/FV/ValueParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Peinture" ;
+        rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
+
+### References
+<ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "type" .
+
+
+### Conditional Mapping
+###################################
+<ConditionalMapping/0/Condition/2/ClassMapping>
+        a                    rr:PredicateObjectMap ;
+        crml:equalCondition  <ConditionalMapping/0/Condition/2/FTM> ;
+        crml:fallbackMap     <ConditionalMapping/0/Condition/3/ClassMapping> ;
+        rr:object            dbo:Painting ;
+        rr:predicate         rdf:type .
+
+
+
+### Function Term Map
+<ConditionalMapping/0/Condition/2/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/2/FTM/FV> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/2/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/Contains> ,
+			       <ConditionalMapping/0/Condition/2/FTM/FV/PropertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/2/FTM/FV/ValueParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/2/FTM/FV/ValueParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Peinture" ;
+        rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
+
+<ConditionalMapping/0/Condition/2/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/2/FTM/FV/PropertyParameterPOM/OM> ;
+        rr:predicate  <http://dbpedia.org/function/Contains/propertyParameter> .
+
+### References
+<ConditionalMapping/0/Condition/2/FTM/FV/PropertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "type" .
+
+
+### Conditional Mapping
+###################################
+<ConditionalMapping/0/Condition/3/ClassMapping>
+        a                    rr:PredicateObjectMap ;
+        crml:equalCondition  <ConditionalMapping/0/Condition/3/FTM> ;
+        crml:fallbackMap     <ConditionalMapping/0/Condition/4/ClassMapping> ;
+        rr:object            dbo:Sculpture ;
+        rr:predicate         rdf:type .
+
+
+
+### Function Term Map
+<ConditionalMapping/0/Condition/3/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/3/FTM/FV> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/3/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/Contains> ,
+			       <ConditionalMapping/0/Condition/3/FTM/FV/PropertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/3/FTM/FV/ValueParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/3/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/3/FTM/FV/PropertyParameterPOM/OM> ;
+        rr:predicate  <http://dbpedia.org/function/Contains/propertyParameter> .
+
+<ConditionalMapping/0/Condition/3/FTM/FV/ValueParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Peinture" ;
+        rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
+
+### References
+<ConditionalMapping/0/Condition/3/FTM/FV/PropertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "type" .
+
+
+### Conditional Mapping
+###################################
+<ConditionalMapping/0/Condition/4/ClassMapping>
+        a                    rr:PredicateObjectMap ;
+        crml:equalCondition  <ConditionalMapping/0/Condition/4/FTM> ;
+        crml:fallbackMap     <ConditionalMapping/0/Condition/5/ClassMapping> ;
+        rr:object            dbo:Sculpture ;
+        rr:predicate         rdf:type .
+
+
+
+### Function Term Map
+<ConditionalMapping/0/Condition/4/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/4/FTM/FV> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/4/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/Contains> ,
+			       <ConditionalMapping/0/Condition/4/FTM/FV/PropertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/4/FTM/FV/ValueParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/4/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/4/FTM/FV/PropertyParameterPOM/OM> ;
+        rr:predicate  <http://dbpedia.org/function/Contains/propertyParameter> .
+
+<ConditionalMapping/0/Condition/4/FTM/FV/ValueParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Peinture" ;
+        rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
+
+### References
+<ConditionalMapping/0/Condition/4/FTM/FV/PropertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "type" .
+
+
+### Conditional Mapping
+###################################
+<ConditionalMapping/0/Condition/5/ClassMapping>
+        a                    rr:PredicateObjectMap ;
+        crml:equalCondition  <ConditionalMapping/0/Condition/5/FTM> ;
+        crml:fallbackMap     <ConditionalMapping/0/Condition/6/ClassMapping> ;
+        rr:object            dbo:Painting ;
+        rr:predicate         rdf:type .
+
+
+
+### Function Term Map
+<ConditionalMapping/0/Condition/5/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/5/FTM/FV> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/5/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/Contains> ,
+			       <ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/5/FTM/FV/ValueParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM/OM> ;
+        rr:predicate  <http://dbpedia.org/function/Contains/propertyParameter> .
+
+<ConditionalMapping/0/Condition/5/FTM/FV/ValueParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Peinture" ;
+        rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
+
+### References
+<ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "type" .
+
+
+### Conditional Mapping
+###################################
+<ConditionalMapping/0/Condition/6/ClassMapping>
+        a                    rr:PredicateObjectMap ;
+        crml:equalCondition  <ConditionalMapping/0/Condition/6/FTM> ;
+        crml:fallbackMap     <ConditionalMapping/0/Condition/7/ClassMapping> ;
+        rr:object            dbo:Painting ;
+        rr:predicate         rdf:type .
+
+
+
+### Function Term Map
+<ConditionalMapping/0/Condition/6/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/6/FTM/FV> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/6/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/Contains> ,
+			       <ConditionalMapping/0/Condition/6/FTM/FV/PropertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/6/FTM/FV/ValueParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/6/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/6/FTM/FV/PropertyParameterPOM/OM> ;
+        rr:predicate  <http://dbpedia.org/function/Contains/propertyParameter> .
+
+<ConditionalMapping/0/Condition/6/FTM/FV/ValueParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Peinture" ;
+        rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
+
+### References
+<ConditionalMapping/0/Condition/6/FTM/FV/PropertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "type" .
+
+
+### Conditional Mapping
+###################################
+<ConditionalMapping/0/Condition/7/ClassMapping>
+        a                    rr:PredicateObjectMap ;
+        crml:equalCondition  <ConditionalMapping/0/Condition/7/FTM> ;
+        rr:object            dbo:Artwork ;
+        rr:predicate         rdf:type .
+
+
+
+### Function Term Map
+<ConditionalMapping/0/Condition/7/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/7/FTM/FV> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/7/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/Contains> ,
+			       <ConditionalMapping/0/Condition/7/FTM/FV/PropertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/7/FTM/FV/ValueParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/7/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/7/FTM/FV/PropertyParameterPOM/OM> ;
+        rr:predicate  <http://dbpedia.org/function/Contains/propertyParameter> .
+
+<ConditionalMapping/0/Condition/7/FTM/FV/ValueParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Peinture" ;
+        rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
+
+### References
+<ConditionalMapping/0/Condition/7/FTM/FV/PropertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "type" .
+
+
+
+############
+# Functions
+############
+
+
+<Function/LatitudeFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:latFunction ;
+        rr:predicate  fno:executes .
+
+<Function/LongitudeFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:lonFunction ;
+        rr:predicate  fno:executes .
+
+<Function/Contains>  a  rr:PredicateObjectMap ;
+        rr:object     dbf:Contains ;
+        rr:predicate  fno:executes .
+
+
+### Functions SubjectMap
+#########################
+
+<SubjectMap/Function>
+        a            rr:SubjectMap ;
+        rr:class     fno:Execution ;
+        rr:termType  rr:BlankNode .
