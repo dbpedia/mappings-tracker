@@ -121,30 +121,25 @@
 
 ### Function Term Map
 <LatitudeMapping/0/FTM>
-        a                      fnml:FunctionTermMap , rr:TriplesMap ;
-        fnml:functionValue     <LatitudeMapping/0/FTM> ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/LatitudeFunction> , <LatitudeMapping/0/FTM/ParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <LatitudeMapping/0/FTM/FV> .
 
 ### Function Execution Mapping
-<LatitudeMapping/0/FTM>
-        a                      fnml:FunctionTermMap ,
-			       rr:TriplesMap ;
-        fnml:functionValue     <LatitudeMapping/0/FTM> ;
+<LatitudeMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <Function/LatitudeFunction> ,
-			       <LatitudeMapping/0/FTM/ParameterPOM> ;
+			       <LatitudeMapping/0/FTM/FV/ParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
-<LatitudeMapping/0/FTM/ParameterPOM>
+<LatitudeMapping/0/FTM/FV/ParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <LatitudeMapping/0/FTM/ParameterPOM/OM> ;
+        rr:objectMap  <LatitudeMapping/0/FTM/FV/ParameterPOM/OM> ;
         rr:predicate  dbf:coordParameter .
 
 ### References
-<LatitudeMapping/0/FTM/ParameterPOM/OM>
+<LatitudeMapping/0/FTM/FV/ParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "συντεταγμένες" .
 
