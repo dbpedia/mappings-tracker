@@ -48,8 +48,7 @@
 			       <LatitudeMapping/0> ,
 			       <ConstantMapping/0> ,
 			       <ConditionalMapping/0/Condition/0/SimplePropertyMapping/0> ,
-			       <SimplePropertyMapping/1> ,
-			       <ConditionalMapping/0/Condition/1/SimplePropertyMapping/0> ;
+			       <SimplePropertyMapping/1> ;
         rr:subjectMap          <SubjectMap> .
 
 
@@ -256,20 +255,6 @@
         rml:reference  "type_obj" .
 
 
-### Predicate Object Map
-#########################
-<ConditionalMapping/0/Condition/1/SimplePropertyMapping/0>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/1/SimplePropertyMapping/0/OM> ;
-        rr:predicate  dbo:name .
-
-### ObjectMap
-<ConditionalMapping/0/Condition/1/SimplePropertyMapping/0/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "objectnaam" ;
-        rr:language    "nl" .
-
-
 ######################
 # Conditional Mappings
 ######################
@@ -328,36 +313,9 @@
 ### Conditional Mapping
 ###################################
 <ConditionalMapping/0/Condition/1/ClassMapping>
-        a                    rr:PredicateObjectMap ;
-        crml:equalCondition  <ConditionalMapping/0/Condition/1/FTM> ;
-        rr:object            dbo:ArchitecturalStructure ;
-        rr:predicate         rdf:type .
-
-
-
-### Function Term Map
-<ConditionalMapping/0/Condition/1/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <ConditionalMapping/0/Condition/1/FTM/FV> .
-
-### Function Execution Mapping
-<ConditionalMapping/0/Condition/1/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/IsSet> ,
-			       <ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM/OM> ;
-        rr:predicate  <http://dbpedia.org/function/IsSet/propertyParameter> .
-
-### References
-<ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "objectnaam" .
+        rr:object     dbo:ArchitecturalStructure ;
+        rr:predicate  rdf:type .
 
 
 ### Conditional Mapping

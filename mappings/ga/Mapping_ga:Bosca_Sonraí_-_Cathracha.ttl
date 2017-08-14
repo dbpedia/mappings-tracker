@@ -35,24 +35,15 @@
 <http://ga.dbpedia.org/resource/Mapping_ga:Bosca_Sonraí_-_Cathracha>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <ConditionalMapping/0/Condition/9/SimplePropertyMapping/0> ,
-			       <SimplePropertyMapping/1> ,
+        rr:predicateObjectMap  <SimplePropertyMapping/1> ,
 			       <SimplePropertyMapping/4> ,
 			       <SimplePropertyMapping/6> ,
-			       <ConditionalMapping/0/Condition/4/SimplePropertyMapping/0> ,
-			       <ConditionalMapping/0/Condition/7/SimplePropertyMapping/0> ,
 			       <SimplePropertyMapping/0> ,
 			       <ConditionalMapping/0/Condition/0/ClassMapping> ,
-			       <ConditionalMapping/0/Condition/5/SimplePropertyMapping/0> ,
 			       <SimplePropertyMapping/2> ,
 			       <SimplePropertyMapping/3> ,
-			       <ConditionalMapping/0/Condition/2/SimplePropertyMapping/0> ,
-			       <ConditionalMapping/0/Condition/8/SimplePropertyMapping/0> ,
-			       <ConditionalMapping/0/Condition/6/SimplePropertyMapping/0> ,
 			       <ConditionalMapping/0/Condition/0/SimplePropertyMapping/0> ,
-			       <SimplePropertyMapping/5> ,
-			       <ConditionalMapping/0/Condition/3/SimplePropertyMapping/0> ,
-			       <ConditionalMapping/0/Condition/1/SimplePropertyMapping/0> ;
+			       <SimplePropertyMapping/5> ;
         rr:subjectMap          <SubjectMap> .
 
 
@@ -78,19 +69,6 @@
 
 ### Predicate Object Map
 #########################
-<ConditionalMapping/0/Condition/9/SimplePropertyMapping/0>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/9/SimplePropertyMapping/0/OM> ;
-        rr:predicate  dbo:elevation .
-
-### ObjectMap
-<ConditionalMapping/0/Condition/9/SimplePropertyMapping/0/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "staitistic_eile" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/1>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/1/OM> ;
@@ -107,26 +85,39 @@
 #########################
 <SimplePropertyMapping/4>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/4/OM> ;
+        rr:objectMap  <SimplePropertyMapping/4/FTM> ;
         rr:predicate  dbo:areaTotal .
 
-### ObjectMap
-<SimplePropertyMapping/4/OM>
+### Function Term Map
+<SimplePropertyMapping/4/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/4/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/squareKilometre> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/4/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/4/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/4/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/4/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/4/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<SimplePropertyMapping/4/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "squareKilometre" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<SimplePropertyMapping/4/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "achar" .
-
-
-### Predicate Object Map
-#########################
-<ConditionalMapping/0/Condition/4/SimplePropertyMapping/0>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/4/SimplePropertyMapping/0/OM> ;
-        rr:predicate  dbo:elevation .
-
-### ObjectMap
-<ConditionalMapping/0/Condition/4/SimplePropertyMapping/0/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "staitistic_eile" .
 
 
 ### Predicate Object Map
@@ -142,19 +133,6 @@
         rml:reference  "daonra" .
 
 
-### Predicate Object Map
-#########################
-<ConditionalMapping/0/Condition/7/SimplePropertyMapping/0>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/7/SimplePropertyMapping/0/OM> ;
-        rr:predicate  dbo:elevation .
-
-### ObjectMap
-<ConditionalMapping/0/Condition/7/SimplePropertyMapping/0/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "staitistic_eile" .
-
-
 
 ### Predicate Object Map
 #########################
@@ -168,19 +146,6 @@
         a              rr:ObjectMap ;
         rml:reference  "ainm" ;
         rr:language    "ga" .
-
-
-### Predicate Object Map
-#########################
-<ConditionalMapping/0/Condition/5/SimplePropertyMapping/0>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/5/SimplePropertyMapping/0/OM> ;
-        rr:predicate  dbo:elevation .
-
-### ObjectMap
-<ConditionalMapping/0/Condition/5/SimplePropertyMapping/0/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "staitistic_eile" .
 
 
 ### Predicate Object Map
@@ -209,45 +174,6 @@
         rml:reference  "líonláithreán" .
 
 
-### Predicate Object Map
-#########################
-<ConditionalMapping/0/Condition/2/SimplePropertyMapping/0>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/2/SimplePropertyMapping/0/OM> ;
-        rr:predicate  dbo:elevation .
-
-### ObjectMap
-<ConditionalMapping/0/Condition/2/SimplePropertyMapping/0/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "staitistic_eile" .
-
-
-### Predicate Object Map
-#########################
-<ConditionalMapping/0/Condition/8/SimplePropertyMapping/0>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/8/SimplePropertyMapping/0/OM> ;
-        rr:predicate  dbo:elevation .
-
-### ObjectMap
-<ConditionalMapping/0/Condition/8/SimplePropertyMapping/0/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "staitistic_eile" .
-
-
-### Predicate Object Map
-#########################
-<ConditionalMapping/0/Condition/6/SimplePropertyMapping/0>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/6/SimplePropertyMapping/0/OM> ;
-        rr:predicate  dbo:elevation .
-
-### ObjectMap
-<ConditionalMapping/0/Condition/6/SimplePropertyMapping/0/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "staitistic_eile" .
-
-
 
 ### Predicate Object Map
 #########################
@@ -260,32 +186,6 @@
 <SimplePropertyMapping/5/OM>
         a              rr:ObjectMap ;
         rml:reference  "ceantar" .
-
-
-### Predicate Object Map
-#########################
-<ConditionalMapping/0/Condition/3/SimplePropertyMapping/0>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/3/SimplePropertyMapping/0/OM> ;
-        rr:predicate  dbo:elevation .
-
-### ObjectMap
-<ConditionalMapping/0/Condition/3/SimplePropertyMapping/0/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "staitistic_eile" .
-
-
-### Predicate Object Map
-#########################
-<ConditionalMapping/0/Condition/1/SimplePropertyMapping/0>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/1/SimplePropertyMapping/0/OM> ;
-        rr:predicate  dbo:elevation .
-
-### ObjectMap
-<ConditionalMapping/0/Condition/1/SimplePropertyMapping/0/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "staitistic_eile" .
 
 
 ######################
@@ -340,13 +240,41 @@
 <ConditionalMapping/0/Condition/0/SimplePropertyMapping/0>
         a                    rr:PredicateObjectMap ;
         crml:equalCondition  <ConditionalMapping/0/Condition/0/FTM> ;
-        rr:objectMap         <ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/OM> ;
+        rr:objectMap         <ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM> ;
         rr:predicate         dbo:elevation .
 
-### ObjectMap
-<ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/OM>
+### Function Term Map
+<ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/metre> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "metre" ;
+        rr:predicate  dbf:unitParameter .
+
+<ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "staitistic_eile" .
+
+
 
 ### Conditional Mapping
 ###################################
@@ -376,7 +304,7 @@
 ### Parameters
 <ConditionalMapping/0/Condition/1/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "Airde" ;
+        rr:object     "Uimhirphlátaí" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 <ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM>
@@ -394,13 +322,41 @@
 ###################################
 <ConditionalMapping/0/Condition/1/SimplePropertyMapping/0>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/1/SimplePropertyMapping/0/OM> ;
+        rr:objectMap  <ConditionalMapping/0/Condition/1/SimplePropertyMapping/0/FTM> ;
         rr:predicate  dbo:elevation .
 
-### ObjectMap
-<ConditionalMapping/0/Condition/1/SimplePropertyMapping/0/OM>
+### Function Term Map
+<ConditionalMapping/0/Condition/1/SimplePropertyMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/1/SimplePropertyMapping/0/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/metre> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/1/SimplePropertyMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <ConditionalMapping/0/Condition/1/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/1/SimplePropertyMapping/0/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/1/SimplePropertyMapping/0/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "metre" ;
+        rr:predicate  dbf:unitParameter .
+
+<ConditionalMapping/0/Condition/1/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/1/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<ConditionalMapping/0/Condition/1/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "staitistic_eile" .
+
+
 
 
 ### Conditional Mapping
@@ -436,7 +392,7 @@
 
 <ConditionalMapping/0/Condition/2/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "Airde" ;
+        rr:object     "Cód phoist" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 ### References
@@ -449,13 +405,41 @@
 ###################################
 <ConditionalMapping/0/Condition/2/SimplePropertyMapping/0>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/2/SimplePropertyMapping/0/OM> ;
+        rr:objectMap  <ConditionalMapping/0/Condition/2/SimplePropertyMapping/0/FTM> ;
         rr:predicate  dbo:elevation .
 
-### ObjectMap
-<ConditionalMapping/0/Condition/2/SimplePropertyMapping/0/OM>
+### Function Term Map
+<ConditionalMapping/0/Condition/2/SimplePropertyMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/2/SimplePropertyMapping/0/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/metre> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/2/SimplePropertyMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <ConditionalMapping/0/Condition/2/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/2/SimplePropertyMapping/0/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/2/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/2/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<ConditionalMapping/0/Condition/2/SimplePropertyMapping/0/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "metre" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<ConditionalMapping/0/Condition/2/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "staitistic_eile" .
+
+
 
 
 ### Conditional Mapping
@@ -486,7 +470,7 @@
 ### Parameters
 <ConditionalMapping/0/Condition/3/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "Airde" ;
+        rr:object     "Crios ama" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 <ConditionalMapping/0/Condition/3/FTM/FV/PropertyParameterPOM>
@@ -504,13 +488,41 @@
 ###################################
 <ConditionalMapping/0/Condition/3/SimplePropertyMapping/0>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/3/SimplePropertyMapping/0/OM> ;
+        rr:objectMap  <ConditionalMapping/0/Condition/3/SimplePropertyMapping/0/FTM> ;
         rr:predicate  dbo:elevation .
 
-### ObjectMap
-<ConditionalMapping/0/Condition/3/SimplePropertyMapping/0/OM>
+### Function Term Map
+<ConditionalMapping/0/Condition/3/SimplePropertyMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/3/SimplePropertyMapping/0/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/metre> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/3/SimplePropertyMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <ConditionalMapping/0/Condition/3/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/3/SimplePropertyMapping/0/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/3/SimplePropertyMapping/0/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "metre" ;
+        rr:predicate  dbf:unitParameter .
+
+<ConditionalMapping/0/Condition/3/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/3/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<ConditionalMapping/0/Condition/3/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "staitistic_eile" .
+
+
 
 
 ### Conditional Mapping
@@ -541,7 +553,7 @@
 ### Parameters
 <ConditionalMapping/0/Condition/4/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "Airde" ;
+        rr:object     "Teangacha oifigiúla" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 <ConditionalMapping/0/Condition/4/FTM/FV/PropertyParameterPOM>
@@ -559,13 +571,41 @@
 ###################################
 <ConditionalMapping/0/Condition/4/SimplePropertyMapping/0>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/4/SimplePropertyMapping/0/OM> ;
+        rr:objectMap  <ConditionalMapping/0/Condition/4/SimplePropertyMapping/0/FTM> ;
         rr:predicate  dbo:elevation .
 
-### ObjectMap
-<ConditionalMapping/0/Condition/4/SimplePropertyMapping/0/OM>
+### Function Term Map
+<ConditionalMapping/0/Condition/4/SimplePropertyMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/4/SimplePropertyMapping/0/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/metre> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/4/SimplePropertyMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <ConditionalMapping/0/Condition/4/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/4/SimplePropertyMapping/0/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/4/SimplePropertyMapping/0/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "metre" ;
+        rr:predicate  dbf:unitParameter .
+
+<ConditionalMapping/0/Condition/4/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/4/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<ConditionalMapping/0/Condition/4/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "staitistic_eile" .
+
+
 
 
 ### Conditional Mapping
@@ -596,7 +636,7 @@
 ### Parameters
 <ConditionalMapping/0/Condition/5/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "Airde" ;
+        rr:object     "Ard-mhéara" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 <ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM>
@@ -607,20 +647,48 @@
 ### References
 <ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "staitistic_eile_teideal" .
+        rml:reference  "leaderTitle" .
 
 
 ### Conditional Mapping
 ###################################
 <ConditionalMapping/0/Condition/5/SimplePropertyMapping/0>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/5/SimplePropertyMapping/0/OM> ;
+        rr:objectMap  <ConditionalMapping/0/Condition/5/SimplePropertyMapping/0/FTM> ;
         rr:predicate  dbo:elevation .
 
-### ObjectMap
-<ConditionalMapping/0/Condition/5/SimplePropertyMapping/0/OM>
+### Function Term Map
+<ConditionalMapping/0/Condition/5/SimplePropertyMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/5/SimplePropertyMapping/0/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/metre> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/5/SimplePropertyMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <ConditionalMapping/0/Condition/5/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/5/SimplePropertyMapping/0/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/5/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/5/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<ConditionalMapping/0/Condition/5/SimplePropertyMapping/0/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "metre" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<ConditionalMapping/0/Condition/5/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "staitistic_eile" .
+
+
 
 
 ### Conditional Mapping
@@ -651,7 +719,7 @@
 ### Parameters
 <ConditionalMapping/0/Condition/6/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "Airde" ;
+        rr:object     "Ard-Mhéara" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 <ConditionalMapping/0/Condition/6/FTM/FV/PropertyParameterPOM>
@@ -662,20 +730,48 @@
 ### References
 <ConditionalMapping/0/Condition/6/FTM/FV/PropertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "staitistic_eile_teideal" .
+        rml:reference  "leaderTitle" .
 
 
 ### Conditional Mapping
 ###################################
 <ConditionalMapping/0/Condition/6/SimplePropertyMapping/0>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/6/SimplePropertyMapping/0/OM> ;
+        rr:objectMap  <ConditionalMapping/0/Condition/6/SimplePropertyMapping/0/FTM> ;
         rr:predicate  dbo:elevation .
 
-### ObjectMap
-<ConditionalMapping/0/Condition/6/SimplePropertyMapping/0/OM>
+### Function Term Map
+<ConditionalMapping/0/Condition/6/SimplePropertyMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/6/SimplePropertyMapping/0/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/metre> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/6/SimplePropertyMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <ConditionalMapping/0/Condition/6/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/6/SimplePropertyMapping/0/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/6/SimplePropertyMapping/0/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "metre" ;
+        rr:predicate  dbf:unitParameter .
+
+<ConditionalMapping/0/Condition/6/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/6/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<ConditionalMapping/0/Condition/6/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "staitistic_eile" .
+
+
 
 
 ### Conditional Mapping
@@ -711,26 +807,54 @@
 
 <ConditionalMapping/0/Condition/7/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "Airde" ;
+        rr:object     "Uachtarán" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 ### References
 <ConditionalMapping/0/Condition/7/FTM/FV/PropertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "staitistic_eile_teideal" .
+        rml:reference  "leaderTitle" .
 
 
 ### Conditional Mapping
 ###################################
 <ConditionalMapping/0/Condition/7/SimplePropertyMapping/0>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/7/SimplePropertyMapping/0/OM> ;
+        rr:objectMap  <ConditionalMapping/0/Condition/7/SimplePropertyMapping/0/FTM> ;
         rr:predicate  dbo:elevation .
 
-### ObjectMap
-<ConditionalMapping/0/Condition/7/SimplePropertyMapping/0/OM>
+### Function Term Map
+<ConditionalMapping/0/Condition/7/SimplePropertyMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/7/SimplePropertyMapping/0/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/metre> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/7/SimplePropertyMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <ConditionalMapping/0/Condition/7/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/7/SimplePropertyMapping/0/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/7/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/7/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<ConditionalMapping/0/Condition/7/SimplePropertyMapping/0/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "metre" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<ConditionalMapping/0/Condition/7/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "staitistic_eile" .
+
+
 
 
 ### Conditional Mapping
@@ -766,80 +890,103 @@
 
 <ConditionalMapping/0/Condition/8/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "Airde" ;
+        rr:object     "Méara" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 ### References
 <ConditionalMapping/0/Condition/8/FTM/FV/PropertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "staitistic_eile_teideal" .
+        rml:reference  "leaderTitle" .
 
 
 ### Conditional Mapping
 ###################################
 <ConditionalMapping/0/Condition/8/SimplePropertyMapping/0>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/8/SimplePropertyMapping/0/OM> ;
+        rr:objectMap  <ConditionalMapping/0/Condition/8/SimplePropertyMapping/0/FTM> ;
         rr:predicate  dbo:elevation .
 
-### ObjectMap
-<ConditionalMapping/0/Condition/8/SimplePropertyMapping/0/OM>
+### Function Term Map
+<ConditionalMapping/0/Condition/8/SimplePropertyMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/8/SimplePropertyMapping/0/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/metre> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/8/SimplePropertyMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <ConditionalMapping/0/Condition/8/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/8/SimplePropertyMapping/0/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/8/SimplePropertyMapping/0/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "metre" ;
+        rr:predicate  dbf:unitParameter .
+
+<ConditionalMapping/0/Condition/8/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/8/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<ConditionalMapping/0/Condition/8/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "staitistic_eile" .
+
+
 
 
 ### Conditional Mapping
 ###################################
 <ConditionalMapping/0/Condition/9/ClassMapping>
-        a                    rr:PredicateObjectMap ;
-        crml:equalCondition  <ConditionalMapping/0/Condition/9/FTM> ;
-        rr:object            dbo:City ;
-        rr:predicate         rdf:type .
-
-
-
-### Function Term Map
-<ConditionalMapping/0/Condition/9/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <ConditionalMapping/0/Condition/9/FTM/FV> .
-
-### Function Execution Mapping
-<ConditionalMapping/0/Condition/9/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/Contains> ,
-			       <ConditionalMapping/0/Condition/9/FTM/FV/PropertyParameterPOM> ,
-			       <ConditionalMapping/0/Condition/9/FTM/FV/ValueParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<ConditionalMapping/0/Condition/9/FTM/FV/PropertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/9/FTM/FV/PropertyParameterPOM/OM> ;
-        rr:predicate  <http://dbpedia.org/function/Contains/propertyParameter> .
-
-<ConditionalMapping/0/Condition/9/FTM/FV/ValueParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "Airde" ;
-        rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
-
-### References
-<ConditionalMapping/0/Condition/9/FTM/FV/PropertyParameterPOM/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "staitistic_eile_teideal" .
+        rr:object     dbo:City ;
+        rr:predicate  rdf:type .
 
 
 ### Conditional Mapping
 ###################################
 <ConditionalMapping/0/Condition/9/SimplePropertyMapping/0>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/9/SimplePropertyMapping/0/OM> ;
+        rr:objectMap  <ConditionalMapping/0/Condition/9/SimplePropertyMapping/0/FTM> ;
         rr:predicate  dbo:elevation .
 
-### ObjectMap
-<ConditionalMapping/0/Condition/9/SimplePropertyMapping/0/OM>
+### Function Term Map
+<ConditionalMapping/0/Condition/9/SimplePropertyMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/9/SimplePropertyMapping/0/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/metre> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/9/SimplePropertyMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <ConditionalMapping/0/Condition/9/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/9/SimplePropertyMapping/0/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/9/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/9/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<ConditionalMapping/0/Condition/9/SimplePropertyMapping/0/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "metre" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<ConditionalMapping/0/Condition/9/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "staitistic_eile" .
+
+
 
 
 
@@ -857,6 +1004,11 @@
 # Functions
 ############
 
+
+<Function/SimplePropertyFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:simplePropertyFunction ;
+        rr:predicate  fno:executes .
 
 <Function/Contains>  a  rr:PredicateObjectMap ;
         rr:object     dbf:Contains ;

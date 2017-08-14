@@ -747,7 +747,7 @@
 ### References
 <ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "integrantes" .
+        rml:reference  "exintegrantes" .
 
 
 ### Conditional Mapping
@@ -770,20 +770,26 @@
 <ConditionalMapping/0/Condition/2/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/IsSet> ,
-			       <ConditionalMapping/0/Condition/2/FTM/FV/PropertyParameterPOM> ;
+        rr:predicateObjectMap  <Function/Equals> ,
+			       <ConditionalMapping/0/Condition/2/FTM/FV/PropertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/2/FTM/FV/ValueParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
 <ConditionalMapping/0/Condition/2/FTM/FV/PropertyParameterPOM>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <ConditionalMapping/0/Condition/2/FTM/FV/PropertyParameterPOM/OM> ;
-        rr:predicate  <http://dbpedia.org/function/IsSet/propertyParameter> .
+        rr:predicate  <http://dbpedia.org/function/Equals/propertyParameter> .
+
+<ConditionalMapping/0/Condition/2/FTM/FV/ValueParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "grupo_ou_banda" ;
+        rr:predicate  <http://dbpedia.org/function/Equals/valueParameter> .
 
 ### References
 <ConditionalMapping/0/Condition/2/FTM/FV/PropertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "integrantes" .
+        rml:reference  "fundo" .
 
 
 ### Conditional Mapping
@@ -806,20 +812,26 @@
 <ConditionalMapping/0/Condition/3/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/IsSet> ,
-			       <ConditionalMapping/0/Condition/3/FTM/FV/PropertyParameterPOM> ;
+        rr:predicateObjectMap  <Function/Equals> ,
+			       <ConditionalMapping/0/Condition/3/FTM/FV/PropertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/3/FTM/FV/ValueParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
+<ConditionalMapping/0/Condition/3/FTM/FV/ValueParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "banda_cover" ;
+        rr:predicate  <http://dbpedia.org/function/Equals/valueParameter> .
+
 <ConditionalMapping/0/Condition/3/FTM/FV/PropertyParameterPOM>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <ConditionalMapping/0/Condition/3/FTM/FV/PropertyParameterPOM/OM> ;
-        rr:predicate  <http://dbpedia.org/function/IsSet/propertyParameter> .
+        rr:predicate  <http://dbpedia.org/function/Equals/propertyParameter> .
 
 ### References
 <ConditionalMapping/0/Condition/3/FTM/FV/PropertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "integrantes" .
+        rml:reference  "fundo" .
 
 
 ### Conditional Mapping
@@ -842,55 +854,34 @@
 <ConditionalMapping/0/Condition/4/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/IsSet> ,
-			       <ConditionalMapping/0/Condition/4/FTM/FV/PropertyParameterPOM> ;
+        rr:predicateObjectMap  <Function/Equals> ,
+			       <ConditionalMapping/0/Condition/4/FTM/FV/PropertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/4/FTM/FV/ValueParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
 
 ### Parameters
+<ConditionalMapping/0/Condition/4/FTM/FV/ValueParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "grupo_clássico" ;
+        rr:predicate  <http://dbpedia.org/function/Equals/valueParameter> .
+
 <ConditionalMapping/0/Condition/4/FTM/FV/PropertyParameterPOM>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <ConditionalMapping/0/Condition/4/FTM/FV/PropertyParameterPOM/OM> ;
-        rr:predicate  <http://dbpedia.org/function/IsSet/propertyParameter> .
+        rr:predicate  <http://dbpedia.org/function/Equals/propertyParameter> .
 
 ### References
 <ConditionalMapping/0/Condition/4/FTM/FV/PropertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "integrantes" .
+        rml:reference  "fundo" .
 
 
 ### Conditional Mapping
 ###################################
 <ConditionalMapping/0/Condition/5/ClassMapping>
-        a                    rr:PredicateObjectMap ;
-        crml:equalCondition  <ConditionalMapping/0/Condition/5/FTM> ;
-        rr:object            dbo:MusicalArtist ;
-        rr:predicate         rdf:type .
-
-
-
-### Function Term Map
-<ConditionalMapping/0/Condition/5/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <ConditionalMapping/0/Condition/5/FTM/FV> .
-
-### Function Execution Mapping
-<ConditionalMapping/0/Condition/5/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/IsSet> ,
-			       <ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM/OM> ;
-        rr:predicate  <http://dbpedia.org/function/IsSet/propertyParameter> .
-
-### References
-<ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "integrantes" .
+        rr:object     dbo:MusicalArtist ;
+        rr:predicate  rdf:type .
 
 
 
@@ -899,9 +890,8 @@
 ############
 
 
-<Function/EndDateFunction>
-        a             rr:PredicateObjectMap ;
-        rr:object     dbf:endDateFunction ;
+<Function/Equals>  a  rr:PredicateObjectMap ;
+        rr:object     dbf:Equals ;
         rr:predicate  fno:executes .
 
 <Function/IsSet>  a   rr:PredicateObjectMap ;
@@ -911,6 +901,11 @@
 <Function/StartDateFunction>
         a             rr:PredicateObjectMap ;
         rr:object     dbf:startDateFunction ;
+        rr:predicate  fno:executes .
+
+<Function/EndDateFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:endDateFunction ;
         rr:predicate  fno:executes .
 
 

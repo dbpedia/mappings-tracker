@@ -700,7 +700,7 @@
 
 <ConditionalMapping/0/Condition/1/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "Животни" ;
+        rr:object     "Растения" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 ### References
@@ -737,7 +737,7 @@
 ### Parameters
 <ConditionalMapping/0/Condition/2/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "Животни" ;
+        rr:object     "Гъби" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 <ConditionalMapping/0/Condition/2/FTM/FV/PropertyParameterPOM>
@@ -784,7 +784,7 @@
 
 <ConditionalMapping/0/Condition/3/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "Животни" ;
+        rr:object     "Бактерии" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 ### References
@@ -821,7 +821,7 @@
 ### Parameters
 <ConditionalMapping/0/Condition/4/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "Животни" ;
+        rr:object     "Protista" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 <ConditionalMapping/0/Condition/4/FTM/FV/PropertyParameterPOM>
@@ -832,48 +832,15 @@
 ### References
 <ConditionalMapping/0/Condition/4/FTM/FV/PropertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "regnum-bg" .
+        rml:reference  "regnum" .
 
 
 ### Conditional Mapping
 ###################################
 <ConditionalMapping/0/Condition/5/ClassMapping>
-        a                    rr:PredicateObjectMap ;
-        crml:equalCondition  <ConditionalMapping/0/Condition/5/FTM> ;
-        rr:object            dbo:Species ;
-        rr:predicate         rdf:type .
-
-
-
-### Function Term Map
-<ConditionalMapping/0/Condition/5/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <ConditionalMapping/0/Condition/5/FTM/FV> .
-
-### Function Execution Mapping
-<ConditionalMapping/0/Condition/5/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/Contains> ,
-			       <ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM> ,
-			       <ConditionalMapping/0/Condition/5/FTM/FV/ValueParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<ConditionalMapping/0/Condition/5/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "Животни" ;
-        rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
-
-<ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM/OM> ;
-        rr:predicate  <http://dbpedia.org/function/Contains/propertyParameter> .
-
-### References
-<ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "regnum-bg" .
+        rr:object     dbo:Species ;
+        rr:predicate  rdf:type .
 
 
 

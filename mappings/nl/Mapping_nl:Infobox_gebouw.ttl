@@ -950,7 +950,7 @@
 
 <ConditionalMapping/0/Condition/1/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "\"Rijksmonument\"@nl" ;
+        rr:object     "\"Gemeentelijk monument\"@nl" ;
         rr:predicate  <http://dbpedia.org/function/Equals/valueParameter> .
 
 ### References
@@ -987,7 +987,7 @@
 ### Parameters
 <ConditionalMapping/0/Condition/2/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "\"Rijksmonument\"@nl" ;
+        rr:object     "\"Provinciaal monument\"@nl" ;
         rr:predicate  <http://dbpedia.org/function/Equals/valueParameter> .
 
 <ConditionalMapping/0/Condition/2/FTM/FV/PropertyParameterPOM>
@@ -1004,42 +1004,9 @@
 ### Conditional Mapping
 ###################################
 <ConditionalMapping/0/Condition/3/ClassMapping>
-        a                    rr:PredicateObjectMap ;
-        crml:equalCondition  <ConditionalMapping/0/Condition/3/FTM> ;
-        rr:object            dbo:Building ;
-        rr:predicate         rdf:type .
-
-
-
-### Function Term Map
-<ConditionalMapping/0/Condition/3/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <ConditionalMapping/0/Condition/3/FTM/FV> .
-
-### Function Execution Mapping
-<ConditionalMapping/0/Condition/3/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/Equals> ,
-			       <ConditionalMapping/0/Condition/3/FTM/FV/PropertyParameterPOM> ,
-			       <ConditionalMapping/0/Condition/3/FTM/FV/ValueParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<ConditionalMapping/0/Condition/3/FTM/FV/PropertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/3/FTM/FV/PropertyParameterPOM/OM> ;
-        rr:predicate  <http://dbpedia.org/function/Equals/propertyParameter> .
-
-<ConditionalMapping/0/Condition/3/FTM/FV/ValueParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "\"Rijksmonument\"@nl" ;
-        rr:predicate  <http://dbpedia.org/function/Equals/valueParameter> .
-
-### References
-<ConditionalMapping/0/Condition/3/FTM/FV/PropertyParameterPOM/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "monumentstatus" .
+        rr:object     dbo:Building ;
+        rr:predicate  rdf:type .
 
 
 

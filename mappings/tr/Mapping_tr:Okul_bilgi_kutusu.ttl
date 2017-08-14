@@ -378,11 +378,37 @@
 #########################
 <SimplePropertyMapping/125>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/125/OM> ;
+        rr:objectMap  <SimplePropertyMapping/125/FTM> ;
         rr:predicate  dbo:tuition .
 
-### ObjectMap
-<SimplePropertyMapping/125/OM>
+### Function Term Map
+<SimplePropertyMapping/125/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/125/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Currency> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/125/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/125/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/125/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/125/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/125/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<SimplePropertyMapping/125/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Currency" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<SimplePropertyMapping/125/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "tuition" .
 
@@ -927,11 +953,37 @@
 #########################
 <SimplePropertyMapping/124>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/124/OM> ;
+        rr:objectMap  <SimplePropertyMapping/124/FTM> ;
         rr:predicate  dbo:fees .
 
-### ObjectMap
-<SimplePropertyMapping/124/OM>
+### Function Term Map
+<SimplePropertyMapping/124/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/124/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Currency> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/124/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/124/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/124/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/124/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Currency" ;
+        rr:predicate  dbf:unitParameter .
+
+<SimplePropertyMapping/124/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/124/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/124/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "fees" .
 
@@ -953,11 +1005,37 @@
 #########################
 <SimplePropertyMapping/103>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/103/OM> ;
+        rr:objectMap  <SimplePropertyMapping/103/FTM> ;
         rr:predicate  dbo:campusSize .
 
-### ObjectMap
-<SimplePropertyMapping/103/OM>
+### Function Term Map
+<SimplePropertyMapping/103/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/103/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Area> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/103/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/103/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/103/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/103/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/103/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<SimplePropertyMapping/103/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Area" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<SimplePropertyMapping/103/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "campus size" .
 
@@ -1494,11 +1572,37 @@
 #########################
 <SimplePropertyMapping/123>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/123/OM> ;
+        rr:objectMap  <SimplePropertyMapping/123/FTM> ;
         rr:predicate  dbo:budget .
 
-### ObjectMap
-<SimplePropertyMapping/123/OM>
+### Function Term Map
+<SimplePropertyMapping/123/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/123/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Currency> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/123/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/123/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/123/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/123/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/123/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<SimplePropertyMapping/123/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Currency" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<SimplePropertyMapping/123/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "budget" .
 
@@ -1507,11 +1611,37 @@
 #########################
 <SimplePropertyMapping/102>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/102/OM> ;
+        rr:objectMap  <SimplePropertyMapping/102/FTM> ;
         rr:predicate  dbo:campusSize .
 
-### ObjectMap
-<SimplePropertyMapping/102/OM>
+### Function Term Map
+<SimplePropertyMapping/102/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/102/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Area> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/102/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/102/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/102/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/102/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Area" ;
+        rr:predicate  dbf:unitParameter .
+
+<SimplePropertyMapping/102/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/102/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/102/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "campus_size" .
 
@@ -1599,11 +1729,37 @@
 #########################
 <SimplePropertyMapping/127>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/127/OM> ;
+        rr:objectMap  <SimplePropertyMapping/127/FTM> ;
         rr:predicate  dbo:revenue .
 
-### ObjectMap
-<SimplePropertyMapping/127/OM>
+### Function Term Map
+<SimplePropertyMapping/127/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/127/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Currency> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/127/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/127/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/127/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/127/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/127/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<SimplePropertyMapping/127/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Currency" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<SimplePropertyMapping/127/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "revenue" .
 
@@ -1734,11 +1890,37 @@
 #########################
 <SimplePropertyMapping/166>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/166/OM> ;
+        rr:objectMap  <SimplePropertyMapping/166/FTM> ;
         rr:predicate  dbo:budget .
 
-### ObjectMap
-<SimplePropertyMapping/166/OM>
+### Function Term Map
+<SimplePropertyMapping/166/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/166/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Currency> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/166/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/166/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/166/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/166/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Currency" ;
+        rr:predicate  dbf:unitParameter .
+
+<SimplePropertyMapping/166/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/166/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/166/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "budget" .
 
@@ -2010,11 +2192,37 @@
 #########################
 <SimplePropertyMapping/122>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/122/OM> ;
+        rr:objectMap  <SimplePropertyMapping/122/FTM> ;
         rr:predicate  dbo:endowment .
 
-### ObjectMap
-<SimplePropertyMapping/122/OM>
+### Function Term Map
+<SimplePropertyMapping/122/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/122/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Currency> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/122/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/122/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/122/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/122/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/122/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<SimplePropertyMapping/122/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Currency" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<SimplePropertyMapping/122/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "endowment" .
 
@@ -2140,11 +2348,37 @@
 #########################
 <SimplePropertyMapping/126>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/126/OM> ;
+        rr:objectMap  <SimplePropertyMapping/126/FTM> ;
         rr:predicate  dbo:tuition .
 
-### ObjectMap
-<SimplePropertyMapping/126/OM>
+### Function Term Map
+<SimplePropertyMapping/126/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/126/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Currency> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/126/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/126/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/126/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/126/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Currency" ;
+        rr:predicate  dbf:unitParameter .
+
+<SimplePropertyMapping/126/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/126/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/126/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "annual tuition" .
 
@@ -2270,11 +2504,37 @@
 #########################
 <SimplePropertyMapping/165>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/165/OM> ;
+        rr:objectMap  <SimplePropertyMapping/165/FTM> ;
         rr:predicate  dbo:endowment .
 
-### ObjectMap
-<SimplePropertyMapping/165/OM>
+### Function Term Map
+<SimplePropertyMapping/165/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/165/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Currency> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/165/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/165/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/165/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/165/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Currency" ;
+        rr:predicate  dbf:unitParameter .
+
+<SimplePropertyMapping/165/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/165/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/165/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "değeri" .
 
@@ -2533,6 +2793,11 @@
 <Function/LatitudeFunction>
         a             rr:PredicateObjectMap ;
         rr:object     dbf:latFunction ;
+        rr:predicate  fno:executes .
+
+<Function/SimplePropertyFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:simplePropertyFunction ;
         rr:predicate  fno:executes .
 
 

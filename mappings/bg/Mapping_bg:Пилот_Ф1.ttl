@@ -47,7 +47,6 @@
 			       <SimplePropertyMapping/18> ,
 			       <SimplePropertyMapping/15> ,
 			       <SimplePropertyMapping/2> ,
-			       <ConditionalMapping/0/Condition/1/ConstantMapping/1> ,
 			       <SimplePropertyMapping/22> ,
 			       <SimplePropertyMapping/4> ,
 			       <SimplePropertyMapping/3> ,
@@ -226,14 +225,6 @@
 <SimplePropertyMapping/15/OM>
         a              rr:ObjectMap ;
         rml:reference  "точки" .
-
-
-### Predicate Object Map
-#########################
-<ConditionalMapping/0/Condition/1/ConstantMapping/1>
-        a             rr:PredicateObjectMap ;
-        rr:object     <http://dbpedia.org/resource/Female> ;
-        rr:predicate  dbo:gender .
 
 
 ### Predicate Object Map
@@ -461,36 +452,9 @@
 ### Conditional Mapping
 ###################################
 <ConditionalMapping/0/Condition/1/ClassMapping>
-        a                    rr:PredicateObjectMap ;
-        crml:equalCondition  <ConditionalMapping/0/Condition/1/FTM> ;
-        rr:object            dbo:FormulaOneRacer ;
-        rr:predicate         rdf:type .
-
-
-
-### Function Term Map
-<ConditionalMapping/0/Condition/1/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <ConditionalMapping/0/Condition/1/FTM/FV> .
-
-### Function Execution Mapping
-<ConditionalMapping/0/Condition/1/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/IsSet> ,
-			       <ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM/OM> ;
-        rr:predicate  <http://dbpedia.org/function/IsSet/propertyParameter> .
-
-### References
-<ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "наставка" .
+        rr:object     dbo:FormulaOneRacer ;
+        rr:predicate  rdf:type .
 
 
 ### Conditional Mapping

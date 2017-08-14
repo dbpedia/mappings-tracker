@@ -388,7 +388,7 @@
 ### References
 <ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "currentteammate" .
+        rml:reference  "teammates" .
 
 
 ### Conditional Mapping
@@ -424,7 +424,7 @@
 ### References
 <ConditionalMapping/0/Condition/2/FTM/FV/PropertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "currentteammate" .
+        rml:reference  "currentcoachteam" .
 
 
 ### Conditional Mapping
@@ -460,7 +460,7 @@
 ### References
 <ConditionalMapping/0/Condition/3/FTM/FV/PropertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "currentteammate" .
+        rml:reference  "coachyears" .
 
 
 ### Conditional Mapping
@@ -496,42 +496,15 @@
 ### References
 <ConditionalMapping/0/Condition/4/FTM/FV/PropertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "currentteammate" .
+        rml:reference  "coachteams" .
 
 
 ### Conditional Mapping
 ###################################
 <ConditionalMapping/0/Condition/5/ClassMapping>
-        a                    rr:PredicateObjectMap ;
-        crml:equalCondition  <ConditionalMapping/0/Condition/5/FTM> ;
-        rr:object            dbo:VolleyballPlayer ;
-        rr:predicate         rdf:type .
-
-
-
-### Function Term Map
-<ConditionalMapping/0/Condition/5/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <ConditionalMapping/0/Condition/5/FTM/FV> .
-
-### Function Execution Mapping
-<ConditionalMapping/0/Condition/5/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/IsSet> ,
-			       <ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM/OM> ;
-        rr:predicate  <http://dbpedia.org/function/IsSet/propertyParameter> .
-
-### References
-<ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "currentteammate" .
+        rr:object     dbo:VolleyballPlayer ;
+        rr:predicate  rdf:type .
 
 
 

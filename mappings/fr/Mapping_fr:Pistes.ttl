@@ -88,11 +88,37 @@
 #########################
 <SimplePropertyMapping/1>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/1/OM> ;
+        rr:objectMap  <SimplePropertyMapping/1/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<SimplePropertyMapping/1/OM>
+### Function Term Map
+<SimplePropertyMapping/1/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/1/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/1/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/1/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/1/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/1/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/1/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<SimplePropertyMapping/1/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<SimplePropertyMapping/1/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "total_temps" .
 
@@ -190,11 +216,37 @@
 ## Predicate Object Map
 <IntermediateMapping/2/SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/10/OM> ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/10/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/2/SimplePropertyMapping/10/OM>
+### Function Term Map
+<IntermediateMapping/2/SimplePropertyMapping/10/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/2/SimplePropertyMapping/10/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/2/SimplePropertyMapping/10/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/10/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/2/SimplePropertyMapping/10/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+<IntermediateMapping/2/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<IntermediateMapping/2/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "length3" .
 
@@ -256,11 +308,37 @@
 ## Predicate Object Map
 <IntermediateMapping/2/SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/9/OM> ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/9/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/2/SimplePropertyMapping/9/OM>
+### Function Term Map
+<IntermediateMapping/2/SimplePropertyMapping/9/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/2/SimplePropertyMapping/9/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/2/SimplePropertyMapping/9/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/2/SimplePropertyMapping/9/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/2/SimplePropertyMapping/9/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+<IntermediateMapping/2/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/2/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<IntermediateMapping/2/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "temps3" .
 
@@ -371,11 +449,37 @@
 ## Predicate Object Map
 <IntermediateMapping/1/SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/9/OM> ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/9/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/1/SimplePropertyMapping/9/OM>
+### Function Term Map
+<IntermediateMapping/1/SimplePropertyMapping/9/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/1/SimplePropertyMapping/9/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/1/SimplePropertyMapping/9/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/1/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/1/SimplePropertyMapping/9/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/1/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/1/SimplePropertyMapping/9/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/1/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "temps2" .
 
@@ -463,11 +567,37 @@
 ## Predicate Object Map
 <IntermediateMapping/1/SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/10/OM> ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/10/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/1/SimplePropertyMapping/10/OM>
+### Function Term Map
+<IntermediateMapping/1/SimplePropertyMapping/10/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/1/SimplePropertyMapping/10/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/1/SimplePropertyMapping/10/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/1/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/1/SimplePropertyMapping/10/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/1/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/1/SimplePropertyMapping/10/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/1/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "length2" .
 
@@ -578,11 +708,37 @@
 ## Predicate Object Map
 <IntermediateMapping/14/SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/10/OM> ;
+        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/10/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/14/SimplePropertyMapping/10/OM>
+### Function Term Map
+<IntermediateMapping/14/SimplePropertyMapping/10/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/14/SimplePropertyMapping/10/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/14/SimplePropertyMapping/10/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/14/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/14/SimplePropertyMapping/10/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/14/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/14/SimplePropertyMapping/10/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/14/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "length15" .
 
@@ -619,11 +775,37 @@
 ## Predicate Object Map
 <IntermediateMapping/14/SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/9/OM> ;
+        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/9/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/14/SimplePropertyMapping/9/OM>
+### Function Term Map
+<IntermediateMapping/14/SimplePropertyMapping/9/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/14/SimplePropertyMapping/9/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/14/SimplePropertyMapping/9/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/14/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/14/SimplePropertyMapping/9/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/14/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/14/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/14/SimplePropertyMapping/9/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/14/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "temps15" .
 
@@ -812,11 +994,37 @@
 ## Predicate Object Map
 <IntermediateMapping/9/SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/9/OM> ;
+        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/9/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/9/SimplePropertyMapping/9/OM>
+### Function Term Map
+<IntermediateMapping/9/SimplePropertyMapping/9/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/9/SimplePropertyMapping/9/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/9/SimplePropertyMapping/9/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/9/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/9/SimplePropertyMapping/9/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/9/SimplePropertyMapping/9/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+<IntermediateMapping/9/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<IntermediateMapping/9/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "temps10" .
 
@@ -865,11 +1073,37 @@
 ## Predicate Object Map
 <IntermediateMapping/9/SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/10/OM> ;
+        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/10/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/9/SimplePropertyMapping/10/OM>
+### Function Term Map
+<IntermediateMapping/9/SimplePropertyMapping/10/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/9/SimplePropertyMapping/10/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/9/SimplePropertyMapping/10/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/9/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/9/SimplePropertyMapping/10/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/9/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/9/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/9/SimplePropertyMapping/10/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/9/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "length10" .
 
@@ -940,11 +1174,37 @@
 ## Predicate Object Map
 <IntermediateMapping/11/SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/9/OM> ;
+        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/9/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/11/SimplePropertyMapping/9/OM>
+### Function Term Map
+<IntermediateMapping/11/SimplePropertyMapping/9/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/11/SimplePropertyMapping/9/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/11/SimplePropertyMapping/9/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/11/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/11/SimplePropertyMapping/9/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/11/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/11/SimplePropertyMapping/9/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/11/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "temps12" .
 
@@ -1033,11 +1293,37 @@
 ## Predicate Object Map
 <IntermediateMapping/11/SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/10/OM> ;
+        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/10/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/11/SimplePropertyMapping/10/OM>
+### Function Term Map
+<IntermediateMapping/11/SimplePropertyMapping/10/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/11/SimplePropertyMapping/10/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/11/SimplePropertyMapping/10/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/11/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/11/SimplePropertyMapping/10/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/11/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/11/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/11/SimplePropertyMapping/10/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/11/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "length12" .
 
@@ -1174,11 +1460,37 @@
 ## Predicate Object Map
 <IntermediateMapping/5/SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/10/OM> ;
+        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/10/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/5/SimplePropertyMapping/10/OM>
+### Function Term Map
+<IntermediateMapping/5/SimplePropertyMapping/10/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/5/SimplePropertyMapping/10/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/5/SimplePropertyMapping/10/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/5/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/5/SimplePropertyMapping/10/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/5/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/5/SimplePropertyMapping/10/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/5/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "length6" .
 
@@ -1213,11 +1525,37 @@
 ## Predicate Object Map
 <IntermediateMapping/5/SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/9/OM> ;
+        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/9/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/5/SimplePropertyMapping/9/OM>
+### Function Term Map
+<IntermediateMapping/5/SimplePropertyMapping/9/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/5/SimplePropertyMapping/9/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/5/SimplePropertyMapping/9/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/5/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/5/SimplePropertyMapping/9/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/5/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/5/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/5/SimplePropertyMapping/9/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/5/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "temps6" .
 
@@ -1367,11 +1705,37 @@
 ## Predicate Object Map
 <IntermediateMapping/0/SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/10/OM> ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/10/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/0/SimplePropertyMapping/10/OM>
+### Function Term Map
+<IntermediateMapping/0/SimplePropertyMapping/10/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/0/SimplePropertyMapping/10/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/0/SimplePropertyMapping/10/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/10/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/0/SimplePropertyMapping/10/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+<IntermediateMapping/0/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<IntermediateMapping/0/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "length1" .
 
@@ -1393,11 +1757,37 @@
 ## Predicate Object Map
 <IntermediateMapping/0/SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/9/OM> ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/9/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/0/SimplePropertyMapping/9/OM>
+### Function Term Map
+<IntermediateMapping/0/SimplePropertyMapping/9/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/0/SimplePropertyMapping/9/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/0/SimplePropertyMapping/9/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/9/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/0/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/0/SimplePropertyMapping/9/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/0/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "temps1" .
 
@@ -1535,11 +1925,37 @@
 ## Predicate Object Map
 <IntermediateMapping/12/SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/10/OM> ;
+        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/10/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/12/SimplePropertyMapping/10/OM>
+### Function Term Map
+<IntermediateMapping/12/SimplePropertyMapping/10/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/12/SimplePropertyMapping/10/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/12/SimplePropertyMapping/10/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/12/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/12/SimplePropertyMapping/10/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/12/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/12/SimplePropertyMapping/10/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/12/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "length13" .
 
@@ -1614,11 +2030,37 @@
 ## Predicate Object Map
 <IntermediateMapping/12/SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/9/OM> ;
+        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/9/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/12/SimplePropertyMapping/9/OM>
+### Function Term Map
+<IntermediateMapping/12/SimplePropertyMapping/9/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/12/SimplePropertyMapping/9/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/12/SimplePropertyMapping/9/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/12/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/12/SimplePropertyMapping/9/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/12/SimplePropertyMapping/9/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+<IntermediateMapping/12/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/12/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<IntermediateMapping/12/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "temps13" .
 
@@ -1756,11 +2198,37 @@
 ## Predicate Object Map
 <IntermediateMapping/8/SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/10/OM> ;
+        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/10/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/8/SimplePropertyMapping/10/OM>
+### Function Term Map
+<IntermediateMapping/8/SimplePropertyMapping/10/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/8/SimplePropertyMapping/10/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/8/SimplePropertyMapping/10/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/8/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/8/SimplePropertyMapping/10/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/8/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/8/SimplePropertyMapping/10/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/8/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "length9" .
 
@@ -1861,11 +2329,37 @@
 ## Predicate Object Map
 <IntermediateMapping/8/SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/9/OM> ;
+        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/9/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/8/SimplePropertyMapping/9/OM>
+### Function Term Map
+<IntermediateMapping/8/SimplePropertyMapping/9/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/8/SimplePropertyMapping/9/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/8/SimplePropertyMapping/9/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/8/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/8/SimplePropertyMapping/9/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/8/SimplePropertyMapping/9/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+<IntermediateMapping/8/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/8/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<IntermediateMapping/8/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "temps9" .
 
@@ -1910,11 +2404,37 @@
 ## Predicate Object Map
 <IntermediateMapping/7/SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/10/OM> ;
+        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/10/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/7/SimplePropertyMapping/10/OM>
+### Function Term Map
+<IntermediateMapping/7/SimplePropertyMapping/10/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/7/SimplePropertyMapping/10/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/7/SimplePropertyMapping/10/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/7/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/7/SimplePropertyMapping/10/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/7/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/7/SimplePropertyMapping/10/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/7/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "length8" .
 
@@ -2016,11 +2536,37 @@
 ## Predicate Object Map
 <IntermediateMapping/7/SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/9/OM> ;
+        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/9/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/7/SimplePropertyMapping/9/OM>
+### Function Term Map
+<IntermediateMapping/7/SimplePropertyMapping/9/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/7/SimplePropertyMapping/9/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/7/SimplePropertyMapping/9/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/7/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/7/SimplePropertyMapping/9/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/7/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/7/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/7/SimplePropertyMapping/9/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/7/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "temps8" .
 
@@ -2130,11 +2676,37 @@
 ## Predicate Object Map
 <IntermediateMapping/4/SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/9/OM> ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/9/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/4/SimplePropertyMapping/9/OM>
+### Function Term Map
+<IntermediateMapping/4/SimplePropertyMapping/9/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/4/SimplePropertyMapping/9/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/4/SimplePropertyMapping/9/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/9/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/4/SimplePropertyMapping/9/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+<IntermediateMapping/4/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<IntermediateMapping/4/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "temps5" .
 
@@ -2223,11 +2795,37 @@
 ## Predicate Object Map
 <IntermediateMapping/4/SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/10/OM> ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/10/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/4/SimplePropertyMapping/10/OM>
+### Function Term Map
+<IntermediateMapping/4/SimplePropertyMapping/10/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/4/SimplePropertyMapping/10/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/4/SimplePropertyMapping/10/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/4/SimplePropertyMapping/10/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/4/SimplePropertyMapping/10/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+<IntermediateMapping/4/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/4/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<IntermediateMapping/4/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "length5" .
 
@@ -2324,11 +2922,37 @@
 ## Predicate Object Map
 <IntermediateMapping/3/SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/9/OM> ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/9/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/3/SimplePropertyMapping/9/OM>
+### Function Term Map
+<IntermediateMapping/3/SimplePropertyMapping/9/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/3/SimplePropertyMapping/9/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/3/SimplePropertyMapping/9/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/9/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/3/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/3/SimplePropertyMapping/9/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/3/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "temps4" .
 
@@ -2391,11 +3015,37 @@
 ## Predicate Object Map
 <IntermediateMapping/3/SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/10/OM> ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/10/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/3/SimplePropertyMapping/10/OM>
+### Function Term Map
+<IntermediateMapping/3/SimplePropertyMapping/10/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/3/SimplePropertyMapping/10/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/3/SimplePropertyMapping/10/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/3/SimplePropertyMapping/10/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/3/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/3/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/3/SimplePropertyMapping/10/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/3/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "length4" .
 
@@ -2624,11 +3274,37 @@
 ## Predicate Object Map
 <IntermediateMapping/10/SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/9/OM> ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/9/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/10/SimplePropertyMapping/9/OM>
+### Function Term Map
+<IntermediateMapping/10/SimplePropertyMapping/9/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/10/SimplePropertyMapping/9/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/10/SimplePropertyMapping/9/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/9/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/10/SimplePropertyMapping/9/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+<IntermediateMapping/10/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<IntermediateMapping/10/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "temps11" .
 
@@ -2637,11 +3313,37 @@
 ## Predicate Object Map
 <IntermediateMapping/10/SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/10/OM> ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/10/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/10/SimplePropertyMapping/10/OM>
+### Function Term Map
+<IntermediateMapping/10/SimplePropertyMapping/10/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/10/SimplePropertyMapping/10/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/10/SimplePropertyMapping/10/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/10/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/10/SimplePropertyMapping/10/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+<IntermediateMapping/10/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<IntermediateMapping/10/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "length11" .
 
@@ -2725,11 +3427,37 @@
 ## Predicate Object Map
 <IntermediateMapping/6/SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/9/OM> ;
+        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/9/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/6/SimplePropertyMapping/9/OM>
+### Function Term Map
+<IntermediateMapping/6/SimplePropertyMapping/9/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/6/SimplePropertyMapping/9/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/6/SimplePropertyMapping/9/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/6/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/6/SimplePropertyMapping/9/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/6/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/6/SimplePropertyMapping/9/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/6/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "temps7" .
 
@@ -2764,11 +3492,37 @@
 ## Predicate Object Map
 <IntermediateMapping/6/SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/10/OM> ;
+        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/10/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/6/SimplePropertyMapping/10/OM>
+### Function Term Map
+<IntermediateMapping/6/SimplePropertyMapping/10/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/6/SimplePropertyMapping/10/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/6/SimplePropertyMapping/10/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/6/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/6/SimplePropertyMapping/10/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/6/SimplePropertyMapping/10/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+<IntermediateMapping/6/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/6/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<IntermediateMapping/6/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "length7" .
 
@@ -2880,11 +3634,37 @@
 ## Predicate Object Map
 <IntermediateMapping/13/SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/10/OM> ;
+        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/10/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/13/SimplePropertyMapping/10/OM>
+### Function Term Map
+<IntermediateMapping/13/SimplePropertyMapping/10/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/13/SimplePropertyMapping/10/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/13/SimplePropertyMapping/10/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/13/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/13/SimplePropertyMapping/10/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/13/SimplePropertyMapping/10/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+<IntermediateMapping/13/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<IntermediateMapping/13/SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "length14" .
 
@@ -2932,11 +3712,37 @@
 ## Predicate Object Map
 <IntermediateMapping/13/SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/9/OM> ;
+        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/9/FTM> ;
         rr:predicate  dbo:runtime .
 
-### ObjectMap
-<IntermediateMapping/13/SimplePropertyMapping/9/OM>
+### Function Term Map
+<IntermediateMapping/13/SimplePropertyMapping/9/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/13/SimplePropertyMapping/9/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/minute> .
+
+### Function Execution Mapping
+<IntermediateMapping/13/SimplePropertyMapping/9/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <IntermediateMapping/13/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ,
+			       <IntermediateMapping/13/SimplePropertyMapping/9/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/13/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/13/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<IntermediateMapping/13/SimplePropertyMapping/9/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "minute" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<IntermediateMapping/13/SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "temps14" .
 
@@ -3037,3 +3843,24 @@
 ######################
 # Conditional Mappings
 ######################
+
+
+
+############
+# Functions
+############
+
+
+<Function/SimplePropertyFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:simplePropertyFunction ;
+        rr:predicate  fno:executes .
+
+
+### Functions SubjectMap
+#########################
+
+<SubjectMap/Function>
+        a            rr:SubjectMap ;
+        rr:class     fno:Execution ;
+        rr:termType  rr:BlankNode .

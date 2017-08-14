@@ -749,7 +749,7 @@
 ### Parameters
 <ConditionalMapping/0/Condition/1/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "watermolen" ;
+        rr:object     "turbinemolen" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 <ConditionalMapping/0/Condition/1/FTM/FV/PropertyParameterPOM>
@@ -796,7 +796,7 @@
 
 <ConditionalMapping/0/Condition/2/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "watermolen" ;
+        rr:object     "getijdenmolen" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 ### References
@@ -833,7 +833,7 @@
 ### Parameters
 <ConditionalMapping/0/Condition/3/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "watermolen" ;
+        rr:object     "bovenslagmolen" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 <ConditionalMapping/0/Condition/3/FTM/FV/PropertyParameterPOM>
@@ -875,7 +875,7 @@
 ### Parameters
 <ConditionalMapping/0/Condition/4/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "watermolen" ;
+        rr:object     "middenslagmolen" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 <ConditionalMapping/0/Condition/4/FTM/FV/PropertyParameterPOM>
@@ -917,7 +917,7 @@
 ### Parameters
 <ConditionalMapping/0/Condition/5/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "watermolen" ;
+        rr:object     "onderslagmolen" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 <ConditionalMapping/0/Condition/5/FTM/FV/PropertyParameterPOM>
@@ -964,7 +964,7 @@
 
 <ConditionalMapping/0/Condition/6/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "watermolen" ;
+        rr:object     "windmotor" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 ### References
@@ -1006,7 +1006,7 @@
 
 <ConditionalMapping/0/Condition/7/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "watermolen" ;
+        rr:object     "Amerikaanse" ;
         rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
 
 ### References
@@ -1035,7 +1035,7 @@
 <ConditionalMapping/0/Condition/8/FTM/FV>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/Contains> ,
+        rr:predicateObjectMap  <Function/Equals> ,
 			       <ConditionalMapping/0/Condition/8/FTM/FV/PropertyParameterPOM> ,
 			       <ConditionalMapping/0/Condition/8/FTM/FV/ValueParameterPOM> ;
         rr:subjectMap          <SubjectMap/Function> .
@@ -1044,12 +1044,12 @@
 <ConditionalMapping/0/Condition/8/FTM/FV/PropertyParameterPOM>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <ConditionalMapping/0/Condition/8/FTM/FV/PropertyParameterPOM/OM> ;
-        rr:predicate  <http://dbpedia.org/function/Contains/propertyParameter> .
+        rr:predicate  <http://dbpedia.org/function/Equals/propertyParameter> .
 
 <ConditionalMapping/0/Condition/8/FTM/FV/ValueParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "watermolen" ;
-        rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
+        rr:object     "Onderzoek" ;
+        rr:predicate  <http://dbpedia.org/function/Equals/valueParameter> .
 
 ### References
 <ConditionalMapping/0/Condition/8/FTM/FV/PropertyParameterPOM/OM>
@@ -1060,42 +1060,9 @@
 ### Conditional Mapping
 ###################################
 <ConditionalMapping/0/Condition/9/ClassMapping>
-        a                    rr:PredicateObjectMap ;
-        crml:equalCondition  <ConditionalMapping/0/Condition/9/FTM> ;
-        rr:object            dbo:Windmill ;
-        rr:predicate         rdf:type .
-
-
-
-### Function Term Map
-<ConditionalMapping/0/Condition/9/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <ConditionalMapping/0/Condition/9/FTM/FV> .
-
-### Function Execution Mapping
-<ConditionalMapping/0/Condition/9/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/Contains> ,
-			       <ConditionalMapping/0/Condition/9/FTM/FV/PropertyParameterPOM> ,
-			       <ConditionalMapping/0/Condition/9/FTM/FV/ValueParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<ConditionalMapping/0/Condition/9/FTM/FV/PropertyParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <ConditionalMapping/0/Condition/9/FTM/FV/PropertyParameterPOM/OM> ;
-        rr:predicate  <http://dbpedia.org/function/Contains/propertyParameter> .
-
-<ConditionalMapping/0/Condition/9/FTM/FV/ValueParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "watermolen" ;
-        rr:predicate  <http://dbpedia.org/function/Contains/valueParameter> .
-
-### References
-<ConditionalMapping/0/Condition/9/FTM/FV/PropertyParameterPOM/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "type" .
+        rr:object     dbo:Windmill ;
+        rr:predicate  rdf:type .
 
 
 
@@ -1106,6 +1073,10 @@
 
 <Function/Contains>  a  rr:PredicateObjectMap ;
         rr:object     dbf:Contains ;
+        rr:predicate  fno:executes .
+
+<Function/Equals>  a  rr:PredicateObjectMap ;
+        rr:object     dbf:Equals ;
         rr:predicate  fno:executes .
 
 <Function/LongitudeFunction>
