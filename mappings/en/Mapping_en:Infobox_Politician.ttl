@@ -358,6 +358,7 @@
 			       <SimplePropertyMapping/241> ,
 			       <SimplePropertyMapping/325> ,
 			       <SimplePropertyMapping/232> ,
+			       <IntermediateMapping/0> ,
 			       <SimplePropertyMapping/223> ,
 			       <SimplePropertyMapping/127> ,
 			       <SimplePropertyMapping/270> ,
@@ -2646,15 +2647,15 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/51>
+<SimplePropertyMapping/303>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/51/OM> ;
-        rr:predicate  dbo:orderInOffice .
+        rr:objectMap  <SimplePropertyMapping/303/OM> ;
+        rr:predicate  dbo:region .
 
 ### ObjectMap
-<SimplePropertyMapping/51/OM>
+<SimplePropertyMapping/303/OM>
         a              rr:ObjectMap ;
-        rml:reference  "order2" .
+        rml:reference  "district9" .
 
 
 ### Predicate Object Map
@@ -2698,15 +2699,15 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/303>
+<SimplePropertyMapping/51>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/303/OM> ;
-        rr:predicate  dbo:region .
+        rr:objectMap  <SimplePropertyMapping/51/OM> ;
+        rr:predicate  dbo:orderInOffice .
 
 ### ObjectMap
-<SimplePropertyMapping/303/OM>
+<SimplePropertyMapping/51/OM>
         a              rr:ObjectMap ;
-        rml:reference  "district9" .
+        rml:reference  "order2" .
 
 
 ### Predicate Object Map
@@ -4684,6 +4685,7 @@
         rml:reference  "country2" .
 
 
+
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/232>
@@ -5712,6 +5714,100 @@
         rml:reference  "lieutenant7" .
 
 
+##############################
+### Intermediate Mappings
+##############################
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/OM> ;
+        rr:predicate  dbo:restingPlacePosition .
+
+## Intermediate Object Map
+<IntermediateMapping/0/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/0/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/0/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/0/LatitudeMapping/0> ,
+			       <IntermediateMapping/0/LongitudeMapping/0> ;
+        rr:subjectMap          <IntermediateMapping/0/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/0/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     geo:SpatialThing ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__restingPlacePosition__22" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/0/LongitudeMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/LongitudeMapping/0/FTM> ;
+        rr:predicate  geo:long .
+
+### Function Term Map
+<IntermediateMapping/0/LongitudeMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/0/LongitudeMapping/0/FTM/FV> .
+
+### Function Execution Mapping
+<IntermediateMapping/0/LongitudeMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/LongitudeFunction> ,
+			       <IntermediateMapping/0/LongitudeMapping/0/FTM/FV/ParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/0/LongitudeMapping/0/FTM/FV/ParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/LongitudeMapping/0/FTM/FV/ParameterPOM/OM> ;
+        rr:predicate  dbf:coordParameter .
+
+### References
+<IntermediateMapping/0/LongitudeMapping/0/FTM/FV/ParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "restingplacecoordinates" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/0/LatitudeMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/LatitudeMapping/0/FTM> ;
+        rr:predicate  geo:lat .
+
+### Function Term Map
+<IntermediateMapping/0/LatitudeMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/0/LatitudeMapping/0/FTM/FV> .
+
+### Function Execution Mapping
+<IntermediateMapping/0/LatitudeMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/LatitudeFunction> ,
+			       <IntermediateMapping/0/LatitudeMapping/0/FTM/FV/ParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/0/LatitudeMapping/0/FTM/FV/ParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/LatitudeMapping/0/FTM/FV/ParameterPOM/OM> ;
+        rr:predicate  dbf:coordParameter .
+
+### References
+<IntermediateMapping/0/LatitudeMapping/0/FTM/FV/ParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "restingplacecoordinates" .
+
+
 ######################
 # Conditional Mappings
 ######################
@@ -5728,9 +5824,19 @@
         rr:object     dbf:endDateFunction ;
         rr:predicate  fno:executes .
 
+<Function/LatitudeFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:latFunction ;
+        rr:predicate  fno:executes .
+
 <Function/StartDateFunction>
         a             rr:PredicateObjectMap ;
         rr:object     dbf:startDateFunction ;
+        rr:predicate  fno:executes .
+
+<Function/LongitudeFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:lonFunction ;
         rr:predicate  fno:executes .
 
 

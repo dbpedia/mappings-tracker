@@ -40,9 +40,11 @@
 			       <SimplePropertyMapping/16> ,
 			       <SimplePropertyMapping/7> ,
 			       <SimplePropertyMapping/14> ,
+			       <IntermediateMapping/0> ,
 			       <SimplePropertyMapping/15> ,
 			       <SimplePropertyMapping/4> ,
 			       <SimplePropertyMapping/5> ,
+			       <IntermediateMapping/1> ,
 			       <SimplePropertyMapping/12> ,
 			       <SimplePropertyMapping/13> ,
 			       <SimplePropertyMapping/2> ,
@@ -194,6 +196,7 @@
         rml:reference  "MÜNDUNG_REGION" .
 
 
+
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/15>
@@ -257,6 +260,7 @@
 <SimplePropertyMapping/5/OM>
         a              rr:ObjectMap ;
         rml:reference  "LÄNGE" .
+
 
 
 ### Predicate Object Map
@@ -417,6 +421,190 @@
         rr:language    "de" .
 
 
+##############################
+### Intermediate Mappings
+##############################
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/OM> ;
+        rr:predicate  dbo:sourcePosition .
+
+## Intermediate Object Map
+<IntermediateMapping/0/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/0/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/0/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/0/LatitudeMapping/0> ,
+			       <IntermediateMapping/0/LongitudeMapping/0> ;
+        rr:subjectMap          <IntermediateMapping/0/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/0/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     geo:SpatialThing ;
+        rr:template  "http://de.dbpedia.org/resource/{wikititle}__sourcePosition__1" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/0/LongitudeMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/LongitudeMapping/0/FTM> ;
+        rr:predicate  geo:long .
+
+### Function Term Map
+<IntermediateMapping/0/LongitudeMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/0/LongitudeMapping/0/FTM/FV> .
+
+### Function Execution Mapping
+<IntermediateMapping/0/LongitudeMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/LongitudeFunction> ,
+			       <IntermediateMapping/0/LongitudeMapping/0/FTM/FV/ParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/0/LongitudeMapping/0/FTM/FV/ParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/LongitudeMapping/0/FTM/FV/ParameterPOM/OM> ;
+        rr:predicate  dbf:lonParameter .
+
+### References
+<IntermediateMapping/0/LongitudeMapping/0/FTM/FV/ParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "QUELLE_LONG_GRAD" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/0/LatitudeMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/LatitudeMapping/0/FTM> ;
+        rr:predicate  geo:lat .
+
+### Function Term Map
+<IntermediateMapping/0/LatitudeMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/0/LatitudeMapping/0/FTM/FV> .
+
+### Function Execution Mapping
+<IntermediateMapping/0/LatitudeMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/LatitudeFunction> ,
+			       <IntermediateMapping/0/LatitudeMapping/0/FTM/FV/ParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/0/LatitudeMapping/0/FTM/FV/ParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/LatitudeMapping/0/FTM/FV/ParameterPOM/OM> ;
+        rr:predicate  dbf:latParameter .
+
+### References
+<IntermediateMapping/0/LatitudeMapping/0/FTM/FV/ParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "QUELLE_LAT_GRAD" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/OM> ;
+        rr:predicate  dbo:mouthPosition .
+
+## Intermediate Object Map
+<IntermediateMapping/1/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/1/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/1/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/1/LatitudeMapping/0> ,
+			       <IntermediateMapping/1/LongitudeMapping/0> ;
+        rr:subjectMap          <IntermediateMapping/1/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/1/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     geo:SpatialThing ;
+        rr:template  "http://de.dbpedia.org/resource/{wikititle}__mouthPosition__1" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/1/LongitudeMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/LongitudeMapping/0/FTM> ;
+        rr:predicate  geo:long .
+
+### Function Term Map
+<IntermediateMapping/1/LongitudeMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/1/LongitudeMapping/0/FTM/FV> .
+
+### Function Execution Mapping
+<IntermediateMapping/1/LongitudeMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/LongitudeFunction> ,
+			       <IntermediateMapping/1/LongitudeMapping/0/FTM/FV/ParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/1/LongitudeMapping/0/FTM/FV/ParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/LongitudeMapping/0/FTM/FV/ParameterPOM/OM> ;
+        rr:predicate  dbf:lonParameter .
+
+### References
+<IntermediateMapping/1/LongitudeMapping/0/FTM/FV/ParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "MÜNDUNG_LONG_GRAD" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/1/LatitudeMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/LatitudeMapping/0/FTM> ;
+        rr:predicate  geo:lat .
+
+### Function Term Map
+<IntermediateMapping/1/LatitudeMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/1/LatitudeMapping/0/FTM/FV> .
+
+### Function Execution Mapping
+<IntermediateMapping/1/LatitudeMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/LatitudeFunction> ,
+			       <IntermediateMapping/1/LatitudeMapping/0/FTM/FV/ParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/1/LatitudeMapping/0/FTM/FV/ParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/1/LatitudeMapping/0/FTM/FV/ParameterPOM/OM> ;
+        rr:predicate  dbf:latParameter .
+
+### References
+<IntermediateMapping/1/LatitudeMapping/0/FTM/FV/ParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "MÜNDUNG_LAT_GRAD" .
+
+
 ######################
 # Conditional Mappings
 ######################
@@ -431,6 +619,16 @@
 <Function/SimplePropertyFunction>
         a             rr:PredicateObjectMap ;
         rr:object     dbf:simplePropertyFunction ;
+        rr:predicate  fno:executes .
+
+<Function/LatitudeFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:latFunction ;
+        rr:predicate  fno:executes .
+
+<Function/LongitudeFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:lonFunction ;
         rr:predicate  fno:executes .
 
 

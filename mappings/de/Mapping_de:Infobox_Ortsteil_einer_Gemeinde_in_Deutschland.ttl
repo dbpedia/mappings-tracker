@@ -512,6 +512,39 @@
         rr:objectMap         <ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM> ;
         rr:predicate         dbo:minimumElevation .
 
+### Function Term Map
+<ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/metre> .
+
+### Function Execution Mapping
+<ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM> ,
+			       <ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "metre" ;
+        rr:predicate  dbf:unitParameter .
+
+<ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<ConditionalMapping/0/Condition/0/SimplePropertyMapping/0/FTM/FV/propertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Höhe" .
+
+
+
 
 
 ### Function Term Map

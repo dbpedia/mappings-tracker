@@ -409,6 +409,7 @@
 			       <SimplePropertyMapping/4> ,
 			       <IntermediateMapping/9> ,
 			       <SimplePropertyMapping/36> ,
+			       <IntermediateMapping/10> ,
 			       <SimplePropertyMapping/182> ,
 			       <SimplePropertyMapping/335> ,
 			       <IntermediateMapping/2> ,
@@ -5230,6 +5231,7 @@
         rml:reference  "appointer" .
 
 
+
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/335>
@@ -5311,7 +5313,7 @@
 ### ObjectMap
 <IntermediateMapping/6/SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
-        rml:reference  "office6" .
+        rml:reference  "office5" .
 
 
 
@@ -5324,7 +5326,7 @@
 ### ObjectMap
 <IntermediateMapping/6/SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_end6" .
+        rml:reference  "term_end5" .
 
 
 
@@ -5337,7 +5339,7 @@
 ### ObjectMap
 <IntermediateMapping/6/SimplePropertyMapping/0/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_start6" .
+        rml:reference  "term_start5" .
 
 
 ### Intermediate Predicate Object Map
@@ -5345,7 +5347,7 @@
 <IntermediateMapping/0>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <IntermediateMapping/0/OM> ;
-        rr:predicate  dbo:termPeriod .
+        rr:predicate  dbo:restingPlacePosition .
 
 ## Intermediate Object Map
 <IntermediateMapping/0/OM>
@@ -5356,54 +5358,78 @@
 <IntermediateMapping/0/OM//PTM>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <IntermediateMapping/0/SimplePropertyMapping/0> ,
-			       <IntermediateMapping/0/SimplePropertyMapping/1> ,
-			       <IntermediateMapping/0/SimplePropertyMapping/2> ;
-        rr:subjectMap          <IntermediateMapping/0/OM//PTM/SubjectMap> .
+        rr:predicateObjectMap  <IntermediateMapping/0/LatitudeMapping/0> ,
+			       <IntermediateMapping/0/LongitudeMapping/0> ;
+        rr:subjectMap          <IntermediateMapping/0/SubjectMap> .
 
 ## Intermediate Subject Map
-<IntermediateMapping/0/OM//PTM/SubjectMap>
+<IntermediateMapping/0/SubjectMap>
         a            rr:SubjectMap ;
-        rr:class     dbo:TimePeriod ;
-        rr:template  "http://en.dbpedia.org/resource/{wikititle}__0" ;
+        rr:class     geo:SpatialThing ;
+        rr:template  "http://mk.dbpedia.org/resource/{wikititle}__restingPlacePosition__1" ;
         rr:termType  rr:IRI .
 
 ## Predicate Object Map
-<IntermediateMapping/0/SimplePropertyMapping/2>
+<IntermediateMapping/0/LongitudeMapping/0>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/2/OM> ;
-        rr:predicate  dbo:office .
+        rr:objectMap  <IntermediateMapping/0/LongitudeMapping/0/FTM> ;
+        rr:predicate  geo:long .
 
-### ObjectMap
-<IntermediateMapping/0/SimplePropertyMapping/2/OM>
+### Function Term Map
+<IntermediateMapping/0/LongitudeMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/0/LongitudeMapping/0/FTM/FV> .
+
+### Function Execution Mapping
+<IntermediateMapping/0/LongitudeMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/LongitudeFunction> ,
+			       <IntermediateMapping/0/LongitudeMapping/0/FTM/FV/ParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<IntermediateMapping/0/LongitudeMapping/0/FTM/FV/ParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/LongitudeMapping/0/FTM/FV/ParameterPOM/OM> ;
+        rr:predicate  dbf:coordParameter .
+
+### References
+<IntermediateMapping/0/LongitudeMapping/0/FTM/FV/ParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "office" .
+        rml:reference  "restingplacecoordinates" .
 
 
 
 ## Predicate Object Map
-<IntermediateMapping/0/SimplePropertyMapping/1>
+<IntermediateMapping/0/LatitudeMapping/0>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/1/OM> ;
-        rr:predicate  dbo:activeYearsEndDate .
+        rr:objectMap  <IntermediateMapping/0/LatitudeMapping/0/FTM> ;
+        rr:predicate  geo:lat .
 
-### ObjectMap
-<IntermediateMapping/0/SimplePropertyMapping/1/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "term_end" .
+### Function Term Map
+<IntermediateMapping/0/LatitudeMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <IntermediateMapping/0/LatitudeMapping/0/FTM/FV> .
 
+### Function Execution Mapping
+<IntermediateMapping/0/LatitudeMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/LatitudeFunction> ,
+			       <IntermediateMapping/0/LatitudeMapping/0/FTM/FV/ParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
 
-
-## Predicate Object Map
-<IntermediateMapping/0/SimplePropertyMapping/0>
+### Parameters
+<IntermediateMapping/0/LatitudeMapping/0/FTM/FV/ParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/0/OM> ;
-        rr:predicate  dbo:activeYearsStartDate .
+        rr:objectMap  <IntermediateMapping/0/LatitudeMapping/0/FTM/FV/ParameterPOM/OM> ;
+        rr:predicate  dbf:coordParameter .
 
-### ObjectMap
-<IntermediateMapping/0/SimplePropertyMapping/0/OM>
+### References
+<IntermediateMapping/0/LatitudeMapping/0/FTM/FV/ParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_start" .
+        rml:reference  "restingplacecoordinates" .
 
 
 ### Intermediate Predicate Object Map
@@ -5443,7 +5469,7 @@
 ### ObjectMap
 <IntermediateMapping/3/SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
-        rml:reference  "office3" .
+        rml:reference  "office2" .
 
 
 
@@ -5456,7 +5482,7 @@
 ### ObjectMap
 <IntermediateMapping/3/SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_end3" .
+        rml:reference  "term_end2" .
 
 
 
@@ -5469,7 +5495,7 @@
 ### ObjectMap
 <IntermediateMapping/3/SimplePropertyMapping/0/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_start3" .
+        rml:reference  "term_start2" .
 
 
 ### Intermediate Predicate Object Map
@@ -5509,7 +5535,7 @@
 ### ObjectMap
 <IntermediateMapping/7/SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
-        rml:reference  "office7" .
+        rml:reference  "office6" .
 
 
 
@@ -5522,7 +5548,7 @@
 ### ObjectMap
 <IntermediateMapping/7/SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_end7" .
+        rml:reference  "term_end6" .
 
 
 
@@ -5535,7 +5561,7 @@
 ### ObjectMap
 <IntermediateMapping/7/SimplePropertyMapping/0/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_start7" .
+        rml:reference  "term_start6" .
 
 
 ### Intermediate Predicate Object Map
@@ -5575,7 +5601,7 @@
 ### ObjectMap
 <IntermediateMapping/4/SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
-        rml:reference  "office4" .
+        rml:reference  "office3" .
 
 
 
@@ -5588,7 +5614,7 @@
 ### ObjectMap
 <IntermediateMapping/4/SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_end4" .
+        rml:reference  "term_end3" .
 
 
 
@@ -5601,7 +5627,7 @@
 ### ObjectMap
 <IntermediateMapping/4/SimplePropertyMapping/0/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_start4" .
+        rml:reference  "term_start3" .
 
 
 ### Intermediate Predicate Object Map
@@ -5641,7 +5667,7 @@
 ### ObjectMap
 <IntermediateMapping/1/SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
-        rml:reference  "office1" .
+        rml:reference  "office" .
 
 
 
@@ -5654,7 +5680,7 @@
 ### ObjectMap
 <IntermediateMapping/1/SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_end1" .
+        rml:reference  "term_end" .
 
 
 
@@ -5667,7 +5693,7 @@
 ### ObjectMap
 <IntermediateMapping/1/SimplePropertyMapping/0/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_start1" .
+        rml:reference  "term_start" .
 
 
 ### Intermediate Predicate Object Map
@@ -5707,7 +5733,7 @@
 ### ObjectMap
 <IntermediateMapping/8/SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
-        rml:reference  "office8" .
+        rml:reference  "office7" .
 
 
 
@@ -5720,7 +5746,7 @@
 ### ObjectMap
 <IntermediateMapping/8/SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_end8" .
+        rml:reference  "term_end7" .
 
 
 
@@ -5733,7 +5759,7 @@
 ### ObjectMap
 <IntermediateMapping/8/SimplePropertyMapping/0/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_start8" .
+        rml:reference  "term_start7" .
 
 
 ### Intermediate Predicate Object Map
@@ -5773,7 +5799,7 @@
 ### ObjectMap
 <IntermediateMapping/5/SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
-        rml:reference  "office5" .
+        rml:reference  "office4" .
 
 
 
@@ -5786,7 +5812,7 @@
 ### ObjectMap
 <IntermediateMapping/5/SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_end5" .
+        rml:reference  "term_end4" .
 
 
 
@@ -5799,7 +5825,7 @@
 ### ObjectMap
 <IntermediateMapping/5/SimplePropertyMapping/0/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_start5" .
+        rml:reference  "term_start4" .
 
 
 ### Intermediate Predicate Object Map
@@ -5839,7 +5865,7 @@
 ### ObjectMap
 <IntermediateMapping/9/SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
-        rml:reference  "office9" .
+        rml:reference  "office8" .
 
 
 
@@ -5852,7 +5878,7 @@
 ### ObjectMap
 <IntermediateMapping/9/SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_end9" .
+        rml:reference  "term_end8" .
 
 
 
@@ -5864,6 +5890,72 @@
 
 ### ObjectMap
 <IntermediateMapping/9/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "term_start8" .
+
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/OM> ;
+        rr:predicate  dbo:termPeriod .
+
+## Intermediate Object Map
+<IntermediateMapping/10/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/10/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/10/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/10/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/1> ,
+			       <IntermediateMapping/10/SimplePropertyMapping/2> ;
+        rr:subjectMap          <IntermediateMapping/10/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/10/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:TimePeriod ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__10" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/10/SimplePropertyMapping/2>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:office .
+
+### ObjectMap
+<IntermediateMapping/10/SimplePropertyMapping/2/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "office9" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/10/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/1/OM> ;
+        rr:predicate  dbo:activeYearsEndDate .
+
+### ObjectMap
+<IntermediateMapping/10/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "term_end9" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/10/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/10/SimplePropertyMapping/0/OM> ;
+        rr:predicate  dbo:activeYearsStartDate .
+
+### ObjectMap
+<IntermediateMapping/10/SimplePropertyMapping/0/OM>
         a              rr:ObjectMap ;
         rml:reference  "term_start9" .
 
@@ -5905,7 +5997,7 @@
 ### ObjectMap
 <IntermediateMapping/2/SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
-        rml:reference  "office2" .
+        rml:reference  "office1" .
 
 
 
@@ -5918,7 +6010,7 @@
 ### ObjectMap
 <IntermediateMapping/2/SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_end2" .
+        rml:reference  "term_end1" .
 
 
 
@@ -5931,7 +6023,7 @@
 ### ObjectMap
 <IntermediateMapping/2/SimplePropertyMapping/0/OM>
         a              rr:ObjectMap ;
-        rml:reference  "term_start2" .
+        rml:reference  "term_start1" .
 
 
 ######################
@@ -5945,6 +6037,11 @@
 ############
 
 
+<Function/LongitudeFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:lonFunction ;
+        rr:predicate  fno:executes .
+
 <Function/EndDateFunction>
         a             rr:PredicateObjectMap ;
         rr:object     dbf:endDateFunction ;
@@ -5953,6 +6050,11 @@
 <Function/StartDateFunction>
         a             rr:PredicateObjectMap ;
         rr:object     dbf:startDateFunction ;
+        rr:predicate  fno:executes .
+
+<Function/LatitudeFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:latFunction ;
         rr:predicate  fno:executes .
 
 
