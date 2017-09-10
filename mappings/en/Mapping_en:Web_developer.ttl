@@ -33,9 +33,13 @@
 ### Main TriplesMap
 ####################
 <http://en.dbpedia.org/resource/Mapping_en:Web_developer>
-        a                  rr:TriplesMap ;
-        rml:logicalSource  <LogicalSource> ;
-        rr:subjectMap      <SubjectMap> .
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <StartDateMapping/0> ,
+			       <SimplePropertyMapping/0> ,
+			       <SimplePropertyMapping/1> ,
+			       <IntermediateMapping/0> ;
+        rr:subjectMap          <SubjectMap> .
 
 
 ### Main SubjectMap
@@ -58,6 +62,177 @@
 ###########
 
 
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/1/FTM> ;
+        rr:predicate  dbo:birthPlace .
+
+### Function Term Map
+<SimplePropertyMapping/1/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/1/FTM/FV> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/1/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/1/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/1/FTM/FV/selectParameterPOM> ,
+			       <SimplePropertyMapping/1/FTM/FV/prefixParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/1/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/1/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<SimplePropertyMapping/1/FTM/FV/selectParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "first" ;
+        rr:predicate  dbf:selectParameter .
+
+<SimplePropertyMapping/1/FTM/FV/prefixParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "prefix" ;
+        rr:predicate  dbf:prefixParameter .
+
+### References
+<SimplePropertyMapping/1/FTM/FV/propertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "place_of_birth" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/0/OM> ;
+        rr:predicate  dbo:name .
+
+### ObjectMap
+<SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "person_name" ;
+        rr:language    "en" .
+
+
+### Predicate Object Map
+#########################
+<StartDateMapping/0>  a  rr:PredicateObjectMap ;
+        rr:objectMap  <StartDateMapping/0/FTM> ;
+        rr:predicate  dbo:startYear .
+
+### Function Term Map
+<StartDateMapping/0/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <StartDateMapping/0/FTM/FV> .
+
+### Function Execution Mapping
+<StartDateMapping/0/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <StartDateMapping/0/FTM/FV/PropertyParameterPOM> ,
+			       <Function/StartDateFunction> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<StartDateMapping/0/FTM/FV/PropertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <StartDateMapping/0/FTM/FV/PropertyParameterPOM/OM> ;
+        rr:predicate  dbf:startDatePropertyParameter .
+
+### References
+<StartDateMapping/0/FTM/FV/PropertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "years_active" .
+
+
+##############################
+### Intermediate Mappings
+##############################
+
+### Intermediate Predicate Object Map
+######################################
+<IntermediateMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/OM> ;
+        rr:predicate  dbo:restingPlace .
+
+## Intermediate Object Map
+<IntermediateMapping/0/OM>
+        a                    rr:ObjectMap ;
+        rr:parentTriplesMap  <IntermediateMapping/0/OM//PTM> .
+
+## Intermediate Triples Map
+<IntermediateMapping/0/OM//PTM>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <IntermediateMapping/0/SimplePropertyMapping/0> ,
+			       <IntermediateMapping/0/SimplePropertyMapping/1> ;
+        rr:subjectMap          <IntermediateMapping/0/OM//PTM/SubjectMap> .
+
+## Intermediate Subject Map
+<IntermediateMapping/0/OM//PTM/SubjectMap>
+        a            rr:SubjectMap ;
+        rr:class     dbo:Place ;
+        rr:template  "http://en.dbpedia.org/resource/{wikititle}__0" ;
+        rr:termType  rr:IRI .
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/1>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/1/OM> ;
+        rr:predicate  dbo:source .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/1/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "source" .
+
+
+
+## Predicate Object Map
+<IntermediateMapping/0/SimplePropertyMapping/0>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <IntermediateMapping/0/SimplePropertyMapping/0/OM> ;
+        rr:predicate  dbo:age .
+
+### ObjectMap
+<IntermediateMapping/0/SimplePropertyMapping/0/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "age" .
+
+
 ######################
 # Conditional Mappings
 ######################
+
+
+
+############
+# Functions
+############
+
+
+<Function/StartDateFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:startDateFunction ;
+        rr:predicate  fno:executes .
+
+<Function/SimplePropertyFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:simplePropertyFunction ;
+        rr:predicate  fno:executes .
+
+
+### Functions SubjectMap
+#########################
+
+<SubjectMap/Function>
+        a            rr:SubjectMap ;
+        rr:class     fno:Execution ;
+        rr:termType  rr:BlankNode .
