@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -53,6 +55,7 @@
 			       <SimplePropertyMapping/20> ,
 			       <SimplePropertyMapping/39> ,
 			       <SimplePropertyMapping/27> ,
+			       <SimplePropertyMapping/44> ,
 			       <SimplePropertyMapping/4> ,
 			       <SimplePropertyMapping/41> ,
 			       <SimplePropertyMapping/1> ,
@@ -148,64 +151,64 @@
 <SimplePropertyMapping/38>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/38/OM> ;
-        rr:predicate  dbo:lethalOnMice .
+        rr:predicate  dbo:lethalOnRats .
 
 ### ObjectMap
 <SimplePropertyMapping/38/OM>
         a              rr:ObjectMap ;
-        rml:reference  "LethaalMuis" .
+        rml:reference  "LethaalRat" .
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/26>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/26/FTM> ;
-        rr:predicate  dbo:density .
+        rr:objectMap  <SimplePropertyMapping/26/OM> ;
+        rr:predicate  dc:description .
 
-### Function Term Map
-<SimplePropertyMapping/26/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/26/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/Density> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/26/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/26/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/26/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/26/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/26/FTM/FV/propertyParameterPOM/OM> ;
-        rr:predicate  dbf:propertyParameter .
-
-<SimplePropertyMapping/26/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "Density" ;
-        rr:predicate  dbf:unitParameter .
-
-### References
-<SimplePropertyMapping/26/FTM/FV/propertyParameterPOM/OM>
+### ObjectMap
+<SimplePropertyMapping/26/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Dichtheid" .
+        rml:reference  "Beschrijving" .
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/29>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/29/OM> ;
-        rr:predicate  dbo:pubchem .
+        rr:objectMap  <SimplePropertyMapping/29/FTM> ;
+        rr:predicate  dbo:sublimationPoint .
 
-### ObjectMap
-<SimplePropertyMapping/29/OM>
+### Function Term Map
+<SimplePropertyMapping/29/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/29/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/degreeCelsius> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/29/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/29/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/29/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/29/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "degreeCelsius" ;
+        rr:predicate  dbf:unitParameter .
+
+<SimplePropertyMapping/29/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/29/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/29/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "PubChem" .
+        rml:reference  "Sublimatiepunt" .
 
 
 ### Predicate Object Map
@@ -226,12 +229,12 @@
 <SimplePropertyMapping/35>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/35/OM> ;
-        rr:predicate  dbo:notSolubleIn .
+        rr:predicate  dbo:solventWithGoodSolubility .
 
 ### ObjectMap
 <SimplePropertyMapping/35/OM>
         a              rr:ObjectMap ;
-        rml:reference  "OnoplIn" .
+        rml:reference  "GoedOplIn" .
 
 
 ### Predicate Object Map
@@ -278,12 +281,12 @@
 <SimplePropertyMapping/40>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/40/OM> ;
-        rr:predicate  dbo:lethalOnChickens .
+        rr:predicate  dbo:lethalOnRabbits .
 
 ### ObjectMap
 <SimplePropertyMapping/40/OM>
         a              rr:ObjectMap ;
-        rml:reference  "LethaalKip" .
+        rml:reference  "LethaalKonijn" .
 
 
 ### Predicate Object Map
@@ -344,12 +347,12 @@
 <SimplePropertyMapping/32>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/32/OM> ;
-        rr:predicate  dbo:solventWithBadSolubility .
+        rr:predicate  dbo:solubility .
 
 ### ObjectMap
 <SimplePropertyMapping/32/OM>
         a              rr:ObjectMap ;
-        rml:reference  "SlechtOplIn" .
+        rml:reference  "Oplosbaarheid" .
 
 
 ### Predicate Object Map
@@ -370,12 +373,12 @@
 <SimplePropertyMapping/39>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/39/OM> ;
-        rr:predicate  dbo:lethalOnRabbits .
+        rr:predicate  dbo:lethalOnMice .
 
 ### ObjectMap
 <SimplePropertyMapping/39/OM>
         a              rr:ObjectMap ;
-        rml:reference  "LethaalKonijn" .
+        rml:reference  "LethaalMuis" .
 
 
 ### Predicate Object Map
@@ -383,13 +386,13 @@
 <SimplePropertyMapping/27>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/27/FTM> ;
-        rr:predicate  dbo:boilingPoint .
+        rr:predicate  dbo:density .
 
 ### Function Term Map
 <SimplePropertyMapping/27/FTM>
         a                   fnml:FunctionTermMap ;
         fnml:functionValue  <SimplePropertyMapping/27/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/degreeCelsius> .
+        rr:datatype         <http://dbpedia.org/datatype/Density> .
 
 ### Function Execution Mapping
 <SimplePropertyMapping/27/FTM/FV>
@@ -403,7 +406,7 @@
 ### Parameters
 <SimplePropertyMapping/27/FTM/FV/unitParameterPOM>
         a             rr:PredicateObjectMap ;
-        rr:object     "degreeCelsius" ;
+        rr:object     "Density" ;
         rr:predicate  dbf:unitParameter .
 
 <SimplePropertyMapping/27/FTM/FV/propertyParameterPOM>
@@ -414,7 +417,20 @@
 ### References
 <SimplePropertyMapping/27/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Kookpunt" .
+        rml:reference  "Dichtheid" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/44>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/44/OM> ;
+        rr:predicate  dbo:typeOfStorage .
+
+### ObjectMap
+<SimplePropertyMapping/44/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Opslag" .
 
 
 ### Predicate Object Map
@@ -435,12 +451,12 @@
 <SimplePropertyMapping/41>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/41/OM> ;
-        rr:predicate  dbo:carcinogen .
+        rr:predicate  dbo:lethalOnChickens .
 
 ### ObjectMap
 <SimplePropertyMapping/41/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Carcinogeen" .
+        rml:reference  "LethaalKip" .
 
 
 ### Predicate Object Map
@@ -488,12 +504,12 @@
 <SimplePropertyMapping/36>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/36/OM> ;
-        rr:predicate  dbo:formula .
+        rr:predicate  dbo:notSolubleIn .
 
 ### ObjectMap
 <SimplePropertyMapping/36/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Formule" .
+        rml:reference  "OnoplIn" .
 
 
 ### Predicate Object Map
@@ -514,12 +530,12 @@
 <SimplePropertyMapping/30>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/30/OM> ;
-        rr:predicate  dbo:colour .
+        rr:predicate  dbo:pubchem .
 
 ### ObjectMap
 <SimplePropertyMapping/30/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Kleur" .
+        rml:reference  "PubChem" .
 
 
 ### Predicate Object Map
@@ -540,12 +556,12 @@
 <SimplePropertyMapping/33>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/33/OM> ;
-        rr:predicate  dbo:solventWithMediocreSolubility .
+        rr:predicate  dbo:solventWithBadSolubility .
 
 ### ObjectMap
 <SimplePropertyMapping/33/OM>
         a              rr:ObjectMap ;
-        rml:reference  "MatigOplIn" .
+        rml:reference  "SlechtOplIn" .
 
 
 ### Predicate Object Map
@@ -566,12 +582,12 @@
 <SimplePropertyMapping/42>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/42/OM> ;
-        rr:predicate  dbo:smiles .
+        rr:predicate  dbo:carcinogen .
 
 ### ObjectMap
 <SimplePropertyMapping/42/OM>
         a              rr:ObjectMap ;
-        rml:reference  "SMILES" .
+        rml:reference  "Carcinogeen" .
 
 
 ### Predicate Object Map
@@ -618,7 +634,7 @@
 <SimplePropertyMapping/28>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/28/FTM> ;
-        rr:predicate  dbo:sublimationPoint .
+        rr:predicate  dbo:boilingPoint .
 
 ### Function Term Map
 <SimplePropertyMapping/28/FTM>
@@ -649,7 +665,7 @@
 ### References
 <SimplePropertyMapping/28/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Sublimatiepunt" .
+        rml:reference  "Kookpunt" .
 
 
 ### Predicate Object Map
@@ -683,12 +699,12 @@
 <SimplePropertyMapping/34>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/34/OM> ;
-        rr:predicate  dbo:solventWithGoodSolubility .
+        rr:predicate  dbo:solventWithMediocreSolubility .
 
 ### ObjectMap
 <SimplePropertyMapping/34/OM>
         a              rr:ObjectMap ;
-        rml:reference  "GoedOplIn" .
+        rml:reference  "MatigOplIn" .
 
 
 ### Predicate Object Map
@@ -696,12 +712,12 @@
 <SimplePropertyMapping/37>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/37/OM> ;
-        rr:predicate  dbo:lethalOnRats .
+        rr:predicate  dbo:formula .
 
 ### ObjectMap
 <SimplePropertyMapping/37/OM>
         a              rr:ObjectMap ;
-        rml:reference  "LethaalRat" .
+        rml:reference  "Formule" .
 
 
 ### Predicate Object Map
@@ -722,12 +738,12 @@
 <SimplePropertyMapping/25>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/25/OM> ;
-        rr:predicate  dc:description .
+        rr:predicate  dbo:vaporPressure .
 
 ### ObjectMap
 <SimplePropertyMapping/25/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Beschrijving" .
+        rml:reference  "Dampdruk" .
 
 
 ### Predicate Object Map
@@ -748,12 +764,12 @@
 <SimplePropertyMapping/31>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/31/OM> ;
-        rr:predicate  dbo:solubility .
+        rr:predicate  dbo:colour .
 
 ### ObjectMap
 <SimplePropertyMapping/31/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Oplosbaarheid" .
+        rml:reference  "Kleur" .
 
 
 ### Predicate Object Map
@@ -774,12 +790,12 @@
 <SimplePropertyMapping/43>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/43/OM> ;
-        rr:predicate  dbo:typeOfStorage .
+        rr:predicate  dbo:smiles .
 
 ### ObjectMap
 <SimplePropertyMapping/43/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Opslag" .
+        rml:reference  "SMILES" .
 
 
 ######################

@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -39,12 +41,15 @@
 			       <SimplePropertyMapping/3> ,
 			       <SimplePropertyMapping/6> ,
 			       <SimplePropertyMapping/0> ,
+			       <SimplePropertyMapping/11> ,
 			       <SimplePropertyMapping/2> ,
 			       <SimplePropertyMapping/5> ,
 			       <SimplePropertyMapping/8> ,
+			       <SimplePropertyMapping/10> ,
 			       <SimplePropertyMapping/1> ,
 			       <SimplePropertyMapping/4> ,
-			       <SimplePropertyMapping/7> ;
+			       <SimplePropertyMapping/7> ,
+			       <SimplePropertyMapping/12> ;
         rr:subjectMap          <SubjectMap> .
 
 
@@ -74,12 +79,13 @@
 <SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/9/OM> ;
-        rr:predicate  dbo:subtitle .
+        rr:predicate  dbo:meshName .
 
 ### ObjectMap
 <SimplePropertyMapping/9/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Legenda" .
+        rml:reference  "MeshName" ;
+        rr:language    "pt" .
 
 
 ### Predicate Object Map
@@ -87,12 +93,12 @@
 <SimplePropertyMapping/3>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/3/OM> ;
-        rr:predicate  dbo:omim .
+        rr:predicate  dbo:icdo .
 
 ### ObjectMap
 <SimplePropertyMapping/3/OM>
         a              rr:ObjectMap ;
-        rml:reference  "OMIM" .
+        rml:reference  "CIDO" .
 
 
 ### Predicate Object Map
@@ -100,12 +106,12 @@
 <SimplePropertyMapping/6>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/6/OM> ;
-        rr:predicate  dbo:meshName .
+        rr:predicate  dbo:eMedicineSubject .
 
 ### ObjectMap
 <SimplePropertyMapping/6/OM>
         a              rr:ObjectMap ;
-        rml:reference  "MeshName" ;
+        rml:reference  "eMedicine" ;
         rr:language    "pt" .
 
 
@@ -114,12 +120,25 @@
 <SimplePropertyMapping/0>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/0/OM> ;
-        rr:predicate  dbo:icd10 .
+        rr:predicate  dbo:diseasesDb .
 
 ### ObjectMap
 <SimplePropertyMapping/0/OM>
         a              rr:ObjectMap ;
-        rml:reference  "CID10" .
+        rml:reference  "DiseasesDB" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/11>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:picture .
+
+### ObjectMap
+<SimplePropertyMapping/11/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Imagem" .
 
 
 ### Predicate Object Map
@@ -127,12 +146,12 @@
 <SimplePropertyMapping/2>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/2/OM> ;
-        rr:predicate  dbo:icdo .
+        rr:predicate  dbo:icd9 .
 
 ### ObjectMap
 <SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
-        rml:reference  "CIDO" .
+        rml:reference  "CID9" .
 
 
 ### Predicate Object Map
@@ -140,12 +159,12 @@
 <SimplePropertyMapping/5>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/5/OM> ;
-        rr:predicate  dbo:meshNumber .
+        rr:predicate  dbo:medlinePlus .
 
 ### ObjectMap
 <SimplePropertyMapping/5/OM>
         a              rr:ObjectMap ;
-        rml:reference  "MeshNumber" .
+        rml:reference  "MedlinePlus" .
 
 
 ### Predicate Object Map
@@ -153,12 +172,26 @@
 <SimplePropertyMapping/8>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/8/OM> ;
-        rr:predicate  dbo:picture .
+        rr:predicate  dbo:meshNumber .
 
 ### ObjectMap
 <SimplePropertyMapping/8/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Imagem" .
+        rml:reference  "MeshNumber" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/10>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/10/OM> ;
+        rr:predicate  foaf:name .
+
+### ObjectMap
+<SimplePropertyMapping/10/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Nome" ;
+        rr:language    "pt" .
 
 
 ### Predicate Object Map
@@ -166,12 +199,12 @@
 <SimplePropertyMapping/1>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/1/OM> ;
-        rr:predicate  dbo:icd9 .
+        rr:predicate  dbo:icd10 .
 
 ### ObjectMap
 <SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
-        rml:reference  "CID9" .
+        rml:reference  "CID10" .
 
 
 ### Predicate Object Map
@@ -179,12 +212,12 @@
 <SimplePropertyMapping/4>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/4/OM> ;
-        rr:predicate  dbo:meshId .
+        rr:predicate  dbo:omim .
 
 ### ObjectMap
 <SimplePropertyMapping/4/OM>
         a              rr:ObjectMap ;
-        rml:reference  "MeshID" .
+        rml:reference  "OMIM" .
 
 
 ### Predicate Object Map
@@ -192,13 +225,25 @@
 <SimplePropertyMapping/7>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/7/OM> ;
-        rr:predicate  foaf:name .
+        rr:predicate  dbo:meshId .
 
 ### ObjectMap
 <SimplePropertyMapping/7/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Nome" ;
-        rr:language    "pt" .
+        rml:reference  "MeshID" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/12>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/12/OM> ;
+        rr:predicate  dbo:subtitle .
+
+### ObjectMap
+<SimplePropertyMapping/12/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Legenda" .
 
 
 ######################

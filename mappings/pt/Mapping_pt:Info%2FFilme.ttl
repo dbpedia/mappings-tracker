@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -52,6 +54,7 @@
 			       <SimplePropertyMapping/9> ,
 			       <SimplePropertyMapping/21> ,
 			       <SimplePropertyMapping/2> ,
+			       <SimplePropertyMapping/67> ,
 			       <SimplePropertyMapping/51> ,
 			       <SimplePropertyMapping/12> ,
 			       <SimplePropertyMapping/35> ,
@@ -68,12 +71,14 @@
 			       <SimplePropertyMapping/19> ,
 			       <SimplePropertyMapping/46> ,
 			       <SimplePropertyMapping/26> ,
+			       <SimplePropertyMapping/68> ,
 			       <SimplePropertyMapping/32> ,
 			       <SimplePropertyMapping/13> ,
 			       <SimplePropertyMapping/8> ,
 			       <SimplePropertyMapping/20> ,
 			       <SimplePropertyMapping/57> ,
 			       <SimplePropertyMapping/37> ,
+			       <SimplePropertyMapping/66> ,
 			       <SimplePropertyMapping/41> ,
 			       <SimplePropertyMapping/50> ,
 			       <SimplePropertyMapping/30> ,
@@ -129,13 +134,39 @@
 #########################
 <SimplePropertyMapping/54>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/54/OM> ;
-        rr:predicate  dbo:executiveProducer .
+        rr:objectMap  <SimplePropertyMapping/54/FTM> ;
+        rr:predicate  dbo:gross .
 
-### ObjectMap
-<SimplePropertyMapping/54/OM>
+### Function Term Map
+<SimplePropertyMapping/54/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/54/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Currency> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/54/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/54/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/54/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/54/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/54/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<SimplePropertyMapping/54/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Currency" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<SimplePropertyMapping/54/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "produção executivo" .
+        rml:reference  "receita" .
 
 
 ### Predicate Object Map
@@ -143,12 +174,12 @@
 <SimplePropertyMapping/34>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/34/OM> ;
-        rr:predicate  dbo:fileSize .
+        rr:predicate  dbo:releaseDate .
 
 ### ObjectMap
 <SimplePropertyMapping/34/OM>
         a              rr:ObjectMap ;
-        rml:reference  "imagem_tamanho" .
+        rml:reference  "lançamento" .
 
 
 ### Predicate Object Map
@@ -156,12 +187,12 @@
 <SimplePropertyMapping/29>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/29/OM> ;
-        rr:predicate  dbo:genre .
+        rr:predicate  dbo:picture .
 
 ### ObjectMap
 <SimplePropertyMapping/29/OM>
         a              rr:ObjectMap ;
-        rml:reference  "gênero" .
+        rml:reference  "imagem" .
 
 
 ### Predicate Object Map
@@ -174,7 +205,7 @@
 ### ObjectMap
 <SimplePropertyMapping/15/OM>
         a              rr:ObjectMap ;
-        rml:reference  "diretor_de_arte" .
+        rml:reference  "diretor_de_fotografia" .
 
 
 ### Predicate Object Map
@@ -182,25 +213,52 @@
 <SimplePropertyMapping/42>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/42/OM> ;
-        rr:predicate  dbo:country .
+        rr:predicate  dbo:formerName .
 
 ### ObjectMap
 <SimplePropertyMapping/42/OM>
         a              rr:ObjectMap ;
-        rml:reference  "país" .
+        rml:reference  "precedido por" ;
+        rr:language    "pt" .
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/22>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/22/OM> ;
-        rr:predicate  dbo:distributor .
+        rr:objectMap  <SimplePropertyMapping/22/FTM> ;
+        rr:predicate  dbo:runtime .
 
-### ObjectMap
-<SimplePropertyMapping/22/OM>
+### Function Term Map
+<SimplePropertyMapping/22/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/22/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Time> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/22/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/22/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/22/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/22/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/22/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<SimplePropertyMapping/22/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Time" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<SimplePropertyMapping/22/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "distribuidor" .
+        rml:reference  "duração" .
 
 
 ### Predicate Object Map
@@ -213,7 +271,7 @@
 ### ObjectMap
 <SimplePropertyMapping/59/OM>
         a              rr:ObjectMap ;
-        rml:reference  "título" ;
+        rml:reference  "título-br" ;
         rr:language    "pt" .
 
 
@@ -222,12 +280,12 @@
 <SimplePropertyMapping/64>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/64/OM> ;
-        rr:predicate  foaf:page .
+        rr:predicate  dbo:subsequentWork .
 
 ### ObjectMap
 <SimplePropertyMapping/64/OM>
         a              rr:ObjectMap ;
-        rml:reference  "website" .
+        rml:reference  "seguido_por" .
 
 
 ### Predicate Object Map
@@ -240,7 +298,7 @@
 ### ObjectMap
 <SimplePropertyMapping/47/OM>
         a              rr:ObjectMap ;
-        rml:reference  "produtor de VHX" .
+        rml:reference  "produtor_de_VHX" .
 
 
 ### Predicate Object Map
@@ -248,12 +306,12 @@
 <SimplePropertyMapping/27>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/27/OM> ;
-        rr:predicate  dbo:starring .
+        rr:predicate  dbo:genre .
 
 ### ObjectMap
 <SimplePropertyMapping/27/OM>
         a              rr:ObjectMap ;
-        rml:reference  "elenco" .
+        rml:reference  "gênero" .
 
 
 ### Predicate Object Map
@@ -261,12 +319,12 @@
 <SimplePropertyMapping/4>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/4/OM> ;
-        rr:predicate  dbo:imdbId .
+        rr:predicate  dbo:releaseDate .
 
 ### ObjectMap
 <SimplePropertyMapping/4/OM>
         a              rr:ObjectMap ;
-        rml:reference  "código-IMDB" .
+        rml:reference  "data_lançamento" .
 
 
 ### Predicate Object Map
@@ -279,7 +337,7 @@
 ### ObjectMap
 <SimplePropertyMapping/53/OM>
         a              rr:ObjectMap ;
-        rml:reference  "produção executiva" .
+        rml:reference  "produção_executiva" .
 
 
 ### Predicate Object Map
@@ -287,12 +345,12 @@
 <SimplePropertyMapping/33>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/33/OM> ;
-        rr:predicate  dbo:subtitle .
+        rr:predicate  dbo:imdbId .
 
 ### ObjectMap
 <SimplePropertyMapping/33/OM>
         a              rr:ObjectMap ;
-        rml:reference  "imagem_legenda" .
+        rml:reference  "imdb_id" .
 
 
 ### Predicate Object Map
@@ -300,13 +358,12 @@
 <SimplePropertyMapping/62>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/62/OM> ;
-        rr:predicate  foaf:name .
+        rr:predicate  dbo:coProducer .
 
 ### ObjectMap
 <SimplePropertyMapping/62/OM>
         a              rr:ObjectMap ;
-        rml:reference  "título-br" ;
-        rr:language    "pt" .
+        rml:reference  "coprodução" .
 
 
 ### Predicate Object Map
@@ -319,7 +376,7 @@
 ### ObjectMap
 <SimplePropertyMapping/9/OM>
         a              rr:ObjectMap ;
-        rml:reference  "diretor de arte" .
+        rml:reference  "diretor de fotografia" .
 
 
 ### Predicate Object Map
@@ -327,12 +384,12 @@
 <SimplePropertyMapping/21>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/21/OM> ;
-        rr:predicate  dbo:director .
+        rr:predicate  dbo:distributor .
 
 ### ObjectMap
 <SimplePropertyMapping/21/OM>
         a              rr:ObjectMap ;
-        rml:reference  "direção" .
+        rml:reference  "distribuição" .
 
 
 ### Predicate Object Map
@@ -340,12 +397,25 @@
 <SimplePropertyMapping/2>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/2/OM> ;
-        rr:predicate  dbo:cinematography .
+        rr:predicate  dbo:imdbId .
 
 ### ObjectMap
 <SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
-        rml:reference  "cinematografia" .
+        rml:reference  "código-IMDB" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/67>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/67/OM> ;
+        rr:predicate  dbo:specialEffects .
+
+### ObjectMap
+<SimplePropertyMapping/67/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "efeitos especiais" .
 
 
 ### Predicate Object Map
@@ -353,12 +423,12 @@
 <SimplePropertyMapping/51>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/51/OM> ;
-        rr:predicate  dbo:producer .
+        rr:predicate  dbo:executiveProducer .
 
 ### ObjectMap
 <SimplePropertyMapping/51/OM>
         a              rr:ObjectMap ;
-        rml:reference  "produtor_VHX" .
+        rml:reference  "produção executiva" .
 
 
 ### Predicate Object Map
@@ -371,7 +441,7 @@
 ### ObjectMap
 <SimplePropertyMapping/12/OM>
         a              rr:ObjectMap ;
-        rml:reference  "diretor de iluminação" .
+        rml:reference  "diretor_ação" .
 
 
 ### Predicate Object Map
@@ -379,12 +449,12 @@
 <SimplePropertyMapping/35>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/35/OM> ;
-        rr:predicate  dbo:imdbId .
+        rr:predicate  dbo:subtitle .
 
 ### ObjectMap
 <SimplePropertyMapping/35/OM>
         a              rr:ObjectMap ;
-        rml:reference  "imdb_id" .
+        rml:reference  "legenda" .
 
 
 ### Predicate Object Map
@@ -392,51 +462,26 @@
 <SimplePropertyMapping/7>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/7/OM> ;
-        rr:predicate  dc:description .
+        rr:predicate  dbo:director .
 
 ### ObjectMap
 <SimplePropertyMapping/7/OM>
         a              rr:ObjectMap ;
-        rml:reference  "descrição" .
+        rml:reference  "diretor de arte" .
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/56>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/56/FTM> ;
-        rr:predicate  dbo:gross .
+        rr:objectMap  <SimplePropertyMapping/56/OM> ;
+        rr:predicate  foaf:name .
 
-### Function Term Map
-<SimplePropertyMapping/56/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/56/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/Currency> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/56/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/56/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/56/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/56/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/56/FTM/FV/propertyParameterPOM/OM> ;
-        rr:predicate  dbf:propertyParameter .
-
-<SimplePropertyMapping/56/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "Currency" ;
-        rr:predicate  dbf:unitParameter .
-
-### References
-<SimplePropertyMapping/56/FTM/FV/propertyParameterPOM/OM>
+### ObjectMap
+<SimplePropertyMapping/56/OM>
         a              rr:ObjectMap ;
-        rml:reference  "receita" .
+        rml:reference  "título" ;
+        rr:language    "pt" .
 
 
 ### Predicate Object Map
@@ -444,13 +489,12 @@
 <SimplePropertyMapping/61>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/61/OM> ;
-        rr:predicate  foaf:name .
+        rr:predicate  foaf:page .
 
 ### ObjectMap
 <SimplePropertyMapping/61/OM>
         a              rr:ObjectMap ;
-        rml:reference  "título-pt" ;
-        rr:language    "pt" .
+        rml:reference  "website" .
 
 
 ### Predicate Object Map
@@ -458,13 +502,12 @@
 <SimplePropertyMapping/44>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/44/OM> ;
-        rr:predicate  dbo:formerName .
+        rr:predicate  dbo:producer .
 
 ### ObjectMap
 <SimplePropertyMapping/44/OM>
         a              rr:ObjectMap ;
-        rml:reference  "precedido por" ;
-        rr:language    "pt" .
+        rml:reference  "produtor" .
 
 
 ### Predicate Object Map
@@ -472,12 +515,12 @@
 <SimplePropertyMapping/1>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/1/OM> ;
-        rr:predicate  dbo:productionEndYear .
+        rr:predicate  dbo:cinematography .
 
 ### ObjectMap
 <SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
-        rml:reference  "ano" .
+        rml:reference  "cinematografia" .
 
 
 ### Predicate Object Map
@@ -485,12 +528,12 @@
 <SimplePropertyMapping/28>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/28/OM> ;
-        rr:predicate  dbo:genre .
+        rr:predicate  dbo:language .
 
 ### ObjectMap
 <SimplePropertyMapping/28/OM>
         a              rr:ObjectMap ;
-        rml:reference  "género" .
+        rml:reference  "idioma" .
 
 
 ### Predicate Object Map
@@ -503,7 +546,7 @@
 ### ObjectMap
 <SimplePropertyMapping/14/OM>
         a              rr:ObjectMap ;
-        rml:reference  "diretor_ação" .
+        rml:reference  "diretor_de_ação" .
 
 
 ### Predicate Object Map
@@ -516,7 +559,7 @@
 ### ObjectMap
 <SimplePropertyMapping/49/OM>
         a              rr:ObjectMap ;
-        rml:reference  "produtor_de_VHX" .
+        rml:reference  "produtor_VHX" .
 
 
 ### Predicate Object Map
@@ -524,12 +567,13 @@
 <SimplePropertyMapping/58>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/58/OM> ;
-        rr:predicate  dbo:fileSize .
+        rr:predicate  foaf:name .
 
 ### ObjectMap
 <SimplePropertyMapping/58/OM>
         a              rr:ObjectMap ;
-        rml:reference  "tamanho_imagem" .
+        rml:reference  "título-pt" ;
+        rr:language    "pt" .
 
 
 ### Predicate Object Map
@@ -537,12 +581,13 @@
 <SimplePropertyMapping/38>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/38/OM> ;
-        rr:predicate  dbo:musicComposer .
+        rr:predicate  foaf:name .
 
 ### ObjectMap
 <SimplePropertyMapping/38/OM>
         a              rr:ObjectMap ;
-        rml:reference  "música" .
+        rml:reference  "nome" ;
+        rr:language    "pt" .
 
 
 ### Predicate Object Map
@@ -555,7 +600,7 @@
 ### ObjectMap
 <SimplePropertyMapping/19/OM>
         a              rr:ObjectMap ;
-        rml:reference  "diretor_fotografia" .
+        rml:reference  "direção" .
 
 
 ### Predicate Object Map
@@ -568,7 +613,7 @@
 ### ObjectMap
 <SimplePropertyMapping/46/OM>
         a              rr:ObjectMap ;
-        rml:reference  "produtor" .
+        rml:reference  "produtor executivo" .
 
 
 ### Predicate Object Map
@@ -576,12 +621,25 @@
 <SimplePropertyMapping/26>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/26/OM> ;
-        rr:predicate  dbo:editing .
+        rr:predicate  dbo:genre .
 
 ### ObjectMap
 <SimplePropertyMapping/26/OM>
         a              rr:ObjectMap ;
-        rml:reference  "edição" .
+        rml:reference  "género" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/68>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/68/OM> ;
+        rr:predicate  dbo:coProducer .
+
+### ObjectMap
+<SimplePropertyMapping/68/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "co-produção" .
 
 
 ### Predicate Object Map
@@ -594,7 +652,7 @@
 ### ObjectMap
 <SimplePropertyMapping/32/OM>
         a              rr:ObjectMap ;
-        rml:reference  "imagem-tamanho" .
+        rml:reference  "imagem_tamanho" .
 
 
 ### Predicate Object Map
@@ -607,7 +665,7 @@
 ### ObjectMap
 <SimplePropertyMapping/13/OM>
         a              rr:ObjectMap ;
-        rml:reference  "diretor_arte" .
+        rml:reference  "diretor_de_arte" .
 
 
 ### Predicate Object Map
@@ -620,7 +678,7 @@
 ### ObjectMap
 <SimplePropertyMapping/8/OM>
         a              rr:ObjectMap ;
-        rml:reference  "diretor" .
+        rml:reference  "diretor de ação" .
 
 
 ### Predicate Object Map
@@ -628,12 +686,12 @@
 <SimplePropertyMapping/20>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/20/OM> ;
-        rr:predicate  dbo:director .
+        rr:predicate  dbo:distributor .
 
 ### ObjectMap
 <SimplePropertyMapping/20/OM>
         a              rr:ObjectMap ;
-        rml:reference  "diretor_iluminação" .
+        rml:reference  "distribuidor" .
 
 
 ### Predicate Object Map
@@ -641,12 +699,13 @@
 <SimplePropertyMapping/57>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/57/OM> ;
-        rr:predicate  dbo:writer .
+        rr:predicate  foaf:name .
 
 ### ObjectMap
 <SimplePropertyMapping/57/OM>
         a              rr:ObjectMap ;
-        rml:reference  "roteiro" .
+        rml:reference  "título-or" ;
+        rr:language    "pt" .
 
 
 ### Predicate Object Map
@@ -654,51 +713,39 @@
 <SimplePropertyMapping/37>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/37/OM> ;
-        rr:predicate  dbo:subtitle .
+        rr:predicate  dbo:narrator .
 
 ### ObjectMap
 <SimplePropertyMapping/37/OM>
         a              rr:ObjectMap ;
-        rml:reference  "legenda" .
+        rml:reference  "narrador" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/66>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/66/OM> ;
+        rr:predicate  dbo:costumeDesigner .
+
+### ObjectMap
+<SimplePropertyMapping/66/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "figurino" .
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/41>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/41/FTM> ;
-        rr:predicate  dbo:budget .
+        rr:objectMap  <SimplePropertyMapping/41/OM> ;
+        rr:predicate  dbo:formerName .
 
-### Function Term Map
-<SimplePropertyMapping/41/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/41/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/Currency> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/41/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/41/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/41/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/41/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/41/FTM/FV/propertyParameterPOM/OM> ;
-        rr:predicate  dbf:propertyParameter .
-
-<SimplePropertyMapping/41/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "Currency" ;
-        rr:predicate  dbf:unitParameter .
-
-### References
-<SimplePropertyMapping/41/FTM/FV/propertyParameterPOM/OM>
+### ObjectMap
+<SimplePropertyMapping/41/OM>
         a              rr:ObjectMap ;
-        rml:reference  "orçamento" .
+        rml:reference  "precedido" ;
+        rr:language    "pt" .
 
 
 ### Predicate Object Map
@@ -711,7 +758,7 @@
 ### ObjectMap
 <SimplePropertyMapping/50/OM>
         a              rr:ObjectMap ;
-        rml:reference  "produtor_executivo" .
+        rml:reference  "produção" .
 
 
 ### Predicate Object Map
@@ -719,12 +766,12 @@
 <SimplePropertyMapping/30>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/30/OM> ;
-        rr:predicate  dbo:language .
+        rr:predicate  dbo:fileSize .
 
 ### ObjectMap
 <SimplePropertyMapping/30/OM>
         a              rr:ObjectMap ;
-        rml:reference  "idioma" .
+        rml:reference  "imagem-tamanho" .
 
 
 ### Predicate Object Map
@@ -732,12 +779,12 @@
 <SimplePropertyMapping/25>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/25/OM> ;
-        rr:predicate  dbo:editor .
+        rr:predicate  dbo:starring .
 
 ### ObjectMap
 <SimplePropertyMapping/25/OM>
         a              rr:ObjectMap ;
-        rml:reference  "editor" .
+        rml:reference  "elenco" .
 
 
 ### Predicate Object Map
@@ -750,7 +797,7 @@
 ### ObjectMap
 <SimplePropertyMapping/11/OM>
         a              rr:ObjectMap ;
-        rml:reference  "diretor de fotografia" .
+        rml:reference  "diretor_arte" .
 
 
 ### Predicate Object Map
@@ -758,12 +805,12 @@
 <SimplePropertyMapping/6>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/6/OM> ;
-        rr:predicate  dbo:releaseDate .
+        rr:predicate  dbo:director .
 
 ### ObjectMap
 <SimplePropertyMapping/6/OM>
         a              rr:ObjectMap ;
-        rml:reference  "data_lançamento" .
+        rml:reference  "diretor" .
 
 
 ### Predicate Object Map
@@ -771,12 +818,12 @@
 <SimplePropertyMapping/55>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/55/OM> ;
-        rr:predicate  dbo:executiveProducer .
+        rr:predicate  dbo:writer .
 
 ### ObjectMap
 <SimplePropertyMapping/55/OM>
         a              rr:ObjectMap ;
-        rml:reference  "produção_executiva" .
+        rml:reference  "roteiro" .
 
 
 ### Predicate Object Map
@@ -784,13 +831,12 @@
 <SimplePropertyMapping/60>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/60/OM> ;
-        rr:predicate  foaf:name .
+        rr:predicate  dbo:category .
 
 ### ObjectMap
 <SimplePropertyMapping/60/OM>
         a              rr:ObjectMap ;
-        rml:reference  "título-or" ;
-        rr:language    "pt" .
+        rml:reference  "tipo" .
 
 
 ### Predicate Object Map
@@ -803,20 +849,46 @@
 ### ObjectMap
 <SimplePropertyMapping/16/OM>
         a              rr:ObjectMap ;
-        rml:reference  "diretor_de_ação" .
+        rml:reference  "diretor_de_iluminação" .
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/39>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/39/OM> ;
-        rr:predicate  dbo:narrator .
+        rr:objectMap  <SimplePropertyMapping/39/FTM> ;
+        rr:predicate  dbo:budget .
 
-### ObjectMap
-<SimplePropertyMapping/39/OM>
+### Function Term Map
+<SimplePropertyMapping/39/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/39/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Currency> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/39/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/39/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/39/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/39/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/39/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<SimplePropertyMapping/39/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Currency" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<SimplePropertyMapping/39/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "narrador" .
+        rml:reference  "orçamento" .
 
 
 ### Predicate Object Map
@@ -829,7 +901,7 @@
 ### ObjectMap
 <SimplePropertyMapping/43/OM>
         a              rr:ObjectMap ;
-        rml:reference  "precedido" ;
+        rml:reference  "precedido_por" ;
         rr:language    "pt" .
 
 
@@ -838,12 +910,12 @@
 <SimplePropertyMapping/23>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/23/OM> ;
-        rr:predicate  dbo:distributor .
+        rr:predicate  dbo:editor .
 
 ### ObjectMap
 <SimplePropertyMapping/23/OM>
         a              rr:ObjectMap ;
-        rml:reference  "distribuição" .
+        rml:reference  "editor" .
 
 
 ### Predicate Object Map
@@ -851,12 +923,12 @@
 <SimplePropertyMapping/0>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/0/OM> ;
-        rr:predicate  dbo:amgid .
+        rr:predicate  dbo:productionEndYear .
 
 ### ObjectMap
 <SimplePropertyMapping/0/OM>
         a              rr:ObjectMap ;
-        rml:reference  "amg_id" .
+        rml:reference  "ano" .
 
 
 ### Predicate Object Map
@@ -864,12 +936,12 @@
 <SimplePropertyMapping/65>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/65/OM> ;
-        rr:predicate  dbo:coProducer .
+        rr:predicate  dbo:subsequentWork .
 
 ### ObjectMap
 <SimplePropertyMapping/65/OM>
         a              rr:ObjectMap ;
-        rml:reference  "coprodução" .
+        rml:reference  "seguido por" .
 
 
 ### Predicate Object Map
@@ -882,7 +954,7 @@
 ### ObjectMap
 <SimplePropertyMapping/48/OM>
         a              rr:ObjectMap ;
-        rml:reference  "produtor executivo" .
+        rml:reference  "produtor_executivo" .
 
 
 ### Predicate Object Map
@@ -890,12 +962,12 @@
 <SimplePropertyMapping/5>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/5/OM> ;
-        rr:predicate  dbo:category .
+        rr:predicate  dc:description .
 
 ### ObjectMap
 <SimplePropertyMapping/5/OM>
         a              rr:ObjectMap ;
-        rml:reference  "cor-pb" .
+        rml:reference  "descrição" .
 
 
 ### Predicate Object Map
@@ -908,7 +980,7 @@
 ### ObjectMap
 <SimplePropertyMapping/18/OM>
         a              rr:ObjectMap ;
-        rml:reference  "diretor_de_iluminação" .
+        rml:reference  "diretor_iluminação" .
 
 
 ### Predicate Object Map
@@ -916,12 +988,12 @@
 <SimplePropertyMapping/63>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/63/OM> ;
-        rr:predicate  dbo:category .
+        rr:predicate  dbo:productionCompany .
 
 ### ObjectMap
 <SimplePropertyMapping/63/OM>
         a              rr:ObjectMap ;
-        rml:reference  "tipo" .
+        rml:reference  "estúdio" .
 
 
 ### Predicate Object Map
@@ -929,12 +1001,12 @@
 <SimplePropertyMapping/31>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/31/OM> ;
-        rr:predicate  dbo:picture .
+        rr:predicate  dbo:subtitle .
 
 ### ObjectMap
 <SimplePropertyMapping/31/OM>
         a              rr:ObjectMap ;
-        rml:reference  "imagem" .
+        rml:reference  "imagem_legenda" .
 
 
 ### Predicate Object Map
@@ -942,12 +1014,12 @@
 <SimplePropertyMapping/3>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/3/OM> ;
-        rr:predicate  dbo:classification .
+        rr:predicate  dbo:category .
 
 ### ObjectMap
 <SimplePropertyMapping/3/OM>
         a              rr:ObjectMap ;
-        rml:reference  "classificação" .
+        rml:reference  "cor-pb" .
 
 
 ### Predicate Object Map
@@ -955,12 +1027,12 @@
 <SimplePropertyMapping/52>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/52/OM> ;
-        rr:predicate  dbo:producer .
+        rr:predicate  dbo:executiveProducer .
 
 ### ObjectMap
 <SimplePropertyMapping/52/OM>
         a              rr:ObjectMap ;
-        rml:reference  "produção" .
+        rml:reference  "produção executivo" .
 
 
 ### Predicate Object Map
@@ -968,12 +1040,12 @@
 <SimplePropertyMapping/36>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/36/OM> ;
-        rr:predicate  dbo:releaseDate .
+        rr:predicate  dbo:musicComposer .
 
 ### ObjectMap
 <SimplePropertyMapping/36/OM>
         a              rr:ObjectMap ;
-        rml:reference  "lançamento" .
+        rml:reference  "música" .
 
 
 ### Predicate Object Map
@@ -981,13 +1053,12 @@
 <SimplePropertyMapping/40>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/40/OM> ;
-        rr:predicate  foaf:name .
+        rr:predicate  dbo:country .
 
 ### ObjectMap
 <SimplePropertyMapping/40/OM>
         a              rr:ObjectMap ;
-        rml:reference  "nome" ;
-        rr:language    "pt" .
+        rml:reference  "país" .
 
 
 ### Predicate Object Map
@@ -1000,46 +1071,20 @@
 ### ObjectMap
 <SimplePropertyMapping/17/OM>
         a              rr:ObjectMap ;
-        rml:reference  "diretor_de_fotografia" .
+        rml:reference  "diretor_fotografia" .
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/24>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/24/FTM> ;
-        rr:predicate  dbo:runtime .
+        rr:objectMap  <SimplePropertyMapping/24/OM> ;
+        rr:predicate  dbo:editing .
 
-### Function Term Map
-<SimplePropertyMapping/24/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/24/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/Time> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/24/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/24/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/24/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/24/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/24/FTM/FV/propertyParameterPOM/OM> ;
-        rr:predicate  dbf:propertyParameter .
-
-<SimplePropertyMapping/24/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "Time" ;
-        rr:predicate  dbf:unitParameter .
-
-### References
-<SimplePropertyMapping/24/FTM/FV/propertyParameterPOM/OM>
+### ObjectMap
+<SimplePropertyMapping/24/OM>
         a              rr:ObjectMap ;
-        rml:reference  "duração" .
+        rml:reference  "edição" .
 
 
 ### Predicate Object Map
@@ -1052,7 +1097,7 @@
 ### ObjectMap
 <SimplePropertyMapping/10/OM>
         a              rr:ObjectMap ;
-        rml:reference  "diretor de ação" .
+        rml:reference  "diretor de iluminação" .
 
 
 ### Predicate Object Map
@@ -1060,13 +1105,12 @@
 <SimplePropertyMapping/45>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/45/OM> ;
-        rr:predicate  dbo:formerName .
+        rr:predicate  dbo:producer .
 
 ### ObjectMap
 <SimplePropertyMapping/45/OM>
         a              rr:ObjectMap ;
-        rml:reference  "precedido_por" ;
-        rr:language    "pt" .
+        rml:reference  "produtor de VHX" .
 
 
 ######################

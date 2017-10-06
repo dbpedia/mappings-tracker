@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -37,19 +39,29 @@
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <SimplePropertyMapping/0> ,
 			       <SimplePropertyMapping/9> ,
+			       <SimplePropertyMapping/16> ,
 			       <SimplePropertyMapping/6> ,
 			       <SimplePropertyMapping/13> ,
 			       <SimplePropertyMapping/8> ,
+			       <SimplePropertyMapping/15> ,
 			       <SimplePropertyMapping/5> ,
 			       <SimplePropertyMapping/12> ,
 			       <SimplePropertyMapping/7> ,
 			       <SimplePropertyMapping/14> ,
 			       <SimplePropertyMapping/4> ,
 			       <SimplePropertyMapping/11> ,
+			       <SimplePropertyMapping/20> ,
 			       <SimplePropertyMapping/3> ,
 			       <SimplePropertyMapping/10> ,
+			       <SimplePropertyMapping/19> ,
+			       <SimplePropertyMapping/18> ,
+			       <SimplePropertyMapping/24> ,
+			       <SimplePropertyMapping/23> ,
 			       <SimplePropertyMapping/2> ,
-			       <SimplePropertyMapping/1> ;
+			       <SimplePropertyMapping/22> ,
+			       <SimplePropertyMapping/1> ,
+			       <SimplePropertyMapping/21> ,
+			       <SimplePropertyMapping/17> ;
         rr:subjectMap          <SubjectMap> .
 
 
@@ -129,6 +141,19 @@
 
 ### Predicate Object Map
 #########################
+<SimplePropertyMapping/16>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/16/OM> ;
+        rr:predicate  dbo:sourcePlace .
+
+### ObjectMap
+<SimplePropertyMapping/16/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "miejsce produkcji" .
+
+
+### Predicate Object Map
+#########################
 <SimplePropertyMapping/6>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/6/OM> ;
@@ -164,6 +189,19 @@
 <SimplePropertyMapping/8/OM>
         a              rr:ObjectMap ;
         rml:reference  "platform" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/15>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/15/OM> ;
+        rr:predicate  dbo:introductionDate .
+
+### ObjectMap
+<SimplePropertyMapping/15/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "zaprezentowany" .
 
 
 ### Predicate Object Map
@@ -324,6 +362,19 @@
 
 ### Predicate Object Map
 #########################
+<SimplePropertyMapping/20>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/20/OM> ;
+        rr:predicate  dbo:wheelbase .
+
+### ObjectMap
+<SimplePropertyMapping/20/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "rozstaw osi" .
+
+
+### Predicate Object Map
+#########################
 <SimplePropertyMapping/3>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/3/OM> ;
@@ -376,6 +427,58 @@
 
 ### Predicate Object Map
 #########################
+<SimplePropertyMapping/19>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/19/OM> ;
+        rr:predicate  dbo:transmission .
+
+### ObjectMap
+<SimplePropertyMapping/19/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "skrzynia biegów" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/18>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/18/OM> ;
+        rr:predicate  dbo:engine .
+
+### ObjectMap
+<SimplePropertyMapping/18/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "silniki" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/24>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/24/OM> ;
+        rr:predicate  dbo:relatedMeanOfTransportation .
+
+### ObjectMap
+<SimplePropertyMapping/24/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "modele bliźniacze" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/23>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/23/OM> ;
+        rr:predicate  dbo:capacity .
+
+### ObjectMap
+<SimplePropertyMapping/23/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "ładowność" .
+
+
+### Predicate Object Map
+#########################
 <SimplePropertyMapping/2>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/2/OM> ;
@@ -390,6 +493,19 @@
 
 ### Predicate Object Map
 #########################
+<SimplePropertyMapping/22>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/22/OM> ;
+        rr:predicate  dbo:numberOfSeats .
+
+### ObjectMap
+<SimplePropertyMapping/22/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "liczba miejsc" .
+
+
+### Predicate Object Map
+#########################
 <SimplePropertyMapping/1>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/1/OM> ;
@@ -399,6 +515,58 @@
 <SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
         rml:reference  "producent" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/21>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/21/FTM> ;
+        rr:predicate  dbo:fuelCapacity .
+
+### Function Term Map
+<SimplePropertyMapping/21/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/21/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Volume> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/21/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/21/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/21/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/21/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/21/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<SimplePropertyMapping/21/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Volume" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<SimplePropertyMapping/21/FTM/FV/propertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "poj. zbiornika paliwa" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/17>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/17/OM> ;
+        rr:predicate  dbo:bodyStyle .
+
+### ObjectMap
+<SimplePropertyMapping/17/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "typy nadwozia" .
 
 
 ######################

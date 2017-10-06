@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -54,6 +56,8 @@
 			       <SimplePropertyMapping/10> ,
 			       <SimplePropertyMapping/7> ,
 			       <SimplePropertyMapping/2> ,
+			       <SimplePropertyMapping/24> ,
+			       <SimplePropertyMapping/23> ,
 			       <SimplePropertyMapping/21> ,
 			       <SimplePropertyMapping/6> ,
 			       <SimplePropertyMapping/5> ,
@@ -92,7 +96,7 @@
 ### ObjectMap
 <SimplePropertyMapping/19/OM>
         a              rr:ObjectMap ;
-        rml:reference  "afbeeldingIVtekst" .
+        rml:reference  "afbeeldingIIItekst" .
 
 
 ### Predicate Object Map
@@ -105,7 +109,7 @@
 ### ObjectMap
 <SimplePropertyMapping/17/OM>
         a              rr:ObjectMap ;
-        rml:reference  "afbeeldingIIItekst" .
+        rml:reference  "afbeeldingIItekst" .
 
 
 ### Predicate Object Map
@@ -113,12 +117,12 @@
 <SimplePropertyMapping/14>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/14/OM> ;
-        rr:predicate  dbo:picture .
+        rr:predicate  dbo:species .
 
 ### ObjectMap
 <SimplePropertyMapping/14/OM>
         a              rr:ObjectMap ;
-        rml:reference  "afbeeldingII" .
+        rml:reference  "species" .
 
 
 ### Predicate Object Map
@@ -126,12 +130,12 @@
 <SimplePropertyMapping/22>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/22/OM> ;
-        rr:predicate  dbo:subOrder .
+        rr:predicate  dbo:picture .
 
 ### ObjectMap
 <SimplePropertyMapping/22/OM>
         a              rr:ObjectMap ;
-        rml:reference  "onderorde" .
+        rml:reference  "afbeelding2" .
 
 
 ### Predicate Object Map
@@ -144,7 +148,7 @@
 ### ObjectMap
 <SimplePropertyMapping/20/OM>
         a              rr:ObjectMap ;
-        rml:reference  "afbeelding2" .
+        rml:reference  "afbeeldingIV" .
 
 
 ### Predicate Object Map
@@ -157,7 +161,7 @@
 ### ObjectMap
 <SimplePropertyMapping/18/OM>
         a              rr:ObjectMap ;
-        rml:reference  "afbeeldingIV" .
+        rml:reference  "afbeeldingIII" .
 
 
 ### Predicate Object Map
@@ -165,12 +169,12 @@
 <SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/9/OM> ;
-        rr:predicate  dbo:subFamily .
+        rr:predicate  dbo:picture .
 
 ### ObjectMap
 <SimplePropertyMapping/9/OM>
         a              rr:ObjectMap ;
-        rml:reference  "onderfamilie" .
+        rml:reference  "commons" .
 
 
 ### Predicate Object Map
@@ -192,12 +196,12 @@
 <SimplePropertyMapping/4>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/4/OM> ;
-        rr:predicate  dbo:picture .
+        rr:predicate  dbo:redListIdNL .
 
 ### ObjectMap
 <SimplePropertyMapping/4/OM>
         a              rr:ObjectMap ;
-        rml:reference  "afbeelding" .
+        rml:reference  "rl-id" .
 
 
 ### Predicate Object Map
@@ -218,12 +222,12 @@
 <SimplePropertyMapping/15>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/15/OM> ;
-        rr:predicate  dbo:pictureDescription .
+        rr:predicate  dbo:taxon .
 
 ### ObjectMap
 <SimplePropertyMapping/15/OM>
         a              rr:ObjectMap ;
-        rml:reference  "afbeeldingIItekst" .
+        rml:reference  "taxon" .
 
 
 ### Predicate Object Map
@@ -231,12 +235,12 @@
 <SimplePropertyMapping/11>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/11/OM> ;
-        rr:predicate  dbo:species .
+        rr:predicate  dbo:subFamily .
 
 ### ObjectMap
 <SimplePropertyMapping/11/OM>
         a              rr:ObjectMap ;
-        rml:reference  "soort" .
+        rml:reference  "onderfamilie" .
 
 
 ### Predicate Object Map
@@ -244,12 +248,12 @@
 <SimplePropertyMapping/12>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/12/OM> ;
-        rr:predicate  dbo:species .
+        rr:predicate  dbo:genus .
 
 ### ObjectMap
 <SimplePropertyMapping/12/OM>
         a              rr:ObjectMap ;
-        rml:reference  "species" .
+        rml:reference  "geslacht" .
 
 
 ### Predicate Object Map
@@ -262,7 +266,7 @@
 ### ObjectMap
 <SimplePropertyMapping/16/OM>
         a              rr:ObjectMap ;
-        rml:reference  "afbeeldingIII" .
+        rml:reference  "afbeeldingII" .
 
 
 ### Predicate Object Map
@@ -270,12 +274,12 @@
 <SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/10/OM> ;
-        rr:predicate  dbo:genus .
+        rr:predicate  dbo:family .
 
 ### ObjectMap
 <SimplePropertyMapping/10/OM>
         a              rr:ObjectMap ;
-        rml:reference  "geslacht" .
+        rml:reference  "familie" .
 
 
 ### Predicate Object Map
@@ -283,12 +287,12 @@
 <SimplePropertyMapping/8>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/8/OM> ;
-        rr:predicate  dbo:family .
+        rr:predicate  dbo:subtitle .
 
 ### ObjectMap
 <SimplePropertyMapping/8/OM>
         a              rr:ObjectMap ;
-        rml:reference  "familie" .
+        rml:reference  "afbeeldingtekst" .
 
 
 ### Predicate Object Map
@@ -296,12 +300,12 @@
 <SimplePropertyMapping/7>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/7/OM> ;
-        rr:predicate  dbo:picture .
+        rr:predicate  dbo:date .
 
 ### ObjectMap
 <SimplePropertyMapping/7/OM>
         a              rr:ObjectMap ;
-        rml:reference  "commons" .
+        rml:reference  "datum" .
 
 
 ### Predicate Object Map
@@ -332,6 +336,32 @@
 
 ### Predicate Object Map
 #########################
+<SimplePropertyMapping/24>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/24/OM> ;
+        rr:predicate  dbo:subOrder .
+
+### ObjectMap
+<SimplePropertyMapping/24/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "onderorde" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/23>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/23/OM> ;
+        rr:predicate  dbo:pictureDescription .
+
+### ObjectMap
+<SimplePropertyMapping/23/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "afbeelding2tekst" .
+
+
+### Predicate Object Map
+#########################
 <SimplePropertyMapping/21>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/21/OM> ;
@@ -340,7 +370,7 @@
 ### ObjectMap
 <SimplePropertyMapping/21/OM>
         a              rr:ObjectMap ;
-        rml:reference  "afbeelding2tekst" .
+        rml:reference  "afbeeldingIVtekst" .
 
 
 ### Predicate Object Map
@@ -348,12 +378,12 @@
 <SimplePropertyMapping/6>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/6/OM> ;
-        rr:predicate  dbo:subtitle .
+        rr:predicate  dbo:picture .
 
 ### ObjectMap
 <SimplePropertyMapping/6/OM>
         a              rr:ObjectMap ;
-        rml:reference  "afbeeldingtekst" .
+        rml:reference  "afbeelding" .
 
 
 ### Predicate Object Map
@@ -361,12 +391,13 @@
 <SimplePropertyMapping/5>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/5/OM> ;
-        rr:predicate  dbo:date .
+        rr:predicate  dbo:name .
 
 ### ObjectMap
 <SimplePropertyMapping/5/OM>
         a              rr:ObjectMap ;
-        rml:reference  "datum" .
+        rml:reference  "titelweergave" ;
+        rr:language    "nl" .
 
 
 ### Predicate Object Map
@@ -374,12 +405,12 @@
 <SimplePropertyMapping/13>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/13/OM> ;
-        rr:predicate  dbo:taxon .
+        rr:predicate  dbo:species .
 
 ### ObjectMap
 <SimplePropertyMapping/13/OM>
         a              rr:ObjectMap ;
-        rml:reference  "taxon" .
+        rml:reference  "soort" .
 
 
 ######################

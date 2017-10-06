@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -47,6 +49,7 @@
 			       <SimplePropertyMapping/16> ,
 			       <SimplePropertyMapping/21> ,
 			       <SimplePropertyMapping/2> ,
+			       <SimplePropertyMapping/65> ,
 			       <SimplePropertyMapping/52> ,
 			       <SimplePropertyMapping/45> ,
 			       <SimplePropertyMapping/7> ,
@@ -77,10 +80,12 @@
 			       <SimplePropertyMapping/13> ,
 			       <SimplePropertyMapping/20> ,
 			       <SimplePropertyMapping/57> ,
+			       <SimplePropertyMapping/64> ,
 			       <SimplePropertyMapping/37> ,
 			       <SimplePropertyMapping/44> ,
 			       <SimplePropertyMapping/26> ,
 			       <SimplePropertyMapping/23> ,
+			       <SimplePropertyMapping/67> ,
 			       <SimplePropertyMapping/47> ,
 			       <SimplePropertyMapping/5> ,
 			       <SimplePropertyMapping/50> ,
@@ -93,7 +98,9 @@
 			       <SimplePropertyMapping/17> ,
 			       <SimplePropertyMapping/22> ,
 			       <SimplePropertyMapping/0> ,
+			       <SimplePropertyMapping/66> ,
 			       <SimplePropertyMapping/46> ,
+			       <SimplePropertyMapping/63> ,
 			       <SimplePropertyMapping/8> ,
 			       <SimplePropertyMapping/43> ,
 			       <SimplePropertyMapping/39> ,
@@ -180,12 +187,12 @@
 <SimplePropertyMapping/59>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/59/OM> ;
-        rr:predicate  dbo:occupation .
+        rr:predicate  dbo:subtitle .
 
 ### ObjectMap
 <SimplePropertyMapping/59/OM>
         a              rr:ObjectMap ;
-        rml:reference  "atividade_início" .
+        rml:reference  "legenda" .
 
 
 ### Predicate Object Map
@@ -193,12 +200,12 @@
 <SimplePropertyMapping/62>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/62/OM> ;
-        rr:predicate  dbo:honours .
+        rr:predicate  dbo:occupation .
 
 ### ObjectMap
 <SimplePropertyMapping/62/OM>
         a              rr:ObjectMap ;
-        rml:reference  "condecorações" .
+        rml:reference  "atividade_início" .
 
 
 ### Predicate Object Map
@@ -277,6 +284,19 @@
 <SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
         rml:reference  "imagem" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/65>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/65/OM> ;
+        rr:predicate  dbo:honours .
+
+### ObjectMap
+<SimplePropertyMapping/65/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Condecorações" .
 
 
 ### Predicate Object Map
@@ -376,12 +396,12 @@
 <SimplePropertyMapping/58>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/58/OM> ;
-        rr:predicate  dbo:occupation .
+        rr:predicate  dbo:subtitle .
 
 ### ObjectMap
 <SimplePropertyMapping/58/OM>
         a              rr:ObjectMap ;
-        rml:reference  "atividade_fim_r" .
+        rml:reference  "imagem_legenda" .
 
 
 ### Predicate Object Map
@@ -454,12 +474,12 @@
 <SimplePropertyMapping/61>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/61/OM> ;
-        rr:predicate  dbo:battle .
+        rr:predicate  dbo:occupation .
 
 ### ObjectMap
 <SimplePropertyMapping/61/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Batalhas/Guerras" .
+        rml:reference  "atividade_fim_r" .
 
 
 ### Predicate Object Map
@@ -665,12 +685,25 @@
 <SimplePropertyMapping/57>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/57/OM> ;
-        rr:predicate  dbo:occupation .
+        rr:predicate  dbo:imageSize .
 
 ### ObjectMap
 <SimplePropertyMapping/57/OM>
         a              rr:ObjectMap ;
-        rml:reference  "atividade_fim" .
+        rml:reference  "imagem_tamanho" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/64>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/64/OM> ;
+        rr:predicate  dbo:battle .
+
+### ObjectMap
+<SimplePropertyMapping/64/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Batalhas/Guerras" .
 
 
 ### Predicate Object Map
@@ -724,6 +757,19 @@
         a              rr:ObjectMap ;
         rml:reference  "pseudónimo" ;
         rr:language    "pt" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/67>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/67/OM> ;
+        rr:predicate  dbo:command .
+
+### ObjectMap
+<SimplePropertyMapping/67/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Comando" .
 
 
 ### Predicate Object Map
@@ -841,7 +887,7 @@
 ### ObjectMap
 <SimplePropertyMapping/60/OM>
         a              rr:ObjectMap ;
-        rml:reference  "atividade_início_r" .
+        rml:reference  "atividade_fim" .
 
 
 ### Predicate Object Map
@@ -909,6 +955,32 @@
         a              rr:ObjectMap ;
         rml:reference  "nome" ;
         rr:language    "pt" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/66>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/66/OM> ;
+        rr:predicate  dbo:house .
+
+### ObjectMap
+<SimplePropertyMapping/66/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "residência" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/63>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/63/OM> ;
+        rr:predicate  dbo:occupation .
+
+### ObjectMap
+<SimplePropertyMapping/63/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "atividade_início_r" .
 
 
 ### Predicate Object Map

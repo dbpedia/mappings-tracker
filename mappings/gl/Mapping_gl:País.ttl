@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -64,7 +66,9 @@
 			       <SimplePropertyMapping/46> ,
 			       <SimplePropertyMapping/44> ,
 			       <SimplePropertyMapping/14> ,
+			       <SimplePropertyMapping/52> ,
 			       <SimplePropertyMapping/10> ,
+			       <SimplePropertyMapping/51> ,
 			       <SimplePropertyMapping/1> ,
 			       <SimplePropertyMapping/6> ,
 			       <SimplePropertyMapping/38> ,
@@ -233,12 +237,12 @@
 <SimplePropertyMapping/47>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/47/OM> ;
-        rr:predicate  dbo:flag .
+        rr:predicate  dbo:officialLanguage .
 
 ### ObjectMap
 <SimplePropertyMapping/47/OM>
         a              rr:ObjectMap ;
-        rml:reference  "imaxe bandeira" .
+        rml:reference  "idioma_cooficial" .
 
 
 ### Predicate Object Map
@@ -430,12 +434,12 @@
 <SimplePropertyMapping/45>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/45/OM> ;
-        rr:predicate  dbo:grossDomesticProductAsOf .
+        rr:predicate  dbo:populationAsOf .
 
 ### ObjectMap
 <SimplePropertyMapping/45/OM>
         a              rr:ObjectMap ;
-        rml:reference  "PIB ano" .
+        rml:reference  "poboación_ano" .
 
 
 ### Predicate Object Map
@@ -456,12 +460,12 @@
 <SimplePropertyMapping/46>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/46/OM> ;
-        rr:predicate  dbo:officialLanguage .
+        rr:predicate  dbo:grossDomesticProductAsOf .
 
 ### ObjectMap
 <SimplePropertyMapping/46/OM>
         a              rr:ObjectMap ;
-        rml:reference  "idioma_cooficial" .
+        rml:reference  "PIB ano" .
 
 
 ### Predicate Object Map
@@ -475,6 +479,19 @@
 <SimplePropertyMapping/44/OM>
         a              rr:ObjectMap ;
         rml:reference  "idiomas_cooficiais" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/52>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/52/OM> ;
+        rr:predicate  dbo:populationAsOf .
+
+### ObjectMap
+<SimplePropertyMapping/52/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "poboación ano" .
 
 
 ### Predicate Object Map
@@ -501,6 +518,19 @@
 <SimplePropertyMapping/10/OM>
         a              rr:ObjectMap ;
         rml:reference  "cctld" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/51>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/51/OM> ;
+        rr:predicate  dbo:map .
+
+### ObjectMap
+<SimplePropertyMapping/51/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "imaxe mapa" .
 
 
 ### Predicate Object Map
@@ -692,12 +722,12 @@
 <SimplePropertyMapping/49>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/49/OM> ;
-        rr:predicate  dbo:picture .
+        rr:predicate  dbo:flag .
 
 ### ObjectMap
 <SimplePropertyMapping/49/OM>
         a              rr:ObjectMap ;
-        rml:reference  "imaxe escudo" .
+        rml:reference  "imaxe_bandeira" .
 
 
 ### Predicate Object Map
@@ -749,7 +779,7 @@
 ### ObjectMap
 <SimplePropertyMapping/48/OM>
         a              rr:ObjectMap ;
-        rml:reference  "imaxe_bandeira" .
+        rml:reference  "imaxe bandeira" .
 
 
 ### Predicate Object Map
@@ -783,12 +813,12 @@
 <SimplePropertyMapping/50>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/50/OM> ;
-        rr:predicate  dbo:map .
+        rr:predicate  dbo:picture .
 
 ### ObjectMap
 <SimplePropertyMapping/50/OM>
         a              rr:ObjectMap ;
-        rml:reference  "imaxe mapa" .
+        rml:reference  "imaxe escudo" .
 
 
 ### Predicate Object Map

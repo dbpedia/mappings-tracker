@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -57,8 +59,7 @@
 			       <SimplePropertyMapping/3> ,
 			       <SimplePropertyMapping/0> ,
 			       <SimplePropertyMapping/10> ,
-			       <SimplePropertyMapping/16> ,
-			       <SimplePropertyMapping/23> ;
+			       <SimplePropertyMapping/16> ;
         rr:subjectMap          <SubjectMap> .
 
 
@@ -114,12 +115,12 @@
 <SimplePropertyMapping/21>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/21/OM> ;
-        rr:predicate  dbo:molecularWeight .
+        rr:predicate  dbo:formula .
 
 ### ObjectMap
 <SimplePropertyMapping/21/OM>
         a              rr:ObjectMap ;
-        rml:reference  "molecuulgewicht" .
+        rml:reference  "chemische_formule" .
 
 
 ### Predicate Object Map
@@ -127,12 +128,12 @@
 <SimplePropertyMapping/19>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/19/OM> ;
-        rr:predicate  dbo:smiles .
+        rr:predicate  dbo:molecularWeight .
 
 ### ObjectMap
 <SimplePropertyMapping/19/OM>
         a              rr:ObjectMap ;
-        rml:reference  "SMILES" .
+        rml:reference  "moleculair_gewicht" .
 
 
 ### Predicate Object Map
@@ -250,7 +251,7 @@
 ### ObjectMap
 <SimplePropertyMapping/22/OM>
         a              rr:ObjectMap ;
-        rml:reference  "chemische_formule" .
+        rml:reference  "formule" .
 
 
 ### Predicate Object Map
@@ -329,7 +330,7 @@
 ### ObjectMap
 <SimplePropertyMapping/20/OM>
         a              rr:ObjectMap ;
-        rml:reference  "moleculair_gewicht" .
+        rml:reference  "molecuulgewicht" .
 
 
 ### Predicate Object Map
@@ -383,19 +384,6 @@
         a              rr:ObjectMap ;
         rml:reference  "naam" ;
         rr:language    "nl" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/23>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/23/OM> ;
-        rr:predicate  dbo:formula .
-
-### ObjectMap
-<SimplePropertyMapping/23/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "formule" .
 
 
 ######################

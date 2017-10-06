@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -38,11 +40,8 @@
         rr:predicateObjectMap  <SimplePropertyMapping/13> ,
 			       <SimplePropertyMapping/4> ,
 			       <SimplePropertyMapping/1> ,
-			       <SimplePropertyMapping/18> ,
-			       <SimplePropertyMapping/15> ,
 			       <SimplePropertyMapping/6> ,
 			       <SimplePropertyMapping/3> ,
-			       <SimplePropertyMapping/17> ,
 			       <SimplePropertyMapping/8> ,
 			       <SimplePropertyMapping/5> ,
 			       <SimplePropertyMapping/10> ,
@@ -52,10 +51,8 @@
 			       <SimplePropertyMapping/0> ,
 			       <EndDateMapping/0> ,
 			       <StartDateMapping/0> ,
-			       <SimplePropertyMapping/14> ,
 			       <SimplePropertyMapping/11> ,
-			       <SimplePropertyMapping/2> ,
-			       <SimplePropertyMapping/16> ;
+			       <SimplePropertyMapping/2> ;
         rr:subjectMap          <SubjectMap> .
 
 
@@ -85,12 +82,12 @@
 <SimplePropertyMapping/13>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/13/OM> ;
-        rr:predicate  dbo:deathDate .
+        rr:predicate  dbo:occupation .
 
 ### ObjectMap
 <SimplePropertyMapping/13/OM>
         a              rr:ObjectMap ;
-        rml:reference  "death_date" .
+        rml:reference  "occupation" .
 
 
 ### Predicate Object Map
@@ -98,12 +95,12 @@
 <SimplePropertyMapping/4>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/4/OM> ;
-        rr:predicate  dbo:successor .
+        rr:predicate  dbo:spouse .
 
 ### ObjectMap
 <SimplePropertyMapping/4/OM>
         a              rr:ObjectMap ;
-        rml:reference  "successor" .
+        rml:reference  "spouse" .
 
 
 ### Predicate Object Map
@@ -111,39 +108,13 @@
 <SimplePropertyMapping/1>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/1/OM> ;
-        rr:predicate  foaf:name .
+        rr:predicate  dbo:title .
 
 ### ObjectMap
 <SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
-        rml:reference  "name" ;
+        rml:reference  "title" ;
         rr:language    "en" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/18>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/18/OM> ;
-        rr:predicate  dbo:occupation .
-
-### ObjectMap
-<SimplePropertyMapping/18/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "occupation" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/15>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/15/OM> ;
-        rr:predicate  dbo:deathPlace .
-
-### ObjectMap
-<SimplePropertyMapping/15/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "death_place" .
 
 
 ### Predicate Object Map
@@ -151,13 +122,12 @@
 <SimplePropertyMapping/6>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/6/OM> ;
-        rr:predicate  foaf:name .
+        rr:predicate  dbo:parent .
 
 ### ObjectMap
 <SimplePropertyMapping/6/OM>
         a              rr:ObjectMap ;
-        rml:reference  "full name" ;
-        rr:language    "en" .
+        rml:reference  "mother" .
 
 
 ### Predicate Object Map
@@ -165,25 +135,12 @@
 <SimplePropertyMapping/3>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/3/OM> ;
-        rr:predicate  dbo:predecessor .
+        rr:predicate  dbo:successor .
 
 ### ObjectMap
 <SimplePropertyMapping/3/OM>
         a              rr:ObjectMap ;
-        rml:reference  "predecessor" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/17>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/17/OM> ;
-        rr:predicate  dbo:restingPlace .
-
-### ObjectMap
-<SimplePropertyMapping/17/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "place of burial" .
+        rml:reference  "successor" .
 
 
 ### Predicate Object Map
@@ -191,12 +148,12 @@
 <SimplePropertyMapping/8>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/8/OM> ;
-        rr:predicate  dbo:parent .
+        rr:predicate  dbo:birthDate .
 
 ### ObjectMap
 <SimplePropertyMapping/8/OM>
         a              rr:ObjectMap ;
-        rml:reference  "mother" .
+        rml:reference  "birthDate" .
 
 
 ### Predicate Object Map
@@ -204,12 +161,12 @@
 <SimplePropertyMapping/5>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/5/OM> ;
-        rr:predicate  dbo:spouse .
+        rr:predicate  dbo:parent .
 
 ### ObjectMap
 <SimplePropertyMapping/5/OM>
         a              rr:ObjectMap ;
-        rml:reference  "spouse" .
+        rml:reference  "father" .
 
 
 ### Predicate Object Map
@@ -217,12 +174,12 @@
 <SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/10/OM> ;
-        rr:predicate  dbo:birthDate .
+        rr:predicate  dbo:deathDate .
 
 ### ObjectMap
 <SimplePropertyMapping/10/OM>
         a              rr:ObjectMap ;
-        rml:reference  "date of birth" .
+        rml:reference  "deathDate" .
 
 
 ### Predicate Object Map
@@ -230,12 +187,12 @@
 <SimplePropertyMapping/7>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/7/OM> ;
-        rr:predicate  dbo:parent .
+        rr:predicate  dbo:child .
 
 ### ObjectMap
 <SimplePropertyMapping/7/OM>
         a              rr:ObjectMap ;
-        rml:reference  "father" .
+        rml:reference  "issue" .
 
 
 ### Predicate Object Map
@@ -243,12 +200,12 @@
 <SimplePropertyMapping/12>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/12/OM> ;
-        rr:predicate  dbo:birthPlace .
+        rr:predicate  dbo:placeOfBurial .
 
 ### ObjectMap
 <SimplePropertyMapping/12/OM>
         a              rr:ObjectMap ;
-        rml:reference  "place of birth" .
+        rml:reference  "burialPlace" .
 
 
 ### Predicate Object Map
@@ -256,12 +213,12 @@
 <SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/9/OM> ;
-        rr:predicate  dbo:birthDate .
+        rr:predicate  dbo:birthPlace .
 
 ### ObjectMap
 <SimplePropertyMapping/9/OM>
         a              rr:ObjectMap ;
-        rml:reference  "birth_date" .
+        rml:reference  "birthPlace" .
 
 
 ### Predicate Object Map
@@ -269,12 +226,13 @@
 <SimplePropertyMapping/0>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/0/OM> ;
-        rr:predicate  dbo:royalAnthem .
+        rr:predicate  foaf:name .
 
 ### ObjectMap
 <SimplePropertyMapping/0/OM>
         a              rr:ObjectMap ;
-        rml:reference  "royal anthem" .
+        rml:reference  "name" ;
+        rr:language    "en" .
 
 
 ### Predicate Object Map
@@ -306,19 +264,6 @@
 <EndDateMapping/0/FTM/FV/PropertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "reign" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/14>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/14/OM> ;
-        rr:predicate  dbo:deathDate .
-
-### ObjectMap
-<SimplePropertyMapping/14/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "date of death" .
 
 
 ### Predicate Object Map
@@ -357,12 +302,12 @@
 <SimplePropertyMapping/11>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/11/OM> ;
-        rr:predicate  dbo:birthPlace .
+        rr:predicate  dbo:deathPlace .
 
 ### ObjectMap
 <SimplePropertyMapping/11/OM>
         a              rr:ObjectMap ;
-        rml:reference  "birth_place" .
+        rml:reference  "deathPlace" .
 
 
 ### Predicate Object Map
@@ -370,26 +315,12 @@
 <SimplePropertyMapping/2>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/2/OM> ;
-        rr:predicate  dbo:title .
+        rr:predicate  dbo:predecessor .
 
 ### ObjectMap
 <SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
-        rml:reference  "title" ;
-        rr:language    "en" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/16>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/16/OM> ;
-        rr:predicate  dbo:deathPlace .
-
-### ObjectMap
-<SimplePropertyMapping/16/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "place of death" .
+        rml:reference  "predecessor" .
 
 
 ######################

@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -40,6 +42,7 @@
 			       <SimplePropertyMapping/0> ,
 			       <SimplePropertyMapping/2> ,
 			       <SimplePropertyMapping/46> ,
+			       <SimplePropertyMapping/55> ,
 			       <SimplePropertyMapping/34> ,
 			       <SimplePropertyMapping/43> ,
 			       <SimplePropertyMapping/45> ,
@@ -53,6 +56,7 @@
 			       <SimplePropertyMapping/25> ,
 			       <ConditionalMapping/0/Condition/0/ClassMapping> ,
 			       <SimplePropertyMapping/1> ,
+			       <SimplePropertyMapping/54> ,
 			       <SimplePropertyMapping/42> ,
 			       <SimplePropertyMapping/4> ,
 			       <SimplePropertyMapping/39> ,
@@ -179,6 +183,19 @@
 <SimplePropertyMapping/46/OM>
         a              rr:ObjectMap ;
         rml:reference  "hongkongfilmwards" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/55>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/55/OM> ;
+        rr:predicate  dbo:notableWork .
+
+### ObjectMap
+<SimplePropertyMapping/55/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "notable_works" .
 
 
 ### Predicate Object Map
@@ -337,6 +354,19 @@
 <SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
         rml:reference  "training" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/54>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/54/OM> ;
+        rr:predicate  dbo:notableWork .
+
+### ObjectMap
+<SimplePropertyMapping/54/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "works" .
 
 
 ### Predicate Object Map
@@ -918,7 +948,7 @@
 <IntermediateMapping/0/SubjectMap>
         a            rr:SubjectMap ;
         rr:class     geo:SpatialThing ;
-        rr:template  "http://en.dbpedia.org/resource/{wikititle}__restingPlacePosition__21" ;
+        rr:template  "http://en.dbpedia.org/resource/%7Bwikititle%7D" ;
         rr:termType  rr:IRI .
 
 ## Predicate Object Map

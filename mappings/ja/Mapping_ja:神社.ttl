@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -36,10 +38,12 @@
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <SimplePropertyMapping/3> ,
+			       <SimplePropertyMapping/6> ,
 			       <LongitudeMapping/0> ,
 			       <LatitudeMapping/0> ,
 			       <SimplePropertyMapping/5> ,
 			       <SimplePropertyMapping/1> ,
+			       <SimplePropertyMapping/7> ,
 			       <SimplePropertyMapping/0> ,
 			       <SimplePropertyMapping/2> ,
 			       <SimplePropertyMapping/4> ;
@@ -78,6 +82,19 @@
 <SimplePropertyMapping/3/OM>
         a              rr:ObjectMap ;
         rml:reference  "祭神" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/6>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/6/OM> ;
+        rr:predicate  dbo:mainBuilding .
+
+### ObjectMap
+<SimplePropertyMapping/6/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "本殿" .
 
 
 ### Predicate Object Map
@@ -138,7 +155,7 @@
 
 <LongitudeMapping/0/FTM/FV/lonDirectionParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "N(北緯)及びS(南緯)_" .
+        rml:reference  "null" .
 
 
 ### Predicate Object Map
@@ -199,7 +216,7 @@
 
 <LatitudeMapping/0/FTM/FV/latDirectionParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "E(東経)及びW(西経)_" .
+        rml:reference  "null" .
 
 
 ### Predicate Object Map
@@ -227,6 +244,19 @@
         a              rr:ObjectMap ;
         rml:reference  "名称" ;
         rr:language    "ja" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/7>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/7/OM> ;
+        rr:predicate  dbo:ranking .
+
+### ObjectMap
+<SimplePropertyMapping/7/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "社格" .
 
 
 ### Predicate Object Map
@@ -262,7 +292,7 @@
 <SimplePropertyMapping/4>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/4/OM> ;
-        rr:predicate  foaf:img .
+        rr:predicate  dbo:picture .
 
 ### ObjectMap
 <SimplePropertyMapping/4/OM>

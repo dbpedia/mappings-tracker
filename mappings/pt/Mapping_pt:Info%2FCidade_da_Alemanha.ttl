@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -41,8 +43,10 @@
 			       <SimplePropertyMapping/14> ,
 			       <LatitudeMapping/0> ,
 			       <SimplePropertyMapping/11> ,
+			       <SimplePropertyMapping/23> ,
 			       <SimplePropertyMapping/18> ,
 			       <SimplePropertyMapping/12> ,
+			       <SimplePropertyMapping/24> ,
 			       <SimplePropertyMapping/3> ,
 			       <SimplePropertyMapping/2> ,
 			       <SimplePropertyMapping/17> ,
@@ -52,6 +56,7 @@
 			       <SimplePropertyMapping/20> ,
 			       <SimplePropertyMapping/10> ,
 			       <SimplePropertyMapping/6> ,
+			       <SimplePropertyMapping/22> ,
 			       <SimplePropertyMapping/15> ,
 			       <SimplePropertyMapping/0> ,
 			       <LongitudeMapping/0> ,
@@ -211,15 +216,28 @@
 
 ### Predicate Object Map
 #########################
+<SimplePropertyMapping/23>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/23/OM> ;
+        rr:predicate  dbo:map .
+
+### ObjectMap
+<SimplePropertyMapping/23/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "mapa" .
+
+
+### Predicate Object Map
+#########################
 <SimplePropertyMapping/18>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/18/OM> ;
-        rr:predicate  foaf:logo .
+        rr:predicate  dbo:party .
 
 ### ObjectMap
 <SimplePropertyMapping/18/OM>
         a              rr:ObjectMap ;
-        rml:reference  "brasão" .
+        rml:reference  "partido" .
 
 
 ### Predicate Object Map
@@ -233,6 +251,19 @@
 <SimplePropertyMapping/12/OM>
         a              rr:ObjectMap ;
         rml:reference  "endereço" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/24>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/24/OM> ;
+        rr:predicate  dbo:map .
+
+### ObjectMap
+<SimplePropertyMapping/24/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "mapa estado" .
 
 
 ### Predicate Object Map
@@ -266,12 +297,12 @@
 <SimplePropertyMapping/17>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/17/OM> ;
-        rr:predicate  dbo:subtitle .
+        rr:predicate  dbo:politicalPartyInLegislature .
 
 ### ObjectMap
 <SimplePropertyMapping/17/OM>
         a              rr:ObjectMap ;
-        rml:reference  "texto da imagem" .
+        rml:reference  "partido" .
 
 
 ### Predicate Object Map
@@ -292,12 +323,12 @@
 <SimplePropertyMapping/21>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/21/OM> ;
-        rr:predicate  dbo:map .
+        rr:predicate  foaf:logo .
 
 ### ObjectMap
 <SimplePropertyMapping/21/OM>
         a              rr:ObjectMap ;
-        rml:reference  "mapa estado" .
+        rml:reference  "brasão" .
 
 
 ### Predicate Object Map
@@ -318,12 +349,12 @@
 <SimplePropertyMapping/20>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/20/OM> ;
-        rr:predicate  dbo:map .
+        rr:predicate  dbo:subtitle .
 
 ### ObjectMap
 <SimplePropertyMapping/20/OM>
         a              rr:ObjectMap ;
-        rml:reference  "mapa" .
+        rml:reference  "texto da imagem" .
 
 
 ### Predicate Object Map
@@ -337,6 +368,19 @@
 <SimplePropertyMapping/10/OM>
         a              rr:ObjectMap ;
         rml:reference  "densidade" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/22>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/22/OM> ;
+        rr:predicate  dbo:height .
+
+### ObjectMap
+<SimplePropertyMapping/22/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "altitude" .
 
 
 ### Predicate Object Map
@@ -471,12 +515,12 @@
 <SimplePropertyMapping/19>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/19/OM> ;
-        rr:predicate  dbo:height .
+        rr:predicate  dbo:vehicleCode .
 
 ### ObjectMap
 <SimplePropertyMapping/19/OM>
         a              rr:ObjectMap ;
-        rml:reference  "altitude" .
+        rml:reference  "placa" .
 
 
 ### Predicate Object Map

@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -40,7 +42,6 @@
 			       <SimplePropertyMapping/28> ,
 			       <SimplePropertyMapping/31> ,
 			       <SimplePropertyMapping/4> ,
-			       <SimplePropertyMapping/32> ,
 			       <SimplePropertyMapping/29> ,
 			       <SimplePropertyMapping/3> ,
 			       <SimplePropertyMapping/5> ,
@@ -62,10 +63,7 @@
 			       <SimplePropertyMapping/23> ,
 			       <SimplePropertyMapping/25> ,
 			       <SimplePropertyMapping/10> ,
-			       <SimplePropertyMapping/33> ,
 			       <SimplePropertyMapping/6> ,
-			       <SimplePropertyMapping/35> ,
-			       <SimplePropertyMapping/34> ,
 			       <SimplePropertyMapping/7> ,
 			       <SimplePropertyMapping/21> ,
 			       <SimplePropertyMapping/17> ,
@@ -100,12 +98,12 @@
 <SimplePropertyMapping/31>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/31/OM> ;
-        rr:predicate  dc:identifier .
+        rr:predicate  dbo:notes .
 
 ### ObjectMap
 <SimplePropertyMapping/31/OM>
         a              rr:ObjectMap ;
-        rml:reference  "ID" .
+        rml:reference  "Notes" .
 
 
 ### Predicate Object Map
@@ -113,12 +111,12 @@
 <SimplePropertyMapping/15>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/15/OM> ;
-        rr:predicate  dbo:license .
+        rr:predicate  dbo:related .
 
 ### ObjectMap
 <SimplePropertyMapping/15/OM>
         a              rr:ObjectMap ;
-        rml:reference  "permission" .
+        rml:reference  "Other versions" .
 
 
 ### Predicate Object Map
@@ -126,12 +124,12 @@
 <SimplePropertyMapping/28>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/28/OM> ;
-        rr:predicate  dc:identifier .
+        rr:predicate  dcterms:extent .
 
 ### ObjectMap
 <SimplePropertyMapping/28/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Accession number" .
+        rml:reference  "dimensions" .
 
 
 ### Predicate Object Map
@@ -163,28 +161,15 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/32>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/32/OM> ;
-        rr:predicate  dcterms:extent .
-
-### ObjectMap
-<SimplePropertyMapping/32/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "dimensions" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/29>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/29/OM> ;
-        rr:predicate  dc:identifier .
+        rr:predicate  dcterms:extent .
 
 ### ObjectMap
 <SimplePropertyMapping/29/OM>
         a              rr:ObjectMap ;
-        rml:reference  "id" .
+        rml:reference  "Dimensions" .
 
 
 ### Predicate Object Map
@@ -224,7 +209,7 @@
 ### ObjectMap
 <SimplePropertyMapping/26/OM>
         a              rr:ObjectMap ;
-        rml:reference  "accession number" .
+        rml:reference  "Id" .
 
 
 ### Predicate Object Map
@@ -237,7 +222,7 @@
 ### ObjectMap
 <SimplePropertyMapping/27/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Accession number" .
+        rml:reference  "ID" .
 
 
 ### Predicate Object Map
@@ -250,7 +235,7 @@
 ### ObjectMap
 <SimplePropertyMapping/20/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Institution" .
+        rml:reference  "Museum" .
 
 
 ### Predicate Object Map
@@ -258,51 +243,25 @@
 <SimplePropertyMapping/30>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/30/OM> ;
-        rr:predicate  dc:identifier .
+        rr:predicate  dbo:notes .
 
 ### ObjectMap
 <SimplePropertyMapping/30/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Id" .
+        rml:reference  "notes" .
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/11>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/11/FTM> ;
-        rr:predicate  dcterms:created .
+        rr:objectMap  <SimplePropertyMapping/11/OM> ;
+        rr:predicate  dbo:license .
 
-### Function Term Map
-<SimplePropertyMapping/11/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/11/FTM/FV> ;
-        rr:datatype         xsd:date .
-
-### Function Execution Mapping
-<SimplePropertyMapping/11/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/11/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/11/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/11/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "xsd:date" ;
-        rr:predicate  dbf:unitParameter .
-
-<SimplePropertyMapping/11/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/11/FTM/FV/propertyParameterPOM/OM> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/11/FTM/FV/propertyParameterPOM/OM>
+### ObjectMap
+<SimplePropertyMapping/11/OM>
         a              rr:ObjectMap ;
-        rml:reference  "year" .
+        rml:reference  "permission" .
 
 
 ### Predicate Object Map
@@ -310,12 +269,12 @@
 <SimplePropertyMapping/13>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/13/OM> ;
-        rr:predicate  dcterms:source .
+        rr:predicate  dbo:related .
 
 ### ObjectMap
 <SimplePropertyMapping/13/OM>
         a              rr:ObjectMap ;
-        rml:reference  "source" .
+        rml:reference  "Other_versions" .
 
 
 ### Predicate Object Map
@@ -336,12 +295,12 @@
 <SimplePropertyMapping/18>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/18/OM> ;
-        rr:predicate  dbo:related .
+        rr:predicate  dbo:institution .
 
 ### ObjectMap
 <SimplePropertyMapping/18/OM>
         a              rr:ObjectMap ;
-        rml:reference  "other versions" .
+        rml:reference  "Gallery" .
 
 
 ### Predicate Object Map
@@ -349,51 +308,25 @@
 <SimplePropertyMapping/12>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/12/OM> ;
-        rr:predicate  dcterms:source .
+        rr:predicate  dbo:related .
 
 ### ObjectMap
 <SimplePropertyMapping/12/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Source" .
+        rml:reference  "other_versions" .
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/8>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/8/FTM> ;
-        rr:predicate  dcterms:created .
+        rr:objectMap  <SimplePropertyMapping/8/OM> ;
+        rr:predicate  dcterms:source .
 
-### Function Term Map
-<SimplePropertyMapping/8/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/8/FTM/FV> ;
-        rr:datatype         xsd:date .
-
-### Function Execution Mapping
-<SimplePropertyMapping/8/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/8/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/8/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/8/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "xsd:date" ;
-        rr:predicate  dbf:unitParameter .
-
-<SimplePropertyMapping/8/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/8/FTM/FV/propertyParameterPOM/OM> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/8/FTM/FV/propertyParameterPOM/OM>
+### ObjectMap
+<SimplePropertyMapping/8/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Date" .
+        rml:reference  "Source" .
 
 
 ### Predicate Object Map
@@ -401,12 +334,12 @@
 <SimplePropertyMapping/16>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/16/OM> ;
-        rr:predicate  dbo:related .
+        rr:predicate  dbo:institution .
 
 ### ObjectMap
 <SimplePropertyMapping/16/OM>
         a              rr:ObjectMap ;
-        rml:reference  "other_versions" .
+        rml:reference  "Institution" .
 
 
 ### Predicate Object Map
@@ -427,12 +360,12 @@
 <SimplePropertyMapping/19>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/19/OM> ;
-        rr:predicate  dbo:related .
+        rr:predicate  dbo:institution .
 
 ### ObjectMap
 <SimplePropertyMapping/19/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Other versions" .
+        rml:reference  "gallery" .
 
 
 ### Predicate Object Map
@@ -440,51 +373,25 @@
 <SimplePropertyMapping/24>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/24/OM> ;
-        rr:predicate  dbo:institution .
+        rr:predicate  dc:identifier .
 
 ### ObjectMap
 <SimplePropertyMapping/24/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Museum" .
+        rml:reference  "Accession number" .
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/9/FTM> ;
-        rr:predicate  dcterms:created .
+        rr:objectMap  <SimplePropertyMapping/9/OM> ;
+        rr:predicate  dcterms:source .
 
-### Function Term Map
-<SimplePropertyMapping/9/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/9/FTM/FV> ;
-        rr:datatype         xsd:date .
-
-### Function Execution Mapping
-<SimplePropertyMapping/9/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/9/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/9/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/9/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "xsd:date" ;
-        rr:predicate  dbf:unitParameter .
-
-<SimplePropertyMapping/9/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/9/FTM/FV/propertyParameterPOM/OM>
+### ObjectMap
+<SimplePropertyMapping/9/OM>
         a              rr:ObjectMap ;
-        rml:reference  "date" .
+        rml:reference  "source" .
 
 
 ### Predicate Object Map
@@ -492,12 +399,12 @@
 <SimplePropertyMapping/23>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/23/OM> ;
-        rr:predicate  dbo:institution .
+        rr:predicate  dc:identifier .
 
 ### ObjectMap
 <SimplePropertyMapping/23/OM>
         a              rr:ObjectMap ;
-        rml:reference  "gallery" .
+        rml:reference  "Accession number" .
 
 
 ### Predicate Object Map
@@ -505,64 +412,25 @@
 <SimplePropertyMapping/25>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/25/OM> ;
-        rr:predicate  dbo:institution .
+        rr:predicate  dc:identifier .
 
 ### ObjectMap
 <SimplePropertyMapping/25/OM>
         a              rr:ObjectMap ;
-        rml:reference  "museum" .
+        rml:reference  "id" .
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/10/FTM> ;
-        rr:predicate  dcterms:created .
-
-### Function Term Map
-<SimplePropertyMapping/10/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/10/FTM/FV> ;
-        rr:datatype         xsd:date .
-
-### Function Execution Mapping
-<SimplePropertyMapping/10/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/10/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/10/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/10/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "xsd:date" ;
-        rr:predicate  dbf:unitParameter .
-
-<SimplePropertyMapping/10/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/10/FTM/FV/propertyParameterPOM/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "Year" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/33>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/33/OM> ;
-        rr:predicate  dcterms:extent .
+        rr:objectMap  <SimplePropertyMapping/10/OM> ;
+        rr:predicate  dbo:license .
 
 ### ObjectMap
-<SimplePropertyMapping/33/OM>
+<SimplePropertyMapping/10/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Dimensions" .
+        rml:reference  "Permission" .
 
 
 ### Predicate Object Map
@@ -576,32 +444,6 @@
 <SimplePropertyMapping/6/OM>
         a              rr:ObjectMap ;
         rml:reference  "Artist" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/35>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/35/OM> ;
-        rr:predicate  dbo:notes .
-
-### ObjectMap
-<SimplePropertyMapping/35/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "Notes" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/34>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/34/OM> ;
-        rr:predicate  dbo:notes .
-
-### ObjectMap
-<SimplePropertyMapping/34/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "notes" .
 
 
 ### Predicate Object Map
@@ -627,7 +469,7 @@
 ### ObjectMap
 <SimplePropertyMapping/21/OM>
         a              rr:ObjectMap ;
-        rml:reference  "institution" .
+        rml:reference  "museum" .
 
 
 ### Predicate Object Map
@@ -635,12 +477,12 @@
 <SimplePropertyMapping/17>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/17/OM> ;
-        rr:predicate  dbo:related .
+        rr:predicate  dbo:institution .
 
 ### ObjectMap
 <SimplePropertyMapping/17/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Other_versions" .
+        rml:reference  "institution" .
 
 
 ### Predicate Object Map
@@ -648,12 +490,12 @@
 <SimplePropertyMapping/14>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/14/OM> ;
-        rr:predicate  dbo:license .
+        rr:predicate  dbo:related .
 
 ### ObjectMap
 <SimplePropertyMapping/14/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Permission" .
+        rml:reference  "other versions" .
 
 
 ### Predicate Object Map
@@ -661,35 +503,14 @@
 <SimplePropertyMapping/22>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/22/OM> ;
-        rr:predicate  dbo:institution .
+        rr:predicate  dc:identifier .
 
 ### ObjectMap
 <SimplePropertyMapping/22/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Gallery" .
+        rml:reference  "accession number" .
 
 
 ######################
 # Conditional Mappings
 ######################
-
-
-
-############
-# Functions
-############
-
-
-<Function/SimplePropertyFunction>
-        a             rr:PredicateObjectMap ;
-        rr:object     dbf:simplePropertyFunction ;
-        rr:predicate  fno:executes .
-
-
-### Functions SubjectMap
-#########################
-
-<SubjectMap/Function>
-        a            rr:SubjectMap ;
-        rr:class     fno:Execution ;
-        rr:termType  rr:BlankNode .

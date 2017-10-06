@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -40,6 +42,7 @@
 			       <SimplePropertyMapping/12> ,
 			       <EndDateMapping/0> ,
 			       <SimplePropertyMapping/6> ,
+			       <SimplePropertyMapping/14> ,
 			       <SimplePropertyMapping/5> ,
 			       <SimplePropertyMapping/8> ,
 			       <SimplePropertyMapping/9> ,
@@ -49,7 +52,8 @@
 			       <SimplePropertyMapping/1> ,
 			       <SimplePropertyMapping/4> ,
 			       <SimplePropertyMapping/10> ,
-			       <SimplePropertyMapping/3> ;
+			       <SimplePropertyMapping/3> ,
+			       <SimplePropertyMapping/13> ;
         rr:subjectMap          <SubjectMap> .
 
 
@@ -79,12 +83,12 @@
 <SimplePropertyMapping/11>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/11/OM> ;
-        rr:predicate  foaf:homepage .
+        rr:predicate  dbo:country .
 
 ### ObjectMap
 <SimplePropertyMapping/11/OM>
         a              rr:ObjectMap ;
-        rml:reference  "website" .
+        rml:reference  "land" .
 
 
 ### Predicate Object Map
@@ -123,12 +127,12 @@
 <SimplePropertyMapping/12>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/12/OM> ;
-        rr:predicate  dbo:imdbId .
+        rr:predicate  dbo:occupation .
 
 ### ObjectMap
 <SimplePropertyMapping/12/OM>
         a              rr:ObjectMap ;
-        rml:reference  "imdb" .
+        rml:reference  "beroep" .
 
 
 ### Predicate Object Map
@@ -177,6 +181,19 @@
 
 ### Predicate Object Map
 #########################
+<SimplePropertyMapping/14>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/14/OM> ;
+        rr:predicate  dbo:imdbId .
+
+### ObjectMap
+<SimplePropertyMapping/14/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "imdb" .
+
+
+### Predicate Object Map
+#########################
 <SimplePropertyMapping/5>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/5/OM> ;
@@ -194,12 +211,12 @@
 <SimplePropertyMapping/8>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/8/OM> ;
-        rr:predicate  dbo:deathDate .
+        rr:predicate  dbo:birthPlace .
 
 ### ObjectMap
 <SimplePropertyMapping/8/OM>
         a              rr:ObjectMap ;
-        rml:reference  "overleden" .
+        rml:reference  "geboorteplaats" .
 
 
 ### Predicate Object Map
@@ -207,12 +224,12 @@
 <SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/9/OM> ;
-        rr:predicate  dbo:country .
+        rr:predicate  dbo:deathDate .
 
 ### ObjectMap
 <SimplePropertyMapping/9/OM>
         a              rr:ObjectMap ;
-        rml:reference  "land" .
+        rml:reference  "overleden" .
 
 
 ### Predicate Object Map
@@ -273,12 +290,12 @@
 <SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/10/OM> ;
-        rr:predicate  dbo:occupation .
+        rr:predicate  dbo:deathPlace .
 
 ### ObjectMap
 <SimplePropertyMapping/10/OM>
         a              rr:ObjectMap ;
-        rml:reference  "beroep" .
+        rml:reference  "overlijdensplaats" .
 
 
 ### Predicate Object Map
@@ -307,6 +324,19 @@
         a              rr:ObjectMap ;
         rml:reference  "volledige naam" ;
         rr:language    "nl" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/13>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/13/OM> ;
+        rr:predicate  foaf:homepage .
+
+### ObjectMap
+<SimplePropertyMapping/13/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "website" .
 
 
 ######################

@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -39,7 +41,9 @@
 			       <SimplePropertyMapping/6> ,
 			       <SimplePropertyMapping/21> ,
 			       <SimplePropertyMapping/8> ,
+			       <SimplePropertyMapping/27> ,
 			       <SimplePropertyMapping/7> ,
+			       <SimplePropertyMapping/29> ,
 			       <SimplePropertyMapping/1> ,
 			       <SimplePropertyMapping/23> ,
 			       <SimplePropertyMapping/20> ,
@@ -48,6 +52,8 @@
 			       <SimplePropertyMapping/15> ,
 			       <SimplePropertyMapping/3> ,
 			       <SimplePropertyMapping/0> ,
+			       <SimplePropertyMapping/30> ,
+			       <SimplePropertyMapping/28> ,
 			       <SimplePropertyMapping/22> ,
 			       <SimplePropertyMapping/14> ,
 			       <SimplePropertyMapping/17> ,
@@ -140,6 +146,19 @@
 
 ### Predicate Object Map
 #########################
+<SimplePropertyMapping/27>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/27/OM> ;
+        rr:predicate  dbo:birthPlace .
+
+### ObjectMap
+<SimplePropertyMapping/27/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "místo narození" .
+
+
+### Predicate Object Map
+#########################
 <SimplePropertyMapping/7>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/7/OM> ;
@@ -149,6 +168,19 @@
 <SimplePropertyMapping/7/OM>
         a              rr:ObjectMap ;
         rml:reference  "stát úmrtí" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/29>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/29/OM> ;
+        rr:predicate  dbo:deathPlace .
+
+### ObjectMap
+<SimplePropertyMapping/29/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "místo úmrtí" .
 
 
 ### Predicate Object Map
@@ -241,6 +273,32 @@
         a              rr:ObjectMap ;
         rml:reference  "celé jméno" ;
         rr:language    "cs" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/30>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/30/OM> ;
+        rr:predicate  dbo:imageSize .
+
+### ObjectMap
+<SimplePropertyMapping/30/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "velikost obrázku" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/28>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/28/OM> ;
+        rr:predicate  dbo:coachClub .
+
+### ObjectMap
+<SimplePropertyMapping/28/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "trénované kluby" .
 
 
 ### Predicate Object Map

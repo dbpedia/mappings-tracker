@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -38,6 +40,7 @@
         rr:predicateObjectMap  <SimplePropertyMapping/4> ,
 			       <IntermediateMapping/3> ,
 			       <SimplePropertyMapping/12> ,
+			       <SimplePropertyMapping/20> ,
 			       <LongitudeMapping/0> ,
 			       <SimplePropertyMapping/3> ,
 			       <SimplePropertyMapping/9> ,
@@ -46,6 +49,7 @@
 			       <SimplePropertyMapping/0> ,
 			       <SimplePropertyMapping/6> ,
 			       <SimplePropertyMapping/14> ,
+			       <SimplePropertyMapping/18> ,
 			       <LatitudeMapping/0> ,
 			       <SimplePropertyMapping/5> ,
 			       <SimplePropertyMapping/17> ,
@@ -59,6 +63,7 @@
 			       <SimplePropertyMapping/16> ,
 			       <SimplePropertyMapping/1> ,
 			       <SimplePropertyMapping/7> ,
+			       <SimplePropertyMapping/19> ,
 			       <SimplePropertyMapping/13> ;
         rr:subjectMap          <SubjectMap> .
 
@@ -95,6 +100,19 @@
 <SimplePropertyMapping/4/OM>
         a              rr:ObjectMap ;
         rml:reference  "drapeau" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/20>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/20/OM> ;
+        rr:predicate  dbo:departmentPosition .
+
+### ObjectMap
+<SimplePropertyMapping/20/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "position-département" .
 
 
 
@@ -173,13 +191,39 @@
 #########################
 <SimplePropertyMapping/15>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/15/OM> ;
-        rr:predicate  dbo:geolocDepartment .
+        rr:objectMap  <SimplePropertyMapping/15/FTM> ;
+        rr:predicate  dbo:minimumElevation .
 
-### ObjectMap
-<SimplePropertyMapping/15/OM>
+### Function Term Map
+<SimplePropertyMapping/15/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/15/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/metre> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/15/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/15/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/15/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "metre" ;
+        rr:predicate  dbf:unitParameter .
+
+<SimplePropertyMapping/15/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/15/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/15/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "géoloc-département" .
+        rml:reference  "alt mini" .
 
 
 ### Predicate Object Map
@@ -213,13 +257,52 @@
 #########################
 <SimplePropertyMapping/14>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/14/OM> ;
-        rr:predicate  foaf:homepage .
+        rr:objectMap  <SimplePropertyMapping/14/FTM> ;
+        rr:predicate  dbo:maximumElevation .
+
+### Function Term Map
+<SimplePropertyMapping/14/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/14/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/metre> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/14/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/14/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/14/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/14/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/14/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<SimplePropertyMapping/14/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "metre" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<SimplePropertyMapping/14/FTM/FV/propertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "alt maxi" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/18>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/18/OM> ;
+        rr:predicate  dbo:geolocDepartment .
 
 ### ObjectMap
-<SimplePropertyMapping/14/OM>
+<SimplePropertyMapping/18/OM>
         a              rr:ObjectMap ;
-        rml:reference  "siteweb" .
+        rml:reference  "géoloc-département" .
 
 
 ### Predicate Object Map
@@ -271,12 +354,12 @@
 <SimplePropertyMapping/17>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/17/OM> ;
-        rr:predicate  dbo:departmentPosition .
+        rr:predicate  foaf:homepage .
 
 ### ObjectMap
 <SimplePropertyMapping/17/OM>
         a              rr:ObjectMap ;
-        rml:reference  "position-département" .
+        rml:reference  "siteweb" .
 
 
 ### Predicate Object Map
@@ -345,12 +428,13 @@
 <SimplePropertyMapping/16>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/16/OM> ;
-        rr:predicate  dbo:position .
+        rr:predicate  dbo:peopleName .
 
 ### ObjectMap
 <SimplePropertyMapping/16/OM>
         a              rr:ObjectMap ;
-        rml:reference  "position" .
+        rml:reference  "gentilé" ;
+        rr:language    "fr" .
 
 
 ### Predicate Object Map
@@ -381,16 +465,54 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/13>
+<SimplePropertyMapping/19>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/13/OM> ;
-        rr:predicate  dbo:peopleName .
+        rr:objectMap  <SimplePropertyMapping/19/OM> ;
+        rr:predicate  dbo:position .
 
 ### ObjectMap
-<SimplePropertyMapping/13/OM>
+<SimplePropertyMapping/19/OM>
         a              rr:ObjectMap ;
-        rml:reference  "gentilé" ;
-        rr:language    "fr" .
+        rml:reference  "position" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/13>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/13/FTM> ;
+        rr:predicate  dbo:elevation .
+
+### Function Term Map
+<SimplePropertyMapping/13/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/13/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/metre> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/13/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/13/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/13/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/13/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/13/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<SimplePropertyMapping/13/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "metre" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<SimplePropertyMapping/13/FTM/FV/propertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "altitude" .
 
 
 ##############################
@@ -628,6 +750,16 @@
 ############
 
 
+<Function/LongitudeFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:lonFunction ;
+        rr:predicate  fno:executes .
+
+<Function/LatitudeFunction>
+        a             rr:PredicateObjectMap ;
+        rr:object     dbf:latFunction ;
+        rr:predicate  fno:executes .
+
 <Function/EndDateFunction>
         a             rr:PredicateObjectMap ;
         rr:object     dbf:endDateFunction ;
@@ -638,14 +770,9 @@
         rr:object     dbf:startDateFunction ;
         rr:predicate  fno:executes .
 
-<Function/LongitudeFunction>
+<Function/SimplePropertyFunction>
         a             rr:PredicateObjectMap ;
-        rr:object     dbf:lonFunction ;
-        rr:predicate  fno:executes .
-
-<Function/LatitudeFunction>
-        a             rr:PredicateObjectMap ;
-        rr:object     dbf:latFunction ;
+        rr:object     dbf:simplePropertyFunction ;
         rr:predicate  fno:executes .
 
 

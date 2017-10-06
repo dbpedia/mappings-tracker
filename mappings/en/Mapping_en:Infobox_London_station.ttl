@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -42,9 +44,8 @@
 			       <SimplePropertyMapping/20> ,
 			       <SimplePropertyMapping/19> ,
 			       <SimplePropertyMapping/18> ,
-			       <SimplePropertyMapping/21> ,
-			       <ConstantMapping/1> ,
 			       <LatitudeMapping/0> ,
+			       <ConstantMapping/1> ,
 			       <SimplePropertyMapping/16> ,
 			       <ConstantMapping/0> ,
 			       <SimplePropertyMapping/11> ,
@@ -95,7 +96,7 @@
 ### ObjectMap
 <SimplePropertyMapping/13/OM>
         a              rr:ObjectMap ;
-        rml:reference  "owner1" .
+        rml:reference  "owner2" .
 
 
 ### Predicate Object Map
@@ -122,7 +123,7 @@
 ### ObjectMap
 <SimplePropertyMapping/12/OM>
         a              rr:ObjectMap ;
-        rml:reference  "owner" .
+        rml:reference  "owner1" .
 
 
 ### Predicate Object Map
@@ -130,12 +131,12 @@
 <SimplePropertyMapping/17>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/17/OM> ;
-        rr:predicate  dbo:gridReference .
+        rr:predicate  dbo:openingDate .
 
 ### ObjectMap
 <SimplePropertyMapping/17/OM>
         a              rr:ObjectMap ;
-        rml:reference  "gridref" .
+        rml:reference  "start" .
 
 
 ### Predicate Object Map
@@ -143,7 +144,7 @@
 <SimplePropertyMapping/20>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/20/OM> ;
-        rr:predicate  dbo:openingDate .
+        rr:predicate  dbo:openingYear .
 
 ### ObjectMap
 <SimplePropertyMapping/20/OM>
@@ -156,12 +157,12 @@
 <SimplePropertyMapping/19>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/19/OM> ;
-        rr:predicate  dbo:openingYear .
+        rr:predicate  dbo:openingDate .
 
 ### ObjectMap
 <SimplePropertyMapping/19/OM>
         a              rr:ObjectMap ;
-        rml:reference  "start" .
+        rml:reference  "starting" .
 
 
 ### Predicate Object Map
@@ -169,25 +170,12 @@
 <SimplePropertyMapping/18>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/18/OM> ;
-        rr:predicate  dbo:openingDate .
+        rr:predicate  dbo:openingYear .
 
 ### ObjectMap
 <SimplePropertyMapping/18/OM>
         a              rr:ObjectMap ;
         rml:reference  "start" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/21>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/21/OM> ;
-        rr:predicate  dbo:openingYear .
-
-### ObjectMap
-<SimplePropertyMapping/21/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "starting" .
 
 
 ### Predicate Object Map
@@ -233,12 +221,12 @@
 <SimplePropertyMapping/16>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/16/OM> ;
-        rr:predicate  dbo:isHandicappedAccessible .
+        rr:predicate  dbo:gridReference .
 
 ### ObjectMap
 <SimplePropertyMapping/16/OM>
         a              rr:ObjectMap ;
-        rml:reference  "access" .
+        rml:reference  "gridref" .
 
 
 ### Predicate Object Map
@@ -253,12 +241,12 @@
 <SimplePropertyMapping/11>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/11/OM> ;
-        rr:predicate  dbo:picture .
+        rr:predicate  dbo:owner .
 
 ### ObjectMap
 <SimplePropertyMapping/11/OM>
         a              rr:ObjectMap ;
-        rml:reference  "image_name" .
+        rml:reference  "owner" .
 
 
 ### Predicate Object Map
@@ -266,12 +254,12 @@
 <SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/10/OM> ;
-        rr:predicate  dbo:fareZone .
+        rr:predicate  dbo:picture .
 
 ### ObjectMap
 <SimplePropertyMapping/10/OM>
         a              rr:ObjectMap ;
-        rml:reference  "fare_zone" .
+        rml:reference  "image_name" .
 
 
 ### Predicate Object Map
@@ -279,12 +267,12 @@
 <SimplePropertyMapping/15>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/15/OM> ;
-        rr:predicate  dbo:agencyStationCode .
+        rr:predicate  dbo:isHandicappedAccessible .
 
 ### ObjectMap
 <SimplePropertyMapping/15/OM>
         a              rr:ObjectMap ;
-        rml:reference  "railcode" .
+        rml:reference  "access" .
 
 
 ### Predicate Object Map
@@ -292,12 +280,12 @@
 <SimplePropertyMapping/14>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/14/OM> ;
-        rr:predicate  dbo:owner .
+        rr:predicate  dbo:agencyStationCode .
 
 ### ObjectMap
 <SimplePropertyMapping/14/OM>
         a              rr:ObjectMap ;
-        rml:reference  "owner2" .
+        rml:reference  "railcode" .
 
 
 ### Predicate Object Map
@@ -305,7 +293,7 @@
 <SimplePropertyMapping/6>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/6/OM> ;
-        rr:predicate  dbo:location .
+        rr:predicate  dbo:district .
 
 ### ObjectMap
 <SimplePropertyMapping/6/OM>
@@ -323,7 +311,7 @@
 ### ObjectMap
 <SimplePropertyMapping/5/OM>
         a              rr:ObjectMap ;
-        rml:reference  "locale" .
+        rml:reference  "borough" .
 
 
 
@@ -332,12 +320,12 @@
 <SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/9/OM> ;
-        rr:predicate  dbo:railwayPlatforms .
+        rr:predicate  dbo:fareZone .
 
 ### ObjectMap
 <SimplePropertyMapping/9/OM>
         a              rr:ObjectMap ;
-        rml:reference  "platforms" .
+        rml:reference  "fare_zone" .
 
 
 ### Predicate Object Map
@@ -345,12 +333,12 @@
 <SimplePropertyMapping/4>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/4/OM> ;
-        rr:predicate  dbo:operatedBy .
+        rr:predicate  dbo:location .
 
 ### ObjectMap
 <SimplePropertyMapping/4/OM>
         a              rr:ObjectMap ;
-        rml:reference  "manager2" .
+        rml:reference  "locale" .
 
 
 ### Predicate Object Map
@@ -358,12 +346,12 @@
 <SimplePropertyMapping/2>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/2/OM> ;
-        rr:predicate  dbo:operatedBy .
+        rr:predicate  dbo:operator .
 
 ### ObjectMap
 <SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
-        rml:reference  "manager" .
+        rml:reference  "manager1" .
 
 
 ### Predicate Object Map
@@ -416,12 +404,12 @@
 <SimplePropertyMapping/3>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/3/OM> ;
-        rr:predicate  dbo:operatedBy .
+        rr:predicate  dbo:operator .
 
 ### ObjectMap
 <SimplePropertyMapping/3/OM>
         a              rr:ObjectMap ;
-        rml:reference  "manager1" .
+        rml:reference  "manager2" .
 
 
 ### Predicate Object Map
@@ -434,7 +422,7 @@
 ### ObjectMap
 <SimplePropertyMapping/8/OM>
         a              rr:ObjectMap ;
-        rml:reference  "platform" .
+        rml:reference  "platforms" .
 
 
 ### Predicate Object Map
@@ -442,12 +430,12 @@
 <SimplePropertyMapping/7>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/7/OM> ;
-        rr:predicate  dbo:district .
+        rr:predicate  dbo:railwayPlatforms .
 
 ### ObjectMap
 <SimplePropertyMapping/7/OM>
         a              rr:ObjectMap ;
-        rml:reference  "borough" .
+        rml:reference  "platform" .
 
 
 ######################

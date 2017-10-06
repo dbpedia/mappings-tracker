@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -40,6 +42,7 @@
 			       <SimplePropertyMapping/15> ,
 			       <SimplePropertyMapping/5> ,
 			       <SimplePropertyMapping/11> ,
+			       <SimplePropertyMapping/20> ,
 			       <SimplePropertyMapping/2> ,
 			       <SimplePropertyMapping/7> ,
 			       <SimplePropertyMapping/14> ,
@@ -48,13 +51,15 @@
 			       <SimplePropertyMapping/10> ,
 			       <SimplePropertyMapping/13> ,
 			       <SimplePropertyMapping/19> ,
+			       <SimplePropertyMapping/21> ,
 			       <SimplePropertyMapping/1> ,
 			       <SimplePropertyMapping/9> ,
 			       <SimplePropertyMapping/16> ,
 			       <SimplePropertyMapping/3> ,
 			       <SimplePropertyMapping/6> ,
 			       <SimplePropertyMapping/12> ,
-			       <SimplePropertyMapping/18> ;
+			       <SimplePropertyMapping/18> ,
+			       <SimplePropertyMapping/22> ;
         rr:subjectMap          <SubjectMap> .
 
 
@@ -173,6 +178,19 @@
 
 ### Predicate Object Map
 #########################
+<SimplePropertyMapping/20>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/20/OM> ;
+        rr:predicate  dbo:country .
+
+### ObjectMap
+<SimplePropertyMapping/20/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "państwo" .
+
+
+### Predicate Object Map
+#########################
 <SimplePropertyMapping/7>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/7/OM> ;
@@ -272,7 +290,7 @@
 ### References
 <SimplePropertyMapping/17/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "kapitał" .
+        rml:reference  "kapitał zakładowy" .
 
 
 ### Predicate Object Map
@@ -351,6 +369,19 @@
 <SimplePropertyMapping/19/OM>
         a              rr:ObjectMap ;
         rml:reference  "www" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/21>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/21/OM> ;
+        rr:predicate  dbo:headquarter .
+
+### ObjectMap
+<SimplePropertyMapping/21/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "siedziba" .
 
 
 ### Predicate Object Map
@@ -468,6 +499,19 @@
 <SimplePropertyMapping/18/OM>
         a              rr:ObjectMap ;
         rml:reference  "zatrudnienie" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/22>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/22/OM> ;
+        rr:predicate  dbo:chairperson .
+
+### ObjectMap
+<SimplePropertyMapping/22/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "prezes" .
 
 
 ######################

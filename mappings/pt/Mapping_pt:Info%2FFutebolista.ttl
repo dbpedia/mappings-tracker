@@ -7,12 +7,14 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
+@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -39,17 +41,15 @@
 			       <SimplePropertyMapping/5> ,
 			       <EndDateMapping/2> ,
 			       <SimplePropertyMapping/16> ,
-			       <SimplePropertyMapping/23> ,
 			       <SimplePropertyMapping/2> ,
 			       <SimplePropertyMapping/12> ,
 			       <SimplePropertyMapping/1> ,
 			       <SimplePropertyMapping/20> ,
-			       <SimplePropertyMapping/19> ,
 			       <StartDateMapping/0> ,
 			       <EndDateMapping/1> ,
+			       <SimplePropertyMapping/19> ,
 			       <SimplePropertyMapping/18> ,
 			       <SimplePropertyMapping/4> ,
-			       <SimplePropertyMapping/22> ,
 			       <StartDateMapping/2> ,
 			       <SimplePropertyMapping/0> ,
 			       <SimplePropertyMapping/8> ,
@@ -93,39 +93,13 @@
 #########################
 <SimplePropertyMapping/13>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/13/FTM> ;
-        rr:predicate  dbo:height .
+        rr:objectMap  <SimplePropertyMapping/13/OM> ;
+        rr:predicate  dbo:footedness .
 
-### Function Term Map
-<SimplePropertyMapping/13/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/13/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/Length> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/13/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/13/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/13/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/13/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "Length" ;
-        rr:predicate  dbf:unitParameter .
-
-<SimplePropertyMapping/13/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/13/FTM/FV/propertyParameterPOM/OM> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/13/FTM/FV/propertyParameterPOM/OM>
+### ObjectMap
+<SimplePropertyMapping/13/OM>
         a              rr:ObjectMap ;
-        rml:reference  "altura" .
+        rml:reference  "pé" .
 
 
 ### Predicate Object Map
@@ -164,12 +138,12 @@
 <SimplePropertyMapping/5>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/5/OM> ;
-        rr:predicate  dbo:birthDate .
+        rr:predicate  dbo:birthPlace .
 
 ### ObjectMap
 <SimplePropertyMapping/5/OM>
         a              rr:ObjectMap ;
-        rml:reference  "nascimento_data" .
+        rml:reference  "nascimento_cidade" .
 
 
 ### Predicate Object Map
@@ -177,25 +151,12 @@
 <SimplePropertyMapping/16>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/16/OM> ;
-        rr:predicate  dbo:youthClub .
+        rr:predicate  dbo:date .
 
 ### ObjectMap
 <SimplePropertyMapping/16/OM>
         a              rr:ObjectMap ;
-        rml:reference  "jovemclubes" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/23>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/23/OM> ;
-        rr:predicate  foaf:homepage .
-
-### ObjectMap
-<SimplePropertyMapping/23/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "site" .
+        rml:reference  "pcupdate" .
 
 
 ### Predicate Object Map
@@ -216,13 +177,65 @@
 #########################
 <SimplePropertyMapping/12>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/12/OM> ;
-        rr:predicate  dbo:nationality .
+        rr:objectMap  <SimplePropertyMapping/12/FTM> ;
+        rr:predicate  dbo:height .
+
+### Function Term Map
+<SimplePropertyMapping/12/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/12/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/Length> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/12/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/12/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/12/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/12/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/12/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+<SimplePropertyMapping/12/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "Length" ;
+        rr:predicate  dbf:unitParameter .
+
+### References
+<SimplePropertyMapping/12/FTM/FV/propertyParameterPOM/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "altura" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/20>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/20/OM> ;
+        rr:predicate  dbo:appearancesInNationalTeam .
 
 ### ObjectMap
-<SimplePropertyMapping/12/OM>
+<SimplePropertyMapping/20/OM>
         a              rr:ObjectMap ;
-        rml:reference  "nacionalidade" .
+        rml:reference  "partidasselecao" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/19>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/19/OM> ;
+        rr:predicate  dbo:team .
+
+### ObjectMap
+<SimplePropertyMapping/19/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "selecaonacional" .
 
 
 ### Predicate Object Map
@@ -258,19 +271,6 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/20>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/20/OM> ;
-        rr:predicate  dbo:team .
-
-### ObjectMap
-<SimplePropertyMapping/20/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "clubes" .
-
-
-### Predicate Object Map
-#########################
 <StartDateMapping/0>  a  rr:PredicateObjectMap ;
         rr:objectMap  <StartDateMapping/0/FTM> ;
         rr:predicate  dbo:activeYearsEndYear .
@@ -302,19 +302,6 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/19>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/19/OM> ;
-        rr:predicate  dbo:date .
-
-### ObjectMap
-<SimplePropertyMapping/19/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "ntupdate" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/1>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/1/OM> ;
@@ -332,12 +319,12 @@
 <SimplePropertyMapping/18>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/18/OM> ;
-        rr:predicate  dbo:date .
+        rr:predicate  dbo:team .
 
 ### ObjectMap
 <SimplePropertyMapping/18/OM>
         a              rr:ObjectMap ;
-        rml:reference  "pcupdate" .
+        rml:reference  "clubes" .
 
 
 ### Predicate Object Map
@@ -350,20 +337,7 @@
 ### ObjectMap
 <SimplePropertyMapping/4/OM>
         a              rr:ObjectMap ;
-        rml:reference  "data_nascimento" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/22>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/22/OM> ;
-        rr:predicate  dbo:appearancesInNationalTeam .
-
-### ObjectMap
-<SimplePropertyMapping/22/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "partidasselecao" .
+        rml:reference  "nascimento_data" .
 
 
 ### Predicate Object Map
@@ -421,7 +395,7 @@
 ### ObjectMap
 <SimplePropertyMapping/8/OM>
         a              rr:ObjectMap ;
-        rml:reference  "nascimento_país" .
+        rml:reference  "paisnatal" .
 
 
 ### Predicate Object Map
@@ -434,7 +408,7 @@
 ### ObjectMap
 <SimplePropertyMapping/6/OM>
         a              rr:ObjectMap ;
-        rml:reference  "nascimento_cidade" .
+        rml:reference  "cidadenatal" .
 
 
 ### Predicate Object Map
@@ -447,7 +421,7 @@
 ### ObjectMap
 <SimplePropertyMapping/7/OM>
         a              rr:ObjectMap ;
-        rml:reference  "cidadenatal" .
+        rml:reference  "nascimento_país" .
 
 
 ### Predicate Object Map
@@ -486,12 +460,12 @@
 <SimplePropertyMapping/15>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/15/OM> ;
-        rr:predicate  dbo:footedness .
+        rr:predicate  dbo:picture .
 
 ### ObjectMap
 <SimplePropertyMapping/15/OM>
         a              rr:ObjectMap ;
-        rml:reference  "pé" .
+        rml:reference  "imagem" .
 
 
 ### Predicate Object Map
@@ -499,12 +473,12 @@
 <SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/9/OM> ;
-        rr:predicate  dbo:birthPlace .
+        rr:predicate  dbo:team .
 
 ### ObjectMap
 <SimplePropertyMapping/9/OM>
         a              rr:ObjectMap ;
-        rml:reference  "paisnatal" .
+        rml:reference  "actualclube" .
 
 
 ### Predicate Object Map
@@ -512,12 +486,12 @@
 <SimplePropertyMapping/11>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/11/OM> ;
-        rr:predicate  dbo:number .
+        rr:predicate  dbo:nationality .
 
 ### ObjectMap
 <SimplePropertyMapping/11/OM>
         a              rr:ObjectMap ;
-        rml:reference  "clubenumero" .
+        rml:reference  "nacionalidade" .
 
 
 ### Predicate Object Map
@@ -561,46 +535,20 @@
 ### ObjectMap
 <SimplePropertyMapping/3/OM>
         a              rr:ObjectMap ;
-        rml:reference  "datanascimento" .
+        rml:reference  "data_nascimento" .
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/14>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/14/FTM> ;
-        rr:predicate  dbo:weight .
+        rr:objectMap  <SimplePropertyMapping/14/OM> ;
+        rr:predicate  dbo:youthClub .
 
-### Function Term Map
-<SimplePropertyMapping/14/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/14/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/Mass> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/14/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/14/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/14/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/14/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/14/FTM/FV/propertyParameterPOM/OM> ;
-        rr:predicate  dbf:propertyParameter .
-
-<SimplePropertyMapping/14/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "Mass" ;
-        rr:predicate  dbf:unitParameter .
-
-### References
-<SimplePropertyMapping/14/FTM/FV/propertyParameterPOM/OM>
+### ObjectMap
+<SimplePropertyMapping/14/OM>
         a              rr:ObjectMap ;
-        rml:reference  "peso" .
+        rml:reference  "jovemclubes" .
 
 
 ### Predicate Object Map
@@ -608,12 +556,12 @@
 <SimplePropertyMapping/21>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/21/OM> ;
-        rr:predicate  dbo:team .
+        rr:predicate  foaf:homepage .
 
 ### ObjectMap
 <SimplePropertyMapping/21/OM>
         a              rr:ObjectMap ;
-        rml:reference  "selecaonacional" .
+        rml:reference  "site" .
 
 
 ### Predicate Object Map
@@ -621,12 +569,12 @@
 <SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/10/OM> ;
-        rr:predicate  dbo:team .
+        rr:predicate  dbo:number .
 
 ### ObjectMap
 <SimplePropertyMapping/10/OM>
         a              rr:ObjectMap ;
-        rml:reference  "actualclube" .
+        rml:reference  "clubenumero" .
 
 
 ### Predicate Object Map
@@ -634,12 +582,12 @@
 <SimplePropertyMapping/17>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/17/OM> ;
-        rr:predicate  dbo:picture .
+        rr:predicate  dbo:date .
 
 ### ObjectMap
 <SimplePropertyMapping/17/OM>
         a              rr:ObjectMap ;
-        rml:reference  "imagem" .
+        rml:reference  "ntupdate" .
 
 
 ######################
