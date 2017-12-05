@@ -7,14 +7,12 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
-@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
-@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -55,9 +53,8 @@
 			       <SimplePropertyMapping/13> ,
 			       <SimplePropertyMapping/9> ,
 			       <SimplePropertyMapping/6> ,
-			       <SimplePropertyMapping/11> ,
 			       <SimplePropertyMapping/14> ,
-			       <SimplePropertyMapping/23> ,
+			       <SimplePropertyMapping/11> ,
 			       <SimplePropertyMapping/7> ,
 			       <SimplePropertyMapping/4> ,
 			       <SimplePropertyMapping/17> ;
@@ -90,12 +87,12 @@
 <SimplePropertyMapping/21>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/21/OM> ;
-        rr:predicate  dbo:lcc .
+        rr:predicate  dbo:previousWork .
 
 ### ObjectMap
 <SimplePropertyMapping/21/OM>
         a              rr:ObjectMap ;
-        rml:reference  "congress" .
+        rml:reference  "preceded_by" .
 
 
 ### Predicate Object Map
@@ -117,12 +114,12 @@
 <SimplePropertyMapping/15>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/15/OM> ;
-        rr:predicate  dbo:publicationDate .
+        rr:predicate  dbo:mediaType .
 
 ### ObjectMap
 <SimplePropertyMapping/15/OM>
         a              rr:ObjectMap ;
-        rml:reference  "english_pub_date" .
+        rml:reference  "media_type" .
 
 
 ### Predicate Object Map
@@ -130,12 +127,12 @@
 <SimplePropertyMapping/20>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/20/OM> ;
-        rr:predicate  dbo:dcc .
+        rr:predicate  dbo:lcc .
 
 ### ObjectMap
 <SimplePropertyMapping/20/OM>
         a              rr:ObjectMap ;
-        rml:reference  "dewey" .
+        rml:reference  "congress" .
 
 
 ### Predicate Object Map
@@ -156,12 +153,12 @@
 <SimplePropertyMapping/18>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/18/OM> ;
-        rr:predicate  dbo:isbn .
+        rr:predicate  dbo:oclc .
 
 ### ObjectMap
 <SimplePropertyMapping/18/OM>
         a              rr:ObjectMap ;
-        rml:reference  "isbn" .
+        rml:reference  "oclc" .
 
 
 ### Predicate Object Map
@@ -169,7 +166,7 @@
 <SimplePropertyMapping/12>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/12/OM> ;
-        rr:predicate  dc:publisher .
+        rr:predicate  dbo:publisher .
 
 ### ObjectMap
 <SimplePropertyMapping/12/OM>
@@ -182,12 +179,12 @@
 <SimplePropertyMapping/22>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/22/OM> ;
-        rr:predicate  dbo:previousWork .
+        rr:predicate  dbo:subsequentWork .
 
 ### ObjectMap
 <SimplePropertyMapping/22/OM>
         a              rr:ObjectMap ;
-        rml:reference  "preceded_by" .
+        rml:reference  "followed_by" .
 
 
 ### Predicate Object Map
@@ -234,12 +231,12 @@
 <SimplePropertyMapping/19>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/19/OM> ;
-        rr:predicate  dbo:oclc .
+        rr:predicate  dbo:dcc .
 
 ### ObjectMap
 <SimplePropertyMapping/19/OM>
         a              rr:ObjectMap ;
-        rml:reference  "oclc" .
+        rml:reference  "dewey" .
 
 
 ### Predicate Object Map
@@ -274,12 +271,12 @@
 <SimplePropertyMapping/16>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/16/OM> ;
-        rr:predicate  dbo:mediaType .
+        rr:predicate  dbo:numberOfPages .
 
 ### ObjectMap
 <SimplePropertyMapping/16/OM>
         a              rr:ObjectMap ;
-        rml:reference  "media_type" .
+        rml:reference  "pages" .
 
 
 ### Predicate Object Map
@@ -287,12 +284,12 @@
 <SimplePropertyMapping/13>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/13/OM> ;
-        rr:predicate  dbo:publisher .
+        rr:predicate  dbo:publicationDate .
 
 ### ObjectMap
 <SimplePropertyMapping/13/OM>
         a              rr:ObjectMap ;
-        rml:reference  "publisher" .
+        rml:reference  "pub_date" .
 
 
 ### Predicate Object Map
@@ -323,19 +320,6 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/23>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/23/OM> ;
-        rr:predicate  dbo:subsequentWork .
-
-### ObjectMap
-<SimplePropertyMapping/23/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "followed_by" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/14>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/14/OM> ;
@@ -344,7 +328,7 @@
 ### ObjectMap
 <SimplePropertyMapping/14/OM>
         a              rr:ObjectMap ;
-        rml:reference  "pub_date" .
+        rml:reference  "english_pub_date" .
 
 
 ### Predicate Object Map
@@ -391,12 +375,12 @@
 <SimplePropertyMapping/17>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/17/OM> ;
-        rr:predicate  dbo:numberOfPages .
+        rr:predicate  dbo:isbn .
 
 ### ObjectMap
 <SimplePropertyMapping/17/OM>
         a              rr:ObjectMap ;
-        rml:reference  "pages" .
+        rml:reference  "isbn" .
 
 
 ######################
