@@ -7,14 +7,12 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
-@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
-@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -47,7 +45,6 @@
 			       <SimplePropertyMapping/18> ,
 			       <SimplePropertyMapping/8> ,
 			       <SimplePropertyMapping/27> ,
-			       <SimplePropertyMapping/32> ,
 			       <SimplePropertyMapping/19> ,
 			       <SimplePropertyMapping/2> ,
 			       <SimplePropertyMapping/10> ,
@@ -101,12 +98,12 @@
 <SimplePropertyMapping/26>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/26/OM> ;
-        rr:predicate  dbo:relative .
+        rr:predicate  dbo:almaMater .
 
 ### ObjectMap
 <SimplePropertyMapping/26/OM>
         a              rr:ObjectMap ;
-        rml:reference  "relatives" .
+        rml:reference  "alma_mater" .
 
 
 ### Predicate Object Map
@@ -219,25 +216,12 @@
 <SimplePropertyMapping/27>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/27/OM> ;
-        rr:predicate  dbo:almaMater .
+        rr:predicate  dbo:education .
 
 ### ObjectMap
 <SimplePropertyMapping/27/OM>
         a              rr:ObjectMap ;
-        rml:reference  "alma_mater" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/32>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/32/OM> ;
-        rr:predicate  foaf:homepage .
-
-### ObjectMap
-<SimplePropertyMapping/32/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "website" .
+        rml:reference  "education" .
 
 
 ### Predicate Object Map
@@ -258,12 +242,12 @@
 <SimplePropertyMapping/28>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/28/OM> ;
-        rr:predicate  dbo:education .
+        rr:predicate  dbo:influencedBy .
 
 ### ObjectMap
 <SimplePropertyMapping/28/OM>
         a              rr:ObjectMap ;
-        rml:reference  "education" .
+        rml:reference  "influences" .
 
 
 ### Predicate Object Map
@@ -312,12 +296,12 @@
 <SimplePropertyMapping/29>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/29/OM> ;
-        rr:predicate  dbo:influencedBy .
+        rr:predicate  dbo:influenced .
 
 ### ObjectMap
 <SimplePropertyMapping/29/OM>
         a              rr:ObjectMap ;
-        rml:reference  "influences" .
+        rml:reference  "influenced" .
 
 
 ### Predicate Object Map
@@ -382,12 +366,12 @@
 <SimplePropertyMapping/30>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/30/OM> ;
-        rr:predicate  dbo:influenced .
+        rr:predicate  dbo:award .
 
 ### ObjectMap
 <SimplePropertyMapping/30/OM>
         a              rr:ObjectMap ;
-        rml:reference  "influenced" .
+        rml:reference  "awards" .
 
 
 ### Predicate Object Map
@@ -466,12 +450,12 @@
 <SimplePropertyMapping/21>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/21/OM> ;
-        rr:predicate  dc:subject .
+        rr:predicate  dbo:movement .
 
 ### ObjectMap
 <SimplePropertyMapping/21/OM>
         a              rr:ObjectMap ;
-        rml:reference  "subject" .
+        rml:reference  "movement" .
 
 
 ### Predicate Object Map
@@ -506,12 +490,12 @@
 <SimplePropertyMapping/31>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/31/OM> ;
-        rr:predicate  dbo:award .
+        rr:predicate  foaf:homepage .
 
 ### ObjectMap
 <SimplePropertyMapping/31/OM>
         a              rr:ObjectMap ;
-        rml:reference  "awards" .
+        rml:reference  "website" .
 
 
 ### Predicate Object Map
@@ -532,12 +516,12 @@
 <SimplePropertyMapping/22>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/22/OM> ;
-        rr:predicate  dbo:movement .
+        rr:predicate  dbo:spouse .
 
 ### ObjectMap
 <SimplePropertyMapping/22/OM>
         a              rr:ObjectMap ;
-        rml:reference  "movement" .
+        rml:reference  "spouse" .
 
 
 ### Predicate Object Map
@@ -545,12 +529,12 @@
 <SimplePropertyMapping/23>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/23/OM> ;
-        rr:predicate  dbo:spouse .
+        rr:predicate  dbo:partner .
 
 ### ObjectMap
 <SimplePropertyMapping/23/OM>
         a              rr:ObjectMap ;
-        rml:reference  "spouse" .
+        rml:reference  "partner" .
 
 
 ### Predicate Object Map
@@ -571,12 +555,12 @@
 <SimplePropertyMapping/24>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/24/OM> ;
-        rr:predicate  dbo:partner .
+        rr:predicate  dbo:child .
 
 ### ObjectMap
 <SimplePropertyMapping/24/OM>
         a              rr:ObjectMap ;
-        rml:reference  "partner" .
+        rml:reference  "children" .
 
 
 ### Predicate Object Map
@@ -584,12 +568,12 @@
 <SimplePropertyMapping/25>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/25/OM> ;
-        rr:predicate  dbo:child .
+        rr:predicate  dbo:relative .
 
 ### ObjectMap
 <SimplePropertyMapping/25/OM>
         a              rr:ObjectMap ;
-        rml:reference  "children" .
+        rml:reference  "relatives" .
 
 
 ######################
