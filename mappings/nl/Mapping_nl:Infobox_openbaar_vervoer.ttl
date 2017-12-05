@@ -7,14 +7,12 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
-@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
-@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -39,6 +37,7 @@
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <SimplePropertyMapping/12> ,
 			       <SimplePropertyMapping/21> ,
+			       <SimplePropertyMapping/25> ,
 			       <SimplePropertyMapping/6> ,
 			       <SimplePropertyMapping/2> ,
 			       <SimplePropertyMapping/9> ,
@@ -50,14 +49,17 @@
 			       <SimplePropertyMapping/17> ,
 			       <SimplePropertyMapping/3> ,
 			       <SimplePropertyMapping/13> ,
+			       <SimplePropertyMapping/26> ,
 			       <SimplePropertyMapping/19> ,
 			       <SimplePropertyMapping/5> ,
 			       <SimplePropertyMapping/16> ,
 			       <SimplePropertyMapping/11> ,
 			       <SimplePropertyMapping/20> ,
+			       <SimplePropertyMapping/24> ,
 			       <SimplePropertyMapping/18> ,
 			       <SimplePropertyMapping/10> ,
 			       <SimplePropertyMapping/14> ,
+			       <SimplePropertyMapping/27> ,
 			       <SimplePropertyMapping/8> ,
 			       <SimplePropertyMapping/0> ,
 			       <SimplePropertyMapping/22> ;
@@ -90,12 +92,12 @@
 <SimplePropertyMapping/21>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/21/OM> ;
-        rr:predicate  dbo:logo .
+        rr:predicate  dbo:railGauge .
 
 ### ObjectMap
 <SimplePropertyMapping/21/OM>
         a              rr:ObjectMap ;
-        rml:reference  "logo" .
+        rml:reference  "Spoorwijdte" .
 
 
 ### Predicate Object Map
@@ -103,12 +105,25 @@
 <SimplePropertyMapping/12>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/12/OM> ;
-        rr:predicate  dbo:trackLength .
+        rr:predicate  dbo:numberOfStations .
 
 ### ObjectMap
 <SimplePropertyMapping/12/OM>
         a              rr:ObjectMap ;
-        rml:reference  "lengte" .
+        rml:reference  "Aantal_stations" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/25>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/25/OM> ;
+        rr:predicate  dbo:logo .
+
+### ObjectMap
+<SimplePropertyMapping/25/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "logo" .
 
 
 ### Predicate Object Map
@@ -116,12 +131,12 @@
 <SimplePropertyMapping/6>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/6/OM> ;
-        rr:predicate  dbo:picture .
+        rr:predicate  dbo:subtitle .
 
 ### ObjectMap
 <SimplePropertyMapping/6/OM>
         a              rr:ObjectMap ;
-        rml:reference  "afbeelding2" .
+        rml:reference  "Onderschrift" .
 
 
 ### Predicate Object Map
@@ -142,12 +157,12 @@
 <SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/9/OM> ;
-        rr:predicate  dbo:subtitle .
+        rr:predicate  dbo:picture .
 
 ### ObjectMap
 <SimplePropertyMapping/9/OM>
         a              rr:ObjectMap ;
-        rml:reference  "onderschrift3" .
+        rml:reference  "afbeelding3" .
 
 
 ### Predicate Object Map
@@ -169,12 +184,12 @@
 <SimplePropertyMapping/23>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/23/OM> ;
-        rr:predicate  dbo:passengersPerYear .
+        rr:predicate  dbo:owner .
 
 ### ObjectMap
 <SimplePropertyMapping/23/OM>
         a              rr:ObjectMap ;
-        rml:reference  "passagiers" .
+        rml:reference  "eigenaar" .
 
 
 ### Predicate Object Map
@@ -195,12 +210,12 @@
 <SimplePropertyMapping/15>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/15/OM> ;
-        rr:predicate  dbo:averageSpeed .
+        rr:predicate  dbo:numberOfVehicles .
 
 ### ObjectMap
 <SimplePropertyMapping/15/OM>
         a              rr:ObjectMap ;
-        rml:reference  "gemsnelheid" .
+        rml:reference  "voertuigen" .
 
 
 ### Predicate Object Map
@@ -208,12 +223,12 @@
 <SimplePropertyMapping/7>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/7/OM> ;
-        rr:predicate  dbo:subtitle .
+        rr:predicate  dbo:picture .
 
 ### ObjectMap
 <SimplePropertyMapping/7/OM>
         a              rr:ObjectMap ;
-        rml:reference  "onderschrift2" .
+        rml:reference  "afbeelding2" .
 
 
 ### Predicate Object Map
@@ -221,12 +236,12 @@
 <SimplePropertyMapping/17>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/17/OM> ;
-        rr:predicate  dbo:railGauge .
+        rr:predicate  dbo:speedLimit .
 
 ### ObjectMap
 <SimplePropertyMapping/17/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Spoorwijdte" .
+        rml:reference  "Maximumsnelheid" .
 
 
 ### Predicate Object Map
@@ -247,12 +262,25 @@
 <SimplePropertyMapping/13>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/13/OM> ;
-        rr:predicate  dbo:numberOfVehicles .
+        rr:predicate  dbo:trackLength .
 
 ### ObjectMap
 <SimplePropertyMapping/13/OM>
         a              rr:ObjectMap ;
-        rml:reference  "voertuigen" .
+        rml:reference  "lengte" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/26>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/26/OM> ;
+        rr:predicate  dbo:operator .
+
+### ObjectMap
+<SimplePropertyMapping/26/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "uitvoerder" .
 
 
 ### Predicate Object Map
@@ -260,12 +288,12 @@
 <SimplePropertyMapping/19>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/19/OM> ;
-        rr:predicate  dbo:owner .
+        rr:predicate  dbo:averageSpeed .
 
 ### ObjectMap
 <SimplePropertyMapping/19/OM>
         a              rr:ObjectMap ;
-        rml:reference  "eigenaar" .
+        rml:reference  "Gemiddelde_snelheid" .
 
 
 ### Predicate Object Map
@@ -273,12 +301,12 @@
 <SimplePropertyMapping/5>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/5/OM> ;
-        rr:predicate  dbo:subtitle .
+        rr:predicate  dbo:picture .
 
 ### ObjectMap
 <SimplePropertyMapping/5/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Onderschrift" .
+        rml:reference  "Afbeelding" .
 
 
 ### Predicate Object Map
@@ -286,12 +314,12 @@
 <SimplePropertyMapping/16>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/16/OM> ;
-        rr:predicate  dbo:railGauge .
+        rr:predicate  dbo:speedLimit .
 
 ### ObjectMap
 <SimplePropertyMapping/16/OM>
         a              rr:ObjectMap ;
-        rml:reference  "spoorwijdte" .
+        rml:reference  "maxsnelheid" .
 
 
 ### Predicate Object Map
@@ -299,12 +327,12 @@
 <SimplePropertyMapping/20>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/20/OM> ;
-        rr:predicate  dbo:numberOfStations .
+        rr:predicate  dbo:railGauge .
 
 ### ObjectMap
 <SimplePropertyMapping/20/OM>
         a              rr:ObjectMap ;
-        rml:reference  "aantal_stations" .
+        rml:reference  "spoorwijdte" .
 
 
 ### Predicate Object Map
@@ -312,12 +340,25 @@
 <SimplePropertyMapping/11>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/11/OM> ;
-        rr:predicate  dbo:servingRailwayLine .
+        rr:predicate  dbo:numberOfStations .
 
 ### ObjectMap
 <SimplePropertyMapping/11/OM>
         a              rr:ObjectMap ;
-        rml:reference  "lijnen" .
+        rml:reference  "stations" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/24>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/24/OM> ;
+        rr:predicate  dbo:owner .
+
+### ObjectMap
+<SimplePropertyMapping/24/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "Eigenaar" .
 
 
 ### Predicate Object Map
@@ -325,12 +366,12 @@
 <SimplePropertyMapping/18>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/18/OM> ;
-        rr:predicate  dbo:city .
+        rr:predicate  dbo:averageSpeed .
 
 ### ObjectMap
 <SimplePropertyMapping/18/OM>
         a              rr:ObjectMap ;
-        rml:reference  "Stad" .
+        rml:reference  "gemsnelheid" .
 
 
 ### Predicate Object Map
@@ -338,12 +379,12 @@
 <SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/10/OM> ;
-        rr:predicate  dbo:numberOfStations .
+        rr:predicate  dbo:subtitle .
 
 ### ObjectMap
 <SimplePropertyMapping/10/OM>
         a              rr:ObjectMap ;
-        rml:reference  "stations" .
+        rml:reference  "onderschrift3" .
 
 
 ### Predicate Object Map
@@ -351,12 +392,25 @@
 <SimplePropertyMapping/14>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/14/OM> ;
-        rr:predicate  dbo:speedLimit .
+        rr:predicate  dbo:trackLength .
 
 ### ObjectMap
 <SimplePropertyMapping/14/OM>
         a              rr:ObjectMap ;
-        rml:reference  "maxsnelheid" .
+        rml:reference  "Lengte" .
+
+
+### Predicate Object Map
+#########################
+<SimplePropertyMapping/27>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/27/OM> ;
+        rr:predicate  dbo:passengersPerYear .
+
+### ObjectMap
+<SimplePropertyMapping/27/OM>
+        a              rr:ObjectMap ;
+        rml:reference  "passagiers" .
 
 
 ### Predicate Object Map
@@ -364,12 +418,12 @@
 <SimplePropertyMapping/8>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/8/OM> ;
-        rr:predicate  dbo:picture .
+        rr:predicate  dbo:subtitle .
 
 ### ObjectMap
 <SimplePropertyMapping/8/OM>
         a              rr:ObjectMap ;
-        rml:reference  "afbeelding3" .
+        rml:reference  "onderschrift2" .
 
 
 ### Predicate Object Map
@@ -391,12 +445,12 @@
 <SimplePropertyMapping/22>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/22/OM> ;
-        rr:predicate  dbo:operator .
+        rr:predicate  dbo:city .
 
 ### ObjectMap
 <SimplePropertyMapping/22/OM>
         a              rr:ObjectMap ;
-        rml:reference  "uitvoerder" .
+        rml:reference  "Stad" .
 
 
 ######################
