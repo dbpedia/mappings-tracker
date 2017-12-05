@@ -7,14 +7,12 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
-@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
-@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -51,7 +49,6 @@
 			       <SimplePropertyMapping/8> ,
 			       <SimplePropertyMapping/1> ,
 			       <SimplePropertyMapping/4> ,
-			       <SimplePropertyMapping/15> ,
 			       <SimplePropertyMapping/10> ;
         rr:subjectMap          <SubjectMap> .
 
@@ -82,12 +79,12 @@
 <SimplePropertyMapping/13>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/13/OM> ;
-        rr:predicate  dbo:lyrics .
+        rr:predicate  dbo:genre .
 
 ### ObjectMap
 <SimplePropertyMapping/13/OM>
         a              rr:ObjectMap ;
-        rml:reference  "tekst" .
+        rml:reference  "genre" .
 
 
 ### Predicate Object Map
@@ -95,12 +92,12 @@
 <SimplePropertyMapping/14>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/14/OM> ;
-        rr:predicate  dbo:genre .
+        rr:predicate  dbo:previousWork .
 
 ### ObjectMap
 <SimplePropertyMapping/14/OM>
         a              rr:ObjectMap ;
-        rml:reference  "genre" .
+        rml:reference  "voorloper" .
 
 
 ### Predicate Object Map
@@ -135,12 +132,12 @@
 <SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/9/OM> ;
-        rr:predicate  dbo:picture .
+        rr:predicate  dbo:pictureDescription .
 
 ### ObjectMap
 <SimplePropertyMapping/9/OM>
         a              rr:ObjectMap ;
-        rml:reference  "afbeelding" .
+        rml:reference  "onderschrift" .
 
 
 ### Predicate Object Map
@@ -148,12 +145,12 @@
 <SimplePropertyMapping/11>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/11/OM> ;
-        rr:predicate  dbo:locationCity .
+        rr:predicate  dbo:award .
 
 ### ObjectMap
 <SimplePropertyMapping/11/OM>
         a              rr:ObjectMap ;
-        rml:reference  "standplaats" .
+        rml:reference  "awards" .
 
 
 ### Predicate Object Map
@@ -174,12 +171,12 @@
 <SimplePropertyMapping/12>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/12/OM> ;
-        rr:predicate  dbo:award .
+        rr:predicate  dbo:lyrics .
 
 ### ObjectMap
 <SimplePropertyMapping/12/OM>
         a              rr:ObjectMap ;
-        rml:reference  "awards" .
+        rml:reference  "tekst" .
 
 
 ### Predicate Object Map
@@ -187,12 +184,12 @@
 <SimplePropertyMapping/7>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/7/OM> ;
-        rr:predicate  dbo:releaseDate .
+        rr:predicate  dbo:subtitle .
 
 ### ObjectMap
 <SimplePropertyMapping/7/OM>
         a              rr:ObjectMap ;
-        rml:reference  "première" .
+        rml:reference  "subtitel" .
 
 
 ### Predicate Object Map
@@ -213,12 +210,12 @@
 <SimplePropertyMapping/6>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/6/OM> ;
-        rr:predicate  dbo:basedOn .
+        rr:predicate  dbo:releaseDate .
 
 ### ObjectMap
 <SimplePropertyMapping/6/OM>
         a              rr:ObjectMap ;
-        rml:reference  "boek" .
+        rml:reference  "première" .
 
 
 ### Predicate Object Map
@@ -226,12 +223,12 @@
 <SimplePropertyMapping/8>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/8/OM> ;
-        rr:predicate  dbo:subtitle .
+        rr:predicate  dbo:picture .
 
 ### ObjectMap
 <SimplePropertyMapping/8/OM>
         a              rr:ObjectMap ;
-        rml:reference  "subtitel" .
+        rml:reference  "afbeelding" .
 
 
 ### Predicate Object Map
@@ -244,7 +241,7 @@
 ### ObjectMap
 <SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
-        rml:reference  "muziek" .
+        rml:reference  "music" .
 
 
 ### Predicate Object Map
@@ -262,28 +259,15 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/15>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/15/OM> ;
-        rr:predicate  dbo:previousWork .
-
-### ObjectMap
-<SimplePropertyMapping/15/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "voorloper" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/10>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/10/OM> ;
-        rr:predicate  dbo:pictureDescription .
+        rr:predicate  dbo:locationCity .
 
 ### ObjectMap
 <SimplePropertyMapping/10/OM>
         a              rr:ObjectMap ;
-        rml:reference  "onderschrift" .
+        rml:reference  "standplaats" .
 
 
 ######################
