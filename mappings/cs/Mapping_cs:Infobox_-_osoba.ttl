@@ -7,14 +7,12 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
-@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
-@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -40,22 +38,17 @@
         rr:predicateObjectMap  <SimplePropertyMapping/25> ,
 			       <SimplePropertyMapping/9> ,
 			       <SimplePropertyMapping/13> ,
-			       <SimplePropertyMapping/48> ,
-			       <SimplePropertyMapping/42> ,
 			       <SimplePropertyMapping/12> ,
 			       <SimplePropertyMapping/2> ,
-			       <SimplePropertyMapping/41> ,
 			       <SimplePropertyMapping/1> ,
 			       <SimplePropertyMapping/29> ,
 			       <SimplePropertyMapping/23> ,
 			       <SimplePropertyMapping/17> ,
 			       <SimplePropertyMapping/11> ,
 			       <SimplePropertyMapping/31> ,
-			       <SimplePropertyMapping/46> ,
 			       <SimplePropertyMapping/16> ,
 			       <SimplePropertyMapping/10> ,
 			       <SimplePropertyMapping/30> ,
-			       <SimplePropertyMapping/45> ,
 			       <EndDateMapping/0> ,
 			       <SimplePropertyMapping/24> ,
 			       <SimplePropertyMapping/8> ,
@@ -65,18 +58,15 @@
 			       <SimplePropertyMapping/40> ,
 			       <SimplePropertyMapping/35> ,
 			       <SimplePropertyMapping/0> ,
-			       <LongitudeMapping/0> ,
 			       <SimplePropertyMapping/34> ,
 			       <SimplePropertyMapping/28> ,
 			       <SimplePropertyMapping/22> ,
 			       <SimplePropertyMapping/27> ,
 			       <SimplePropertyMapping/21> ,
 			       <SimplePropertyMapping/15> ,
-			       <SimplePropertyMapping/44> ,
 			       <SimplePropertyMapping/14> ,
 			       <SimplePropertyMapping/4> ,
 			       <StartDateMapping/0> ,
-			       <SimplePropertyMapping/43> ,
 			       <SimplePropertyMapping/5> ,
 			       <SimplePropertyMapping/3> ,
 			       <SimplePropertyMapping/6> ,
@@ -85,9 +75,7 @@
 			       <SimplePropertyMapping/19> ,
 			       <SimplePropertyMapping/33> ,
 			       <SimplePropertyMapping/18> ,
-			       <LatitudeMapping/0> ,
 			       <SimplePropertyMapping/32> ,
-			       <SimplePropertyMapping/47> ,
 			       <SimplePropertyMapping/26> ,
 			       <SimplePropertyMapping/20> ;
         rr:subjectMap          <SubjectMap> .
@@ -181,32 +169,6 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/48>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/48/OM> ;
-        rr:predicate  dbo:notes .
-
-### ObjectMap
-<SimplePropertyMapping/48/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "poznámky" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/42>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/42/OM> ;
-        rr:predicate  dbo:citizenship .
-
-### ObjectMap
-<SimplePropertyMapping/42/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "občanství" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/12>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/12/OM> ;
@@ -229,19 +191,6 @@
 <SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
         rml:reference  "obrázek" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/41>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/41/OM> ;
-        rr:predicate  dbo:spouse .
-
-### ObjectMap
-<SimplePropertyMapping/41/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "choť" .
 
 
 ### Predicate Object Map
@@ -325,19 +274,6 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/46>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/46/OM> ;
-        rr:predicate  dbo:hometown .
-
-### ObjectMap
-<SimplePropertyMapping/46/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "domovské město" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/16>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/16/OM> ;
@@ -374,19 +310,6 @@
 <SimplePropertyMapping/30/OM>
         a              rr:ObjectMap ;
         rml:reference  "politická strana" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/45>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/45/OM> ;
-        rr:predicate  dbo:nationality .
-
-### ObjectMap
-<SimplePropertyMapping/45/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "země" .
 
 
 ### Predicate Object Map
@@ -554,37 +477,6 @@
 
 ### Predicate Object Map
 #########################
-<LongitudeMapping/0>  a  rr:PredicateObjectMap ;
-        rr:objectMap  <LongitudeMapping/0/FTM> ;
-        rr:predicate  geo:long .
-
-### Function Term Map
-<LongitudeMapping/0/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <LongitudeMapping/0/FTM/FV> .
-
-### Function Execution Mapping
-<LongitudeMapping/0/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/LongitudeFunction> ,
-			       <LongitudeMapping/0/FTM/FV/ParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<LongitudeMapping/0/FTM/FV/ParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <LongitudeMapping/0/FTM/FV/ParameterPOM/OM> ;
-        rr:predicate  dbf:lonParameter .
-
-### References
-<LongitudeMapping/0/FTM/FV/ParameterPOM/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "zeměpisná délka" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/34>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/34/OM> ;
@@ -690,19 +582,6 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/44>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/44/OM> ;
-        rr:predicate  dbo:signature .
-
-### ObjectMap
-<SimplePropertyMapping/44/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "podpis" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/14>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/14/OM> ;
@@ -756,19 +635,6 @@
 <StartDateMapping/0/FTM/FV/PropertyParameterPOM/OM>
         a              rr:ObjectMap ;
         rml:reference  "období" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/43>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/43/OM> ;
-        rr:predicate  dbo:activeYears .
-
-### ObjectMap
-<SimplePropertyMapping/43/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "aktivní roky" .
 
 
 ### Predicate Object Map
@@ -878,37 +744,6 @@
 
 ### Predicate Object Map
 #########################
-<LatitudeMapping/0>  a  rr:PredicateObjectMap ;
-        rr:objectMap  <LatitudeMapping/0/FTM> ;
-        rr:predicate  geo:lat .
-
-### Function Term Map
-<LatitudeMapping/0/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <LatitudeMapping/0/FTM/FV> .
-
-### Function Execution Mapping
-<LatitudeMapping/0/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/LatitudeFunction> ,
-			       <LatitudeMapping/0/FTM/FV/ParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<LatitudeMapping/0/FTM/FV/ParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <LatitudeMapping/0/FTM/FV/ParameterPOM/OM> ;
-        rr:predicate  dbf:latParameter .
-
-### References
-<LatitudeMapping/0/FTM/FV/ParameterPOM/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "zeměpisná šířka" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/32>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/32/OM> ;
@@ -918,19 +753,6 @@
 <SimplePropertyMapping/32/OM>
         a              rr:ObjectMap ;
         rml:reference  "vyznání" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/47>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/47/OM> ;
-        rr:predicate  dbo:ethnicity .
-
-### ObjectMap
-<SimplePropertyMapping/47/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "etnikum" .
 
 
 ### Predicate Object Map
@@ -996,9 +818,9 @@
 ############
 
 
-<Function/LongitudeFunction>
+<Function/StartDateFunction>
         a             rr:PredicateObjectMap ;
-        rr:object     dbf:lonFunction ;
+        rr:object     dbf:startDateFunction ;
         rr:predicate  fno:executes .
 
 <Function/SimplePropertyFunction>
@@ -1009,16 +831,6 @@
 <Function/EndDateFunction>
         a             rr:PredicateObjectMap ;
         rr:object     dbf:endDateFunction ;
-        rr:predicate  fno:executes .
-
-<Function/StartDateFunction>
-        a             rr:PredicateObjectMap ;
-        rr:object     dbf:startDateFunction ;
-        rr:predicate  fno:executes .
-
-<Function/LatitudeFunction>
-        a             rr:PredicateObjectMap ;
-        rr:object     dbf:latFunction ;
         rr:predicate  fno:executes .
 
 
