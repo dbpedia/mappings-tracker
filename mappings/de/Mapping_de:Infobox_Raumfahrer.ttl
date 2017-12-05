@@ -7,14 +7,12 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
-@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
-@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -37,14 +35,12 @@
 <http://de.dbpedia.org/resource/Mapping_de:Infobox_Raumfahrer>
         a                      rr:TriplesMap ;
         rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <SimplePropertyMapping/2> ,
+        rr:predicateObjectMap  <SimplePropertyMapping/0> ,
 			       <SimplePropertyMapping/1> ,
-			       <SimplePropertyMapping/4> ,
+			       <SimplePropertyMapping/2> ,
 			       <SimplePropertyMapping/3> ,
-			       <SimplePropertyMapping/6> ,
-			       <SimplePropertyMapping/7> ,
-			       <SimplePropertyMapping/5> ,
-			       <SimplePropertyMapping/0> ;
+			       <SimplePropertyMapping/4> ,
+			       <SimplePropertyMapping/5> ;
         rr:subjectMap          <SubjectMap> .
 
 
@@ -71,28 +67,15 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/2>
+<SimplePropertyMapping/5>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/2/OM> ;
-        rr:predicate  dbo:office .
+        rr:objectMap  <SimplePropertyMapping/5/OM> ;
+        rr:predicate  dbo:retired .
 
 ### ObjectMap
-<SimplePropertyMapping/2/OM>
+<SimplePropertyMapping/5/OM>
         a              rr:ObjectMap ;
-        rml:reference  "behörde" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/1>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/1/OM> ;
-        rr:predicate  dbo:country .
-
-### ObjectMap
-<SimplePropertyMapping/1/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "land" .
+        rml:reference  "ausgeschieden" .
 
 
 ### Predicate Object Map
@@ -123,41 +106,28 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/6>
+<SimplePropertyMapping/2>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/6/OM> ;
-        rr:predicate  dbo:mission .
+        rr:objectMap  <SimplePropertyMapping/2/OM> ;
+        rr:predicate  dbo:office .
 
 ### ObjectMap
-<SimplePropertyMapping/6/OM>
+<SimplePropertyMapping/2/OM>
         a              rr:ObjectMap ;
-        rml:reference  "1.Mission" .
+        rml:reference  "behörde" .
 
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/7>
+<SimplePropertyMapping/1>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/7/OM> ;
-        rr:predicate  dbo:mission .
+        rr:objectMap  <SimplePropertyMapping/1/OM> ;
+        rr:predicate  dbo:country .
 
 ### ObjectMap
-<SimplePropertyMapping/7/OM>
+<SimplePropertyMapping/1/OM>
         a              rr:ObjectMap ;
-        rml:reference  "2.Mission" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/5>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/5/OM> ;
-        rr:predicate  dbo:retired .
-
-### ObjectMap
-<SimplePropertyMapping/5/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "ausgeschieden" .
+        rml:reference  "land" .
 
 
 ### Predicate Object Map
