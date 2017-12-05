@@ -7,14 +7,12 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
-@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
-@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -39,7 +37,6 @@
         rml:logicalSource      <LogicalSource> ;
         rr:predicateObjectMap  <SimplePropertyMapping/9> ,
 			       <SimplePropertyMapping/6> ,
-			       <SimplePropertyMapping/16> ,
 			       <SimplePropertyMapping/3> ,
 			       <SimplePropertyMapping/1> ,
 			       <SimplePropertyMapping/11> ,
@@ -83,25 +80,12 @@
 <SimplePropertyMapping/9>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/9/OM> ;
-        rr:predicate  dc:publisher .
+        rr:predicate  dbo:literaryGenre .
 
 ### ObjectMap
 <SimplePropertyMapping/9/OM>
         a              rr:ObjectMap ;
-        rml:reference  "wydawca_oryg" .
-
-
-### Predicate Object Map
-#########################
-<SimplePropertyMapping/16>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/16/OM> ;
-        rr:predicate  dbo:subsequentWork .
-
-### ObjectMap
-<SimplePropertyMapping/16/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "następna" .
+        rml:reference  "typ_utworu" .
 
 
 ### Predicate Object Map
@@ -109,12 +93,12 @@
 <SimplePropertyMapping/6>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/6/OM> ;
-        rr:predicate  dbo:language .
+        rr:predicate  dbo:country .
 
 ### ObjectMap
 <SimplePropertyMapping/6/OM>
         a              rr:ObjectMap ;
-        rml:reference  "język_oryg_wyd" .
+        rml:reference  "kraj_oryg_wyd" .
 
 
 ### Predicate Object Map
@@ -122,12 +106,13 @@
 <SimplePropertyMapping/3>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/3/OM> ;
-        rr:predicate  dbo:translator .
+        rr:predicate  dbo:originalTitle .
 
 ### ObjectMap
 <SimplePropertyMapping/3/OM>
         a              rr:ObjectMap ;
-        rml:reference  "tłumacz" .
+        rml:reference  "tytuł_oryg" ;
+        rr:language    "pl" .
 
 
 ### Predicate Object Map
@@ -149,7 +134,7 @@
 <SimplePropertyMapping/11>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/11/OM> ;
-        rr:predicate  dbo:firstPublisher .
+        rr:predicate  dbo:publisher .
 
 ### ObjectMap
 <SimplePropertyMapping/11/OM>
@@ -162,12 +147,12 @@
 <SimplePropertyMapping/14>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/14/OM> ;
-        rr:predicate  dbo:country .
+        rr:predicate  dbo:previousWork .
 
 ### ObjectMap
 <SimplePropertyMapping/14/OM>
         a              rr:ObjectMap ;
-        rml:reference  "miejsce wydania" .
+        rml:reference  "poprzednia" .
 
 
 ### Predicate Object Map
@@ -175,12 +160,12 @@
 <SimplePropertyMapping/4>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/4/OM> ;
-        rr:predicate  dbo:author .
+        rr:predicate  dbo:translator .
 
 ### ObjectMap
 <SimplePropertyMapping/4/OM>
         a              rr:ObjectMap ;
-        rml:reference  "autor" .
+        rml:reference  "tłumacz" .
 
 
 ### Predicate Object Map
@@ -188,12 +173,12 @@
 <SimplePropertyMapping/7>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/7/OM> ;
-        rr:predicate  dbo:nonFictionSubject .
+        rr:predicate  dbo:language .
 
 ### ObjectMap
 <SimplePropertyMapping/7/OM>
         a              rr:ObjectMap ;
-        rml:reference  "tematyka" .
+        rml:reference  "język_oryg_wyd" .
 
 
 ### Predicate Object Map
@@ -214,12 +199,12 @@
 <SimplePropertyMapping/8>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/8/OM> ;
-        rr:predicate  dbo:literaryGenre .
+        rr:predicate  dbo:nonFictionSubject .
 
 ### ObjectMap
 <SimplePropertyMapping/8/OM>
         a              rr:ObjectMap ;
-        rml:reference  "typ_utworu" .
+        rml:reference  "tematyka" .
 
 
 ### Predicate Object Map
@@ -227,12 +212,12 @@
 <SimplePropertyMapping/5>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/5/OM> ;
-        rr:predicate  dbo:country .
+        rr:predicate  dbo:author .
 
 ### ObjectMap
 <SimplePropertyMapping/5/OM>
         a              rr:ObjectMap ;
-        rml:reference  "kraj_oryg_wyd" .
+        rml:reference  "autor" .
 
 
 ### Predicate Object Map
@@ -240,12 +225,12 @@
 <SimplePropertyMapping/15>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/15/OM> ;
-        rr:predicate  dbo:previousWork .
+        rr:predicate  dbo:subsequentWork .
 
 ### ObjectMap
 <SimplePropertyMapping/15/OM>
         a              rr:ObjectMap ;
-        rml:reference  "poprzednia" .
+        rml:reference  "następna" .
 
 
 ### Predicate Object Map
@@ -266,7 +251,7 @@
 <SimplePropertyMapping/2>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/2/OM> ;
-        rr:predicate  dbo:originalTitle .
+        rr:predicate  foaf:name .
 
 ### ObjectMap
 <SimplePropertyMapping/2/OM>
