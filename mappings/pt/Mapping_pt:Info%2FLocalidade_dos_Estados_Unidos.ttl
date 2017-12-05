@@ -7,14 +7,12 @@
 @prefix bio:   		<http://purl.org/vocab/bio/0.1/> .
 @prefix skos:  		<http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
-@prefix nif:   		<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix d0:    		<http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix geo:   		<http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rml:   		<http://semweb.mmlab.be/ns/rml#> .
 @prefix dct:   		<http://purl.org/dc/terms/> .
 @prefix fnml:  		<http://semweb.mmlab.be/ns/fnml#> .
 @prefix dcterms: 	<http://purl.org/dc/terms/> .
-@prefix html:  		<http://www.w3.org/1999/xhtml/> .
 @prefix ql:    		<http://semweb.mmlab.be/ns/ql#> .
 @prefix dbr-en: 	<http://en.dbpedia.org/resource/> .
 @prefix foaf:  		<http://xmlns.com/foaf/0.1/> .
@@ -55,7 +53,6 @@
 			       <SimplePropertyMapping/11> ,
 			       <SimplePropertyMapping/17> ,
 			       <SimplePropertyMapping/5> ,
-			       <SimplePropertyMapping/32> ,
 			       <SimplePropertyMapping/13> ,
 			       <SimplePropertyMapping/14> ,
 			       <SimplePropertyMapping/8> ,
@@ -106,7 +103,7 @@
 ### ObjectMap
 <SimplePropertyMapping/16/OM>
         a              rr:ObjectMap ;
-        rml:reference  "web" .
+        rml:reference  "www" .
 
 
 ### Predicate Object Map
@@ -174,13 +171,39 @@
 #########################
 <SimplePropertyMapping/29>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/29/OM> ;
-        rr:predicate  dbo:mayor .
+        rr:objectMap  <SimplePropertyMapping/29/FTM> ;
+        rr:predicate  dbo:area .
 
-### ObjectMap
-<SimplePropertyMapping/29/OM>
+### Function Term Map
+<SimplePropertyMapping/29/FTM>
+        a                   fnml:FunctionTermMap ;
+        fnml:functionValue  <SimplePropertyMapping/29/FTM/FV> ;
+        rr:datatype         <http://dbpedia.org/datatype/squareKilometre> .
+
+### Function Execution Mapping
+<SimplePropertyMapping/29/FTM/FV>
+        a                      rr:TriplesMap ;
+        rml:logicalSource      <LogicalSource> ;
+        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
+			       <SimplePropertyMapping/29/FTM/FV/propertyParameterPOM> ,
+			       <SimplePropertyMapping/29/FTM/FV/unitParameterPOM> ;
+        rr:subjectMap          <SubjectMap/Function> .
+
+### Parameters
+<SimplePropertyMapping/29/FTM/FV/unitParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:object     "squareKilometre" ;
+        rr:predicate  dbf:unitParameter .
+
+<SimplePropertyMapping/29/FTM/FV/propertyParameterPOM>
+        a             rr:PredicateObjectMap ;
+        rr:objectMap  <SimplePropertyMapping/29/FTM/FV/propertyParameterPOM/OM> ;
+        rr:predicate  dbf:propertyParameter .
+
+### References
+<SimplePropertyMapping/29/FTM/FV/propertyParameterPOM/OM>
         a              rr:ObjectMap ;
-        rml:reference  "prefeito" .
+        rml:reference  "área" .
 
 
 ### Predicate Object Map
@@ -188,12 +211,12 @@
 <SimplePropertyMapping/26>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/26/OM> ;
-        rr:predicate  dbo:map .
+        rr:predicate  dbo:subtitle .
 
 ### ObjectMap
 <SimplePropertyMapping/26/OM>
         a              rr:ObjectMap ;
-        rml:reference  "mapa_detalhado" .
+        rml:reference  "mapa_detalhado_legenda" .
 
 
 ### Predicate Object Map
@@ -227,12 +250,12 @@
 <SimplePropertyMapping/25>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/25/OM> ;
-        rr:predicate  dbo:populationAsOf .
+        rr:predicate  dbo:map .
 
 ### ObjectMap
 <SimplePropertyMapping/25/OM>
         a              rr:ObjectMap ;
-        rml:reference  "data_pop" .
+        rml:reference  "mapa_detalhado" .
 
 
 ### Predicate Object Map
@@ -253,12 +276,12 @@
 <SimplePropertyMapping/21>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/21/OM> ;
-        rr:predicate  dbo:populationUrban .
+        rr:predicate  dbo:motto .
 
 ### ObjectMap
 <SimplePropertyMapping/21/OM>
         a              rr:ObjectMap ;
-        rml:reference  "população_urbana" .
+        rml:reference  "lema" .
 
 
 ### Predicate Object Map
@@ -279,12 +302,12 @@
 <SimplePropertyMapping/19>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/19/OM> ;
-        rr:predicate  dbo:areaUrban .
+        rr:predicate  dbo:county .
 
 ### ObjectMap
 <SimplePropertyMapping/19/OM>
         a              rr:ObjectMap ;
-        rml:reference  "área_urbana" .
+        rml:reference  "condado" .
 
 
 ### Predicate Object Map
@@ -292,12 +315,13 @@
 <SimplePropertyMapping/27>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/27/OM> ;
-        rr:predicate  dbo:subtitle .
+        rr:predicate  foaf:name .
 
 ### ObjectMap
 <SimplePropertyMapping/27/OM>
         a              rr:ObjectMap ;
-        rml:reference  "mapa_detalhado_legenda" .
+        rml:reference  "nome_alt" ;
+        rr:language    "pt" .
 
 
 ### Predicate Object Map
@@ -305,12 +329,12 @@
 <SimplePropertyMapping/23>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/23/OM> ;
-        rr:predicate  dbo:timeZone .
+        rr:predicate  dbo:birthDate .
 
 ### ObjectMap
 <SimplePropertyMapping/23/OM>
         a              rr:ObjectMap ;
-        rml:reference  "fuso_horário" .
+        rml:reference  "data_fundação" .
 
 
 ### Predicate Object Map
@@ -318,12 +342,12 @@
 <SimplePropertyMapping/17>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/17/OM> ;
-        rr:predicate  foaf:homepage .
+        rr:predicate  dbo:cityType .
 
 ### ObjectMap
 <SimplePropertyMapping/17/OM>
         a              rr:ObjectMap ;
-        rml:reference  "www" .
+        rml:reference  "tipo" .
 
 
 ### Predicate Object Map
@@ -368,19 +392,6 @@
 
 ### Predicate Object Map
 #########################
-<SimplePropertyMapping/32>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/32/OM> ;
-        rr:predicate  dbo:populationTotal .
-
-### ObjectMap
-<SimplePropertyMapping/32/OM>
-        a              rr:ObjectMap ;
-        rml:reference  "população" .
-
-
-### Predicate Object Map
-#########################
 <SimplePropertyMapping/13>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/13/OM> ;
@@ -411,13 +422,12 @@
 <SimplePropertyMapping/14>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/14/OM> ;
-        rr:predicate  foaf:name .
+        rr:predicate  dbo:populationUrban .
 
 ### ObjectMap
 <SimplePropertyMapping/14/OM>
         a              rr:ObjectMap ;
-        rml:reference  "coord_título" ;
-        rr:language    "pt" .
+        rml:reference  "população_metrópole" .
 
 
 ### Predicate Object Map
@@ -438,12 +448,12 @@
 <SimplePropertyMapping/22>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/22/OM> ;
-        rr:predicate  dbo:motto .
+        rr:predicate  dbo:timeZone .
 
 ### ObjectMap
 <SimplePropertyMapping/22/OM>
         a              rr:ObjectMap ;
-        rml:reference  "lema" .
+        rml:reference  "fuso_horário" .
 
 
 ### Predicate Object Map
@@ -451,52 +461,25 @@
 <SimplePropertyMapping/28>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/28/OM> ;
-        rr:predicate  foaf:name .
+        rr:predicate  dbo:mayor .
 
 ### ObjectMap
 <SimplePropertyMapping/28/OM>
         a              rr:ObjectMap ;
-        rml:reference  "nome_alt" ;
-        rr:language    "pt" .
+        rml:reference  "prefeito" .
 
 
 ### Predicate Object Map
 #########################
 <SimplePropertyMapping/30>
         a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/30/FTM> ;
-        rr:predicate  dbo:area .
+        rr:objectMap  <SimplePropertyMapping/30/OM> ;
+        rr:predicate  dbo:picture .
 
-### Function Term Map
-<SimplePropertyMapping/30/FTM>
-        a                   fnml:FunctionTermMap ;
-        fnml:functionValue  <SimplePropertyMapping/30/FTM/FV> ;
-        rr:datatype         <http://dbpedia.org/datatype/squareKilometre> .
-
-### Function Execution Mapping
-<SimplePropertyMapping/30/FTM/FV>
-        a                      rr:TriplesMap ;
-        rml:logicalSource      <LogicalSource> ;
-        rr:predicateObjectMap  <Function/SimplePropertyFunction> ,
-			       <SimplePropertyMapping/30/FTM/FV/propertyParameterPOM> ,
-			       <SimplePropertyMapping/30/FTM/FV/unitParameterPOM> ;
-        rr:subjectMap          <SubjectMap/Function> .
-
-### Parameters
-<SimplePropertyMapping/30/FTM/FV/unitParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:object     "squareKilometre" ;
-        rr:predicate  dbf:unitParameter .
-
-<SimplePropertyMapping/30/FTM/FV/propertyParameterPOM>
-        a             rr:PredicateObjectMap ;
-        rr:objectMap  <SimplePropertyMapping/30/FTM/FV/propertyParameterPOM/OM> ;
-        rr:predicate  dbf:propertyParameter .
-
-### References
-<SimplePropertyMapping/30/FTM/FV/propertyParameterPOM/OM>
+### ObjectMap
+<SimplePropertyMapping/30/OM>
         a              rr:ObjectMap ;
-        rml:reference  "área" .
+        rml:reference  "imagem" .
 
 
 ### Predicate Object Map
@@ -504,12 +487,12 @@
 <SimplePropertyMapping/24>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/24/OM> ;
-        rr:predicate  dbo:birthDate .
+        rr:predicate  dbo:populationAsOf .
 
 ### ObjectMap
 <SimplePropertyMapping/24/OM>
         a              rr:ObjectMap ;
-        rml:reference  "data_fundação" .
+        rml:reference  "data_pop" .
 
 
 ### Predicate Object Map
@@ -517,12 +500,12 @@
 <SimplePropertyMapping/20>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/20/OM> ;
-        rr:predicate  dbo:county .
+        rr:predicate  dbo:populationUrban .
 
 ### ObjectMap
 <SimplePropertyMapping/20/OM>
         a              rr:ObjectMap ;
-        rml:reference  "condado" .
+        rml:reference  "população_urbana" .
 
 
 ### Predicate Object Map
@@ -556,12 +539,12 @@
 <SimplePropertyMapping/15>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/15/OM> ;
-        rr:predicate  dbo:populationUrban .
+        rr:predicate  foaf:homepage .
 
 ### ObjectMap
 <SimplePropertyMapping/15/OM>
         a              rr:ObjectMap ;
-        rml:reference  "população_metrópole" .
+        rml:reference  "web" .
 
 
 ### Predicate Object Map
@@ -569,12 +552,12 @@
 <SimplePropertyMapping/18>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/18/OM> ;
-        rr:predicate  dbo:cityType .
+        rr:predicate  dbo:areaUrban .
 
 ### ObjectMap
 <SimplePropertyMapping/18/OM>
         a              rr:ObjectMap ;
-        rml:reference  "tipo" .
+        rml:reference  "área_urbana" .
 
 
 ### Predicate Object Map
@@ -643,12 +626,12 @@
 <SimplePropertyMapping/31>
         a             rr:PredicateObjectMap ;
         rr:objectMap  <SimplePropertyMapping/31/OM> ;
-        rr:predicate  dbo:picture .
+        rr:predicate  dbo:populationTotal .
 
 ### ObjectMap
 <SimplePropertyMapping/31/OM>
         a              rr:ObjectMap ;
-        rml:reference  "imagem" .
+        rml:reference  "população" .
 
 
 ### Predicate Object Map
